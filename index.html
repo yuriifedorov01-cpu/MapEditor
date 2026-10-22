@@ -2353,6 +2353,7 @@ const EQU = {
   swfMtime: null, statusTimer: 0,               // время сборки gamefs/MyGame.swf
   swf: null,                                    // последний ответ /editor/api/equip-status
   rebuilding: false,                            // идёт ли пересборка SWF прямо сейчас
+  publish: (function(){ try { return localStorage.getItem('equPublish') !== '0'; } catch(e){ return true; } })(), // публиковать в hht-client
 };
 const EQU_SLOT_LIST = [
   ['helmet', 'Шлем'], ['shirt', 'Нагрудник (броня)'], ['pants', 'Штаны'], ['shoe', 'Обувь'],
@@ -2663,7 +2664,13 @@ function buildEquipPanel(){
       ${EQU.target === 'person'
         ? '<button onclick="equSave(true)">💾 Сохранить и пересобрать SWF</button>'
         : '<button onclick="equSave(false)">💾 Сохранить</button>'}
+      <button onclick="equSave(${EQU.target === 'person'}, true)">🌐 Опубликовать в hht-client</button>
     </div>
+    <label style="display:flex;gap:6px;align-items:center;font-size:12px;margin-top:6px">
+      <input type="checkbox" ${EQU.publish ? 'checked' : ''}
+        onchange="EQU.publish=this.checked;try{localStorage.setItem('equPublish',this.checked?'1':'0')}catch(e){}">
+      публиковать в hht-client после сохранения
+    </label>
     <div class="swfbar" id="equSwfBar">
       <div class="swfbar-top"><span id="equSwfStatus">SWF: …</span><b id="equSwfPct"></b></div>
       <div class="swfbar-track"><div class="swfbar-fill" id="equProgress"></div></div>
@@ -2673,6 +2680,7 @@ function buildEquipPanel(){
       ? 'Персонаж: правки пишутся в BodyAnimator.as (ffdec-client + build/src). Без пересборки SWF в игре не видны.'
       : 'Питомец: правки пишутся в gamefs/dynamic_content/misc/pet_body_locations.xml — видны после перезапуска клиента.'}</div>
     <div class="gridmeta">После пересборки: перезапустите клиента (deploy\\stop.cmd → start.cmd); при застарелом кэше — <b>start.ps1 -ClearCache</b>.</div>
+    <div class="gridmeta">Публикация: облачный SWF (ассеты → GitHub Pages) + ассеты/карты → репо <b>hht-client</b> (commit + push). Игроки получают обновление за 1–2 мин.</div>
     <span class="tag" id="equStatus">${EQU.status}</span>`;
   const inp = EQU.focusSearch && document.getElementById('equSearch_' + EQU.focusSearch);
   if(inp){ inp.focus(); try { inp.setSelectionRange(inp.value.length, inp.value.length); } catch {} }
@@ -2686,6 +2694,10 @@ const EQU_STEP_RU = {
   'extract-abc': 'извлечение ABC', 'abc-stackfix': 'фикс кодогена (pop→nop)',
   'set-abc': 'подмена ABC в SWF', 'deploy-patches': 'накат ABC-патчей (deploy map)',
   'artifact': 'сборка артефакта', 'restore': 'откат SWF', 'done': 'готово',
+  'publish-cloud-abc': 'облачная сборка (GitHub Pages)', 'publish-cloud-swf': 'вшивание облачного ABC',
+  'publish-swf-patches': 'ABC-патчи на облачный SWF', 'publish-compress': 'сжатие в CWS',
+  'publish-assets': 'ассеты и карты в репо', 'publish-place': 'MyGame.swf в репо',
+  'publish-verify': 'проверка облачного SWF', 'publish-push': 'git commit + push',
 };
 
 // статус-бар: валидность gamefs/MyGame.swf + полоса прогресса пересборки
@@ -2706,9 +2718,12 @@ function equRenderStatus(j){
   pct.textContent = p + '%';
   pct.style.color = j.error ? 'var(--danger2)' : (j.rebuilding ? 'var(--acc)' : 'var(--acc2)');
   let msg;
-  if(j.rebuilding) msg = 'Пересборка: шаг ' + (j.step||'?') + '/' + (j.totalSteps||'?') + ' — ' + (EQU_STEP_RU[j.stepName] || j.stepName || '…');
+  const ph = j.phase === 'publish' ? 'Публикация в hht-client' : 'Пересборка';
+  if(j.rebuilding) msg = ph + ': шаг ' + (j.step||'?') + '/' + (j.totalSteps||'?') + ' — ' + (EQU_STEP_RU[j.stepName] || j.stepName || '…');
   else if(j.error) msg = '❌ Ошибка сборки: ' + j.error + ' — подробности в логе (наведите на строку статуса).';
-  else if(j.done) msg = '✅ Сборка завершена — перезапустите клиент (deploy\\stop.cmd → start.cmd); при застарелом кэше — start.ps1 -ClearCache.';
+  else if(j.done) msg = (j.phase === 'publish')
+    ? '✅ Сборка и публикация завершены — игроки получат обновление за 1–2 мин; для локальной проверки перезапустите клиент (deploy\\stop.cmd → start.cmd).'
+    : '✅ Сборка завершена — перезапустите клиент (deploy\\stop.cmd → start.cmd); при застарелом кэше — start.ps1 -ClearCache.';
   else if(j.swfOk) msg = 'SWF валиден (' + (j.swfCheck||'') + ').';
   else msg = '⚠️ ' + (j.swfCheck || 'SWF не проверен') + ' — нажмите «Сохранить и пересобрать SWF».';
   note.textContent = msg;
@@ -2808,7 +2823,7 @@ window.addEventListener('keydown', (e)=>{
   if(map[e.key] && slot){ e.preventDefault(); equNudge(slot, map[e.key][0], map[e.key][1]); }
 });
 
-function equSave(rebuild){
+function equSave(rebuild, publish){
   const body = {};
   const isPerson = EQU.target === 'person';
   if(isPerson) body.person = EQU.data.person.offsets;
@@ -2819,15 +2834,18 @@ function equSave(rebuild){
   // Персонаж: правки живут в BodyAnimator.as и попадают в игру ТОЛЬКО после пересборки SWF,
   // поэтому «Сохранить» для персонажа всегда запускает пересборку. Питомец — живой XML, сборка не нужна.
   body.rebuild = isPerson ? true : !!rebuild;
-  EQU.rebuilding = body.rebuild;
-  EQU.status = body.rebuild ? 'сохранено — пересобираю SWF…' : 'сохранение…';
+  // публикация в hht-client (репо, откуда играют): на сервере идёт ПОСЛЕ пересборки, одним процессом
+  body.publish = (publish === undefined) ? !!EQU.publish : !!publish;
+  EQU.rebuilding = body.rebuild || body.publish;
+  EQU.status = body.rebuild ? 'сохранено — пересобираю SWF…'
+             : (body.publish ? 'сохранено — публикую в hht-client…' : 'сохранение…');
   buildEquipPanel();
   fetch('/editor/api/equip', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
     .then(r => r.json()).then(j => {
       if(j.ok){
         EQU.dirty.person = false; EQU.dirty.pets = false;
-        EQU.status = j.rebuilding
-          ? 'сохранено; идёт пересборка SWF — смотрите полосу прогресса ниже'
+        EQU.status = (j.rebuilding || j.publishing)
+          ? 'сохранено; идёт ' + (j.publishing ? (j.rebuilding ? 'пересборка + публикация в hht-client' : 'публикация в hht-client') : 'пересборка SWF') + ' — смотрите полосу прогресса ниже'
           : 'сохранено в gamefs/pet_body_locations.xml — перезапустите клиент, чтобы увидеть';
       } else { EQU.rebuilding = false; EQU.status = 'ошибка'; }
       buildEquipPanel();

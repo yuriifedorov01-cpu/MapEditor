@@ -70,7 +70,8 @@ http.createServer(async (req, res) => {
       const percent = rebuilding ? (prog.percent | 0) : (error ? (prog.percent | 0) : (swfOk ? 100 : 0));
       return send(res, 200, JSON.stringify({
         swfMtime, swfSize, swfOk, swfCheck,
-        rebuilding, stale,
+        rebuilding, stale, publishing: !!(prog && prog.phase === 'publish'),
+        phase: prog ? (prog.phase || 'rebuild') : null,
         step: prog ? prog.step : null, totalSteps: prog ? prog.total : null,
         stepName: prog ? prog.name : null, percent, done, error, logTail,
       }), MIME['.json']);
@@ -102,18 +103,24 @@ http.createServer(async (req, res) => {
             saved.pets = Object.keys(body.pets);
           }
           if (body.petHelmetOffsets) { mod.writePetHelmetOffsets(body.petHelmetOffsets.x, body.petHelmetOffsets.y); saved.petHelmetOffsets = true; }
-          let rebuilding = false;
-          if (body.rebuild && process.platform === 'win32') {
+          // Пересборка и/или публикация в hht-client. Публикация должна идти ПОСЛЕ пересборки,
+          // поэтому при обоих флагах запускаем один процесс: rebuild-client-swf.ps1 -Publish.
+          let rebuilding = false, publishing = false;
+          if ((body.rebuild || body.publish) && process.platform === 'win32') {
             const psExe = path.join(process.env.SystemRoot || 'C:\\Windows',
               'System32', 'WindowsPowerShell', 'v1.0', 'powershell.exe');
-            const args = ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-Command',
-              `& '${path.join(TOOLS, 'rebuild-client-swf.ps1')}' -Force *> '${path.join(TOOLS, 'rebuild-client.log')}'`];
+            const log = path.join(TOOLS, 'rebuild-client.log');
+            const cmd = body.rebuild
+              ? `& '${path.join(TOOLS, 'rebuild-client-swf.ps1')}' -Force${body.publish ? ' -Publish' : ''} *> '${log}'`
+              : `& '${path.join(TOOLS, 'publish-hht-client.ps1')}' -WithSwfPatches *> '${log}'`;
             // ВАЖНО: detached:true на Windows заставляет powershell.exe молча ничего не делать
             // (проверено: ни лог, ни прогресс не появляются) — пересборка «не срабатывала».
-            spawn(psExe, args, { cwd: TOOLS, stdio: 'ignore', windowsHide: true }).unref();
-            rebuilding = true;
+            spawn(psExe, ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-Command', cmd],
+              { cwd: TOOLS, stdio: 'ignore', windowsHide: true }).unref();
+            rebuilding = !!body.rebuild;
+            publishing = true;
           }
-          return send(res, 200, JSON.stringify({ ok: true, saved, rebuilding }), MIME['.json']);
+          return send(res, 200, JSON.stringify({ ok: true, saved, rebuilding, publishing }), MIME['.json']);
         } catch (e) { return send(res, 500, 'equip error: ' + e.message); }
       });
       return;
