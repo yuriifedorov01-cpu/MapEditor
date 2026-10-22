@@ -348,5 +348,12 @@
   "cols": 7,
   "rows": 2,
   "count": 14
+ },
+ {
+  "set": "Fish",
+  "kind": "fish",
+  "cols": 7,
+  "rows": 6,
+  "count": 42
  }
 ]

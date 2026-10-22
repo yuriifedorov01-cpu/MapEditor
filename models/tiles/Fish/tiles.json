@@ -1,0 +1,387 @@
+{
+ "cell": 165,
+ "cols": 7,
+ "rows": 6,
+ "sprite": "Fish.png",
+ "tiles": [
+  {
+   "id": 0,
+   "file": "tile_0.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 29,
+   "h": 21,
+   "name": "sliver"
+  },
+  {
+   "id": 1,
+   "file": "tile_1.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 30,
+   "h": 19,
+   "name": "swerm"
+  },
+  {
+   "id": 2,
+   "file": "tile_2.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 29,
+   "h": 19,
+   "name": "puffer"
+  },
+  {
+   "id": 3,
+   "file": "tile_3.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 41,
+   "h": 25,
+   "name": "shroomer"
+  },
+  {
+   "id": 4,
+   "file": "tile_4.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 30,
+   "h": 27,
+   "name": "mufungi"
+  },
+  {
+   "id": 5,
+   "file": "tile_5.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 30,
+   "h": 17,
+   "name": "furry feen"
+  },
+  {
+   "id": 6,
+   "file": "tile_6.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 36,
+   "h": 23,
+   "name": "hairloom"
+  },
+  {
+   "id": 7,
+   "file": "tile_7.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 35,
+   "h": 24,
+   "name": "hertle"
+  },
+  {
+   "id": 8,
+   "file": "tile_8.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 34,
+   "h": 22,
+   "name": "plant fungus"
+  },
+  {
+   "id": 9,
+   "file": "tile_9.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 32,
+   "h": 22,
+   "name": "spud"
+  },
+  {
+   "id": 10,
+   "file": "tile_10.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 33,
+   "h": 21,
+   "name": "flipper"
+  },
+  {
+   "id": 11,
+   "file": "tile_11.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 39,
+   "h": 31,
+   "name": "coconut fish"
+  },
+  {
+   "id": 12,
+   "file": "tile_12.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 34,
+   "h": 30,
+   "name": "mud fish"
+  },
+  {
+   "id": 13,
+   "file": "tile_13.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 28,
+   "h": 32,
+   "name": "glopper"
+  },
+  {
+   "id": 14,
+   "file": "tile_14.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 35,
+   "h": 21,
+   "name": "plant bacteria"
+  },
+  {
+   "id": 15,
+   "file": "tile_15.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 34,
+   "h": 21,
+   "name": "metal guppy"
+  },
+  {
+   "id": 16,
+   "file": "tile_16.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 35,
+   "h": 20,
+   "name": "iron minnow"
+  },
+  {
+   "id": 17,
+   "file": "tile_17.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 37,
+   "h": 22,
+   "name": "peep fish"
+  },
+  {
+   "id": 18,
+   "file": "tile_18.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 38,
+   "h": 24,
+   "name": "dark tadpole"
+  },
+  {
+   "id": 19,
+   "file": "tile_19.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 41,
+   "h": 22,
+   "name": "evil pupe"
+  },
+  {
+   "id": 20,
+   "file": "tile_20.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 37,
+   "h": 21,
+   "name": "dark toad"
+  },
+  {
+   "id": 21,
+   "file": "tile_21.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 67,
+   "h": 40,
+   "name": "mushroom coy"
+  },
+  {
+   "id": 22,
+   "file": "tile_22.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 76,
+   "h": 43,
+   "name": "lion fish"
+  },
+  {
+   "id": 23,
+   "file": "tile_23.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 74,
+   "h": 42,
+   "name": "stagnant scum"
+  },
+  {
+   "id": 24,
+   "file": "tile_24.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 63,
+   "h": 50,
+   "name": "omate"
+  },
+  {
+   "id": 25,
+   "file": "tile_25.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 60,
+   "h": 33,
+   "name": "greenspot"
+  },
+  {
+   "id": 26,
+   "file": "tile_26.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 67,
+   "h": 43,
+   "name": "sharktooth"
+  },
+  {
+   "id": 27,
+   "file": "tile_27.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 67,
+   "h": 33,
+   "name": "glowshine"
+  },
+  {
+   "id": 28,
+   "file": "tile_28.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 88,
+   "h": 71,
+   "name": "subordinate"
+  },
+  {
+   "id": 29,
+   "file": "tile_29.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 146,
+   "h": 70,
+   "name": "dark reaper"
+  },
+  {
+   "id": 30,
+   "file": "tile_30.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 31,
+   "h": 21,
+   "name": "clipper"
+  },
+  {
+   "id": 31,
+   "file": "tile_31.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 32,
+   "h": 23,
+   "name": "pootnick"
+  },
+  {
+   "id": 32,
+   "file": "tile_32.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 39,
+   "h": 32,
+   "name": "root fish"
+  },
+  {
+   "id": 33,
+   "file": "tile_33.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 37,
+   "h": 27,
+   "name": "pumpkin shell fish"
+  },
+  {
+   "id": 34,
+   "file": "tile_34.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 43,
+   "h": 53,
+   "name": "pumphin"
+  },
+  {
+   "id": 35,
+   "file": "tile_35.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 49,
+   "h": 21,
+   "name": "snow fish"
+  },
+  {
+   "id": 36,
+   "file": "tile_36.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 46,
+   "h": 32,
+   "name": "ice fish"
+  },
+  {
+   "id": 37,
+   "file": "tile_37.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 44,
+   "h": 29,
+   "name": "lava reef fish"
+  },
+  {
+   "id": 38,
+   "file": "tile_38.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 44,
+   "h": 22,
+   "name": "lava spud"
+  },
+  {
+   "id": 39,
+   "file": "tile_39.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 55,
+   "h": 55,
+   "name": "flame coy"
+  },
+  {
+   "id": 40,
+   "file": "tile_40.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 44,
+   "h": 30,
+   "name": "beholder guppy"
+  },
+  {
+   "id": 41,
+   "file": "tile_41.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 67,
+   "h": 37,
+   "name": "krimper"
+  }
+ ],
+ "count": 42
+}
