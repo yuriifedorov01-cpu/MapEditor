@@ -168,8 +168,11 @@ let area = { name:'map_1',
   oy:{ main:Array(W*H).fill(0), water:Array(W*H).fill(0), g2:Array(W*H).fill(0),
     g3:Array(W*H).fill(0), fg:Array(W*H).fill(0), art:Array(W*H).fill(0) },
   portals:[], spawns:[], atms:[], playerSpawn:null, background:'',
-  npcs:[] };   // продавцы карты: [x, y, "имя из data/npcs.json", "переопределение товаров (пусто = из каталога)"]
+  npcs:[],      // продавцы карты: [x, y, "имя из data/npcs.json", "переопределение товаров (пусто = из каталога)"]
+  trees:[],     // деревья карты: [col, row, "pine tree"] — имя = текстура в атласе игры (Tree.as)
+  fish:[] };    // виды рыб карты: ["puffer", ...] — сервер спавнит их в связных водах
 let layer='main', tile=40, tool='paint', currentTab='map';
+let treeSel='';      // выбранный спрайт дерева (имя текстуры игры, напр. "pine tree")
 
 // ===================== семантика тайлов клиента (TileHandler.createTile / tileSlope) =====================
 // Зеркало в игре кодируется ИДОМ тайла, а не флагом: сервер шлёт 1 байт на клетку (флаги в карту
@@ -271,7 +274,12 @@ const TILES = {};                                      // set -> { id: {file,ox,
 const TILE_IMG = {};                                   // 'set/file' -> Image
 let SEL_MAIN = localStorage.getItem('hh_set_main') || 'GreenAreaTiles';
 let SEL_FG   = localStorage.getItem('hh_set_fg')   || 'GreenAreaForegroundTiles';
-function curSet(){ return palSet === 'fg' ? SEL_FG : SEL_MAIN; }
+function curSet(){
+  if(palSet === 'fg') return SEL_FG;
+  if(palSet === 'tree') return 'Trees';    // деревья — свой атлас (объекты), не тайлы карты
+  if(palSet === 'fish') return 'Fish';     // рыбы — свой атлас (объекты)
+  return SEL_MAIN;
+}
 function loadManifest(set){
   if(MANIFESTS[set]) return Promise.resolve(MANIFESTS[set]);
   return fetch('/models/tiles/' + set + '/tiles.json')
@@ -381,6 +389,13 @@ function finishPalDrag(){
   if(d.start === d.end){                       // одиночный клик
     const t = palShown[d.start];
     if(!t) return;
+    if(palSet === 'tree'){                     // дерево: выбираем спрайт (ставится кистью)
+      treeSel = String(t.name || '');
+      buildPalette(); updateTreesInfo();
+      setStatus('🌳 выбрано дерево «' + (treeSel||'?') + '» — ставь кистью на карту');
+      return;
+    }
+    if(palSet === 'fish'){ toggleMapFish(String(t.name || '')); return; }
     // 🧩/🎲 — клик добавляет/убирает тайл в наборе (до 10)
     if(tool === 'combine' || tool === 'random'){ toggleTileInSet(t.id); return; }
     palSelRect = null;
@@ -467,6 +482,70 @@ function toggleTileSetMode(){
   updateTileSetInfo();
   setStatus('набор ставится ' + (tileSetMode === 'row' ? 'полосой (вправо)' : 'квадратом'));
 }
+// ===================== 🌳 деревья и 🐟 рыбы — ОБЪЕКТЫ карты (свой атлас, НЕ тайлы) =====================
+// В игре это не тайлы, а объекты: Tree.as (рубится, дропает бревно) и Fish.as (спавнятся в воде).
+// Поэтому в JSON карты они лежат отдельно: trees:[[col,row,"pine tree"]] и fish:["puffer",...].
+function treeImg(name){
+  const m = MANIFESTS['Trees'];
+  const t = (m && m.tiles) ? m.tiles.find(x => x.name === name) : null;
+  return t ? tileImgFor('Trees', t.file) : null;
+}
+function placeTree(x, y, erase){
+  area.trees = area.trees || [];
+  const idx = area.trees.findIndex(t => (t[0]|0) === x && (t[1]|0) === y);
+  if(erase){
+    if(idx < 0) return;
+    pushHistory(); area.trees.splice(idx, 1); updateTreesInfo();
+    setStatus('дерево убрано с ' + x + ',' + y + ' (осталось ' + area.trees.length + ')');
+    return;
+  }
+  if(!treeSel){ setStatus('сначала выбери спрайт дерева: набор «Trees» в списке зон палитры'); return; }
+  if(idx >= 0){
+    if(String(area.trees[idx][2]) === treeSel) return;
+    pushHistory(); area.trees[idx][2] = treeSel;          // смена вида на той же клетке
+  } else {
+    pushHistory(); area.trees.push([x, y, treeSel]);
+  }
+  updateTreesInfo();
+  setStatus('🌳 «' + treeSel + '» на ' + x + ',' + y + ' (всего ' + area.trees.length + ')');
+}
+function toggleMapFish(name){
+  if(!name) return;
+  area.fish = area.fish || [];
+  const i = area.fish.indexOf(name);
+  if(i >= 0) area.fish.splice(i, 1); else area.fish.push(name);
+  buildPalette(); updateTreesInfo();
+  setStatus('🐟 рыбы карты (' + area.fish.length + '): ' + (area.fish.join(', ') || '—') +
+    ' — спавн в связных водоёмах, до 15 на карту');
+}
+function clearTrees(){
+  if(!(area.trees||[]).length) return;
+  pushHistory(); area.trees = []; updateTreesInfo(); draw();
+  setStatus('все деревья убраны');
+}
+function clearFish(){
+  if(!(area.fish||[]).length) return;
+  area.fish = []; buildPalette(); updateTreesInfo();
+  setStatus('список рыб карты очищен');
+}
+function updateTreesInfo(){
+  const el = document.getElementById('palSetInfo'); if(!el) return;
+  if(palSet === 'tree'){
+    const n = (area.trees||[]).length;
+    el.innerHTML = '🌳 <b>Деревья</b>: поставлено <b>' + n + '</b>. Выбрано: <b>' + esc(treeSel || '—') +
+      '</b>. Ставить — кистью, убирать — ластиком или правым кликом.' +
+      (n ? '<div style="margin-top:5px"><span class="chip" style="cursor:pointer" onclick="clearTrees()">✕ убрать все деревья</span></div>' : '');
+    return;
+  }
+  if(palSet === 'fish'){
+    const f = area.fish || [];
+    el.innerHTML = '🐟 <b>Рыбы карты</b>: <b>' + f.length + '</b>' + (f.length ? ' — ' + esc(f.join(', ')) : '') +
+      '<br>Клик по спрайту — вкл/выкл вид. Спавн — в связных водоёмах (до 15 на карту).' +
+      (f.length ? '<div style="margin-top:5px"><span class="chip" style="cursor:pointer" onclick="clearFish()">✕ очистить</span></div>' : '');
+    return;
+  }
+  updateTileSetInfo();
+}
 // ---- 2-й этап: ЗОНА -> НАБОР ТАЙЛОВ (выводим зону из имени набора, данные не меняем) ----
 const ZONE_ALIAS = { RedMush: 'RedMushroom', Robo: 'Robot' };
 function zoneKeyOf(set){
@@ -492,7 +571,7 @@ function zonesList(){
   arr.sort((a,b) => a.label.localeCompare(b.label));
   return arr;
 }
-const currentSetName = () => (palSet === 'fg' ? SEL_FG : SEL_MAIN);
+const currentSetName = () => curSet();
 // ---- 2-й этап: фильтр палитры по СУЩЕСТВУЮЩИМ данным (без новой меты) ----
 const PAL_FILTERS = [['all','Все'],['special','★ спец'],['slope','⛰ склоны'],['mirror','⇄ зеркальные']];
 function matchPalFilter(t){
@@ -529,10 +608,14 @@ function pickZone(key){
 }
 function pickSet(setName){
   const s = TILE_INDEX.find(x => x.set === setName); if(!s) return;
-  // наборы «Trees»/«Fish» — объекты игры (свой атлас), а НЕ тайлы карты: тему карты не трогаем
+  // «Trees»/«Fish» — объекты игры (свой атлас), а НЕ тайлы карты: тему карты (SEL_MAIN/SEL_FG) НЕ трогаем
   if(s.kind === 'tree' || s.kind === 'fish'){
-    setStatus('набор «' + setName + '» (' + (s.kind === 'tree' ? 'деревья' : 'рыбы') + ') — пока только просмотр: ' +
-      'размещение появится вместе с правками игры. Тайлы и тема карты НЕ меняются.');
+    palSet = s.kind;
+    if(s.kind === 'tree' && tool !== 'paint' && tool !== 'erase') tool = 'paint';
+    buildPalette(); updateTreesInfo(); draw();
+    setStatus(s.kind === 'tree'
+      ? '🌳 деревья: выбери спрайт и ставь кистью на карту; правый клик / ластик — убрать'
+      : '🐟 рыбы: клик по спрайту — вкл/выкл вид для этой карты (спавн в водоёмах, до 15 на карту)');
     return;
   }
   if(s.kind === 'fg'){ SEL_FG = setName; localStorage.setItem('hh_set_fg', SEL_FG); palSet = 'fg'; layer = 'fg'; }
@@ -591,11 +674,11 @@ function buildPalette(){
     const baseFile = (id) => { const b = tiles.find(t => t.id === id); return b ? b.file : null; };
     const list = [];
     for(const t of tiles){
-      const mb = (palSet !== 'fg') ? MIRROR_OF[t.id] : undefined;
+      const mb = (palSet === 'main') ? MIRROR_OF[t.id] : undefined;
       const bf = mb !== undefined ? baseFile(mb) : null;
       list.push(bf ? { ...t, mirrorOf: mb, file: bf } : t);
     }
-    if(palSet !== 'fg'){
+    if(palSet === 'main'){
       for(const [mid, base] of Object.entries(MIRROR_OF)){
         const id = +mid;
         if(have.has(id)) continue;
@@ -620,14 +703,20 @@ function buildPalette(){
       const t = shown[k];
       const usable = renderableIds(set) ? renderableIds(set).has(t.id) : true;
       const d = document.createElement('div');
-      d.className = 'tilepick' + (tile === t.id ? ' on' : '');
+      const on = (palSet === 'tree') ? (treeSel === t.name)
+               : (palSet === 'fish') ? ((area.fish||[]).indexOf(t.name) >= 0)
+               : (tile === t.id);
+      d.className = 'tilepick' + (on ? ' on' : '');
       d.dataset.idx = String(k);
       d.dataset.id = String(t.id);
       const info = tileInfo(t.id);
-      d.title = set + ' · тайл ' + t.id +
-        (t.mirrorOf !== undefined ? ' (зеркальный: база ' + t.mirrorOf + ' + scaleX=-1)' : '') +
-        (info ? ' — ' + info : '') +
-        (usable ? '' : ' — НЕ рисуется в игре (нет в атласе темы), ставить нельзя');
+      d.title = (palSet === 'tree' || palSet === 'fish')
+        ? set + ' · ' + (t.name || t.file) + ' · спрайт ' + t.id +
+          (palSet === 'tree' ? ' — дерево (ставится на карту как объект)' : ' — рыба (вид для водоёмов карты)')
+        : set + ' · тайл ' + t.id +
+          (t.mirrorOf !== undefined ? ' (зеркальный: база ' + t.mirrorOf + ' + scaleX=-1)' : '') +
+          (info ? ' — ' + info : '') +
+          (usable ? '' : ' — НЕ рисуется в игре (нет в атласе темы), ставить нельзя');
       if(!usable){ d.style.opacity = '0.25'; d.style.outline = '1px dashed #b4552f'; }
       let im;
       if(t.mirrorOf !== undefined){                       // свежая картинка (кэш tileImgFor общий)
@@ -641,7 +730,7 @@ function buildPalette(){
       d.style.display = 'flex'; d.style.alignItems = 'center'; d.style.justifyContent = 'center';
       d.style.position = 'relative';
       d.appendChild(im);
-      const badge = t.mirrorOf !== undefined ? '⇄' : (SPECIAL_TILE[t.id] ? '★' : '');
+      const badge = t.mirrorOf !== undefined ? '⇄' : ((palSet === 'main' && SPECIAL_TILE[t.id]) ? '★' : '');
       if(badge){
         const b = document.createElement('span');
         b.textContent = badge;
@@ -803,6 +892,7 @@ function renderStage(){
       else if(currentTab==='equip'){ sizeEquipCanvas(); } }); }
   ensureAssets();
   ensureTileIndex();
+  loadManifest('Trees').then(() => { if(currentTab === 'map') draw(); });   // 🌳 спрайты деревьев нужны для отрисовки карты
   draw(); buildPalette(); renderPortalList(); renderSpawnList(); renderAtmList(); renderLayerPanel(); renderValidation(); drawMinimap();
   ensureNpcCatalog().then(()=>renderShopList());
 }
@@ -1114,6 +1204,8 @@ function setTile(L, x, y, erase, useId){
 }
 function apply(x,y,rightClick){
   const L = targetLayer();
+  // 🌳 деревья — объекты карты: кисть ставит/меняет вид, ластик и правый клик убирают
+  if(palSet === 'tree' && (tool === 'paint' || tool === 'erase' || rightClick)){ placeTree(x, y, !!(rightClick || tool === 'erase')); draw(); return; }
   if(rightClick || tool==='erase'){ setTile(L, x, y, true); draw(); return; }
   if(tool==='paint'){ if(brushTiles) stampBrush(x, y); else setTile(L, x, y, false); draw(); }
   else if(tool==='combine'){ stampTileSet(L, x, y); draw(); }
@@ -1237,6 +1329,18 @@ function paintScene(ctx, cw, ch, z, oxv, oyv, visibleOnly){
     }
     ctx.restore();
   }
+  // 🌳 деревья карты (объекты): спрайт прижат низом к клетке, как в игре (Tree.as: pivot = низ по центру)
+  if((area.trees||[]).length && layerVis.art !== false){
+    const kt = TS / 165;                                   // игровая клетка = 165 px
+    for(const tr of area.trees){
+      const tx = tr[0]|0, ty = tr[1]|0;
+      if(tx < x0-2 || tx > x1+2 || ty < y0-3 || ty > y1+2) continue;
+      const im = treeImg(tr[2]);
+      if(!im || !im.complete || !im.naturalWidth) continue;
+      const dw = im.naturalWidth * kt, dh = im.naturalHeight * kt;
+      ctx.drawImage(im, tx*TS + TS/2 - dw/2, ty*TS + TS - dh, dw, dh);
+    }
+  }
   if(showGrid && TS*z >= 7){
     ctx.strokeStyle='rgba(0,0,0,0.16)'; ctx.lineWidth = 1/z;
     for(let x=x0;x<=x1+1;x++){ctx.beginPath();ctx.moveTo(x*TS,y0*TS);ctx.lineTo(x*TS,(y1+1)*TS);ctx.stroke();}
@@ -1355,7 +1459,7 @@ function renderRightPanel(){
     </select>
     <label>Набор тайлов</label>
     <select onchange="pickSet(this.value)">
-      ${(zonesList().find(z=>z.key===zoneKeyOf(currentSetName()))||{sets:[]}).sets.map(s=>`<option value="${esc(s.set)}" ${s.set===currentSetName()?'selected':''}>${esc(s.set)} · ${s.kind==='fg'?'передний план':'основной'} (${s.count})</option>`).join('')}
+      ${(zonesList().find(z=>z.key===zoneKeyOf(currentSetName()))||{sets:[]}).sets.map(s=>`<option value="${esc(s.set)}" ${s.set===currentSetName()?'selected':''}>${esc(s.set)} · ${s.kind==='fg'?'передний план':s.kind==='tree'?'🌳 деревья':s.kind==='fish'?'🐟 рыбы':'основной'} (${s.count})</option>`).join('')}
     </select>
     <input type="text" id="palSearchBox" placeholder="🔍 поиск: id тайла или точное имя набора…" value="${esc(palSearch)}" oninput="onPalSearch(this.value)">
     <div class="chips" id="palChips">
@@ -1366,7 +1470,7 @@ function renderRightPanel(){
     <h2>Проверка карты</h2>
     <div class="btnrow"><button onclick="runValidation()">🔍 Проверить</button></div>
     <div class="vbox" id="validBox"></div>`;
-  renderValidation(); updateTileSetInfo(); drawMinimap();
+  renderValidation(); updateTreesInfo(); drawMinimap();
 }
 function multiPropsHtml(){
   return `<div class="proprow"><label>Выбрано</label><b style="flex:1">${selObjs.length} объектов</b></div>
@@ -2094,6 +2198,8 @@ function serializeArea(){
     spawns:area.spawns.map(s=>[s[0],s[1],s[2]||0,s[3]||0,s[4]||'']),
     atms:(area.atms||[]).map(a=>[a[0]|0, a[1]|0]),
     npcs:(area.npcs||[]).map(s=>[s[0]|0, s[1]|0, s[2]||'', s[3]||'']),
+    trees:(area.trees||[]).map(t=>[t[0]|0, t[1]|0, String(t[2]||'')]),
+    fish:(area.fish||[]).map(String),
     // товары/цена НПС берутся из каталога (data/npcs.json), на клетке можно переопределить
     playerSpawn: area.playerSpawn || null,
     background: bgName || '',
@@ -2166,6 +2272,8 @@ function applyMapObject(d){
   area.spawns = (d.spawns || []).map(s => [s[0]|0, s[1]|0, s[2]|0, s[3]|0, s[4]||'']);
   area.atms = (d.atms || []).map(a => [a[0]|0, a[1]|0]);
   area.npcs = (d.npcs || []).map(n => [n[0]|0, n[1]|0, String(n[2]||''), n[3]||'']);
+  area.trees = (d.trees || []).map(t => [t[0]|0, t[1]|0, String(t[2]||'')]);
+  area.fish = (d.fish || []).map(String);
   area.playerSpawn = d.playerSpawn || null;
   bgName = d.background || '';
   if(!BG_FRAMES.some(f=>f[0]===bgName)) bgName = '';   // 'sky' и прочие незнакомые имена = просто небо
@@ -2201,6 +2309,7 @@ function newEdit(){ return { cells:{}, objsBefore:null }; }
 function objSnapshot(){
   return { portals: area.portals.map(p => p.slice()), spawns: area.spawns.map(s => s.slice()),
            atms: (area.atms||[]).map(a => a.slice()), npcs: (area.npcs||[]).map(n => n.slice()),
+           trees: (area.trees||[]).map(t => t.slice()), fish: (area.fish||[]).slice(),
            playerSpawn: area.playerSpawn ? area.playerSpawn.slice() : null };
 }
 function restoreObjs(s){
@@ -2209,6 +2318,8 @@ function restoreObjs(s){
   area.spawns  = s.spawns.map(x => x.slice());
   area.atms    = s.atms.map(x => x.slice());
   area.npcs    = s.npcs.map(x => x.slice());
+  area.trees   = (s.trees || []).map(x => x.slice());
+  area.fish    = (s.fish || []).slice();
   area.playerSpawn = s.playerSpawn ? s.playerSpawn.slice() : null;
 }
 function recordCell(L, i){                 // запомнить «до»-значение клетки (один раз на правку)
