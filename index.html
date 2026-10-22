@@ -1,0 +1,2789 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Helmet Heroes — Редактор карт (реальная графика)</title>
+<style>
+:root {
+  --bg:#0b0f17; --panel:#111827; --panel2:#151e2d; --panel3:#1b2536;
+  --line:#243044; --line2:#2c3a52;
+  --fg:#dbe3f0; --dim:#8b98ad; --acc:#3b82f6; --acc2:#22d3ee;
+  --danger:#7f2d3b; --danger2:#a03b4d; --canvas:#070a10;
+}
+* { box-sizing:border-box; }
+body { margin:0; height:100vh; display:flex; flex-direction:column; font:14px/1.45 "Segoe UI",system-ui,sans-serif; background:var(--bg); color:var(--fg); }
+header { display:flex; gap:8px; align-items:center; padding:8px 12px; background:var(--panel); border-bottom:1px solid var(--line); flex-wrap:wrap; flex:0 0 auto; }
+header h1 { font-size:16px; margin:0; letter-spacing:.02em; }
+.tabs { display:flex; gap:4px; }
+.tabs button { padding:7px 14px; border:1px solid var(--line); background:var(--panel2); color:var(--fg); border-radius:6px; cursor:pointer; }
+.tabs button.on { background:var(--acc); border-color:var(--acc); color:#fff; }
+main { display:flex; flex:1; min-height:0; }
+.panel { padding:12px; overflow:auto; background:var(--panel); }
+#tools { width:var(--tools-w,300px); min-width:180px; max-width:720px; border-right:1px solid var(--line); background:var(--panel); }
+#right { width:var(--right-w,320px); min-width:220px; max-width:640px; border-left:1px solid var(--line); background:var(--panel); }
+#stage { flex:1; min-width:0; padding:0; position:relative; overflow:hidden; background:var(--bg); }
+#split { width:6px; cursor:col-resize; background:var(--panel2); flex:0 0 6px; }
+#split2 { width:6px; cursor:col-resize; background:var(--panel2); flex:0 0 6px; }
+#split:hover, #split2:hover { background:var(--acc); }
+h2 { font-size:12px; margin:14px 0 6px; color:var(--acc2); text-transform:uppercase; letter-spacing:.06em; }
+label { display:block; margin:6px 0 2px; color:var(--dim); font-size:12px; }
+input,select,button { font:inherit; }
+input[type=text],input[type=number],select { width:100%; padding:6px 8px; background:var(--panel2); border:1px solid var(--line); color:var(--fg); border-radius:5px; }
+input[type=text]:focus,input[type=number]:focus,select:focus { outline:none; border-color:var(--acc); box-shadow:0 0 0 2px rgba(59,130,246,.18); }
+button { padding:7px 10px; border:1px solid var(--line); background:var(--panel3); color:var(--fg); border-radius:5px; cursor:pointer; }
+button:hover { background:var(--line2); border-color:var(--acc); }
+button.primary { background:var(--acc); border-color:var(--acc); color:#fff; }
+button.danger { background:var(--danger); border-color:var(--danger2); }
+.row { display:flex; gap:6px; align-items:center; margin-top:6px; }
+.row input,.row select { flex:1; }
+canvas { border:1px solid var(--line); background:var(--canvas); cursor:crosshair; }
+.gridmeta { color:var(--dim); font-size:12px; margin:6px 0; }
+.palwrap { max-height:340px; overflow:auto; border:1px solid var(--line); border-radius:6px; padding:6px; background:var(--panel2); }
+.palgrid { display:flex; flex-wrap:wrap; gap:3px; }
+.tilepick { width:36px; height:36px; border:1px solid var(--line2); border-radius:4px; cursor:pointer;
+  image-rendering:pixelated; background-repeat:no-repeat; overflow:hidden; }
+.tilepick:hover { border-color:var(--acc2); }
+.tilepick.on { outline:2px solid var(--acc); outline-offset:-1px; }
+.tileid { font-size:9px; color:#fff; text-shadow:1px 1px 2px #000; }
+.portal-row,.spawn-row { display:flex; gap:4px; align-items:center; margin:4px 0; }
+.portal-row input,.spawn-row input { padding:4px; font-size:12px; min-width:0; flex:1; }
+.portal-row input { flex:0 0 40px; }
+.portal-row input[placeholder="арена"] { flex:1 1 64px; }
+.portal-row button, .spawn-row button { flex:0 0 auto; padding:4px 6px; }
+.tag { font-size:11px; color:var(--acc2); }
+.btnrow { display:flex; gap:4px; flex-wrap:wrap; margin-top:4px; }
+.btnrow button { flex:1 1 auto; padding:6px 8px; }
+.btnrow button.on { background:var(--acc); border-color:var(--acc); color:#fff; }
+canvas.nogrid { background:var(--canvas); }
+.chk { display:flex; align-items:center; gap:6px; margin-top:6px; font-size:12px; color:var(--dim); }
+/* ---- раскладка (toolbar + вьюпорт + правая панель) ---- */
+.topbar { display:flex; gap:4px; align-items:center; flex-wrap:wrap; }
+.topbar .sep { width:1px; height:22px; background:var(--line); margin:0 4px; }
+.toolbtn { min-width:32px; padding:6px 8px; font-size:15px; line-height:1; }
+.toolbtn.on { background:var(--acc); border-color:var(--acc); color:#fff; }
+#viewwrap { position:absolute; inset:0; overflow:hidden; }
+#map { display:block; cursor:crosshair; background:var(--canvas); }
+.hud { position:absolute; left:8px; bottom:8px; background:rgba(11,15,23,.86); border:1px solid var(--line);
+  border-radius:6px; padding:4px 8px; font-size:12px; color:var(--fg); pointer-events:none; white-space:nowrap; }
+.hud b { color:#fff; }
+#minimap { border:1px solid var(--line); border-radius:6px; background:var(--canvas); display:block; width:100%; cursor:pointer; }
+.layrow { display:flex; align-items:center; gap:6px; padding:4px 6px; border:1px solid var(--line);
+  border-radius:5px; margin:3px 0; background:var(--panel2); cursor:pointer; }
+.layrow:hover { border-color:var(--line2); }
+.layrow.on { border-color:var(--acc); background:#16233a; }
+.layrow .lname { flex:1; font-size:12px; }
+.layrow .lbtn { padding:2px 6px; font-size:12px; }
+.layrow.locked { opacity:.6; }
+.proprow { display:flex; gap:6px; align-items:center; margin:4px 0; }
+.proprow > label { flex:0 0 96px; margin:0; }
+.proprow > input, .proprow > select { flex:1; }
+.vbox { font-size:12px; }
+.vitem { display:flex; gap:6px; padding:4px 6px; border-radius:5px; margin:3px 0; background:var(--panel2); }
+.vitem.err  { border-left:3px solid #ef4444; }
+.vitem.warn { border-left:3px solid #eab308; }
+.vitem.info { border-left:3px solid var(--acc2); }
+.chips { display:flex; flex-wrap:wrap; gap:4px; margin:4px 0; }
+.chip { padding:2px 8px; font-size:11px; border:1px solid var(--line); border-radius:10px; cursor:pointer; background:var(--panel2); }
+.chip.on { background:var(--acc); border-color:var(--acc); color:#fff; }
+.palitem { position:relative; width:36px; height:36px; border:1px solid var(--line2); border-radius:4px; cursor:pointer;
+  display:flex; align-items:center; justify-content:center; image-rendering:pixelated; background-repeat:no-repeat; }
+.palitem:hover { border-color:var(--acc2); }
+.palitem.on { outline:2px solid var(--acc); }
+.palitem span { position:absolute; top:0; right:2px; font-size:10px; color:#fff; text-shadow:1px 1px 2px #000; }
+.palhover { position:fixed; display:none; z-index:60; border:1px solid var(--line2); background:var(--panel3);
+  border-radius:8px; padding:6px; pointer-events:none; box-shadow:0 10px 30px rgba(0,0,0,.55); }
+.palhover img { image-rendering:pixelated; }
+.tabpanel { padding:14px; overflow:auto; height:100%; }
+.tabpanel h2:first-child { margin-top:0; }
+/* ---- Midnight: скроллбары и мелочи ---- */
+* { scrollbar-color:#2c3a52 var(--panel2); scrollbar-width:thin; }
+::-webkit-scrollbar { width:10px; height:10px; }
+::-webkit-scrollbar-track { background:var(--panel2); }
+::-webkit-scrollbar-thumb { background:#2c3a52; border-radius:6px; border:2px solid var(--panel2); }
+::-webkit-scrollbar-thumb:hover { background:var(--acc); }
+input[type=range] { accent-color:var(--acc); }
+input[type=checkbox] { accent-color:var(--acc); }
+</style>
+</head>
+<body>
+<header>
+  <h1>HH Редактор</h1>
+  <div class="tabs">
+    <button id="tabMap" class="on" onclick="showTab('map')">Карта</button>
+    <button id="tabObj" onclick="showTab('objects')">Настройка</button>
+    <button id="tabEquip" onclick="showTab('equip')">Экипировка</button>
+  </div>
+  <div class="topbar" id="topbar"></div>
+  <span class="tag" id="status" style="margin-left:auto"></span>
+</header>
+<main>
+  <aside id="tools" class="panel"></aside>
+  <div id="split" title="потяни, чтобы изменить ширину панели"></div>
+  <section id="stage" class="panel"></section>
+  <div id="split2" title="потяни, чтобы изменить ширину правой панели"></div>
+  <aside id="right" class="panel"></aside>
+</main>
+<script>
+// ===================== state =====================
+let W = 40, H = 25;                          // размер карты — свой у каждой (переменный)
+const NO = 255, TSZ = 165;                   // TSZ = размер тайла в игре (px)
+// [ключ, название для человека, имя слоя в JSON]
+const LAYERS = [
+  ['main','Земля 1 — по ней ходишь','mapMain'],
+  ['g2','Земля 2 — платформа (спуститься/подняться)','mapG2'],
+  ['g3','Земля 3 — фон','mapG3'],
+  ['water','Вода','mapWater'],
+  ['art','Декор фона','mapArt'],
+  ['fg','Передний план','mapFG']
+];
+// Клиент: main = «solid» (твёрдая, спрыгнуть нельзя), g2/g3 = «platform» (односторонние — можно
+// спрыгнуть вниз, присев + ВНИЗ: GravityObject.dropThroughCheck). Склоны (9/10/21/22/33/54/55/67)
+// кладутся в «Землю 1» — наклон клиент считает только по main (TileHandler.tileSlope).
+const targetLayer = () => layer;
+// Порядок отрисовки в КЛИЕНТЕ (снизу вверх). В GameMain.tileDataGot массивы рисуются в порядке
+// art -> main -> water -> g2 -> g3 -> fg, а каждый тайл, кроме переднего плана, добавляется
+// через addChildAt(image, 0) — поэтому итог: Земля 3 (g3) САМЫЙ НИЖНИЙ слой, выше неё g2, вода,
+// Земля 1, затем декор фона (art) и поверх всего передний план (fg).
+const LAYER_DRAW_ORDER = ['g3','g2','water','main','art','fg'];
+const LAYER_BY_KEY = {}; LAYERS.forEach(l => LAYER_BY_KEY[l[0]] = l);
+let area = { name:'map_1',
+  layers:{ main:Array(W*H).fill(NO), water:Array(W*H).fill(NO), g2:Array(W*H).fill(NO),
+    g3:Array(W*H).fill(NO), fg:Array(W*H).fill(NO), art:Array(W*H).fill(NO) },
+  sizes:{ main:Array(W*H).fill(0), water:Array(W*H).fill(0), g2:Array(W*H).fill(0),
+    g3:Array(W*H).fill(0), fg:Array(W*H).fill(0), art:Array(W*H).fill(0) },
+  // трансформация тайла: бит0 = зеркало по H, бит1 = зеркало по V, биты2-3 = поворот (0..3)*90
+  flag:{ main:Array(W*H).fill(0), water:Array(W*H).fill(0), g2:Array(W*H).fill(0),
+    g3:Array(W*H).fill(0), fg:Array(W*H).fill(0), art:Array(W*H).fill(0) },
+  // ручное смещение тайла в пикселях игры (клетка = 165 px)
+  ox:{ main:Array(W*H).fill(0), water:Array(W*H).fill(0), g2:Array(W*H).fill(0),
+    g3:Array(W*H).fill(0), fg:Array(W*H).fill(0), art:Array(W*H).fill(0) },
+  oy:{ main:Array(W*H).fill(0), water:Array(W*H).fill(0), g2:Array(W*H).fill(0),
+    g3:Array(W*H).fill(0), fg:Array(W*H).fill(0), art:Array(W*H).fill(0) },
+  portals:[], spawns:[], atms:[], playerSpawn:null, background:'',
+  npcs:[] };   // продавцы карты: [x, y, "имя из data/npcs.json", "переопределение товаров (пусто = из каталога)"]
+let layer='main', tile=40, tool='paint', currentTab='map';
+
+// ===================== семантика тайлов клиента (TileHandler.createTile / tileSlope) =====================
+// Зеркало в игре кодируется ИДОМ тайла, а не флагом: сервер шлёт 1 байт на клетку (флаги в карту
+// не уходят). Для 12 «зеркальных склонов» клиент берёт базовый тайл и рисует его с scaleX=-1
+// (pivotX = правый край). FG-слой клиент НЕ зеркалит никогда.
+const MIRROR_OF = {10:9, 4:2, 16:14, 20:18, 21:55, 22:54, 33:67, 42:62, 50:48, 64:52, 77:75, 78:73};
+const MIRROR_TO = {9:10, 2:4, 14:16, 18:20, 55:21, 54:22, 67:33, 62:42, 48:50, 52:64, 75:77, 73:78};
+const SPECIAL_TILE = {31:'коин-бокс (даёт монеты при ударе/прыжке)', 30:'баунс-пад (пружинит; анимируется в темах 2 и 4)'};
+const SLOPE_DIR = {54:1, 55:1, 67:1, 10:1, 21:-1, 22:-1, 33:-1, 9:-1};   // +1 вверх, -1 вниз (tileSlope)
+const gameTile = (id) => (MIRROR_OF[id] !== undefined ? MIRROR_OF[id] : id);  // что реально рисует клиент
+// ---- каталог НПС-торговцев (data/npcs.json генерирует tools/gen-npcs.mjs) --------------
+// NPC_LIST[i] = { name, kind:'shop', shop:{ type:'items'|'pets'|'craft', items:[{item,price}] }, origin, appearance }
+let NPC_LIST = [];              // только торговцы, порядок как в файле
+const NPC_BY = new Map();
+let npcCatLoaded = false, npcCatPromise = null;
+function ensureNpcCatalog(){
+  if(npcCatPromise) return npcCatPromise;      // повторный вызов ждёт ТОТ ЖЕ fetch (без гонки)
+  npcCatLoaded = true;
+  npcCatPromise = fetch('/data/npcs.json').then(r=>r.json()).then(j=>{
+    NPC_LIST = (j.npcs||[]).filter(n=>n.shop && (n.shop.type==='items' || n.shop.type==='pets'));
+    NPC_LIST.forEach(n=>NPC_BY.set(n.name,n));
+    return NPC_LIST;
+  }).catch(()=>{
+    NPC_LIST = [{name:'Item Vendor',shop:{type:'items',items:[]}},{name:'Pet Vendor',shop:{type:'pets',items:[]}}];
+    NPC_LIST.forEach(n=>NPC_BY.set(n.name,n));
+    return NPC_LIST;
+  });
+  return npcCatPromise;
+}
+const npcDef   = n => NPC_BY.get(n);
+const npcStock = n => { const d = NPC_BY.get(n); return (d && d.shop && d.shop.items) ? d.shop.items.map(it=>it.item+'|'+(it.price|0)).join(',') : ''; };
+const npcKind  = n => { const d = NPC_BY.get(n); return (d && d.shop && d.shop.type==='pets') ? 'pet' : 'vendor'; };
+
+let showGrid = (localStorage.getItem('hh_grid') !== '0');
+let sel = null;            // выделенная зона {x0,y0,x1,y1}
+let selStart = null;       // начало протяжки выделения
+let hover = null;          // последняя клетка под курсором ([x,y])
+let clip = null;           // скопированная зона (все слои)
+let TS=32;                 // масштаб сетки (px на тайл в редакторе)
+let palSet='main';         // что показываем в палитре: main | fg | bg
+let bgName='';             // выбранный фон (имя из атласа backgrounds1)
+// ---- undo/redo, автосейв, превью фигур, видимость слоёв ----
+const history = [], redoStack = [], HIST_MAX = 50;
+let autosaveTimer = null;
+let shapeStart = null, shapeEnd = null, shapeErase = false;   // протяжка инструментов «линия»/«прямоугольник»
+const layerVis   = { main:true, water:true, g2:true, g3:true, fg:true, art:true };
+const layerAlpha = { main:1, water:1, g2:1, g3:1, fg:1, art:1 };
+// ---- Phase 5: блокировка слоя (правки в запертый слой не проходят) ----
+const layerLock  = { main:false, water:false, g2:false, g3:false, fg:false, art:false };
+// ---- Phase 3: вьюпорт (zoom/pan). Клетка на экране = TS*view.zoom px ----
+let view = { zoom:1, x:0, y:0 };
+let panning = null;                 // {sx,sy,vx,vy} при перетаскивании средней кнопкой
+let palSearch = '';                 // Phase 4: поиск в палитре тайлов
+let palFilter = (localStorage.getItem('hh_palfilter') || 'all');   // 2-й этап: фильтр палитры
+// ---- Phase 6: multi-tile brush (область тайлов как кисть) ----
+let brushTiles = null;              // { w,h, ids:[], sz:[], fl:[] } — паттерн кисти
+let pasteMode = null;               // Phase 6: превью вставки (Ctrl+V → следует за курсором → ЛКМ)
+// ---- Phase 7: выбранный объект для Properties + multi-select объектов ----
+let selObj = null;                  // { kind:'portal'|'spawn'|'npc'|'atm'|'pspawn', i:number } — «главный»
+let selObjs = [];                   // набор выбранных объектов (Shift+клик / рамка)
+let dragObj = null;                 // перетаскивание объекта
+let objBox = null;                  // рамка выделения объектов
+let objClip = null;                 // скопированные объекты (Ctrl+C/V)
+// ---- Phase 9: последний результат validateMap (для UI) ----
+let validation = [];
+let buildResult = '';               // результат последней сборки server/Map.generated.cs
+// все мобы игры (data/enemyStats.json) — для выпадающего списка в спавнере
+const ENEMIES = ['green bouncer','green walker','purple goo','red bouncer','mushroom squish',
+  'mushroom ball','bouncing mushroom','orange crazy','yellow hairy monster','yellow puff monster',
+  'horned monster','crab','plant monster','pumpkin creeper','great frog','penguin','sasquatch',
+  'goo cube','brick monster','block bot','night stalker','drill bot','lotus eye','dark beholder',
+  'Carnelia','leafling','leaflet','glord','kreeton','giant goo cube','repguana','Kreetus',
+  'fishurn','proteum','bionic bird','titanium vulture','magmagon','aipster','mongrel','kraken',
+  'bullopede','kraw','mushroom bird','flockling','chirplet','omega fluff'];
+// торговцы (shop NPC) — тип лавки, как их называет игра (PayVault/GameCode)
+// список питомцев игры для подсказок в редакторе (ключи = типы питомцев)
+const PETS = ['tebra','babybounce','quackman','spooker','rexosaur','technotron','marshy','petri','gibler','fisky',
+  'roblost','pumpman','chippy','thumper','nooter','gobloid','ritardo','ozich','topper','bunyan','quackster',
+  'dwimplepike','squatch','stalkling','abomino','parashee','boopis','boopular','bunyan','charnatto'];
+</script>
+<script>
+// ===================== assets =====================
+const TILESET_MAIN = '/models/swf/DefineSprite_2970_GreenAreaTiles/1.png';
+const TILESET_FG   = '/models/swf/DefineSprite_4202_GreenAreaForegroundTiles/1.png';
+const PORTAL_IMG   = '/models/swf/DefineSprite_66_com.game_objects.ambient_objects.Portal/1.png';
+const BG_ATLAS     = '/dynamic_content/backgrounds/backgrounds1.png';
+const BG_FRAMES = [   // [имя, x, y, w, h, повёрнут] из backgrounds1.xml
+  ['sky',            0, 1164,  949,  701, false],
+  ['background 1',   0,  666, 1308,  498, false],
+  ['background 2',   0,    0, 1308,  666, false],
+  ['background 3',1354,    0,  479, 1306, true],
+  ['cloud',        949, 1311,  569,   88, false]
+];
+const assets = {};
+// --- наборы тайлов (нарезка tools/split-tiles.py + index.json) ---
+let TILE_INDEX = [];                                   // [{set,kind,cols,rows,count}]
+const MANIFESTS = {};                                  // set -> tiles.json
+const TILES = {};                                      // set -> { id: {file,ox,oy,w,h} }
+const TILE_IMG = {};                                   // 'set/file' -> Image
+let SEL_MAIN = localStorage.getItem('hh_set_main') || 'GreenAreaTiles';
+let SEL_FG   = localStorage.getItem('hh_set_fg')   || 'GreenAreaForegroundTiles';
+function curSet(){ return palSet === 'fg' ? SEL_FG : SEL_MAIN; }
+function loadManifest(set){
+  if(MANIFESTS[set]) return Promise.resolve(MANIFESTS[set]);
+  return fetch('/models/tiles/' + set + '/tiles.json')
+    .then(r => r.json())
+    .then(m => { MANIFESTS[set] = m; TILES[set] = {};
+      for(const t of (m.tiles||[])) TILES[set][t.id] = t;
+      return m; })
+    .catch(() => { MANIFESTS[set] = {tiles:[]}; TILES[set] = {}; return MANIFESTS[set]; });
+}
+function tileImgFor(set, file){
+  const key = set + '/' + file;
+  if(TILE_IMG[key]) return TILE_IMG[key];
+  const im = new Image();
+  im.onload = ()=>{ if(currentTab === 'map') draw(); };
+  im.src = '/models/tiles/' + set + '/' + file;
+  TILE_IMG[key] = im;
+  return im;
+}
+function ensureTileIndex(){
+  if(TILE_INDEX.length) return;
+  fetch('/models/tiles/index.json').then(r => r.json())
+    .then(list => { TILE_INDEX = list || []; if(currentTab === 'map') renderMap(); })
+    .catch(() => {});
+}
+function ensureAssets(){
+  [['mainArt',TILESET_MAIN],['fgArt',TILESET_FG],['portal',PORTAL_IMG],['bg',BG_ATLAS]].forEach(([k,u])=>{
+    if(assets[k]) return;
+    const im = new Image();
+    im.onload = ()=>{ assets[k]=im; if(currentTab==='map') { draw(); buildPalette(); } };
+    im.onerror = ()=>{ assets[k]=null; };
+    im.src = u;
+  });
+}
+function cols(img){ return Math.max(1, Math.floor((img&&img.naturalWidth||0)/TSZ)); }
+function showTab(t){
+  currentTab = t;
+  document.getElementById('tabMap').classList.toggle('on', t==='map');
+  document.getElementById('tabObj').classList.toggle('on', t==='objects');
+  document.getElementById('tabEquip').classList.toggle('on', t==='equip');
+  render();
+}
+function render(){
+  if(currentTab === 'equip') renderEquip();
+  else if(currentTab === 'objects') renderObjectsTab();
+  else renderMap();
+}
+
+// ===================== визуальная палитра тайлов (нарезанные PNG + манифест) =====================
+// ---- Phase 4/6: выбор области тайлов В ПАЛИТРЕ (протянуть мышью) -> кисть-паттерн ----
+const PAL_ITEM = 36, PAL_GAP = 3;
+let palShown = [], palCols = 1, palDrag = null, palSelRect = null;
+function palIndexFromEvent(e){
+  const g = document.getElementById('palgrid'); if(!g) return -1;
+  const r = g.getBoundingClientRect(), cw = PAL_ITEM + PAL_GAP;
+  const col = Math.floor((e.clientX - r.left) / cw);
+  const row = Math.floor((e.clientY - r.top) / cw);
+  if(col < 0 || row < 0 || col >= palCols) return -1;
+  const idx = row * palCols + col;
+  return (idx >= 0 && idx < palShown.length) ? idx : -1;
+}
+function palMouseDown(e){
+  if(e.button !== 0) return;
+  const idx = palIndexFromEvent(e); if(idx < 0) return;
+  e.preventDefault();
+  palDrag = { start: idx, end: idx };
+  renderPaletteSel();
+}
+function palMouseMove(e){
+  if(!palDrag) return;
+  const idx = palIndexFromEvent(e); if(idx < 0) return;
+  if(idx !== palDrag.end){ palDrag.end = idx; renderPaletteSel(); }
+}
+function renderPaletteSel(){
+  const g = document.getElementById('palgrid'); if(!g) return;
+  let r = palSelRect;
+  if(palDrag){
+    const a = palDrag.start, b = palDrag.end;
+    r = { c0:Math.min(a%palCols, b%palCols), r0:Math.min((a/palCols)|0, (b/palCols)|0),
+          c1:Math.max(a%palCols, b%palCols), r1:Math.max((a/palCols)|0, (b/palCols)|0) };
+  }
+  for(const d of g.children){
+    const idx = +d.dataset.idx;
+    let on;
+    if(r){ const c = idx % palCols, row = (idx/palCols)|0; on = (c>=r.c0 && c<=r.c1 && row>=r.r0 && row<=r.r1); }
+    else  { on = (+d.dataset.id === tile); }
+    if(d.classList && d.classList.toggle) d.classList.toggle('on', on);
+  }
+}
+function finishPalDrag(){
+  const d = palDrag; palDrag = null;
+  if(!d) return;
+  if(d.start === d.end){                       // одиночный клик — выбрать один тайл
+    const t = palShown[d.start];
+    palSelRect = null;
+    if(t){ tile = t.id; brushTiles = null; updateBrushInfo(); renderMap(); }
+    return;
+  }
+  const a = d.start, b = d.end;
+  palSelRect = { c0:Math.min(a%palCols, b%palCols), r0:Math.min((a/palCols)|0, (b/palCols)|0),
+                 c1:Math.max(a%palCols, b%palCols), r1:Math.max((a/palCols)|0, (b/palCols)|0) };
+  buildBrushFromPalette(palSelRect);
+  renderPaletteSel();
+}
+function buildBrushFromPalette(r){
+  const w = r.c1 - r.c0 + 1, h = r.r1 - r.r0 + 1;
+  const ids = [], sz = [], fl = [];
+  for(let row=r.r0; row<=r.r1; row++) for(let c=r.c0; c<=r.c1; c++){
+    const t = palShown[row*palCols + c];
+    ids.push(t ? t.id : NO); sz.push(0); fl.push(0);
+  }
+  brushTiles = { w, h, ids, sz, fl };
+  updateBrushInfo();
+  setStatus('кисть-паттерн из палитры: ' + w + '×' + h + ' тайлов — рисуй кистью (B); сброс — «✕ Сброс»');
+}
+// ---- 2-й этап: ЗОНА -> НАБОР ТАЙЛОВ (выводим зону из имени набора, данные не меняем) ----
+const ZONE_ALIAS = { RedMush: 'RedMushroom', Robo: 'Robot' };
+function zoneKeyOf(set){
+  let b = String(set).replace(/ForegroundTiles$/, '').replace(/AreaTiles$/, '')
+                      .replace(/HouseTiles$/, '').replace(/Tiles$/, '');
+  if(!b) b = String(set);
+  return ZONE_ALIAS[b] || b;
+}
+function zoneLabel(k){
+  const nice = { GreenArea:'Green Area', BlueMushroom:'Blue Mushroom', RedMushroom:'Red Mushroom',
+                 MushroomHouse:'Mushroom House', PVP:'PVP' };
+  return nice[k] || String(k).replace(/([a-z0-9])([A-Z])/g, '$1 $2');
+}
+function zonesList(){
+  const m = new Map();
+  for(const s of TILE_INDEX){
+    const k = zoneKeyOf(s.set);
+    if(!m.has(k)) m.set(k, { key:k, label:zoneLabel(k), sets:[] });
+    m.get(k).sets.push(s);
+  }
+  const arr = [...m.values()];
+  arr.forEach(z => z.sets.sort((a,b) => a.set.localeCompare(b.set)));
+  arr.sort((a,b) => a.label.localeCompare(b.label));
+  return arr;
+}
+const currentSetName = () => (palSet === 'fg' ? SEL_FG : SEL_MAIN);
+// ---- 2-й этап: фильтр палитры по СУЩЕСТВУЮЩИМ данным (без новой меты) ----
+const PAL_FILTERS = [['all','Все'],['special','★ спец'],['slope','⛰ склоны'],['mirror','⇄ зеркальные']];
+function matchPalFilter(t){
+  if(palFilter === 'special') return !!SPECIAL_TILE[t.id];
+  if(palFilter === 'slope')   return SLOPE_DIR[t.id] !== undefined;
+  if(palFilter === 'mirror')  return t.mirrorOf !== undefined || MIRROR_OF[t.id] !== undefined;
+  return true;
+}
+function setPalFilter(f){
+  palFilter = f;
+  try{ localStorage.setItem('hh_palfilter', f); }catch(e){}
+  renderPalChips(); buildPalette();
+}
+function renderPalChips(){
+  if(!document.querySelectorAll) return;
+  document.querySelectorAll('.palchip').forEach(c => {
+    if(c.classList && c.classList.toggle) c.classList.toggle('on', c.dataset && c.dataset.f === palFilter);
+  });
+}
+// поиск: по id тайла; если введено ТОЧНОЕ имя набора — переключаемся на него (пункт §7)
+function onPalSearch(v){
+  palSearch = v;
+  const q = String(v||'').trim().toLowerCase();
+  const hit = q && TILE_INDEX.find(s => s.set.toLowerCase() === q);
+  if(hit){ palSearch = ''; pickSet(hit.set); return; }
+  buildPalette();
+}
+function pickZone(key){
+  const z = zonesList().find(z => z.key === key);
+  if(!z || !z.sets.length) return;
+  const cur = currentSetName();
+  const keep = z.sets.find(s => s.set === cur);
+  pickSet((keep || z.sets[0]).set);
+}
+function pickSet(setName){
+  const s = TILE_INDEX.find(x => x.set === setName); if(!s) return;
+  if(s.kind === 'fg'){ SEL_FG = setName; localStorage.setItem('hh_set_fg', SEL_FG); palSet = 'fg'; layer = 'fg'; }
+  else { SEL_MAIN = setName; localStorage.setItem('hh_set_main', SEL_MAIN); palSet = 'main'; if(layer === 'fg') layer = 'main'; }
+  renderMap();
+}
+// ---- увеличенное превью тайла при наведении (плавающий блок) ----
+let palHoverEl = null;
+function ensurePalHover(){
+  if(palHoverEl) return palHoverEl;
+  if(!document.body) return null;
+  palHoverEl = document.createElement('div');
+  palHoverEl.className = 'palhover';
+  document.body.appendChild(palHoverEl);
+  return palHoverEl;
+}
+function showPalHover(e, set, t){
+  const el = ensurePalHover(); if(!el) return;
+  const mir = (t.mirrorOf !== undefined) ? ' scaleX(-1)' : '';
+  el.innerHTML = '<img src="/models/tiles/' + set + '/' + t.file + '" style="max-width:128px;max-height:128px;' +
+    'image-rendering:pixelated;display:block;transform:' + (mir || 'none') + '">' +
+    '<div class="gridmeta" style="text-align:center;margin:4px 0 0">id ' + t.id +
+    (t.mirrorOf !== undefined ? ' · зеркало ' + t.mirrorOf : '') + '</div>';
+  el.style.display = 'block';
+  positionPalHover(e);
+}
+function positionPalHover(e){
+  if(!palHoverEl || palHoverEl.style.display === 'none') return;
+  const pad = 14, w = palHoverEl.offsetWidth || 140, h = palHoverEl.offsetHeight || 160;
+  let x = e.clientX + pad, y = e.clientY + pad;
+  if(x + w > window.innerWidth) x = e.clientX - w - pad;
+  if(y + h > window.innerHeight) y = e.clientY - h - pad;
+  palHoverEl.style.left = Math.max(4, x) + 'px';
+  palHoverEl.style.top = Math.max(4, y) + 'px';
+}
+function hidePalHover(){ if(palHoverEl) palHoverEl.style.display = 'none'; }
+function buildPalette(){
+  const el = document.getElementById('palgrid'); if(!el) return;
+  hidePalHover();
+  const set = curSet();
+  loadManifest(set).then(() => {
+    draw();                                     // тайлы со смещениями рисуем после загрузки манифеста
+    const all = (MANIFESTS[set] && MANIFESTS[set].tiles) || [];
+    // 2-й этап: зеркальные записи манифеста (mirror:true / tile_N_m.png) не нужны —
+    // зеркало делаем ПРОГРАММНО (scaleX(-1)) по MIRROR_OF/MIRROR_TO. Физические _m.png не грузим.
+    const tiles = all.filter(t => !t.mirror && !/_m\.png$/.test(String(t.file||'')));
+    el.innerHTML = '';
+    if(!tiles.length){
+      el.innerHTML = '<div class="gridmeta">нет нарезки для набора ' + set + '</div>';
+      return;
+    }
+    // зеркальные тайлы: игра рисует БАЗОВЫЙ тайл с scaleX=-1, а не свою нарезку tile_N.png ->
+    // в палитре показываем именно то, что будет в игре (база + зеркало). 16/33/42/77/78 в
+    // нарезке отсутствуют — добавляем их из базовых.
+    const have = new Set(tiles.map(t => t.id));
+    const baseFile = (id) => { const b = tiles.find(t => t.id === id); return b ? b.file : null; };
+    const list = [];
+    for(const t of tiles){
+      const mb = (palSet !== 'fg') ? MIRROR_OF[t.id] : undefined;
+      const bf = mb !== undefined ? baseFile(mb) : null;
+      list.push(bf ? { ...t, mirrorOf: mb, file: bf } : t);
+    }
+    if(palSet !== 'fg'){
+      for(const [mid, base] of Object.entries(MIRROR_OF)){
+        const id = +mid;
+        if(have.has(id)) continue;
+        const bf = baseFile(base);
+        if(bf) list.push({ id, file: bf, mirrorOf: base });
+      }
+      list.sort((a, b) => a.id - b.id);
+    }
+    let shown = list;
+    const q = String(palSearch||'').trim().toLowerCase();
+    if(q) shown = list.filter(t => String(t.id).includes(q) || String(t.file||'').toLowerCase().includes(q));
+    shown = shown.filter(matchPalFilter);          // 2-й этап: категория (все/спец/склоны/зеркальные)
+    if(!shown.length){ el.innerHTML = '<div class="gridmeta">ничего не найдено' + (q ? ' по «' + esc(palSearch) + '»' : '') + (palFilter !== 'all' ? ' (фильтр: ' + palFilter + ')' : '') + '</div>'; return; }
+    palShown = shown;
+    const gw = (el.clientWidth || 288);
+    palCols = Math.max(1, Math.floor((gw + PAL_GAP) / (PAL_ITEM + PAL_GAP)));
+    el.style.display = 'grid';
+    el.style.gridTemplateColumns = 'repeat(' + palCols + ', ' + PAL_ITEM + 'px)';
+    el.style.gap = PAL_GAP + 'px';
+    el.style.justifyContent = 'start';
+    for(let k = 0; k < shown.length; k++){
+      const t = shown[k];
+      const usable = renderableIds(set) ? renderableIds(set).has(t.id) : true;
+      const d = document.createElement('div');
+      d.className = 'tilepick' + (tile === t.id ? ' on' : '');
+      d.dataset.idx = String(k);
+      d.dataset.id = String(t.id);
+      const info = tileInfo(t.id);
+      d.title = set + ' · тайл ' + t.id +
+        (t.mirrorOf !== undefined ? ' (зеркальный: база ' + t.mirrorOf + ' + scaleX=-1)' : '') +
+        (info ? ' — ' + info : '') +
+        (usable ? '' : ' — НЕ рисуется в игре (нет в атласе темы), ставить нельзя');
+      if(!usable){ d.style.opacity = '0.25'; d.style.outline = '1px dashed #b4552f'; }
+      let im;
+      if(t.mirrorOf !== undefined){                       // свежая картинка (кэш tileImgFor общий)
+        im = new Image(); im.src = '/models/tiles/' + set + '/' + t.file;
+        im.style.transform = 'scaleX(-1)';
+      } else {
+        im = tileImgFor(set, t.file);
+      }
+      im.draggable = false;
+      im.style.maxWidth = '34px'; im.style.maxHeight = '34px';
+      d.style.display = 'flex'; d.style.alignItems = 'center'; d.style.justifyContent = 'center';
+      d.style.position = 'relative';
+      d.appendChild(im);
+      const badge = t.mirrorOf !== undefined ? '⇄' : (SPECIAL_TILE[t.id] ? '★' : '');
+      if(badge){
+        const b = document.createElement('span');
+        b.textContent = badge;
+        b.style.cssText = 'position:absolute;top:0;right:2px;font-size:11px;color:#ffcf6a;text-shadow:0 0 2px #000';
+        d.appendChild(b);
+      }
+      const idb = document.createElement('span');            // id тайла мелким бейджем
+      idb.textContent = String(t.id);
+      idb.style.cssText = 'position:absolute;left:1px;bottom:0;font-size:9px;line-height:1;color:#cfe3ff;' +
+        'text-shadow:0 0 2px #000,0 0 2px #000;pointer-events:none';
+      d.appendChild(idb);
+      d.onmouseenter = (e) => showPalHover(e, set, t);       // увеличенное превью
+      d.onmousemove  = (e) => positionPalHover(e);
+      d.onmouseleave = () => hidePalHover();
+      el.appendChild(d);
+    }
+    el.onmousedown = palMouseDown;               // выбор области протяжкой -> кисть
+    el.onmousemove = palMouseMove;
+    if(palSelRect) renderPaletteSel();
+  });
+}
+
+function cols(img){ return Math.max(1, Math.floor((img&&img.naturalWidth||0)/TSZ)); }
+function fallbackColor(id){
+  const c={40:'#5a4632',75:'#3f7d2c',9:'#7a6a52',10:'#7a6a52',25:'#2b6cb0',31:'#c9a227',77:'#6b7280',0:'#6fb7e6'};
+  return c[id]||'#384150';
+}
+function tileImg(){ return palSet==='fg' ? assets.fgArt : assets.mainArt; }
+</script>
+
+<script>
+// ===================== панель инструментов + канвас =====================
+let mapCanvas = null, dragging = false;
+
+// ===================== Phase 2: архитектура UI =====================
+// renderMap() — оркестратор: собирает независимые панели и вьюпорт.
+// Формат данных (area / serializeArea / applyMapObject / validateMap) НЕ меняется.
+//   renderTopbar()     — верхняя панель инструментов / зума / файла (в шапке)
+//   renderLeftPanel()  — слева: слои, инструмент, размеры, палитра, объекты, генератор, файл
+//   renderRightPanel() — справа: миникарта, свойства, multi-tile brush, проверка
+//   renderStage()      — центр: вьюпорт (canvas) + HUD + привязка событий мыши/колеса
+function renderMap(){
+  renderTopbar();
+  renderLeftPanel();
+  renderRightPanel();
+  renderStage();
+}
+// ===================== вкладка «Настройка»: торговцы / телепорты / спавнеры =====================
+function renderObjectsTab(){
+  const stage = document.getElementById('stage'); if(!stage) return;
+  stage.innerHTML = `<div class="tabpanel">
+    <h2>Настройка: торговцы (НПС)</h2>
+    <div id="shopList"></div>
+    <button class="primary" onclick="addShop()">+ продавец</button>
+    <button onclick="addShopNamed('Ticket Vendor')">+ Ticket Vendor (300 000 за тикет)</button>
+    <div class="gridmeta">Ставится инструментом «🧑 НПС-торговец» на вкладке «Карта». Цена 0 = цена предмета из игры; питомцы берутся из игры целиком. Объекты грузятся вместе с картой (не при подходе игрока).</div>
+    <h2>Настройка: телепорты (порталы)</h2>
+    <div id="portalList"></div>
+    <button class="primary" onclick="addPortal()">+ портал</button>
+    <div class="gridmeta">x, y, №, <b>арена</b> (map_2 — переход на другую карту; пусто — этот же map), <b>№ портала цели</b> (0 — по умолчанию). Ставится инструментом «🌀 Портал».</div>
+    <h2>Настройка: спавнеры (спавны врагов)</h2>
+    <div id="spawnList"></div>
+    <button onclick="addSpawnRow()">+ спавн врага</button>
+    <div class="gridmeta">🚩 Спавн игрока — инструментом «Спавн игрока» на вкладке «Карта», один на карту.</div>
+  </div>`;
+  renderPortalList(); renderSpawnList();
+  ensureNpcCatalog().then(() => renderShopList());
+}
+function renderLeftPanel(){
+  const tools = document.getElementById('tools');
+  tools.innerHTML = `
+    <h2>Слой</h2>
+    <select id="layerSel" onchange="setLayer(this.value)">
+      ${LAYERS.map(([k,n])=>`<option value="${k}" ${k===layer?'selected':''}>${n}</option>`).join('')}
+    </select>
+    <h2>Слои (клик — активный слой)</h2>
+    <div id="layerPanel"></div>
+    <div class="gridmeta">Склоны (9, 10, 21, 22, 33, 54, 55, 67) клади на «Землю 1» — наклон клиент считает только по ней. «Земля 2/3» — односторонние платформы: снизу под ними проходишь, спрыгнуть вниз — присесть + ВНИЗ.<br>
+      <b>Порядок отрисовки в игре (снизу вверх): Земля 3 → Земля 2 → Вода → Земля 1 → Декор фона → Передний план.</b>
+      Поэтому тайл в «Земле 3» окажется ПОД землёй (просвечивает, если земля с прозрачными краями) — платформы/траву клади в «Землю 1» или «Землю 2».</div>
+    <h2>История</h2>
+    <div class="btnrow">
+      <button onclick="undo()">↶ Отменить</button>
+      <button onclick="redo()">↷ Повторить</button>
+    </div>
+    <div class="gridmeta">Ctrl+Z — отменить, Ctrl+Y — повторить. История — до ${HIST_MAX} шагов.</div>
+    <h2>🎲 Генератор карты</h2>
+    <div class="gridmeta">Кнопка делает случайный рельеф (проверенные тайлы земли), ставит <b>стены по краям карты</b>, выкапывает <b>пруд</b> (слой «Вода»), строит <b>магазин</b> (декор «STORE →» + прилавок), выбирает <b>фон</b> и расставляет спавн игрока, мобов, НПС, банкомат и порталы в формате <b>map_&lt;N&gt;.json</b>. Генерация отменяется через Ctrl+Z.</div>
+    <label>Сид (пусто = случайный; после генерации подставится сам)</label>
+    <div class="row">
+      <input type="text" id="genSeed" value="${esc(genOpts.seed)}" placeholder="напр. forest-42"
+             oninput="genOpts.seed=this.value;saveGenOpts()">
+      <button style="flex:0 0 auto" title="новый случайный сид"
+        onclick="genOpts.seed=String((Math.random()*1e9)|0);document.getElementById('genSeed').value=genOpts.seed;saveGenOpts()">🎲</button>
+    </div>
+    <label>Стиль рельефа</label>
+    <select onchange="genOpts.style=this.value;saveGenOpts()">
+      <option value="flat"      ${genOpts.style==='flat'?'selected':''}>ровная земля (безопасно)</option>
+      <option value="hills"     ${genOpts.style==='hills'?'selected':''}>холмы (мягкие, прыгаемые)</option>
+      <option value="platforms" ${genOpts.style==='platforms'?'selected':''}>земля + парящие платформы</option>
+      <option value="mixed"     ${genOpts.style==='mixed'?'selected':''}>смешанный (холмы + платформы)</option>
+    </select>
+    <label>Парящих платформ: <b id="genPlatVal">${genOpts.platforms}</b></label>
+    <input type="range" min="0" max="8" value="${genOpts.platforms}" style="width:100%"
+      oninput="genOpts.platforms=+this.value;document.getElementById('genPlatVal').textContent=this.value;saveGenOpts()">
+    <label>Мобов (спавнов): <b id="genMobVal">${genOpts.mobs}</b></label>
+    <input type="range" min="0" max="12" value="${genOpts.mobs}" style="width:100%"
+      oninput="genOpts.mobs=+this.value;document.getElementById('genMobVal').textContent=this.value;saveGenOpts()">
+    <div class="chk"><input type="checkbox" id="genNpcs" ${genOpts.npcs?'checked':''}
+      onchange="genOpts.npcs=this.checked;saveGenOpts()"><label for="genNpcs" style="margin:0">НПС-продавцы (+ Ticket Vendor)</label></div>
+    <div class="chk"><input type="checkbox" id="genAtm" ${genOpts.atm?'checked':''}
+      onchange="genOpts.atm=this.checked;saveGenOpts()"><label for="genAtm" style="margin:0">Банкомат (ATM)</label></div>
+    <div class="chk"><input type="checkbox" id="genPortals" ${genOpts.portals?'checked':''}
+      onchange="genOpts.portals=this.checked;saveGenOpts()"><label for="genPortals" style="margin:0">Порталы (1–2, в этот же map)</label></div>
+    <div class="chk"><input type="checkbox" id="genWalls" ${genOpts.walls?'checked':''}
+      onchange="genOpts.walls=this.checked;saveGenOpts()"><label for="genWalls" style="margin:0">Стены по краям (игрок/мобы не выпадут)</label></div>
+    <div class="chk"><input type="checkbox" id="genWater" ${genOpts.water?'checked':''}
+      onchange="genOpts.water=this.checked;saveGenOpts()"><label for="genWater" style="margin:0">Вода (пруд)</label></div>
+    <div class="chk"><input type="checkbox" id="genShop" ${genOpts.shop?'checked':''}
+      onchange="genOpts.shop=this.checked;saveGenOpts()"><label for="genShop" style="margin:0">Магазин (прилавок + вывеска)</label></div>
+    <label>Фон (бекграунд) сгенерированной карты</label>
+    <select onchange="genOpts.bg=this.value;saveGenOpts()">
+      <option value="" ${genOpts.bg===''?'selected':''}>— просто небо —</option>
+      ${BG_FRAMES.map(([n])=>`<option value="${n}" ${genOpts.bg===n?'selected':''}>${n}</option>`).join('')}
+    </select>
+    <button class="primary" style="width:100%;margin-top:8px" onclick="generateMap()">🎲 Сгенерировать карту</button>
+    <h2>Зеркало кисти</h2>
+    <div class="btnrow">
+      <button onclick="mirrorBrush()" title="Подставить зеркальный id — клиент зеркалит тайл сам (scaleX=-1)">⇄ Зеркало (H)</button>
+    </div>
+    <div class="gridmeta">Зеркало делается ЗЕРКАЛЬНЫМ ID тайла (9↔10, 2↔4, 14↔16, …): клиент рисует его с scaleX=-1.<br>
+      Поворот, размер и пиксельное смещение тайла в игру НЕ передаются (сервер шлёт 1 байт на клетку) — поэтому этих инструментов здесь нет.</div>
+    <div class="chk">
+      <input type="checkbox" id="gridChk" ${showGrid?'checked':''}
+        onchange="showGrid=this.checked;localStorage.setItem('hh_grid',showGrid?'1':'0');draw()">
+      <label for="gridChk" style="margin:0">показывать сетку</label>
+    </div>
+    <h2>Фон (бекграунд)</h2>
+    <select onchange="bgName=this.value;saveBgOnly()">
+      <option value="">— просто небо —</option>
+      ${BG_FRAMES.map(([n])=>`<option value="${n}" ${bgName===n?'selected':''}>${n}</option>`).join('')}
+    </select>
+  `;
+}
+function renderStage(){
+  const stage = document.getElementById('stage');
+  stage.innerHTML = `<div id="viewwrap"><canvas id="map"></canvas>
+    <div class="hud">${W}×${H} · слой: <b>${LAYER_BY_KEY[layer][1]}</b> · курсор: <b id="hoverInfo">—</b> · зум <b id="zoomInfo">${Math.round(view.zoom*100)}%</b></div></div>`;
+  mapCanvas = document.getElementById('map');
+  sizeViewport();
+  mapCanvas.addEventListener('mousedown', onCell);
+  mapCanvas.addEventListener('mousemove', onCellMove);
+  mapCanvas.addEventListener('contextmenu', e=>e.preventDefault());
+  mapCanvas.addEventListener('wheel', onWheel, {passive:false});
+  window.onmouseup = ()=>{ if((tool==='line'||tool==='rect') && shapeStart) commitShape();
+    if(palDrag) finishPalDrag();
+    if(objBox) finishObjBox();
+    if(dragObj){ renderPortalList(); renderSpawnList(); renderShopList(); renderAtmList(); renderProps(); dragObj=null; }
+    dragging=false; panning=null; };
+  if(!_resizeBound){ _resizeBound = true;
+    window.addEventListener('resize', ()=>{ if(currentTab==='map'){ sizeViewport(); draw(); drawMinimap(); } }); }
+  ensureAssets();
+  ensureTileIndex();
+  draw(); buildPalette(); renderPortalList(); renderSpawnList(); renderAtmList(); renderLayerPanel(); renderValidation(); drawMinimap();
+  ensureNpcCatalog().then(()=>renderShopList());
+}
+
+
+// ===================== Phase 3: вьюпорт (zoom/pan) + toolbar + панель слоёв =====================
+let _resizeBound = false;
+function sizeViewport(){
+  if(!mapCanvas) return;
+  const wrap = document.getElementById('viewwrap'); if(!wrap) return;
+  const r = wrap.getBoundingClientRect();
+  mapCanvas.width  = Math.max(1, Math.floor(r.width));
+  mapCanvas.height = Math.max(1, Math.floor(r.height));
+}
+function onWheel(e){
+  e.preventDefault();
+  const r = mapCanvas.getBoundingClientRect();
+  const sx = (e.clientX - r.left) * (mapCanvas.width  / r.width);
+  const sy = (e.clientY - r.top)  * (mapCanvas.height / r.height);
+  zoomAt(sx, sy, e.deltaY < 0 ? 1.15 : 1/1.15);
+}
+function zoomAt(sx, sy, factor){
+  const old = view.zoom;
+  const nz = Math.max(0.15, Math.min(8, old * factor));
+  if(nz === old) return;
+  view.x = sx - (sx - view.x) * (nz / old);
+  view.y = sy - (sy - view.y) * (nz / old);
+  view.zoom = nz;
+  const zi = document.getElementById('zoomInfo'); if(zi) zi.textContent = Math.round(nz*100) + '%';
+  draw(); drawMinimap();
+}
+function zoomBy(f){ if(mapCanvas) zoomAt(mapCanvas.width/2, mapCanvas.height/2, f); }
+function fitView(){
+  if(!mapCanvas || !W || !H) return;
+  const cw = mapCanvas.width, ch = mapCanvas.height;
+  const z = Math.max(0.15, Math.min(4, Math.min(cw/(W*TS), ch/(H*TS)) * 0.97));
+  view.zoom = z;
+  view.x = (cw - W*TS*z)/2; view.y = (ch - H*TS*z)/2;
+  const zi = document.getElementById('zoomInfo'); if(zi) zi.textContent = Math.round(z*100) + '%';
+  draw(); drawMinimap();
+}
+const TOPBAR_T1 = [['select','⬚','Выделение зоны (копировать/вставить)'],
+  ['paint','🖌','Кисть (B)'],['erase','🧽','Ластик (E)'],['fill','🪣','Заливка (F)'],
+  ['line','📏','Линия (L)'],['rect','▭','Прямоугольник'],['pick','💧','Пипетка (P)'],
+  ['move','✥','Перемещение объекта'],['object','🎯','Объекты: выбор/свойства']];
+const TOPBAR_T2 = [['portal','🌀','Портал'],['spawn','👾','Спавн врага'],['shop','🧑','НПС-торговец'],
+  ['atm','🏧','Банкомат'],['pspawn','🚩','Спавн игрока']];
+function renderTopbar(){
+  const tb = document.getElementById('topbar'); if(!tb) return;
+  const btn = ([k,i,t]) => `<button class="toolbtn ${tool===k?'on':''}" title="${esc(t)}" onclick="setTool('${k}')">${i}</button>`;
+  tb.innerHTML =
+    `<input id="mapName" title="Имя карты (= имя файла, map_1 / map_2…)" value="${esc(area.name)}" style="width:96px;padding:4px 6px"
+       oninput="area.name=this.value.trim()">` +
+    `<input type="file" id="loadMapFile" accept=".json" style="display:none" onchange="loadMap(this)">` +
+    `<button class="toolbtn" title="Загрузить карту из JSON" onclick="document.getElementById('loadMapFile').click()">📂</button>` +
+    `<button class="toolbtn" title="Сохранить — скачать JSON (Ctrl+S)" onclick="saveMap()">💾</button>` +
+    `<button class="toolbtn" title="Скачать PNG-превью всей карты" onclick="exportPng()">🖼</button>` +
+    `<button class="primary" title="Проверить карту и собрать server/Map.generated.cs" onclick="checkAndBuild()">✓</button>` +
+    '<span class="sep"></span>' +
+    TOPBAR_T1.map(btn).join('') + '<span class="sep"></span>' + TOPBAR_T2.map(btn).join('') +
+    '<span class="sep"></span>' +
+    `<button class="toolbtn" title="Приблизить" onclick="zoomBy(1.25)">＋</button>` +
+    `<button class="toolbtn" title="Отдалить" onclick="zoomBy(0.8)">－</button>` +
+    `<button class="toolbtn" title="Вписать карту" onclick="fitView()">⛶</button>` +
+    `<button class="toolbtn ${showGrid?'on':''}" title="Сетка (G)" onclick="toggleGrid()">▦</button>`;
+}
+function setTool(k){ tool = k; renderTopbar(); }
+function toggleGrid(){ showGrid = !showGrid; localStorage.setItem('hh_grid', showGrid?'1':'0'); renderTopbar(); draw(); }
+function renderLayerPanel(){
+  const el = document.getElementById('layerPanel'); if(!el) return;
+  el.innerHTML = LAYERS.map(([k,n])=>`<div class="layrow ${k===layer?'on':''} ${layerLock[k]?'locked':''}" onclick="setLayer('${k}')">
+    <button class="lbtn" title="${layerVis[k]?'скрыть':'показать'}" onclick="event.stopPropagation();layerVis['${k}']=!layerVis['${k}'];renderLayerPanel();draw()">${layerVis[k]?'👁':'🚫'}</button>
+    <button class="lbtn" title="${layerLock[k]?'разблокировать':'заблокировать'}" onclick="event.stopPropagation();layerLock['${k}']=!layerLock['${k}'];renderLayerPanel()">${layerLock[k]?'🔒':'🔓'}</button>
+    <span class="lname">${esc(n)}</span>
+    <input type="range" min="0" max="100" value="${Math.round((layerAlpha[k]!=null?layerAlpha[k]:1)*100)}" style="width:70px" title="прозрачность"
+      onclick="event.stopPropagation()" onchange="layerAlpha['${k}']=this.value/100;draw()">
+    <button class="lbtn" title="очистить слой" onclick="event.stopPropagation();clearLayer('${k}')">🧹</button>
+  </div>`).join('');
+}
+function setLayer(k){ layer = k; renderLayerPanel(); const s = document.getElementById('layerSel'); if(s) s.value = k; draw(); }
+function clearLayer(k){
+  if(!confirm('Очистить слой «' + LAYER_BY_KEY[k][1] + '»?')) return;
+  pushHistoryFull();
+  area.layers[k].fill(NO); area.sizes[k].fill(0); area.flag[k].fill(0); area.ox[k].fill(0); area.oy[k].fill(0);
+  draw(); drawMinimap();
+}
+function cellFromEvent(e){
+  const r = mapCanvas.getBoundingClientRect();
+  const sx = (e.clientX - r.left) * (mapCanvas.width  / r.width);
+  const sy = (e.clientY - r.top)  * (mapCanvas.height / r.height);
+  const wx = (sx - view.x) / view.zoom, wy = (sy - view.y) / view.zoom;
+  const x = Math.floor(wx / TS), y = Math.floor(wy / TS);
+  return (x>=0 && x<W && y>=0 && y<H) ? [x,y] : null;
+}
+function screenFromEvent(e){
+  const r = mapCanvas.getBoundingClientRect();
+  return [ (e.clientX - r.left) * (mapCanvas.width  / r.width),
+           (e.clientY - r.top)  * (mapCanvas.height / r.height) ];
+}
+function onCell(e){
+  const c0 = cellFromEvent(e); if(c0) hover = c0;
+  if(e.button === 1){ const p = screenFromEvent(e);
+    panning = { sx:p[0], sy:p[1], vx:view.x, vy:view.y }; e.preventDefault(); return; }
+  if(pasteMode && e.button === 0){                 // Phase 6: вставка по ЛКМ
+    if(c0) commitPaste(c0); else cancelPaste();
+    return;
+  }
+  if(tool === 'object' || tool === 'move'){
+    const o = objectAt(c0);
+    if(o){
+      if(tool === 'move'){
+        if(!objInSel(o)){ selObjs = [o]; selObj = o; }
+        dragObj = { o, c0, pushed:false };
+      } else if(e.shiftKey){ toggleSelObj(o); }
+      else { selObjs = [o]; selObj = o; }
+      renderProps(); draw(); return;
+    }
+    if(tool === 'object'){                     // рамка выделения по пустому месту
+      if(!e.shiftKey){ selObjs = []; selObj = null; }
+      if(c0) objBox = { c0:c0[0], r0:c0[1], c1:c0[0], r1:c0[1] };
+      renderProps(); draw(); return;
+    }
+    return;
+  }
+  dragging = true;
+  const c = cellFromEvent(e); if(!c) return;
+  if(tool === 'pick' || e.altKey){ pickTileAt(c[0], c[1]); dragging = false; return; }
+  if(tool === 'select'){
+    selStart = c;
+    sel = { x0:c[0], y0:c[1], x1:c[0], y1:c[1] };
+    draw(); return;
+  }
+  if(tool === 'fill'){ floodFill(c[0], c[1], e.button===2); return; }
+  if(tool === 'line' || tool === 'rect'){ shapeStart = c; shapeEnd = c; shapeErase = (e.button === 2); draw(); return; }
+  pushHistory();
+  apply(c[0], c[1], e.button===2);
+}
+function onCellMove(e){
+  if(panning){
+    const p = screenFromEvent(e);
+    view.x = panning.vx + (p[0] - panning.sx);
+    view.y = panning.vy + (p[1] - panning.sy);
+    draw(); drawMinimap(); return;
+  }
+  const c0 = cellFromEvent(e); if(c0) hover = c0;
+  updateHoverInfo(c0);
+  if(pasteMode){ if(c0){ pasteMode.at = c0; draw(); } return; }
+  if(objBox && c0){ objBox.c1 = c0[0]; objBox.r1 = c0[1]; draw(); return; }
+  if(dragObj && c0){
+    const dx = c0[0] - dragObj.c0[0], dy = c0[1] - dragObj.c0[1];
+    if(dx || dy){
+      if(!dragObj.pushed){ pushHistory(); dragObj.pushed = true; }
+      if(selObjs.length > 1){ for(const o of selObjs) moveObject(o, dx, dy); }
+      else moveObject(dragObj.o, dx, dy);
+      dragObj.c0 = c0; draw(); drawMinimap();
+    }
+    return;
+  }
+  if(tool === 'select' && selStart && c0){
+    sel = { x0:Math.min(selStart[0], c0[0]), y0:Math.min(selStart[1], c0[1]),
+            x1:Math.max(selStart[0], c0[0]), y1:Math.max(selStart[1], c0[1]) };
+    draw(); return;
+  }
+  if((tool === 'line' || tool === 'rect') && shapeStart && c0){
+    shapeEnd = c0; draw(); return;
+  }
+  if(!dragging) return;
+  if(c0 && (tool === 'paint' || tool === 'erase')) apply(c0[0], c0[1], false);
+}
+function updateHoverInfo(c){ updateHud(); }
+// --- выделение зоны тайлов: копировать / вставить ---
+function selRect(){
+  if(!sel) return null;
+  return { x0:sel.x0, y0:sel.y0, w:sel.x1-sel.x0+1, h:sel.y1-sel.y0+1 };
+}
+function copySel(){
+  const r = selRect();
+  if(!r){ setStatus('сначала выдели зону инструментом «⬚ Выделить зону»'); return; }
+  const data = {};
+  for(const [k] of LAYERS){
+    const ids=[], sz=[], fl=[], ox=[], oy=[];
+    for(let y=sel.y0;y<=sel.y1;y++) for(let x=sel.x0;x<=sel.x1;x++){
+      const i = y*W + x;
+      ids.push(area.layers[k][i]); sz.push(area.sizes[k][i]); fl.push(area.flag[k][i]);
+      ox.push(area.ox[k][i]); oy.push(area.oy[k][i]);
+    }
+    data[k] = { ids, sz, fl, ox, oy };
+  }
+  clip = { w:r.w, h:r.h, data };
+  setStatus('скопировано ' + r.w + '×' + r.h + ' клеток — наведи курсор и Ctrl+V');
+}
+// Phase 6 (п.14 ТЗ): вставка в ДВА шага — Ctrl+V включает ПРЕВЬЮ (следует за курсором),
+// ЛКМ — вставить в эту точку, Esc — отмена.
+function pasteSel(){
+  if(clip){ pasteMode = { kind:'tiles', at: hover ? hover.slice() : [0,0] }; }
+  else if(objClip && objClip.length){ pasteMode = { kind:'objs', at: hover ? hover.slice() : [0,0] }; }
+  else { setStatus('сначала скопируй зону (Ctrl+C) или объекты'); return; }
+  setStatus('вставка: двигай мышь, ЛКМ — вставить, Esc — отмена');
+  draw();
+}
+function cancelPaste(){ if(pasteMode){ pasteMode = null; draw(); setStatus('вставка отменена'); } }
+function commitPaste(at){
+  if(!pasteMode) return;
+  if(pasteMode.kind === 'tiles') pasteTilesAt(at); else pasteObjsAt(at);
+  pasteMode = null;
+  draw(); drawMinimap();
+}
+function pasteTilesAt(at){
+  pushHistoryFull();
+  for(const [k] of LAYERS){
+    const d = clip.data[k]; if(!d) continue;
+    for(let yy=0; yy<clip.h; yy++) for(let xx=0; xx<clip.w; xx++){
+      const x = at[0]+xx, y = at[1]+yy;
+      if(x >= W || y >= H) continue;
+      const i = y*W + x, j = yy*clip.w + xx;
+      area.layers[k][i] = d.ids[j]; area.sizes[k][i] = d.sz[j];
+      area.flag[k][i] = d.fl[j]; area.ox[k][i] = d.ox[j]; area.oy[k][i] = d.oy[j];
+    }
+  }
+  setStatus('вставлено ' + clip.w + '×' + clip.h + ' в ' + at[0] + ',' + at[1]);
+}
+function pasteObjsAt(at){
+  if(!objClip || !objClip.length) return;
+  const xs = [], ys = [];
+  for(const it of objClip){ if(it.kind === 'pspawn'){ xs.push(it.x); ys.push(it.y); } else { xs.push(it.data[0]|0); ys.push(it.data[1]|0); } }
+  const dx = at[0] - Math.min(...xs), dy = at[1] - Math.min(...ys);
+  pushHistory();
+  const cl = (v,mx) => Math.max(0, Math.min(mx, v));
+  const created = [];
+  for(const it of objClip){
+    if(it.kind === 'pspawn'){ area.playerSpawn = [cl(it.x+dx,W-1), cl(it.y+dy,H-1)]; created.push({ kind:'pspawn', i:0 }); continue; }
+    const d = it.data.slice();
+    d[0] = cl((d[0]|0)+dx, W-1); d[1] = cl((d[1]|0)+dy, H-1);
+    if(it.kind === 'portal'){ d[2] = Math.max(0, ...area.portals.map(p => p[2])) + 1; area.portals.push(d); created.push({ kind:'portal', i:area.portals.length-1 }); }
+    else if(it.kind === 'spawn'){ area.spawns.push(d); created.push({ kind:'spawn', i:area.spawns.length-1 }); }
+    else if(it.kind === 'npc'){ area.npcs.push(d); created.push({ kind:'npc', i:area.npcs.length-1 }); }
+    else if(it.kind === 'atm'){ area.atms.push(d); created.push({ kind:'atm', i:area.atms.length-1 }); }
+  }
+  selObjs = created; selObj = created.length ? created[created.length-1] : null;
+  renderObjLists(); renderProps();
+  setStatus('вставлено объектов: ' + created.length);
+}
+function drawPastePreview(ctx, z){
+  if(!pasteMode) return;
+  const at = pasteMode.at;
+  ctx.save();
+  if(pasteMode.kind === 'tiles' && clip){
+    ctx.globalAlpha = 0.55;
+    const d = clip.data[targetLayer()];
+    if(d) for(let yy=0; yy<clip.h; yy++) for(let xx=0; xx<clip.w; xx++){
+      const id = d.ids[yy*clip.w+xx];
+      if(id === NO) continue;
+      const x = at[0]+xx, y = at[1]+yy;
+      if(x >= W || y >= H) continue;
+      ctx.fillStyle = fallbackColor(id); ctx.fillRect(x*TS, y*TS, TS, TS);
+    }
+    ctx.globalAlpha = 1;
+    ctx.strokeStyle = '#ffcf6a'; ctx.lineWidth = 2/z; ctx.setLineDash([5/z,3/z]);
+    ctx.strokeRect(at[0]*TS, at[1]*TS, clip.w*TS, clip.h*TS);
+  } else if(pasteMode.kind === 'objs' && objClip){
+    ctx.fillStyle = 'rgba(62,207,106,0.25)'; ctx.fillRect(at[0]*TS, at[1]*TS, TS, TS);
+    ctx.strokeStyle = '#3ecf6a'; ctx.lineWidth = 2/z; ctx.setLineDash([5/z,3/z]);
+    ctx.strokeRect(at[0]*TS, at[1]*TS, TS, TS);
+  }
+  ctx.restore();
+}
+function clearSel(){ sel = null; selStart = null; draw(); }
+// Зеркало = подставить ЗЕРКАЛЬНЫЙ ID тайла (клиент рисует базу с scaleX=-1).
+// Поворот/размер/смещение тайла в игру НЕ передаются — таких инструментов в редакторе нет.
+function mirrorBrush(){
+  if(MIRROR_TO[tile] !== undefined){
+    const base = tile; tile = MIRROR_TO[base]; renderMap();
+    setStatus('⇄ зеркало: ' + base + ' → ' + tile + ' (в игре рисуется как ' + base + ' с scaleX=-1)');
+    return;
+  }
+  if(MIRROR_OF[tile] !== undefined){
+    const m = tile; tile = MIRROR_OF[m]; renderMap();
+    setStatus('⇄ зеркало: обратно на базовый тайл ' + tile + ' (был ' + m + ')');
+    return;
+  }
+  setStatus('у тайла ' + tile + ' нет зеркальной версии: клиент зеркалит только 9↔10, 2↔4, 14↔16, ' +
+    '18↔20, 55↔21, 54↔22, 67↔33, 62↔42, 48↔50, 52↔64, 75↔77, 73↔78 (и только слой main; FG не зеркалится)');
+}
+function tileInfo(id){
+  const parts = [];
+  if(SPECIAL_TILE[id]) parts.push(SPECIAL_TILE[id]);
+  if(MIRROR_OF[id] !== undefined) parts.push('зеркальный: ' + MIRROR_OF[id] + ' + scaleX=-1');
+  if(SLOPE_DIR[id] !== undefined) parts.push('склон ' + (SLOPE_DIR[id] > 0 ? 'вверх' : 'вниз') + ' (slope ' + (SLOPE_DIR[id]*27) + ')');
+  return parts.join('; ');
+}
+function pickTile(id){
+  tile = id; renderMap();
+  const inf = tileInfo(id);
+  setStatus('выбран тайл ' + id + (inf ? ' — ' + inf : ''));
+}
+function setTile(L, x, y, erase){
+  if(layerLock[L]){ setStatus('🔒 слой заперт — сними замок в панели «Слои»'); return; }
+  if(x<0 || x>=W || y<0 || y>=H) return;
+  if(!erase && !tileRenderable(L, tile)){          // id вне атласа темы -> в игре краш #1009
+    setStatus('⛔ тайл ' + tile + ' не рисуется в игре (его нет в атласе набора ' + setForLayer(L) +
+      ') — не ставлю. Выбери тайл из палитры, соответствующей слою.');
+    return;
+  }
+  const i = y*W + x;
+  recordCell(L, i);                               // Phase 12: дельта для undo
+  if(erase){ area.layers[L][i]=NO; area.sizes[L][i]=0; area.flag[L][i]=0; area.ox[L][i]=0; area.oy[L][i]=0; }
+  else { area.layers[L][i]=tile; area.sizes[L][i]=0; area.flag[L][i]=0; area.ox[L][i]=0; area.oy[L][i]=0; }
+}
+function apply(x,y,rightClick){
+  const L = targetLayer();
+  if(rightClick || tool==='erase'){ setTile(L, x, y, true); draw(); return; }
+  if(tool==='paint'){ if(brushTiles) stampBrush(x, y); else setTile(L, x, y, false); draw(); }
+  else if(tool==='portal'){ area.portals.push([x,y, area.portals.length?Math.max(...area.portals.map(p=>p[2]))+1:1, '', 0]); renderPortalList(); draw(); }
+  else if(tool==='spawn'){ area.spawns.push([x,y,Math.max(0,x-3),Math.min(W-1,x+3),'']); renderSpawnList(); draw(); }
+  else if(tool==='shop'){ area.npcs.push([x, y, (NPC_LIST[0]||{name:'Item Vendor'}).name, '']); renderShopList(); draw(); }
+  else if(tool==='atm'){ area.atms.push([x,y]); renderAtmList(); draw(); }
+  else if(tool==='pspawn'){ area.playerSpawn=[x,y]; draw(); }
+}
+// --- заливка / фигуры / пипетка ---
+function floodFill(x, y, erase){
+  const L = targetLayer();
+  if(x<0 || x>=W || y<0 || y>=H) return;
+  const target = area.layers[L][y*W + x];
+  if(!erase && target === tile){ setStatus('уже этот тайл'); return; }
+  pushHistory();
+  const seen = new Uint8Array(W*H);
+  const stack = [[x,y]];
+  while(stack.length){
+    const [cx,cy] = stack.pop();
+    if(cx<0 || cx>=W || cy<0 || cy>=H) continue;
+    const i = cy*W + cx;
+    if(seen[i]) continue; seen[i] = 1;
+    if(area.layers[L][i] !== target) continue;
+    setTile(L, cx, cy, erase);
+    stack.push([cx+1,cy],[cx-1,cy],[cx,cy+1],[cx,cy-1]);
+  }
+  draw();
+}
+function shapeCells(){
+  const [x0,y0] = shapeStart, [x1,y1] = shapeEnd, out = [];
+  if(tool === 'line'){
+    let dx = Math.abs(x1-x0), dy = Math.abs(y1-y0), sx = x0<x1?1:-1, sy = y0<y1?1:-1, err = dx-dy, x = x0, y = y0;
+    while(true){ out.push([x,y]); if(x===x1 && y===y1) break; const e2 = 2*err; if(e2 > -dy){ err -= dy; x += sx; } if(e2 < dx){ err += dx; y += sy; } }
+  } else {
+    for(let yy=Math.min(y0,y1); yy<=Math.max(y0,y1); yy++) for(let xx=Math.min(x0,x1); xx<=Math.max(x0,x1); xx++) out.push([xx,yy]);
+  }
+  return out;
+}
+function commitShape(){
+  if(!shapeStart || !shapeEnd){ shapeStart = shapeEnd = null; return; }
+  pushHistory();
+  const L = targetLayer();
+  for(const [x,y] of shapeCells()) setTile(L, x, y, shapeErase);
+  shapeStart = shapeEnd = null;
+  draw();
+}
+function pickTileAt(x, y){
+  const L = targetLayer();
+  if(x<0 || x>=W || y<0 || y>=H) return;
+  const i = y*W + x, v = area.layers[L][i];
+  if(v === NO){ setStatus('пустая клетка'); return; }
+  tile = v;
+  setStatus('пипетка: тайл ' + v);
+  renderMap();
+}
+function saveBgOnly(){ draw(); }
+
+function drawBackdrop(ctx,cw,ch){
+  const f = BG_FRAMES.find(f=>f[0]===bgName);
+  if(f && assets.bg && assets.bg.naturalWidth){
+    ctx.drawImage(assets.bg, f[1], f[2], f[3], f[4], 0, 0, cw, ch);
+    return;
+  }
+  const g = ctx.createLinearGradient(0,0,0,ch);
+  g.addColorStop(0,'#8fd0f2'); g.addColorStop(1,'#d8ecf7');
+  ctx.fillStyle=g; ctx.fillRect(0,0,cw,ch);
+}
+
+function draw(){
+  if(!mapCanvas) return;
+  const ctx = mapCanvas.getContext('2d'), cw = mapCanvas.width, ch = mapCanvas.height;
+  drawBackdrop(ctx,cw,ch);
+  paintScene(ctx, cw, ch, view.zoom, view.x, view.y, true);
+  updateHud();
+}
+function updateHud(){
+  const el = document.querySelector('.hud'); if(!el) return;
+  const c = hover ? (hover[0]+','+hover[1]) : '—';
+  let v = '—';
+  if(hover){ const t = area.layers[layer][hover[1]*W + hover[0]]; if(t !== undefined && t !== NO) v = t; }
+  el.innerHTML = W+'×'+H+' · слой: <b>'+esc(LAYER_BY_KEY[layer][1].split(' — ')[0])+'</b> · клетка: <b>'+c+
+    '</b> · тайл: <b>'+v+'</b> · зум <b>'+Math.round(view.zoom*100)+'%</b> · история <b>'+history.length+'</b>';
+}
+// рисование сцены в заданном трансформе (вьюпорт: visibleOnly=true; PNG: z=1,ox=oy=0)
+function paintScene(ctx, cw, ch, z, oxv, oyv, visibleOnly){
+  ctx.setTransform(z,0,0,z,oxv,oyv);
+  const k = TS / TSZ;
+  const x0 = visibleOnly ? Math.max(0, Math.floor(-oxv/(TS*z))) : 0;
+  const y0 = visibleOnly ? Math.max(0, Math.floor(-oyv/(TS*z))) : 0;
+  const x1 = visibleOnly ? Math.min(W-1, Math.floor((cw - oxv)/(TS*z))) : W-1;
+  const y1 = visibleOnly ? Math.min(H-1, Math.floor((ch - oyv)/(TS*z))) : H-1;
+  for(const lay of LAYER_DRAW_ORDER){
+    if(layerVis[lay] === false) continue;
+    ctx.save(); ctx.globalAlpha = (layerAlpha[lay]!=null?layerAlpha[lay]:1);
+    const arr = area.layers[lay], sz = area.sizes[lay], fl = area.flag[lay];
+    const oxa = area.ox[lay], oya = area.oy[lay];
+    const set = (lay === 'fg') ? SEL_FG : SEL_MAIN;
+    const byId = TILES[set] || {};
+    const atlas = (lay === 'fg') ? assets.fgArt : assets.mainArt;
+    for(let y=y0; y<=y1; y++) for(let x=x0; x<=x1; x++){
+      const i = y*W + x;
+      const v = arr[i]; if(v===NO) continue;
+      const f = fl && fl[i] ? fl[i] : 0;
+      const rot = ((f>>2)&3) * Math.PI/2;
+      // зеркало = ИД тайла (как в игре); флаг-зеркало не используем, FG клиент не зеркалит
+      const idMirror = (lay !== 'fg') && MIRROR_OF[v] !== undefined;
+      const vSrc = idMirror ? MIRROR_OF[v] : v;
+      const fh = idMirror ? -1 : 1, fv = 1;
+      const ux = (oxa && oxa[i] ? oxa[i] : 0) * k;
+      const uy = (oya && oya[i] ? oya[i] : 0) * k;
+      const mul = (sz && sz[i]) ? sz[i]/100 : 1;
+      const t = byId[vSrc];
+      let img, sx = 0, sy = 0, dw, dh, cx, cy, trimmed = false;
+      if(t){
+        img = tileImgFor(set, t.file);
+        if(!img.complete || !img.naturalWidth) continue;      // дорисуется по onload
+        dw = t.w * k * mul; dh = t.h * k * mul;
+        // зеркало по H: пивот = правый край клетки (клиент: scaleX=-1, pivotX=width) ->
+        // положение тайла внутри клетки тоже зеркалится: ox' = TSZ - ox - w
+        const oxEff = idMirror ? (TSZ - t.ox - t.w) : t.ox;
+        cx = x*TS + oxEff*k + ux + (t.w*k)/2;
+        cy = y*TS + t.oy*k + uy + (t.h*k)/2;
+        trimmed = true;
+      } else if(atlas && atlas.naturalWidth){
+        img = atlas;
+        const nc = cols(img);
+        sx = (vSrc%nc)*TSZ; sy = ((vSrc/nc)|0)*TSZ;
+        const s = (sz && sz[i] ? TS*sz[i]/100 : TS);
+        dw = dh = s;
+        cx = x*TS + (TS-s)/2 + ux + s/2;
+        cy = y*TS + (TS-s)/2 + uy + s/2;
+      } else {
+        ctx.fillStyle = fallbackColor(vSrc); ctx.fillRect(x*TS + ux, y*TS + uy, TS, TS); continue;
+      }
+      ctx.save();
+      ctx.translate(cx, cy);
+      if(rot) ctx.rotate(rot);
+      if(fh !== 1 || fv !== 1) ctx.scale(fh, fv);
+      if(trimmed) ctx.drawImage(img, -dw/2, -dh/2, dw, dh);
+      else ctx.drawImage(img, sx, sy, TSZ, TSZ, -dw/2, -dh/2, dw, dh);
+      ctx.restore();
+    }
+    ctx.restore();
+  }
+  if(showGrid && TS*z >= 7){
+    ctx.strokeStyle='rgba(0,0,0,0.16)'; ctx.lineWidth = 1/z;
+    for(let x=x0;x<=x1+1;x++){ctx.beginPath();ctx.moveTo(x*TS,y0*TS);ctx.lineTo(x*TS,(y1+1)*TS);ctx.stroke();}
+    for(let y=y0;y<=y1+1;y++){ctx.beginPath();ctx.moveTo(x0*TS,y*TS);ctx.lineTo((x1+1)*TS,y*TS);ctx.stroke();}
+  }
+  ctx.save(); ctx.strokeStyle='rgba(79,157,255,0.5)'; ctx.lineWidth = 1/z;
+  ctx.strokeRect(0,0,W*TS,H*TS); ctx.restore();
+  if(sel){
+    ctx.save();
+    ctx.strokeStyle = '#4f9dff'; ctx.setLineDash([6,4]); ctx.lineWidth = 2;
+    ctx.strokeRect(sel.x0*TS + 0.5, sel.y0*TS + 0.5,
+                   (sel.x1-sel.x0+1)*TS - 1, (sel.y1-sel.y0+1)*TS - 1);
+    ctx.restore();
+  }
+  if(area.playerSpawn){
+    const [px,py] = area.playerSpawn;
+    ctx.fillStyle='rgba(62,207,106,0.85)';
+    ctx.beginPath(); ctx.arc(px*TS+TS/2, py*TS+TS/2, TS*0.34, 0, 6.2832); ctx.fill();
+    ctx.fillStyle='#fff'; ctx.font=`bold ${(TS*0.45)|0}px sans`;
+    ctx.textAlign='center'; ctx.textBaseline='middle';
+    ctx.fillText('P', px*TS+TS/2, py*TS+TS/2);
+    ctx.textAlign='left'; ctx.textBaseline='alphabetic';
+  }
+  area.portals.forEach(p=>{
+    if(assets.portal && assets.portal.naturalWidth)
+      ctx.drawImage(assets.portal, p[0]*TS, p[1]*TS-TS*0.25, TS*0.85, TS*0.95);
+    else { ctx.fillStyle='#ff5c5c'; ctx.fillRect(p[0]*TS,p[1]*TS,TS,TS); }
+    ctx.fillStyle='#fff'; ctx.strokeStyle='rgba(0,0,0,0.6)'; ctx.lineWidth=2;
+    ctx.font=(TS>=24?'bold 10px':'bold 8px')+' sans';
+    const lbl = '№' + p[2] + (p[3] ? ' → ' + p[3] : '');
+    ctx.strokeText(lbl, p[0]*TS+2, p[1]*TS+10);
+    ctx.fillText(lbl, p[0]*TS+2, p[1]*TS+10);
+    ctx.lineWidth=1;
+  });
+  (area.npcs||[]).forEach(s=>{
+    const pet = npcKind(s[2]) === 'pet';
+    ctx.fillStyle = pet ? 'rgba(120,90,220,0.9)' : 'rgba(230,190,60,0.92)';
+    ctx.beginPath(); ctx.arc(s[0]*TS+TS/2, s[1]*TS+TS/2, TS*0.32, 0, 6.2832); ctx.fill();
+    ctx.fillStyle='#fff'; ctx.font='bold '+Math.max(8,(TS*0.42)|0)+'px sans'; ctx.textAlign='center';
+    ctx.fillText(pet ? 'П' : 'Н', s[0]*TS+TS/2, s[1]*TS+TS*0.64);
+    ctx.textAlign='left';
+  });
+  (area.atms||[]).forEach(a=>{
+    const x = a[0]*TS, y = a[1]*TS;
+    ctx.fillStyle = 'rgba(40,150,220,0.92)';
+    ctx.fillRect(x+TS*0.18, y+TS*0.14, TS*0.64, TS*0.72);
+    ctx.fillStyle = '#fff'; ctx.font='bold '+Math.max(8,(TS*0.4)|0)+'px sans'; ctx.textAlign='center';
+    ctx.fillText('ATM', x+TS/2, y+TS*0.62);
+    ctx.textAlign='left';
+  });
+  area.spawns.forEach(s=>{
+    ctx.fillStyle='rgba(255,140,0,0.9)';
+    ctx.beginPath(); ctx.arc(s[0]*TS+TS/2,s[1]*TS+TS/2,TS*0.3,0,6.2832); ctx.fill();
+    ctx.fillStyle='#7a3b00';
+    ctx.beginPath(); ctx.arc(s[0]*TS+TS/2,s[1]*TS+TS/2,TS*0.12,0,6.2832); ctx.fill();
+  });
+  if(shapeStart && shapeEnd && (tool==='line' || tool==='rect')){
+    ctx.save();
+    ctx.fillStyle = shapeErase ? 'rgba(255,80,80,0.45)' : 'rgba(79,157,255,0.45)';
+    for(const [x,y] of shapeCells()){ if(x>=0&&x<W&&y>=0&&y<H) ctx.fillRect(x*TS, y*TS, TS, TS); }
+    ctx.restore();
+  }
+  if(visibleOnly){
+    // Phase 6: превью multi-tile brush
+    if(brushTiles && hover){
+      ctx.save(); ctx.strokeStyle = '#ffcf6a'; ctx.lineWidth = 1.5/z; ctx.setLineDash([4/z,3/z]);
+      ctx.strokeRect(hover[0]*TS, hover[1]*TS, brushTiles.w*TS, brushTiles.h*TS); ctx.restore();
+    }
+    // Phase 6: превью вставки (Ctrl+V → курсор → ЛКМ)
+    drawPastePreview(ctx, z);
+    // Phase 7: рамки выбранных объектов (multi-select)
+    if(selObjs.length || selObj){
+      const list = selObjs.length ? selObjs : [selObj];
+      ctx.save(); ctx.strokeStyle = '#4f9dff'; ctx.lineWidth = 2/z;
+      for(const o of list){ const b = objCell(o); if(b) ctx.strokeRect(b[0]*TS - 2/z, b[1]*TS - 2/z, TS + 4/z, TS + 4/z); }
+      ctx.restore();
+    }
+    // Phase 7: рамка выделения объектов (протяжка)
+    if(objBox){
+      const c0 = Math.min(objBox.c0,objBox.c1), c1 = Math.max(objBox.c0,objBox.c1);
+      const r0 = Math.min(objBox.r0,objBox.r1), r1 = Math.max(objBox.r0,objBox.r1);
+      ctx.save(); ctx.fillStyle = 'rgba(79,157,255,0.15)'; ctx.strokeStyle = '#4f9dff';
+      ctx.lineWidth = 1.5/z; ctx.setLineDash([5/z,3/z]);
+      ctx.fillRect(c0*TS, r0*TS, (c1-c0+1)*TS, (r1-r0+1)*TS);
+      ctx.strokeRect(c0*TS, r0*TS, (c1-c0+1)*TS, (r1-r0+1)*TS);
+      ctx.restore();
+    }
+    // подсветка клетки под курсором
+    if(hover){ ctx.save(); ctx.strokeStyle = 'rgba(255,255,255,0.85)'; ctx.lineWidth = 1.5/z;
+      ctx.strokeRect(hover[0]*TS + 0.5/z, hover[1]*TS + 0.5/z, TS - 1/z, TS - 1/z); ctx.restore(); }
+  }
+  ctx.setTransform(1,0,0,1,0,0);
+}
+// полная карта в offscreen-канвас (для PNG-экспорта)
+function renderFullMap(){
+  const cv = document.createElement('canvas');
+  cv.width = W*TS; cv.height = H*TS;
+  const c = cv.getContext('2d');
+  drawBackdrop(c, cv.width, cv.height);
+  paintScene(c, cv.width, cv.height, 1, 0, 0, false);
+  return cv;
+}
+function objCell(o){
+  if(!o) return null;
+  if(o.kind==='pspawn') return area.playerSpawn;
+  if(o.kind==='portal') return area.portals[o.i];
+  if(o.kind==='npc')    return area.npcs[o.i];
+  if(o.kind==='atm')    return area.atms[o.i];
+  if(o.kind==='spawn')  return area.spawns[o.i];
+  return null;
+}
+
+
+// ===================== Phase 7/8/9: правая панель — свойства, миникарта, проверка =====================
+function renderRightPanel(){
+  const r = document.getElementById('right'); if(!r) return;
+  r.innerHTML = `
+    <h2>Миникарта</h2>
+    <canvas id="minimap" onclick="mmClick(event)"></canvas>
+    <div class="gridmeta">клик — перейти к точке карты</div>
+    <h2>Палитра тайлов</h2>
+    <label>Зона</label>
+    <select onchange="pickZone(this.value)">
+      ${zonesList().map(z=>`<option value="${esc(z.key)}" ${z.key===zoneKeyOf(currentSetName())?'selected':''}>${esc(z.label)} (${z.sets.length})</option>`).join('')}
+    </select>
+    <label>Набор тайлов</label>
+    <select onchange="pickSet(this.value)">
+      ${(zonesList().find(z=>z.key===zoneKeyOf(currentSetName()))||{sets:[]}).sets.map(s=>`<option value="${esc(s.set)}" ${s.set===currentSetName()?'selected':''}>${esc(s.set)} · ${s.kind==='fg'?'передний план':'основной'} (${s.count})</option>`).join('')}
+    </select>
+    <input type="text" id="palSearchBox" placeholder="🔍 поиск: id тайла или точное имя набора…" value="${esc(palSearch)}" oninput="onPalSearch(this.value)">
+    <div class="chips" id="palChips">
+      ${PAL_FILTERS.map(([f,l])=>`<span class="chip palchip ${palFilter===f?'on':''}" data-f="${f}" onclick="setPalFilter('${f}')">${l}</span>`).join('')}
+    </div>
+    <div class="palwrap"><div class="palgrid" id="palgrid"></div></div>
+    <h2>Проверка карты</h2>
+    <div class="btnrow"><button onclick="runValidation()">🔍 Проверить</button></div>
+    <div class="vbox" id="validBox"></div>`;
+  renderValidation(); drawMinimap();
+}
+function multiPropsHtml(){
+  return `<div class="proprow"><label>Выбрано</label><b style="flex:1">${selObjs.length} объектов</b></div>
+    <div class="btnrow">
+      <button onclick="moveSelObjs(-1,0)" title="влево">←</button>
+      <button onclick="moveSelObjs(1,0)" title="вправо">→</button>
+      <button onclick="moveSelObjs(0,-1)" title="вверх">↑</button>
+      <button onclick="moveSelObjs(0,1)" title="вниз">↓</button>
+    </div>
+    <div class="btnrow">
+      <button onclick="copyObjs()">📋 Копировать</button>
+      <button onclick="duplicateSelObjs()">📄 Дублировать</button>
+      <button class="danger" onclick="deleteSelObjs()">🗑 Удалить</button>
+    </div>
+    <div class="gridmeta">Стрелки — сдвиг на 1 (Shift — на 5), Ctrl+D — дублировать. Shift+клик — добавить/убрать объект. Рамка — протяни по пустому месту инструментом «🎯».</div>`;
+}
+function renderProps(){
+  const el = document.getElementById('props'); if(!el) return;
+  if(selObjs.length > 1){ el.innerHTML = multiPropsHtml(); return; }
+  const o = selObj;
+  if(!o){ el.innerHTML = '<div class="gridmeta">Объект не выбран. Инструмент «🎯 Объекты» (или «✥») → щёлкни по маркеру на карте. Shift+клик — добавить к выделению.</div>'; return; }
+  const row = (label, inner) => `<div class="proprow"><label>${label}</label>${inner}</div>`;
+  const num = (label, val, code) => row(label, `<input type="number" value="${val}" onchange="${code};draw();drawMinimap()">`);
+  let html = '';
+  if(o.kind==='pspawn'){
+    const p = area.playerSpawn || [0,0];
+    html += row('Спавн игрока', '<b style="flex:1">🚩</b>');
+    html += num('X', p[0], `area.playerSpawn[0]=+this.value`);
+    html += num('Y', p[1], `area.playerSpawn[1]=+this.value`);
+  } else if(o.kind==='portal'){
+    const p = area.portals[o.i];
+    html += row('Портал', `<b style="flex:1">🌀 №${p[2]}</b>`);
+    html += num('X', p[0], `area.portals[${o.i}][0]=+this.value`);
+    html += num('Y', p[1], `area.portals[${o.i}][1]=+this.value`);
+    html += num('№', p[2], `area.portals[${o.i}][2]=+this.value`);
+    html += row('Арена', `<input type="text" placeholder="map_N (пусто — этот же)" value="${esc(p[3]||'')}" onchange="area.portals[${o.i}][3]=this.value.trim()">`);
+    html += num('Портал цели', p[4]||0, `area.portals[${o.i}][4]=+this.value`);
+  } else if(o.kind==='spawn'){
+    const s = area.spawns[o.i];
+    html += row('Спавн моба', '<b style="flex:1">👾</b>');
+    html += num('X', s[0], `area.spawns[${o.i}][0]=+this.value`);
+    html += num('Y', s[1], `area.spawns[${o.i}][1]=+this.value`);
+    html += num('мин X', s[2], `area.spawns[${o.i}][2]=+this.value`);
+    html += num('макс X', s[3], `area.spawns[${o.i}][3]=+this.value`);
+    html += row('Моб', `<select onchange="area.spawns[${o.i}][4]=this.value"><option value="">— любой (авто) —</option>${ENEMIES.map(e=>`<option ${s[4]===e?'selected':''}>${e}</option>`).join('')}</select>`);
+  } else if(o.kind==='npc'){
+    const n = area.npcs[o.i];
+    html += row('НПС', `<b style="flex:1">🧑 ${esc(n[2]||'')}</b>`);
+    html += num('X', n[0], `area.npcs[${o.i}][0]=+this.value`);
+    html += num('Y', n[1], `area.npcs[${o.i}][1]=+this.value`);
+    html += row('Имя', `<input type="text" value="${esc(n[2]||'')}" onchange="area.npcs[${o.i}][2]=this.value;draw()">`);
+    html += `<div class="gridmeta">${NPC_BY.get(n[2]) ? 'есть в каталоге data/npcs.json' : '⚠ НЕТ В КАТАЛОГЕ'}</div>`;
+  } else if(o.kind==='atm'){
+    const a = area.atms[o.i];
+    html += row('ATM', '<b style="flex:1">🏧</b>');
+    html += num('X', a[0], `area.atms[${o.i}][0]=+this.value`);
+    html += num('Y', a[1], `area.atms[${o.i}][1]=+this.value`);
+  }
+  html += `<div class="btnrow" style="margin-top:6px">
+    <button onclick="duplicateSelObjs()">📄 Дублировать</button>
+    <button class="danger" onclick="deleteSelObjs()">🗑 Удалить</button>
+  </div>`;
+  el.innerHTML = html;
+}
+function deleteSelObj(){
+  if(!selObj) return;
+  pushHistory();
+  const kind = selObj.kind, i = selObj.i;
+  if(kind==='portal') area.portals.splice(i,1);
+  else if(kind==='spawn') area.spawns.splice(i,1);
+  else if(kind==='npc') area.npcs.splice(i,1);
+  else if(kind==='atm') area.atms.splice(i,1);
+  else if(kind==='pspawn') area.playerSpawn = null;
+  selObj = null;
+  renderPortalList(); renderSpawnList(); renderShopList(); renderAtmList(); renderProps(); draw(); drawMinimap();
+}
+function objectAt(c){
+  if(!c) return null;
+  const x = c[0], y = c[1];
+  if(area.playerSpawn && area.playerSpawn[0]===x && area.playerSpawn[1]===y) return { kind:'pspawn', i:0 };
+  for(let i=0;i<area.portals.length;i++) if(area.portals[i][0]===x && area.portals[i][1]===y) return { kind:'portal', i };
+  for(let i=0;i<(area.npcs||[]).length;i++) if(area.npcs[i][0]===x && area.npcs[i][1]===y) return { kind:'npc', i };
+  for(let i=0;i<(area.atms||[]).length;i++) if(area.atms[i][0]===x && area.atms[i][1]===y) return { kind:'atm', i };
+  for(let i=0;i<area.spawns.length;i++) if(area.spawns[i][0]===x && area.spawns[i][1]===y) return { kind:'spawn', i };
+  return null;
+}
+function moveObject(o, dx, dy){
+  const cl = (v,mx)=>Math.max(0, Math.min(mx, v));
+  if(o.kind==='pspawn'){ if(area.playerSpawn) area.playerSpawn = [cl(area.playerSpawn[0]+dx,W-1), cl(area.playerSpawn[1]+dy,H-1)]; return; }
+  const arr = o.kind==='portal' ? area.portals : o.kind==='npc' ? area.npcs : o.kind==='atm' ? area.atms : o.kind==='spawn' ? area.spawns : null;
+  if(!arr) return;
+  const p = arr[o.i]; if(!p) return;
+  p[0] = cl(p[0]+dx, W-1); p[1] = cl(p[1]+dy, H-1);
+}
+
+// ---- Phase 7: multi-select объектов, стрелки, копирование/вставка ----
+// ---- Phase 7: выбор объекта кликом по строке списка (и центрирование на нём) ----
+function selectObject(kind, i){
+  selObjs = [{ kind, i }]; selObj = selObjs[0];
+  const c = objCell(selObj);
+  if(c && mapCanvas){ const TSz = TS*view.zoom;
+    view.x = mapCanvas.width/2  - (c[0] + 0.5)*TSz;
+    view.y = mapCanvas.height/2 - (c[1] + 0.5)*TSz; }
+  renderProps(); draw(); drawMinimap();
+  setStatus('выбран объект: ' + kind + ' #' + i);
+}
+function objKey(o){ return o.kind + ':' + o.i; }
+function objInSel(o){ const k = objKey(o); return selObjs.some(s => objKey(s) === k); }
+function toggleSelObj(o){
+  const k = objKey(o), idx = selObjs.findIndex(s => objKey(s) === k);
+  if(idx >= 0) selObjs.splice(idx, 1); else selObjs.push(o);
+  selObj = selObjs.length ? selObjs[selObjs.length-1] : null;
+  renderProps(); draw();
+}
+function objectsInRect(c0, r0, c1, r1){
+  const out = [], inR = (x,y) => x >= c0 && x <= c1 && y >= r0 && y <= r1;
+  area.portals.forEach((p,i) => { if(inR(p[0],p[1])) out.push({ kind:'portal', i }); });
+  (area.npcs||[]).forEach((n,i) => { if(inR(n[0],n[1])) out.push({ kind:'npc', i }); });
+  (area.atms||[]).forEach((a,i) => { if(inR(a[0],a[1])) out.push({ kind:'atm', i }); });
+  area.spawns.forEach((s,i) => { if(inR(s[0],s[1])) out.push({ kind:'spawn', i }); });
+  if(area.playerSpawn && inR(area.playerSpawn[0], area.playerSpawn[1])) out.push({ kind:'pspawn', i:0 });
+  return out;
+}
+function finishObjBox(){
+  const b = objBox; objBox = null;
+  if(!b) return;
+  const c0 = Math.min(b.c0,b.c1), c1 = Math.max(b.c0,b.c1);
+  const r0 = Math.min(b.r0,b.r1), r1 = Math.max(b.r0,b.r1);
+  const found = objectsInRect(c0, r0, c1, r1);
+  selObjs = found; selObj = found.length ? found[found.length-1] : null;
+  renderProps(); draw();
+  setStatus('выделено объектов: ' + found.length);
+}
+function renderObjLists(){ renderPortalList(); renderSpawnList(); renderShopList(); renderAtmList(); }
+function moveSelObjs(dx, dy){
+  if(!selObjs.length) return;
+  pushHistory();
+  for(const o of selObjs) moveObject(o, dx, dy);
+  renderObjLists(); renderProps(); draw(); drawMinimap();
+}
+function deleteSelObjs(){
+  if(!selObjs.length) return;
+  pushHistory();
+  const byKind = {};
+  for(const o of selObjs){ (byKind[o.kind] = byKind[o.kind] || []).push(o.i); }
+  for(const kind in byKind){
+    const idxs = byKind[kind].sort((a,b) => b - a);       // с конца — индексы не съезжают
+    for(const i of idxs){
+      if(kind === 'portal') area.portals.splice(i,1);
+      else if(kind === 'spawn') area.spawns.splice(i,1);
+      else if(kind === 'npc') area.npcs.splice(i,1);
+      else if(kind === 'atm') area.atms.splice(i,1);
+      else if(kind === 'pspawn') area.playerSpawn = null;
+    }
+  }
+  selObjs = []; selObj = null;
+  renderObjLists(); renderProps(); draw(); drawMinimap();
+}
+function copyObjs(){
+  if(!selObjs.length) return;
+  objClip = selObjs.map(o => {
+    const c = objCell(o);
+    if(o.kind === 'pspawn') return { kind:'pspawn', x:c[0], y:c[1] };
+    const arr = o.kind==='portal' ? area.portals : o.kind==='npc' ? area.npcs : o.kind==='atm' ? area.atms : area.spawns;
+    return { kind:o.kind, data: arr[o.i].slice() };
+  });
+  setStatus('скопировано объектов: ' + objClip.length + ' — Ctrl+V, чтобы вставить');
+}
+function pasteObjs(){
+  if(!objClip || !objClip.length) return;
+  pushHistory();
+  const cl = (v,mx) => Math.max(0, Math.min(mx, v));
+  const created = [];
+  for(const it of objClip){
+    if(it.kind === 'pspawn'){ area.playerSpawn = [cl(it.x+1,W-1), cl(it.y+1,H-1)]; created.push({ kind:'pspawn', i:0 }); continue; }
+    const d = it.data.slice();
+    d[0] = cl((d[0]|0)+1, W-1); d[1] = cl((d[1]|0)+1, H-1);
+    if(it.kind === 'portal'){ d[2] = Math.max(0, ...area.portals.map(p => p[2])) + 1; area.portals.push(d); created.push({ kind:'portal', i:area.portals.length-1 }); }
+    else if(it.kind === 'spawn'){ area.spawns.push(d); created.push({ kind:'spawn', i:area.spawns.length-1 }); }
+    else if(it.kind === 'npc'){ area.npcs.push(d); created.push({ kind:'npc', i:area.npcs.length-1 }); }
+    else if(it.kind === 'atm'){ area.atms.push(d); created.push({ kind:'atm', i:area.atms.length-1 }); }
+  }
+  selObjs = created; selObj = created.length ? created[created.length-1] : null;
+  renderObjLists(); renderProps(); draw(); drawMinimap();
+  setStatus('вставлено объектов: ' + created.length);
+}
+function duplicateSelObjs(){
+  if(!selObjs.length) return;
+  const list = selObjs.map(o => {
+    const c = objCell(o);
+    if(o.kind === 'pspawn') return { kind:'pspawn', x:c[0], y:c[1] };
+    const arr = o.kind==='portal' ? area.portals : o.kind==='npc' ? area.npcs : o.kind==='atm' ? area.atms : area.spawns;
+    return { kind:o.kind, data: arr[o.i].slice() };
+  });
+  pushHistory();
+  const cl = (v,mx) => Math.max(0, Math.min(mx, v));
+  const created = [];
+  for(const it of list){
+    if(it.kind === 'pspawn'){ area.playerSpawn = [cl(it.x+1,W-1), cl(it.y+1,H-1)]; created.push({ kind:'pspawn', i:0 }); continue; }
+    const d = it.data.slice();
+    d[0] = cl((d[0]|0)+1, W-1); d[1] = cl((d[1]|0)+1, H-1);
+    if(it.kind === 'portal'){ d[2] = Math.max(0, ...area.portals.map(p => p[2])) + 1; area.portals.push(d); created.push({ kind:'portal', i:area.portals.length-1 }); }
+    else if(it.kind === 'spawn'){ area.spawns.push(d); created.push({ kind:'spawn', i:area.spawns.length-1 }); }
+    else if(it.kind === 'npc'){ area.npcs.push(d); created.push({ kind:'npc', i:area.npcs.length-1 }); }
+    else if(it.kind === 'atm'){ area.atms.push(d); created.push({ kind:'atm', i:area.atms.length-1 }); }
+  }
+  selObjs = created; selObj = created.length ? created[created.length-1] : null;
+  renderObjLists(); renderProps(); draw(); drawMinimap();
+  setStatus('дублировано объектов: ' + created.length);
+}
+function validationJump(msg){
+  const m = /\((\d+)\s*,\s*(\d+)\)/.exec(String(msg||''));
+  if(!m){ setStatus('в этом сообщении нет координат клетки'); return; }
+  if(!mapCanvas) return;
+  const TSz = TS*view.zoom;
+  view.x = mapCanvas.width/2  - (+m[1] + 0.5)*TSz;
+  view.y = mapCanvas.height/2 - (+m[2] + 0.5)*TSz;
+  draw(); drawMinimap();
+  setStatus('переход к клетке ' + m[1] + ',' + m[2]);
+}
+function runValidation(){ validation = validateMap(); renderValidation(); return validation; }
+function validationWarnings(){
+  const w = [];
+  if(!area.portals.length) w.push('нет порталов — игрок не сможет покинуть карту');
+  if(!(area.spawns||[]).length) w.push('нет спавнов мобов');
+  if(!(area.npcs||[]).length) w.push('нет НПС-торговцев');
+  return w;
+}
+function renderValidation(){
+  const el = document.getElementById('validBox'); if(!el) return;
+  const warns = validationWarnings();
+  let html = '';
+  if(validation.length) html += validation.map((m,i)=>`<div class="vitem err" style="cursor:pointer" title="клик — перейти к проблемной клетке" onclick="validationJump(validation[${i}])">🔴 ${esc(m)}</div>`).join('');
+  if(warns.length) html += warns.map(m=>`<div class="vitem warn">🟡 ${esc(m)}</div>`).join('');
+  if(!html) html = '<div class="vitem info">🔵 Замечаний нет. Нажми «🔍 Проверить» или «▶ TEST» перед сохранением.</div>';
+  if(buildResult) html += `<div class="vitem info">🔵 ${esc(buildResult)}</div>`;
+  el.innerHTML = html;
+}
+function mmColor(id){
+  const c = {0:'#6fb7e2',25:'#2b6cb0',36:'#6fae3f',38:'#5a4632',40:'#4a6b2a',75:'#3f7d2c',120:'#c9a227'};
+  return c[id] || '#3a4a5a';
+}
+function drawMinimap(){
+  const cv = document.getElementById('minimap'); if(!cv) return;
+  const scale = Math.max(1, Math.floor(288 / Math.max(1, W)));
+  const w = W*scale, h = H*scale;
+  if(cv.width !== w) cv.width = w;
+  if(cv.height !== h) cv.height = h;
+  const g = cv.getContext('2d');
+  g.fillStyle = '#0d0f13'; g.fillRect(0,0,w,h);
+  const main = area.layers.main;
+  for(let y=0;y<H;y++) for(let x=0;x<W;x++){
+    const v = main[y*W+x]; if(v===NO) continue;
+    g.fillStyle = mmColor(v); g.fillRect(x*scale, y*scale, scale, scale);
+  }
+  const water = area.layers.water;
+  g.fillStyle = 'rgba(43,108,176,0.75)';
+  for(let y=0;y<H;y++) for(let x=0;x<W;x++) if(water[y*W+x]!==NO) g.fillRect(x*scale, y*scale, scale, scale);
+  const dot = (x,y,c)=>{ g.fillStyle=c; g.fillRect(x*scale, y*scale, Math.max(2,scale), Math.max(2,scale)); };
+  area.portals.forEach(p=>dot(p[0],p[1],'#ff5c5c'));
+  (area.npcs||[]).forEach(p=>dot(p[0],p[1],'#e6be3c'));
+  (area.atms||[]).forEach(p=>dot(p[0],p[1],'#2896dc'));
+  area.spawns.forEach(p=>dot(p[0],p[1],'#ff8c00'));
+  if(area.playerSpawn) dot(area.playerSpawn[0], area.playerSpawn[1], '#3ecf6a');
+  if(mapCanvas){
+    const TSz = TS*view.zoom;
+    const vx = (-view.x)/TSz, vy = (-view.y)/TSz;
+    const vw = mapCanvas.width/TSz, vh = mapCanvas.height/TSz;
+    g.strokeStyle = '#4f9dff'; g.lineWidth = 1;
+    g.strokeRect(vx*scale, vy*scale, vw*scale, vh*scale);
+  }
+}
+function mmClick(e){
+  const cv = document.getElementById('minimap'); if(!cv || !mapCanvas) return;
+  const r = cv.getBoundingClientRect();
+  const mx = (e.clientX - r.left) / r.width  * W;
+  const my = (e.clientY - r.top ) / r.height * H;
+  const TSz = TS*view.zoom;
+  view.x = mapCanvas.width/2  - mx*TSz;
+  view.y = mapCanvas.height/2 - my*TSz;
+  draw(); drawMinimap();
+}
+function takeBrush(){
+  if(!sel){ setStatus('сначала выдели зону инструментом «⬚»'); return; }
+  const L = targetLayer(), w = sel.x1-sel.x0+1, h = sel.y1-sel.y0+1;
+  const ids=[], sz=[], fl=[];
+  for(let y=sel.y0;y<=sel.y1;y++) for(let x=sel.x0;x<=sel.x1;x++){
+    const i=y*W+x; ids.push(area.layers[L][i]); sz.push(area.sizes[L][i]); fl.push(area.flag[L][i]);
+  }
+  brushTiles = { w, h, ids, sz, fl };
+  updateBrushInfo(); setStatus('кисть-паттерн '+w+'×'+h+' (слой '+LAYER_BY_KEY[L][1].split(' — ')[0]+') — рисуй кистью');
+}
+function clearBrush(){ brushTiles = null; updateBrushInfo(); draw(); }
+function mirrorBrushPattern(){
+  if(!brushTiles){ setStatus('кисть-паттерн не задан'); return; }
+  const b = brushTiles, ids = [], sz = [], fl = [];
+  for(let y=0; y<b.h; y++){
+    for(let x=b.w-1; x>=0; x--){                       // зеркалим порядок в строке
+      const j = y*b.w + x, id = b.ids[j];
+      const mid = (id !== NO && MIRROR_TO[id] !== undefined) ? MIRROR_TO[id]
+                : (id !== NO && MIRROR_OF[id] !== undefined) ? MIRROR_OF[id] : id;
+      ids.push(mid); sz.push(b.sz[j]); fl.push(b.fl[j]);
+    }
+  }
+  brushTiles = { w:b.w, h:b.h, ids, sz, fl };
+  updateBrushInfo(); draw();
+  setStatus('паттерн зеркалён (id, у которых клиент умеет зеркало, заменены на зеркальные)');
+}
+function updateBrushInfo(){
+  const el = document.getElementById('brushInfo'); if(!el) return;
+  el.textContent = brushTiles
+    ? ('паттерн ' + brushTiles.w + '×' + brushTiles.h + ' — ставится целиком при рисовании')
+    : 'кисть-паттерн не задан: выдели зону инструментом «⬚» и нажми «🎯 Взять выделение как кисть»';
+}
+function stampBrush(x0, y0){
+  const L = targetLayer(), b = brushTiles; if(!b) return;
+  for(let yy=0; yy<b.h; yy++) for(let xx=0; xx<b.w; xx++){
+    const px = x0+xx, py = y0+yy; if(px<0||px>=W||py<0||py>=H) continue;
+    const i = py*W+px, j = yy*b.w+xx, id = b.ids[j];
+    recordCell(L, i);                             // Phase 12: дельта для undo
+    if(id===NO){ area.layers[L][i]=NO; area.sizes[L][i]=0; area.flag[L][i]=0; area.ox[L][i]=0; area.oy[L][i]=0; continue; }
+    if(!tileRenderable(L, id)) continue;
+    area.layers[L][i]=id; area.sizes[L][i]=b.sz[j]||0; area.flag[L][i]=b.fl[j]||0;
+    area.ox[L][i]=0; area.oy[L][i]=0;
+  }
+}
+// ===================== TEST: проверка карты на ошибки (клиент НЕ запускается) =====================
+// Кнопка «▶ TEST» прогоняет правила проекта на ТЕКУЩЕЙ карте и показывает результат
+// в панели «Проверка карты». Ничего не сохраняет, не собирает и не открывает.
+function testMap(){
+  const issues = runValidation();                 // validateMap() -> панель (🔴) + предупреждения (🟡)
+  const nErr = issues.length, nWarn = validationWarnings().length;
+  setStatus(nErr
+    ? ('TEST: ошибок ' + nErr + (nWarn ? ', предупреждений ' + nWarn : '') + ' — смотри «Проверка карты»')
+    : (nWarn ? ('TEST: ошибок нет, предупреждений ' + nWarn)
+             : 'TEST: карта чистая ✓ (ошибок и предупреждений нет)'));
+  return issues;
+}
+// Проверка + сборка одной кнопкой (toolbar «✓»): валидация, и если чисто — сборка .cs
+function checkAndBuild(){
+  const issues = testMap();                    // validateMap + предупреждения -> панель «Проверка карты»
+  if(issues.length){ setStatus('⚠ проверка: ошибок ' + issues.length + ' — сборка отменена'); return issues; }
+  buildServerMap();                            // node tools/gen-map.mjs -> server/Map.generated.cs
+  return issues;
+}
+// Сборка серверного кода (отдельно от TEST): node tools/gen-map.mjs -> server/Map.generated.cs
+function buildServerMap(){
+  setStatus('собираю server/Map.generated.cs из сохранённых data/map_*.json…');
+  fetch('/editor/api/gen-map').then(r=>r.json()).then(j=>{
+    buildResult = String(j.out||'').trim() || (j.ok ? 'готово' : 'без вывода');
+    setStatus(j.ok ? '✔ Map.generated.cs обновлён' : '⚠ сборка вернула ошибку (см. панель)');
+    renderValidation();
+  }).catch(()=>{
+    buildResult = '⚠ сборка недоступна: нужен запущенный serve.mjs (start-editor.cmd)';
+    setStatus('сборка недоступна — запусти start-editor.cmd');
+    renderValidation();
+  });
+}
+function renderPortalList(){
+  const el = document.getElementById('portalList'); if(!el) return;
+  el.innerHTML = area.portals.map((p,i)=>`<div class="portal-row">
+    <input type="number" value="${p[0]}" onchange="area.portals[${i}][0]=+this.value;draw()">
+    <input type="number" value="${p[1]}" onchange="area.portals[${i}][1]=+this.value;draw()">
+    <input type="number" value="${p[2]}" title="№" onchange="area.portals[${i}][2]=+this.value;draw()">
+    <input type="text" title="целевая арена: map_N (пусто — этот же map)" placeholder="арена"
+           value="${p[3]||''}" onchange="area.portals[${i}][3]=this.value.trim()">
+    <input type="number" title="№ портала на целевой арене (0 — вход по умолчанию)"
+           value="${p[4]||0}" onchange="area.portals[${i}][4]=+this.value">
+    <button class="danger" onclick="pushHistory();area.portals.splice(${i},1);renderPortalList();draw()">✕</button>
+    <button title="выбрать на карте" onclick="selectObject('portal',${i})">🎯</button>
+    <button title="дублировать" onclick="dupPortal(${i})">📄</button>
+  </div>`).join('') || '<div class="gridmeta">нет порталов</div>';
+}
+function dupPortal(i){ pushHistory(); const p=area.portals[i].slice(); p[0]=Math.min(p[0]+1,W-1); p[2]=Math.max(...area.portals.map(q=>q[2]))+1; area.portals.splice(i+1,0,p); renderPortalList(); draw(); }
+function addPortal(){ pushHistory(); area.portals.push([5,H-3, area.portals.length?Math.max(...area.portals.map(p=>p[2]))+1:1, '', 0]); renderPortalList(); draw(); }
+
+function renderSpawnList(){
+  const el = document.getElementById('spawnList'); if(!el) return;
+  el.innerHTML = area.spawns.map((s,i)=>{
+    const who = (s[4]&&s[4].length) ? s[4] : '';
+    return `<div class="spawn-row">
+    <input type="number" value="${s[0]}" title="x" onchange="area.spawns[${i}][0]=+this.value;draw()">
+    <input type="number" value="${s[1]}" title="y" onchange="area.spawns[${i}][1]=+this.value;draw()">
+    <select title="какой моб" onchange="area.spawns[${i}][4]=this.value">
+      <option value="">— любой (авто) —</option>
+      ${ENEMIES.map(e=>`<option value="${e}" ${who===e?'selected':''}>${e}</option>`).join('')}
+    </select>
+    <button title="выбрать на карте" onclick="selectObject('spawn',${i})">🎯</button>
+    <button title="дублировать" onclick="dupSpawn(${i})">📄</button>
+    <button class="danger" title="удалить" onclick="pushHistory();area.spawns.splice(${i},1);renderSpawnList();draw()">✕</button>
+  </div>`; }).join('') || '<div class="gridmeta">нет спавнов</div>';
+}
+function dupSpawn(i){ pushHistory(); area.spawns.splice(i+1, 0, area.spawns[i].slice()); renderSpawnList(); draw(); }
+function addSpawnRow(){ pushHistory(); area.spawns.push([10,H-4,7,13,'']); renderSpawnList(); draw(); }
+
+// Список клеток-НПС: [x, y, "имя из каталога", "переопределение товаров"]
+function renderShopList(){
+  const el = document.getElementById('shopList'); if(!el) return;
+  const names = NPC_LIST.length ? NPC_LIST
+    : [{name:'Item Vendor',shop:{type:'items',items:[]}},{name:'Pet Vendor',shop:{type:'pets',items:[]}}];
+  const rows = (area.npcs||[]).map((s,i)=>{
+    const def = NPC_BY.get(s[2]);
+    const stock = (s[3] && String(s[3]).length) ? String(s[3]) : npcStock(s[2]);
+    const info = def ? (def.shop.type==='pets' ? 'продаёт питомцев' : (def.shop.items||[]).length+' предметов')
+                     : 'НЕТ В КАТАЛОГЕ (проверь data/npcs.json)';
+    const opts = names.map(n=>`<option value="${esc(n.name)}" ${s[2]===n.name?'selected':''}>${esc(n.name)} — ${n.shop.type==='pets'?'питомцы':'предметы'}</option>`).join('');
+    return `<div class="portal-row">
+      <input type="number" value="${s[0]}" title="x" onchange="area.npcs[${i}][0]=+this.value;draw()">
+      <input type="number" value="${s[1]}" title="y" onchange="area.npcs[${i}][1]=+this.value;draw()">
+      <select title="какой НПС поставить" onchange="area.npcs[${i}][2]=this.value;renderShopList();draw()">${opts}</select>
+      <button title="выбрать на карте" onclick="selectObject('npc',${i})">🎯</button>
+      <button title="дублировать" onclick="dupShop(${i})">📄</button>
+      <button class="danger" title="удалить" onclick="pushHistory();area.npcs.splice(${i},1);renderShopList();draw()">✕</button>
+    </div>
+    <div class="gridmeta" style="margin-left:12px">${esc(s[2])} — ${info}</div>
+    <input type="text" style="width:100%" value="${esc(s[3]||'')}" title="переопределить товары на этой клетке"
+           placeholder="товары: ключ|цена, ... (пусто = из каталога НПС)"
+           onchange="area.npcs[${i}][3]=this.value.trim();renderShopList()">
+    <div class="gridmeta" style="margin-left:12px">${stock ? 'итог: '+esc(stock.slice(0,140)) : 'товары по умолчанию (сервер подставит свои)'}</div>`;
+  }).join('');
+  el.innerHTML = rows || '<div class="gridmeta">нет НПС — выбери инструмент «🧑 НПС-торговец» и щёлкни по клетке</div>';
+}
+
+function addShop(){ pushHistory(); area.npcs.push([8, H-4, (NPC_LIST[0]||{name:'Item Vendor'}).name, '']); renderShopList(); draw(); }
+function addShopNamed(name){ pushHistory(); area.npcs.push([8, H-4, name, '']); renderShopList(); draw(); }
+function dupShop(i){ pushHistory(); const s = (area.npcs[i]||[]).slice(); s[0] = Math.min((s[0]|0)+1, W-1); area.npcs.splice(i+1,0,s); renderShopList(); draw(); }
+// --- банкоматы (ATM): маркер ставится инструментом «🏧 Банкомат», логику банка держит сервер ---
+function renderAtmList(){
+  const el = document.getElementById('atmList');
+  if(!el) return;
+  el.innerHTML = (area.atms||[]).map((a,i)=>`<div class="portal-row">
+    <input type="number" value="${a[0]}" title="x" onchange="area.atms[${i}][0]=+this.value;draw()">
+    <input type="number" value="${a[1]}" title="y" onchange="area.atms[${i}][1]=+this.value;draw()">
+    <button title="выбрать на карте" onclick="selectObject('atm',${i})">🎯</button>
+    <button class="danger" title="удалить" onclick="pushHistory();area.atms.splice(${i},1);renderAtmList();draw()">✕</button>
+  </div>`).join('');
+}
+function addAtm(){ pushHistory(); area.atms.push([10, H-4]); renderAtmList(); draw(); }
+function dupAtm(i){ pushHistory(); const a=(area.atms[i]||[]).slice(); a[0]=Math.min((a[0]|0)+1, W-1); area.atms.splice(i+1,0,a); renderAtmList(); draw(); }
+
+
+// ===================== 🎲 ГЕНЕРАТОР СЛУЧАЙНОЙ КАРТЫ =====================
+// Земля строится ПРОВЕРЕННЫМИ тайлами арены GreenAreaTiles (те же, что в data/map_1.json):
+//   36       — трава (верхний, «ходибельный» тайл: по нему игрок стоит),
+//   40 / 38  — земля под травой (полные блоки 165x165).
+// Дополнительно генератор строит (всё из того же атласа GreenAreaTiles, чтобы рисовалось в игре):
+//   40       — стены по краям карты (колонки 0/1 и W-2/W-1 до поверхности; как в GameCode.World.cs),
+//   25       — вода в слое mapWater (клиент рисует её анимированной, TileHandler.as:538),
+//   70 / 120 — декор магазина в слое mapArt: табличка «STORE →» и прилавок.
+// Маркеры (спавн игрока, мобы, НПС, ATM, порталы) ставятся на клетку ПРЯМО НАД землёй —
+// ровно так их читает сервер (GameCode.World.cs: GroundYAt(row) = row*165 + 185).
+// !!! Ширину менять нельзя (40) — иначе съедут id тайлов атласа.
+const GROUND_TOP  = 36;                  // трава (поверхность)
+const GROUND_FILL = [40, 38];            // земля под травой (чередуем для фактуры)
+const WALL_TILE   = 40;                  // твёрдый блок стены по краям карты
+const WATER_TILE  = 25;                  // вода — кладётся в слой mapWater (полный блок с волной)
+const SHOP_SIGN   = 70;                  // табличка «STORE →» (слой mapArt)
+const SHOP_STALL  = 120;                 // прилавок магазина (слой mapArt)
+
+// ---- какие тайлы РЕАЛЬНО рисуются в игре -------------------------------------------------
+// Клиент собирает атлас ЖЁСТКОЙ сеткой 165 px (TileHandler.createTileAtlasXML): основной набор
+// (GreenAreaTiles) = 12x11 = 132 ячейки -> id 0..131, передний план (GreenAreaForegroundTiles)
+// = 5x8 = 40 ячеек -> id 0..39. Заполнены только тайлы из нарезки (models/tiles/<set>/tiles.json,
+// id < cols*rows): «зеркальные» id из манифеста (у основного набора 132..249, у FG 40..71) в
+// атлас НЕ попадают. Любой id, которого нет в атласе, даёт getTexture() == null -> Image с
+// null-текстурой -> клиент падает (#1009) при первом же портале
+// (SortDepths.addAt -> TileHandler.getHighestMainArtIndex -> visualTile_array[i].texture.base).
+// Поэтому такие id нельзя ни рисовать, ни сохранять в карту.
+const RENDERABLE = {};                   // set -> Set(id); null/undefined = манифест ещё не загружен
+function renderableIds(set){
+  const cached = RENDERABLE[set];
+  if(cached !== undefined) return cached;
+  const m = (typeof MANIFESTS !== 'undefined') ? MANIFESTS[set] : null;
+  if(!m || !m.tiles || !m.tiles.length || !m.cols || !m.rows) return null;  // манифест не загружен/неполный
+  const cap = m.cols * m.rows;
+  const s = new Set();
+  for(const t of m.tiles) if(t.id < cap) s.add(t.id);
+  RENDERABLE[set] = s;
+  return s;
+}
+const setForLayer = (L) => (L === 'fg' ? SEL_FG : SEL_MAIN);
+function tileRenderable(L, id){
+  if(id === NO) return true;
+  const s = renderableIds(setForLayer(L));
+  return s ? s.has(id) : true;                         // манифест не загружен — не мешаем работать
+}
+const GEN_MOBS = ['green bouncer','green walker','purple goo','red bouncer','mushroom squish',
+  'mushroom ball','bouncing mushroom','orange crazy','yellow hairy monster','yellow puff monster',
+  'horned monster','crab','plant monster','goo cube','brick monster','block bot','night stalker','drill bot'];
+let genOpts = { seed:'', style:'mixed', platforms:3, mobs:5, npcs:true, atm:true, portals:true,
+  walls:true, water:true, shop:true, bg:'background 1' };
+try{ const g = JSON.parse(localStorage.getItem('hh_gen') || 'null'); if(g && typeof g==='object') Object.assign(genOpts, g); }catch(e){}
+function saveGenOpts(){ try{ localStorage.setItem('hh_gen', JSON.stringify(genOpts)); }catch(e){} }
+
+// детерминированный ГПСЧ (mulberry32): один сид -> одна и та же карта
+function genMulberry32(a){
+  a >>>= 0;
+  return function(){
+    a = (a + 0x6D2B79F5) >>> 0;
+    let t = a;
+    t = Math.imul(t ^ (t >>> 15), 1 | t);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+function genHash(s){
+  let h = 2166136261 >>> 0; s = String(s);
+  for(let i=0;i<s.length;i++){ h ^= s.charCodeAt(i); h = Math.imul(h, 16777619) >>> 0; }
+  return h >>> 0;
+}
+const gRand = (rnd,n) => Math.floor(rnd()*n);
+const gPick = (rnd,arr) => arr[gRand(rnd,arr.length)];
+
+function genPut(L,x,y,id){                       // поставить тайл с нулевыми размером/флагом/смещением
+  if(x<0 || x>=W || y<0 || y>=H) return;
+  const i = y*W + x;
+  area.layers[L][i]=id; area.sizes[L][i]=0; area.flag[L][i]=0; area.ox[L][i]=0; area.oy[L][i]=0;
+}
+const genSolid = (x,y) => (x>=0 && x<W && y>=0 && y<H && area.layers.main[y*W+x] !== NO);
+
+// главная функция: кнопка «🎲 Сгенерировать карту»
+async function generateMap(){
+  try{ await ensureNpcCatalog(); }catch(e){}     // имена НПС берём из data/npcs.json
+  const usedSeedStr = String(genOpts.seed || '').trim();
+  const seed = usedSeedStr ? genHash(usedSeedStr) : ((Math.random()*0xFFFFFFFF) >>> 0);
+  const rnd  = genMulberry32(seed);
+  const style = genOpts.style;
+
+  pushHistoryFull();                             // генерация отменяется через Ctrl+Z (полный снимок)
+
+  // 1) очистка всех слоёв и маркеров
+  for(const [k] of LAYERS){
+    area.layers[k].fill(NO); area.sizes[k].fill(0); area.flag[k].fill(0);
+    area.ox[k].fill(0); area.oy[k].fill(0);
+  }
+  area.portals = []; area.spawns = []; area.atms = []; area.npcs = []; area.playerSpawn = null;
+
+  // 2) рельеф — верхняя «травяная» клетка каждой колонки
+  const baseRow = H - 6;                         // 19 — как пол в map_1
+  const surface = new Array(W).fill(baseRow);
+  if(style === 'hills' || style === 'mixed'){
+    let r = baseRow;
+    for(let x=0;x<W;x++){
+      if(x > 1 && rnd() < 0.55) r += (gRand(rnd,3) - 1);      // шаг −1/0/+1: мягкие, прыгаемые холмы
+      r = Math.max(baseRow-5, Math.min(baseRow+2, r));
+      surface[x] = r;
+    }
+    // края выравниваем — игрок не упирается в стену у самой границы карты
+    surface[0]=surface[1]=surface[W-1]=surface[W-2]=baseRow;
+  }
+  for(let x=0;x<W;x++){
+    genPut('main', x, surface[x], GROUND_TOP);                     // трава
+    for(let y=surface[x]+1; y<H; y++) genPut('main', x, y, GROUND_FILL[(x+y)%2]);   // земля до низа карты
+  }
+
+  // 2б) СТЕНЫ ПО КРАЯМ: колонки 0/1 и W-2/W-1 заливаем твёрдым блоком до самой поверхности —
+  //     ровно так делает серверный процедурный генератор (GameCode.World.cs:329). Игрок и мобы
+  //     не смогут выйти за карту (иначе падают в пустоту).
+  const wallCols = new Set();
+  if(genOpts.walls){
+    for(const x of [0,1,W-2,W-1]){
+      wallCols.add(x);
+      for(let y=0; y<surface[x]; y++) genPut('main', x, y, WALL_TILE);
+    }
+  }
+
+  // 2в) ПРУД: в колонках пруда убираем траву и заливаем это место водой (тайл 25 в слое mapWater),
+  //     дно на ряд ниже уже заполнено землёй. В клиенте вода — анимированный слой (TileHandler.as:538).
+  const pondCols = new Set();
+  if(genOpts.water){
+    const ww = 3 + gRand(rnd,3);                            // ширина пруда 3..5 клеток
+    const wx = 3 + gRand(rnd, Math.max(1, W - ww - 7));     // не впритык к стенам
+    for(let x=wx; x<wx+ww && x<W-3; x++){
+      const y = surface[x];                                 // вода — на локальной поверхности колонки
+      genPut('main', x, y, NO);                             // убрали траву — ямка
+      genPut('water', x, y, WATER_TILE);                    // вода на поверхности
+      surface[x] = y + 1;                                   // дно пруда на ряд ниже (земля уже есть)
+      pondCols.add(x);
+    }
+  }
+
+  // 3) парящие платформы (трава + 1 ряд земли под ней) — для вертикали; маркеры туда не ставим
+  let plat = genOpts.platforms | 0;
+  if(style === 'platforms') plat = Math.max(plat, 4);
+  for(let p=0; p<plat; p++){
+    const pw = 3 + gRand(rnd,4);                                 // ширина 3..6
+    const px = 2 + gRand(rnd, Math.max(1, W - pw - 4));
+    const py = 12 + gRand(rnd, Math.max(1, baseRow - 4 - 12));    // ряд 12..(baseRow-5)
+    if(py + 1 >= baseRow) continue;
+    for(let x=px; x<px+pw && x<W; x++){
+      if(pondCols.has(x)) continue;                               // над прудом платформ не ставим
+      if(py === surface[x]-1 || py+1 === surface[x]-1) continue;  // не загораживаем клетки под маркеры
+      if(genSolid(x,py)) continue;                                // не перекрываем уже занятое
+      genPut('main', x, py, GROUND_TOP);
+      genPut('main', x, py+1, GROUND_FILL[(x+py)%2]);
+    }
+  }
+
+  // 4) клетки, где можно поставить маркер: пусто, а ровно под ней земля
+  const groundWalk = [];
+  for(let x=0;x<W;x++){
+    if(wallCols.has(x) || pondCols.has(x)) continue;   // на стенах и в воде маркеров не ставим
+    const y = surface[x]-1;
+    if(y < 0) continue;
+    if(genSolid(x, y)) continue;                       // клетку заняла платформа/блок (холмы) — не годится
+    if(!genSolid(x, y+1)) continue;                    // под клеткой обязана быть твёрдая земля
+    groundWalk.push([x,y]);
+  }
+  const taken = new Set();
+  const gkey  = (x,y) => y*W + x;
+  const nearestTo = (tx) => {                    // ближайшая свободная клетка базовой земли
+    let best=null, bd=1e9;
+    for(const c of groundWalk){
+      if(taken.has(gkey(c[0],c[1]))) continue;
+      const d = Math.abs(c[0]-tx);
+      if(d < bd){ bd = d; best = c; }
+    }
+    return best;
+  };
+  const takeRandom = () => {
+    const free = [];
+    for(const c of groundWalk) if(!taken.has(gkey(c[0],c[1]))) free.push(c);
+    return free.length ? free[gRand(rnd, free.length)] : null;
+  };
+  const place = (c) => { if(c) taken.add(gkey(c[0],c[1])); return c; };
+
+  // 4б) МАГАЗИН: прилавок и вывеска «STORE →» (декор в слое mapArt) на самом длинном ровном
+  //     участке земли, плюс клетка под продавца (её займёт первый НПС-торговец).
+  let shopCell = null;
+  if(genOpts.shop){
+    let bestX = -1, bestLen = 0;                         // ищем подряд идущие колонки одной высоты
+    const freeAt = (x) => !wallCols.has(x) && !pondCols.has(x) && !genSolid(x, surface[x]-1);
+    for(let x=2; x<=W-3; ){
+      if(!freeAt(x)){ x++; continue; }                   // стена/вода/платформа над клеткой — не годится
+      let e = x;
+      while(e+1 <= W-3 && freeAt(e+1) && surface[e+1]===surface[x]) e++;
+      const len = Math.min(e - x + 1, 3);
+      if(len > bestLen){ bestLen = len; bestX = x; }
+      x = e + 1;
+    }
+    if(bestX >= 0){
+      const r = surface[bestX] - 1;                      // ряд, где стоят игрок/мобы
+      if(bestLen >= 3){
+        genPut('art', bestX,   r, SHOP_SIGN);            // вывеска «STORE →» слева
+        genPut('art', bestX+2, r, SHOP_STALL);           // прилавок справа
+        place([bestX, r]); place([bestX+2, r]);          // на декор не встанут мобы/НПС
+        shopCell = [bestX+1, r];                         // продавец — между ними
+      } else {
+        genPut('art', bestX, r, SHOP_STALL);             // места мало — только прилавок
+        place([bestX, r]);
+        if(bestLen >= 2) shopCell = [bestX+1, r];
+      }
+      if(shopCell) place(shopCell);                      // клетку продавца резервируем заранее
+    }
+  }
+
+  // 5) спавн игрока (слева на земле, не на клетке портала)
+  const ps = nearestTo(Math.round(W*0.28));
+  if(ps) place(ps);
+  area.playerSpawn = ps ? [ps[0], ps[1]] : [Math.round(W/2), baseRow-1];
+
+  // 6) мобы — на земле, с коридором патруля ±3 клетки (как в map_1)
+  for(let i=0;i<(genOpts.mobs|0);i++){
+    const c = takeRandom(); if(!c) break;
+    place(c);
+    area.spawns.push([c[0], c[1], Math.max(0,c[0]-3), Math.min(W-1,c[0]+3), gPick(rnd, GEN_MOBS)]);
+  }
+
+  // 7) НПС-продавцы: 1 на предметы, 1 на питомцев + Ticket Vendor
+  if(genOpts.npcs){
+    const items = NPC_LIST.filter(n => n.shop && n.shop.type==='items' && n.name!=='Ticket Vendor').map(n=>n.name);
+    const pets  = NPC_LIST.filter(n => n.shop && n.shop.type==='pets').map(n=>n.name);
+    const names = [ items.length ? gPick(rnd, items) : 'Sales Man',
+                    pets.length  ? gPick(rnd, pets)  : 'Tanner' ];
+    if(NPC_BY.has('Ticket Vendor')) names.push('Ticket Vendor');
+    let shopUsed = false;
+    for(const nm of names){
+      if(!NPC_BY.get(nm)) continue;              // нет в каталоге — пропускаем (иначе validateMap ругнётся)
+      let c;
+      if(shopCell && !shopUsed){ c = shopCell; shopUsed = true; }   // первый торговец встаёт у прилавка
+      else c = takeRandom();
+      if(!c) break;
+      place(c);
+      area.npcs.push([c[0], c[1], nm, '']);
+    }
+  }
+
+  // 8) банкомат
+  if(genOpts.atm){
+    const c = takeRandom();
+    if(c){ place(c); area.atms.push([c[0], c[1]]); }
+  }
+
+  // 9) порталы по краям карты (ведут в этот же map, номера 1 и 2)
+  if(genOpts.portals){
+    let n = 1;
+    for(const c of [nearestTo(1), nearestTo(W-2)]){
+      if(!c) continue;
+      place(c);
+      area.portals.push([c[0], c[1], n++, '', 0]);
+    }
+  }
+
+  // 10) ФОН (бекграунд): имя кадра из атласа backgrounds1. Это превью редактора и поле
+  //     background в JSON; в самой игре фон выбирает клиент по номеру арены (AreaCreator).
+  if(typeof genOpts.bg === 'string') bgName = genOpts.bg;
+
+  if(!usedSeedStr) genOpts.seed = String(seed);   // чтобы «крутить» настройки на той же карте
+  saveGenOpts();
+  renderMap();                                    // перерисовывает панель, канвас и все списки
+
+  const issues = validateMap();
+  setStatus('🎲 сгенерировано (сид ' + genOpts.seed + ', стиль ' + style + '): земля ' +
+    groundWalk.length + ' кл., стены ' + wallCols.size + ' кол., вода ' + pondCols.size + ' кл., магазин ' +
+    (shopCell ? 'есть' : 'нет') + ', фон ' + (bgName || 'небо') + ', мобов ' + area.spawns.length +
+    ', НПС ' + area.npcs.length + ', ATM ' + area.atms.length + ', порталов ' + area.portals.length +
+    (issues.length ? ' · ⚠ ' + issues.join('; ') : ' · ✓'));
+}
+
+// ---- сериализация / валидация / сохранение ----
+function serializeArea(){
+  const out = { name:area.name, width:W, height:H,
+    layers:{}, sizes:{}, flags:{}, offsets:{},
+    portals:area.portals.map(p=>[p[0],p[1],p[2], p[3]||'', p[4]||0]),
+    spawns:area.spawns.map(s=>[s[0],s[1],s[2]||0,s[3]||0,s[4]||'']),
+    atms:(area.atms||[]).map(a=>[a[0]|0, a[1]|0]),
+    npcs:(area.npcs||[]).map(s=>[s[0]|0, s[1]|0, s[2]||'', s[3]||'']),
+    // товары/цена НПС берутся из каталога (data/npcs.json), на клетке можно переопределить
+    playerSpawn: area.playerSpawn || null,
+    background: bgName || '',
+    themeMain: SEL_MAIN, themeFg: SEL_FG };
+  for(const [k,,jn] of LAYERS){
+    out.layers[jn]=area.layers[k]; out.sizes[jn]=area.sizes[k];
+    const f={}, o={};
+    for(let i=0;i<W*H;i++){
+      const fv=area.flag[k][i]||0, ox=area.ox[k][i]||0, oy=area.oy[k][i]||0;
+      if(fv) f[i]=fv;
+      if(ox||oy) o[i]=[ox,oy];
+    }
+    out.flags[jn]=f; out.offsets[jn]=o;
+  }
+  return out;
+}
+function validateMap(){
+  const issues = [];
+  if(!area.playerSpawn) issues.push('не задан спавн игрока (инструмент «🚩 Спавн игрока»)');
+  // Тайлы вне атласа темы: клиент берёт текстуру по id и на неизвестном получает null ->
+  // падает #1009 при входе на карту (SortDepths -> getHighestMainArtIndex). Такие нельзя сохранять.
+  for(const [L,,jn] of LAYERS){
+    const ok = renderableIds(setForLayer(L));
+    if(!ok) continue;                                  // манифест набора ещё не загружен — пропускаем
+    let bad = 0, first = '';
+    for(let i=0;i<W*H;i++){
+      const v = area.layers[L][i];
+      if(v === NO || ok.has(v)) continue;
+      bad++;
+      if(!first) first = 'тайл ' + v + ' (' + (i%W) + ',' + ((i/W)|0) + ')';
+    }
+    if(bad) issues.push('слой ' + jn + ': ' + bad + ' тайл(ов) вне атласа темы, напр. ' + first +
+      ' — в игре они не рисуются и роняют клиент (#1009); замени их тайлами из палитры этого слоя');
+  }
+  area.portals.forEach((p,i)=>{ const a=String(p[3]||'').trim(); if(a && !/^map_\d+$/.test(a)) issues.push('портал #'+i+': арена «'+a+'» не похожа на map_N'); });
+  (area.spawns||[]).forEach((s,i)=>{ const t=String(s[4]||'').trim(); if(t && ENEMIES.indexOf(t)<0) issues.push('спавн #'+i+': моб «'+t+'» нет в списке'); });
+  (area.npcs||[]).forEach((n,i)=>{ if(!NPC_BY.get(String(n[2]||''))) issues.push('НПС #'+i+': «'+(n[2]||'')+'» нет в каталоге data/npcs.json'); });
+  return issues;
+}
+function saveMap(){
+  const el = document.getElementById('mapName');
+  area.name = (el && el.value.trim()) || area.name || 'map_1';
+  if(!/^(orig_)?map_\d+$/.test(area.name)) area.name = 'map_1';
+  const issues = validateMap();
+  if(issues.length && !confirm('Проверка карты нашла проблемы:\n\n• ' + issues.join('\n• ') + '\n\nВсё равно скачать?')) return;
+  download(area.name+'.json', JSON.stringify(serializeArea()));
+  setStatus('Сохранено: '+area.name+' → положи в data\\'+area.name+'.json');
+}
+// ---- применение JSON карты (загрузка файла и undo/redo) ----
+function applyMapObject(d){
+  area.name = d.name || 'map_1';
+  // карта может быть любого размера (оригинальные hh-карты 36x13 / 37x13) — размер из файла
+  W = Math.max(1, (d.width | 0) || 40);
+  H = Math.max(1, (d.height | 0) || 25);
+  for(const [k,,jn] of LAYERS){
+    // слой берём только если это массив ровно на всю карту; ключ может быть mapMain (наш формат) или main
+    const la = d.layers && (d.layers[jn] || d.layers[k]);
+    const sz = d.sizes && (d.sizes[jn] || d.sizes[k]);
+    area.layers[k] = (Array.isArray(la) && la.length === W*H) ? la.slice() : Array(W*H).fill(NO);
+    area.sizes[k]  = (Array.isArray(sz) && sz.length === W*H) ? sz.slice() : Array(W*H).fill(0);
+    area.flag[k] = Array(W*H).fill(0);
+    area.ox[k] = Array(W*H).fill(0);
+    area.oy[k] = Array(W*H).fill(0);
+    const f = d.flags && d.flags[jn];
+    if(f) for(const key in f){ const i=+key; if(i>=0 && i<W*H) area.flag[k][i] = f[key] | 0; }
+    const o = d.offsets && d.offsets[jn];
+    if(o) for(const key in o){ const i=+key; if(i>=0 && i<W*H){ area.ox[k][i] = o[key][0]|0; area.oy[k][i] = o[key][1]|0; } }
+  }
+  area.portals = (d.portals || []).map(p => [p[0]|0, p[1]|0, p[2]|0, p[3]||'', p[4]|0]);
+  area.spawns = (d.spawns || []).map(s => [s[0]|0, s[1]|0, s[2]|0, s[3]|0, s[4]||'']);
+  area.atms = (d.atms || []).map(a => [a[0]|0, a[1]|0]);
+  area.npcs = (d.npcs || []).map(n => [n[0]|0, n[1]|0, String(n[2]||''), n[3]||'']);
+  area.playerSpawn = d.playerSpawn || null;
+  bgName = d.background || '';
+  if(!BG_FRAMES.some(f=>f[0]===bgName)) bgName = '';   // 'sky' и прочие незнакомые имена = просто небо
+  if(d.themeMain){ SEL_MAIN = d.themeMain; localStorage.setItem('hh_set_main', SEL_MAIN); }
+  if(d.themeFg){ SEL_FG = d.themeFg; localStorage.setItem('hh_set_fg', SEL_FG); }
+}
+function loadMap(input){
+  const f = input.files[0]; if(!f) return;
+  const r = new FileReader();
+  r.onload = ()=>{ try{
+    applyMapObject(JSON.parse(r.result));
+    renderMap(); setStatus('Загружено: '+area.name);
+  }catch(e){ setStatus('Ошибка JSON: '+e.message); } };
+  r.readAsText(f);
+}
+
+
+function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;'); }
+function download(name,text){
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob([text],{type:'application/json'}));
+  a.download=name; a.click();
+}
+function setStatus(m){ const el=document.getElementById('status'); if(el) el.textContent=m; }
+
+// ---- undo/redo (Phase 12: ДИФФЕРЕНЦИАЛЬНАЯ история) + автосейв + экспорт PNG ----
+// НЕ копируем всю карту на каждое движение: правки тайлов пишутся дельтами клеток
+// (index -> [id,size,flag,ox,oy]) + снимок маркеров (их мало). Крупные операции
+// (генерация / очистка слоя / вставка зоны) — полный снимок (kind:'full').
+let curEdit = null;          // текущая незакрытая правка (дельты клеток)
+let pendingFull = null;      // «до»-снимок для крупной операции
+function newEdit(){ return { cells:{}, objsBefore:null }; }
+function objSnapshot(){
+  return { portals: area.portals.map(p => p.slice()), spawns: area.spawns.map(s => s.slice()),
+           atms: (area.atms||[]).map(a => a.slice()), npcs: (area.npcs||[]).map(n => n.slice()),
+           playerSpawn: area.playerSpawn ? area.playerSpawn.slice() : null };
+}
+function restoreObjs(s){
+  if(!s) return;
+  area.portals = s.portals.map(p => p.slice());
+  area.spawns  = s.spawns.map(x => x.slice());
+  area.atms    = s.atms.map(x => x.slice());
+  area.npcs    = s.npcs.map(x => x.slice());
+  area.playerSpawn = s.playerSpawn ? s.playerSpawn.slice() : null;
+}
+function recordCell(L, i){                 // запомнить «до»-значение клетки (один раз на правку)
+  if(!curEdit) curEdit = newEdit();
+  const m = curEdit.cells[L] || (curEdit.cells[L] = new Map());
+  if(!m.has(i)) m.set(i, [area.layers[L][i], area.sizes[L][i], area.flag[L][i], area.ox[L][i], area.oy[L][i]]);
+}
+function areaSnapshotFull(){
+  const s = { W, H, name: area.name, layers:{}, sizes:{}, flag:{}, ox:{}, oy:{},
+              objs: objSnapshot(), bg: bgName, themeMain: SEL_MAIN, themeFg: SEL_FG };
+  for(const [k] of LAYERS){
+    s.layers[k] = area.layers[k].slice(); s.sizes[k] = area.sizes[k].slice();
+    s.flag[k] = area.flag[k].slice(); s.ox[k] = area.ox[k].slice(); s.oy[k] = area.oy[k].slice();
+  }
+  return s;
+}
+function restoreFull(s){
+  W = s.W; H = s.H; area.name = s.name;
+  for(const [k] of LAYERS){
+    area.layers[k] = s.layers[k].slice(); area.sizes[k] = s.sizes[k].slice();
+    area.flag[k] = s.flag[k].slice(); area.ox[k] = s.ox[k].slice(); area.oy[k] = s.oy[k].slice();
+  }
+  restoreObjs(s.objs); bgName = s.bg; SEL_MAIN = s.themeMain; SEL_FG = s.themeFg;
+}
+function finalizeEdit(){                   // закрыть текущую правку и положить в историю
+  if(pendingFull){
+    const before = pendingFull; pendingFull = null;
+    history.push({ kind:'full', before, after: areaSnapshotFull() });
+    if(history.length > HIST_MAX) history.shift();
+    redoStack.length = 0;
+    return;
+  }
+  const e = curEdit; curEdit = null;
+  if(!e) return;
+  const after = {};
+  let hasCells = false;
+  for(const L in e.cells){
+    const m = e.cells[L]; if(!m.size) continue;
+    hasCells = true;
+    const a = new Map();
+    for(const i of m.keys()) a.set(i, [area.layers[L][i], area.sizes[L][i], area.flag[L][i], area.ox[L][i], area.oy[L][i]]);
+    after[L] = a;
+  }
+  const objsNow = objSnapshot();
+  const objsChanged = e.objsBefore && JSON.stringify(e.objsBefore) !== JSON.stringify(objsNow);
+  if(!hasCells && !objsChanged) return;              // правок не было — историю не засоряем
+  history.push({ kind:'diff', cells:e.cells, after, objsBefore:e.objsBefore, objsAfter:objsNow });
+  if(history.length > HIST_MAX) history.shift();
+  redoStack.length = 0;
+}
+function pushHistory(){                    // вызывается ПЕРЕД правкой
+  finalizeEdit();
+  curEdit = newEdit();
+  curEdit.objsBefore = objSnapshot();      // маркеров мало — дёшево
+  scheduleAutosave();
+}
+function pushHistoryFull(){                // крупные операции: генерация / очистка слоя / вставка зоны
+  finalizeEdit();
+  curEdit = null;
+  pendingFull = areaSnapshotFull();
+  scheduleAutosave();
+}
+function applyEntry(entry, dir){
+  if(entry.kind === 'full'){ restoreFull(dir === 'before' ? entry.before : entry.after); return; }
+  const cells = dir === 'before' ? entry.cells : entry.after;
+  for(const L in cells){
+    for(const [i, v] of cells[L]){
+      area.layers[L][i] = v[0]; area.sizes[L][i] = v[1]; area.flag[L][i] = v[2];
+      area.ox[L][i] = v[3]; area.oy[L][i] = v[4];
+    }
+  }
+  restoreObjs(dir === 'before' ? entry.objsBefore : entry.objsAfter);
+}
+function afterHistoryApply(msg){
+  shapeStart = shapeEnd = null; selObjs = []; selObj = null; objBox = null; palDrag = null; pasteMode = null;
+  renderMap(); setStatus(msg);
+}
+function undo(){
+  finalizeEdit();
+  if(!history.length){ setStatus('нечего отменять'); return; }
+  const h = history.pop();
+  applyEntry(h, 'before');
+  redoStack.push(h);
+  if(redoStack.length > HIST_MAX) redoStack.shift();
+  afterHistoryApply('отменено');
+}
+function redo(){
+  if(!redoStack.length){ setStatus('нечего повторять'); return; }
+  const h = redoStack.pop();
+  applyEntry(h, 'after');
+  history.push(h);
+  if(history.length > HIST_MAX) history.shift();
+  afterHistoryApply('повторено');
+}
+function scheduleAutosave(){
+  clearTimeout(autosaveTimer);
+  autosaveTimer = setTimeout(()=>{ try{ localStorage.setItem('hh_autosave', JSON.stringify(serializeArea())); }catch(e){} }, 800);
+}
+function checkAutosave(){
+  let raw = null; try{ raw = localStorage.getItem('hh_autosave'); }catch(e){}
+  if(!raw) return;
+  try{
+    const d = JSON.parse(raw);
+    if(confirm('Найден автосейв («'+(d.name||'?')+'»). Восстановить его?')){ applyMapObject(d); renderMap(); setStatus('восстановлено из автосейва'); }
+  }catch(e){}
+}
+function exportPng(){
+  if(!mapCanvas){ setStatus('нет карты'); return; }
+  const cv = renderFullMap();
+  const a = document.createElement('a');
+  a.href = cv.toDataURL('image/png');
+  a.download = (area.name||'map') + '.png'; a.click();
+  setStatus('PNG сохранён (вся карта ' + W + '×' + H + '): '+(area.name||'map')+'.png');
+}
+
+// --- ресайз боковых панелей (тяни разделитель) ---
+(function(){
+  const savedL = localStorage.getItem('hh_sidebar_w');
+  if(savedL) document.documentElement.style.setProperty('--tools-w', savedL + 'px');
+  const savedR = localStorage.getItem('hh_right_w');
+  if(savedR) document.documentElement.style.setProperty('--right-w', savedR + 'px');
+  let drag = null;
+  const start = (id, which) => {
+    const sp = document.getElementById(id); if(!sp) return;
+    sp.addEventListener('mousedown', (e)=>{
+      const target = which === 'L' ? document.getElementById('tools') : document.getElementById('right');
+      drag = { which, x:e.clientX, w0: target.getBoundingClientRect().width };
+      e.preventDefault();
+    });
+  };
+  start('split', 'L'); start('split2', 'R');
+  window.addEventListener('mousemove', (e)=>{
+    if(!drag) return;
+    if(drag.which === 'L'){
+      const w = Math.max(180, Math.min(720, drag.w0 + (e.clientX - drag.x)));
+      document.documentElement.style.setProperty('--tools-w', w + 'px');
+      localStorage.setItem('hh_sidebar_w', String(Math.round(w)));
+    } else {
+      const w = Math.max(220, Math.min(640, drag.w0 - (e.clientX - drag.x)));
+      document.documentElement.style.setProperty('--right-w', w + 'px');
+      localStorage.setItem('hh_right_w', String(Math.round(w)));
+    }
+  });
+  window.addEventListener('mouseup', ()=>{ if(drag){ drag = null; if(currentTab==='map'){ sizeViewport(); draw(); drawMinimap(); } } });
+})();
+
+// --- горячие клавиши: R поворот, Shift+R назад, H зеркало ⇄ (по id), G сетка ---
+window.addEventListener('keydown', (e)=>{
+  if(e.target && /input|select|textarea/i.test(e.target.tagName)) return;
+  if(currentTab !== 'map') return;             // на других вкладках горячие клавиши карты не работают
+  const k = (e.key||'').toLowerCase();
+  if((e.ctrlKey || e.metaKey) && k === 'c'){ if(selObjs.length) copyObjs(); else copySel(); return; }
+  if((e.ctrlKey || e.metaKey) && k === 'v'){ pasteSel(); return; }
+  if((e.ctrlKey || e.metaKey) && k === 'd'){ if(selObjs.length){ e.preventDefault(); duplicateSelObjs(); } return; }
+  if((e.ctrlKey || e.metaKey) && k === 's'){ e.preventDefault(); saveMap(); return; }
+  if((e.ctrlKey || e.metaKey) && k === 'z'){ e.preventDefault(); e.shiftKey ? redo() : undo(); return; }
+  if((e.ctrlKey || e.metaKey) && k === 'y'){ e.preventDefault(); redo(); return; }
+  if(e.ctrlKey || e.metaKey || e.altKey) return;   // дальше — одиночные клавиши
+  if(k === 'escape'){
+    if(pasteMode){ cancelPaste(); return; }
+    clearSel(); shapeStart = shapeEnd = null; selObjs = []; selObj = null; objBox = null; renderProps(); draw(); return;
+  }
+  if(k === 'delete' || k === 'backspace'){ if(selObjs.length){ e.preventDefault(); deleteSelObjs(); } return; }
+  if(k.indexOf('arrow') === 0 && selObjs.length){
+    e.preventDefault();
+    const step = e.shiftKey ? 5 : 1;
+    const dx = k === 'arrowleft' ? -step : k === 'arrowright' ? step : 0;
+    const dy = k === 'arrowup'   ? -step : k === 'arrowdown'  ? step : 0;
+    moveSelObjs(dx, dy); return;
+  }
+  if(k === 'b') setTool('paint');
+  else if(k === 'e') setTool('erase');
+  else if(k === 'f') setTool('fill');
+  else if(k === 'l') setTool('line');
+  else if(k === 'm') setTool('move');
+  else if(k === 'p') setTool('pick');
+  else if(k === 'h') mirrorBrush();
+  else if(k === 'g') toggleGrid();
+});
+
+showTab('map');
+ensureAssets();
+checkAutosave();
+</script>
+
+<script>
+// ===================== вкладка «Экипировка»: позиции предметов на персонаже и питомце =====================
+// Персонаж: оффсеты = массивы BodyAnimator.as (индекс = кадр предмета f - 1), сохранение пишет
+//   оба исходника (ffdec-client + tools/build/src) и опционально пересобирает клиент SWF.
+// Питомец: оффсеты = gamefs/dynamic_content/misc/pet_body_locations.xml (живой файл GameFS —
+//   пересборка не нужна, достаточно перезапустить клиент).
+const EQU = {
+  data: null, target: 'person',
+  slot: 'helmet', personItem: {},           // slot -> имя предмета
+  petType: null, petHelmet: 'pet none helmet', petShoe: 'none shoe',
+  frame: 0, zoom: 3, lastTs: 0,     // кадр всегда 0 (поза «standing»), анимации нет
+  canvas: null, ctx: null, atlasImg: null, atlas: {}, atlasNorm: {},
+  drag: null, hits: [], status: '',
+  sel: { person: null, pet: null },        // выбранная (обведённая) часть
+  showHits: true,                          // показывать хитбоксы всех частей
+  dirty: { person: false, pets: false },   // есть несохранённые правки (UI-флаг)
+  search: { item: '', helmet: '', shoe: '' },   // фильтры списков предметов
+  focusSearch: null,                            // какой поиск вернуть в фокус после перерисовки
+  swfMtime: null, statusTimer: 0,               // время сборки gamefs/MyGame.swf
+};
+const EQU_SLOT_LIST = [
+  ['helmet', 'Шлем'], ['shirt', 'Нагрудник (броня)'], ['pants', 'Штаны'], ['shoe', 'Обувь'],
+  ['weapon', 'Оружие 1'], ['weapon2', 'Оружие 2'], ['accessory', 'Аксессуар'],
+];
+// слот -> массивы BodyAnimator (для тяги/записи); левая/правая сторона раздельно
+// (правая живёт в armRX/armRY, legRX/legRY — правки 41/42 compile-client)
+const EQU_SLOT_ARR = {
+  helmet: ['helmetsX', 'helmetsY'], shirt: ['shirtX', 'shirtY'],
+  armL: ['armX', 'armY'],           armR: ['armRX', 'armRY'],
+  pantsL: ['legX', 'legY'],         pantsR: ['legRX', 'legRY'],
+  shoe: ['shoesX', 'shoesY'], weapon: ['weaponsX', 'weaponsY'], weapon2: ['weapons2X', 'weapons2Y'],
+  accessory: ['miscX', 'miscY'],
+};
+// какой слот определяет КАДР для стороны (рукава/штанины наследуют кадр брони/штанов)
+const EQU_SLOT_FRAME = { armL: 'shirt', armR: 'shirt', pantsL: 'pants', pantsR: 'pants' };
+
+function ensureEquip(){
+  if(EQU.data) return Promise.resolve(EQU.data);
+  const p1 = fetch('/editor/api/equip').then(r=>r.json());
+  const p2 = fetch('/dynamic_content/sprite_sheets/items_pets_bodies.xml').then(r=>r.text());
+  const p3 = new Promise(res=>{ const im=new Image(); im.onload=()=>res(im); im.onerror=()=>res(null); im.src='/dynamic_content/sprite_sheets/items_pets_bodies.png'; });
+  return Promise.all([p1, p2, p3]).then(([data, xml, img])=>{
+    EQU.data = data; EQU.atlasImg = img;
+    const re = /<SubTexture name="([^"]+)"([^>]*)\/>/g; let m;
+    while((m = re.exec(xml))){
+      const attrs = {}; const ar = /(\w+)="([^"]*)"/g; let a;
+      while((a = ar.exec(m[2]))) attrs[a[1]] = +a[2];
+      EQU.atlas[m[1]] = { x: attrs.x|0, y: attrs.y|0, w: attrs.width|0, h: attrs.height|0,
+        pivotX: attrs.pivotX || 0, pivotY: attrs.pivotY || 0 };
+      // 2-й этап: у питомцев ключ в pet_body_locations.xml без пробелов (babybounce), а спрайт
+      // в items_pets_bodies.xml с пробелами (baby bounce leg) — держим нормализованный индекс
+      const nk = equNorm(m[1]);
+      if(!EQU.atlasNorm[nk]) EQU.atlasNorm[nk] = EQU.atlas[m[1]];
+    }
+    EQU.personItem = { helmet: 'none', shirt: 'red shirt', pants: 'blue jeans', shoe: 'brown shoe',
+      weapon: 'none', weapon2: 'none', accessory: 'nothing' };
+    EQU.petType = Object.keys(data.pets)[0] || null;
+    return data;
+  });
+}
+
+// подписи частей (обводка/хитбоксы)
+const EQU_TITLES = {
+  shirt: 'туловище (броня)', armL: 'рукав (левый)', armR: 'рукав (правый)',
+  pantsL: 'штанина (левая)', pantsR: 'штанина (правая)', shoe: 'обувь', helmet: 'шлем',
+  weapon: 'оружие 1', weapon2: 'оружие 2', accessory: 'аксессуар',
+  petHelmet: 'шлем питомца', petShoe: 'обувь питомца',
+};
+
+function equSlotFrame(slot){
+  const list = (EQU.data.items[slot] || []);
+  const it = list.find(i => i.name === EQU.personItem[slot]);
+  return it ? it.frame : 1;
+}
+function equItemByFrame(slot, frame){
+  return (EQU.data.items[slot] || []).find(i => i.frame === frame);
+}
+// нормализация имени спрайта: без пробелов/подчёркиваний, нижний регистр
+function equNorm(s){ return String(s == null ? '' : s).replace(/[\s_]+/g, '').toLowerCase(); }
+function equTex(name){
+  if(name == null) return null;
+  // спрайты в items_pets_bodies.xml идут как "<имя>_00" (кадр 0, две цифры), иногда "_0"
+  if(EQU.atlas[name]) return EQU.atlas[name];
+  if(EQU.atlas[name + '_00']) return EQU.atlas[name + '_00'];
+  if(EQU.atlas[name + '_0']) return EQU.atlas[name + '_0'];
+  // 2-й этап: части питомца собираются как T+' leg'/' body'/' head' (babybounce leg), а спрайты
+  // в атласе — с пробелами (baby bounce leg) -> ищем по нормализованному имени
+  return EQU.atlasNorm[equNorm(name)] || null;
+}
+function equDraw(ctx, name, x, y, mirror, pivotless){
+  const t = equTex(name); if(!t || !EQU.atlasImg) return;
+  const px = pivotless ? 0 : t.pivotX, py = pivotless ? 0 : t.pivotY;
+  ctx.save();
+  if(mirror){ ctx.scale(-1, 1); x = -x; }
+  ctx.drawImage(EQU.atlasImg, t.x, t.y, t.w, t.h, x - px, y - py, t.w, t.h);
+  ctx.restore();
+}
+function equHit(slot, x, y, t){
+  if(!t) return;
+  EQU.hits.push({ slot, x: x - t.w / 2, y: y - t.h / 2, w: t.w, h: t.h });
+}
+
+// ---- рисование персонажа (геометрия BodyAnimator: addChild-порядок + конструктор) ----
+function equDrawPerson(ctx, f){
+  const D = EQU.data.person, M = D.matrices, O = D.offsets;
+  const at = (arr, i) => arr[i] || 0;
+  const Mx = (arr) => arr[f] || { a: 1, b: 0, c: 0, d: 1, tx: 0, ty: 0 };
+  const part = (m, fn) => { ctx.save(); ctx.transform(m.a, m.b, m.c, m.d, m.tx, m.ty); fn(); ctx.restore(); };
+  const hF = equSlotFrame('helmet'), sF = equSlotFrame('shirt'), pF = equSlotFrame('pants'),
+        shF = equSlotFrame('shoe'), wF = equSlotFrame('weapon'), w2F = equSlotFrame('weapon2'),
+        aF = equSlotFrame('accessory');
+  // 1) аксессуар
+  part(Mx(M.acc), ()=>{
+    if(aF > 1){
+      const x = at(O.miscX, aF-1), y = at(O.miscY, aF-1);
+      equDraw(ctx, EQU.personItem.accessory, x, y, false); equHit('accessory', x, y, equTex(EQU.personItem.accessory));
+    }
+  });
+  // 2) оружие 2 (правая рука) + правая кисть — СВОЯ пара weapons2X/Y (правка 43)
+  part(Mx(M.weapon2), ()=>{
+    equDraw(ctx, 'bare hand 1', 0, 38, false, true);
+    if(w2F > 1){
+      const x = at(O.weapons2X, w2F-1), y = at(O.weapons2Y, w2F-1);
+      equDraw(ctx, EQU.personItem.weapon2, x, y, false); equHit('weapon2', x, y, equTex(EQU.personItem.weapon2));
+    }
+  });
+  // 3-5) руки брони и штанины — ЛЕВАЯ и ПРАВАЯ сторона раздельно (armX/armY vs armRX/armRY,
+  //      legX/legY vs legRX/legRY), пивот атласа как в клиенте (BodyAnimator:1428-1436, 1496-1505)
+  part(Mx(M.rightArm), ()=>{
+    if(sF > 1){
+      const x = at(O.armRX, sF-1), y = at(O.armRY, sF-1);
+      equDraw(ctx, EQU.personItem.shirt + ' arm', x, y, false); equHit('armR', x, y, equTex(EQU.personItem.shirt + ' arm'));
+    }
+  });
+  part(Mx(M.rightLeg), ()=>{
+    if(shF > 1){
+      const x = at(O.shoesX, shF-1), y = at(O.shoesY, shF-1);
+      equDraw(ctx, EQU.personItem.shoe, x, y, false); equHit('shoe', x, y, equTex(EQU.personItem.shoe));
+    }
+    if(pF > 1){
+      const x = at(O.legRX, pF-1), y = at(O.legRY, pF-1);
+      // без зеркала: клиент рисует обе ноги одним текстуром без scaleX=-1
+      equDraw(ctx, EQU.personItem.pants, x, y, false); equHit('pantsR', x, y, equTex(EQU.personItem.pants));
+    } else equDraw(ctx, EQU.personItem.pants, -3, -13, false, true);
+  });
+  part(Mx(M.leftLeg), ()=>{
+    if(shF > 1) equDraw(ctx, EQU.personItem.shoe, at(O.shoesX, shF-1), at(O.shoesY, shF-1), false);
+    if(pF > 1){
+      const x = at(O.legX, pF-1), y = at(O.legY, pF-1);
+      equDraw(ctx, EQU.personItem.pants, x, y, false); equHit('pantsL', x, y, equTex(EQU.personItem.pants));
+    } else equDraw(ctx, EQU.personItem.pants, -3, -13, false, true);
+  });
+  // 6) нагрудник
+  part(Mx(M.body), ()=>{
+    const x = at(O.shirtX, sF-1), y = at(O.shirtY, sF-1);
+    equDraw(ctx, EQU.personItem.shirt, x, y, false); equHit('shirt', x, y, equTex(EQU.personItem.shirt));
+  });
+  // 7) голова: голова -> шлем (под волосами, addChildAt numChildren-1) -> глаза/волосы
+  part(Mx(M.head), ()=>{
+    equDraw(ctx, 'male head 1', -14, -13, false, true);
+    if(hF > 1){
+      const x = at(O.helmetsX, hF-1), y = at(O.helmetsY, hF-1);
+      equDraw(ctx, EQU.personItem.helmet, x, y, false); equHit('helmet', x, y, equTex(EQU.personItem.helmet));
+    }
+    equDraw(ctx, 'eyes 1', -3, -5, false, true);
+    equDraw(ctx, 'hair 1', -34, -45, false, true);
+  });
+  // 9) левая рука брони — armX/armY с пивотом (правая — armRX/armRY выше)
+  part(Mx(M.leftArm), ()=>{
+    if(sF > 1){
+      const x = at(O.armX, sF-1), y = at(O.armY, sF-1);
+      equDraw(ctx, EQU.personItem.shirt + ' arm', x, y, false); equHit('armL', x, y, equTex(EQU.personItem.shirt + ' arm'));
+    }
+  });
+  // 10) оружие 1 + левая кисть
+  part(Mx(M.weapon1), ()=>{
+    if(wF > 1){
+      const x = at(O.weaponsX, wF-1), y = at(O.weaponsY, wF-1);
+      equDraw(ctx, EQU.personItem.weapon, x, y, false); equHit('weapon', x, y, equTex(EQU.personItem.weapon));
+    }
+    equDraw(ctx, 'bare hand 1', 0, 38, false, true);
+  });
+}
+
+// ---- рисование питомца (формулы Pet.as updateFrame) ----
+function equDrawPet(ctx, f){
+  const P = EQU.data.pets[EQU.petType]; if(!P) return;
+  const T = EQU.petType;
+  const at = (arr, i) => (arr && arr[i] != null) ? arr[i] : 0;
+  const hx = at(P.headX, f), hy = at(P.headY, f);
+  const leg = (lx, ly, lr, shoeMirror) => {
+    ctx.save(); ctx.translate(lx, ly); ctx.rotate(lr * Math.PI / 180);
+    const sF = equSlotFrame('shoe');    // обувь питомца = кадр из shoeStats
+    if(sF > 1){
+      const x = (P.shoePlaceX|0) + 7, y = (P.shoePlaceY|0) - 3;
+      equDraw(ctx, EQU.petShoe, x, y, shoeMirror); equHit('petShoe', x, y, equTex(EQU.petShoe));
+    }
+    // пивот из атласа обязателен: Pet.as:749-752 ставит pivot у leg/head/body,
+    // без него части съезжают (туловище ниже ног)
+    equDraw(ctx, T + ' leg', 0, 0, false);
+    ctx.restore();
+  };
+  leg(at(P.rightLegX, f), at(P.rightLegY, f), at(P.rightLegRotation, f), true);
+  if((P.bodyX || []).length > 1){
+    ctx.save();
+    ctx.translate(at(P.bodyX, f), at(P.bodyY, f));
+    ctx.scale(at(P.bodyScaleX, f) || 1, at(P.bodyScaleY, f) || 1);
+    equDraw(ctx, T + ' body', 0, 0, false);
+    ctx.restore();
+  } else equDraw(ctx, T + ' body', 0, 0, false);
+  leg(at(P.leftLegX, f), at(P.leftLegY, f), at(P.leftLegRotation, f), false);
+  equDraw(ctx, T + ' head', hx, hy, false);
+  const hF = equSlotFrame('petHelmet');
+  const ho = EQU.data.petHelmetOffsets || { x: [], y: [] };
+  const fx = ho.x[hF-1] || 0, fy = ho.y[hF-1] || 0;
+  const hlx = hx + (P.helmetOffsetX|0) + fx + 2, hly = hy + (P.helmetOffsetY|0) + fy - 2;
+  ctx.save(); ctx.translate(hlx, hly); ctx.scale(P.helmetScale || 1, P.helmetScale || 1); ctx.translate(-hlx, -hly);
+  equDraw(ctx, EQU.petHelmet, hlx, hly, false);
+  ctx.restore();
+  equHit('petHelmet', hlx, hly, equTex(EQU.petHelmet));
+}
+
+function equDrawFrame(){
+  const cv = EQU.canvas, ctx = EQU.ctx; if(!cv) return;
+  const W = cv.width, H = cv.height, z = EQU.zoom;
+  ctx.setTransform(1, 0, 0, 1, 0, 0);
+  ctx.fillStyle = '#20242c'; ctx.fillRect(0, 0, W, H);
+  ctx.strokeStyle = '#2c313c'; ctx.beginPath();
+  ctx.moveTo(W/2, 0); ctx.lineTo(W/2, H); ctx.moveTo(0, H*0.78); ctx.lineTo(W, H*0.78);
+  ctx.stroke();
+  EQU.hits = [];
+  ctx.setTransform(z, 0, 0, z, W/2, H*0.62);
+  ctx.imageSmoothingEnabled = false;
+  if(EQU.target === 'person') equDrawPerson(ctx, EQU.frame % (EQU.data.person.matrices.head.length || 1));
+  else equDrawPet(ctx, EQU.frame % (((EQU.data.pets[EQU.petType]||{}).headX || [0]).length || 1));
+  ctx.setTransform(1, 0, 0, 1, 0, 0);
+  // обводки: выбранная часть — яркий пунктир, остальные — условные хитбоксы (как в редакторах)
+  const selSlot = EQU.sel[EQU.target];
+  ctx.font = '10px sans-serif';
+  for(const h of EQU.hits){
+    const isSel = h.slot === selSlot;
+    if(!isSel && !EQU.showHits) continue;
+    const x = W/2 + z*h.x, y = H*0.62 + z*h.y, w = z*h.w, hh = z*h.h;
+    ctx.strokeStyle = isSel ? '#ff9d2e' : 'rgba(120,200,255,0.30)';
+    ctx.lineWidth = isSel ? 2 : 1;
+    if(isSel) ctx.setLineDash([5, 3]);
+    ctx.strokeRect(x, y, w, hh);
+    ctx.setLineDash([]);
+    ctx.fillStyle = isSel ? '#ff9d2e' : 'rgba(150,210,255,0.55)';
+    ctx.fillText((EQU_TITLES[h.slot] || h.slot) + (isSel ? ' — тащите мышью / стрелками' : ''), x, Math.max(10, y - 4));
+  }
+}
+
+function equTick(ts){
+  if(currentTab === 'equip' && EQU.canvas){
+    // анимации нет: редактор всегда стоит на кадре 0 (позе "standing")
+    equDrawFrame();
+  }
+  requestAnimationFrame && requestAnimationFrame(equTick);
+}
+requestAnimationFrame && requestAnimationFrame(equTick);
+
+function renderEquip(){
+  ensureEquip().then(()=>{ buildEquipPanel(); buildEquipStage(); });
+}
+
+function buildEquipPanel(){
+  const tools = document.getElementById('tools');
+  const d = EQU.data;
+  const esc = (s) => String(s).replace(/"/g, '&quot;');
+  const eq = (v, s) => (v + '').toLowerCase().includes(s.toLowerCase());
+  // списки уже отсортированы по алфавиту в equip-data.mjs; здесь ещё и фильтр поиска
+  const filtered = (list, q) => (list || []).filter(i => !q || eq(i.name, q) || String(i.frame) === q);
+  const opts = (list, sel, q) => filtered(list, q)
+    .map(i => `<option value="${esc(i.name)}" ${i.name===sel?'selected':''}>${esc(i.label || i.name)} (f=${i.frame})</option>`).join('');
+  const slotOpts = EQU_SLOT_LIST.map(([k, n]) => `<option value="${k}" ${k===EQU.slot?'selected':''}>${n}</option>`).join('');
+  const petOpts = Object.keys(d.pets).map(t => `<option value="${t}" ${t===EQU.petType?'selected':''}>${t}</option>`).join('');
+  const it = equItemByFrame(EQU.slot, equSlotFrame(EQU.slot)) || {};
+  const searchBox = (key, ph) =>
+    `<div class="row"><input id="equSearch_${key}" type="text" value="${esc(EQU.search[key])}" placeholder="${ph}"
+       oninput="EQU.search['${key}']=this.value;EQU.focusSearch='${key}';buildEquipPanel()"></div>`;
+  tools.innerHTML = `
+    <h2>Цель</h2>
+    <div class="btnrow">
+      <button class="${EQU.target==='person'?'on':''}" onclick="EQU.target='person';buildEquipPanel()">Персонаж</button>
+      <button class="${EQU.target==='pet'?'on':''}" onclick="EQU.target='pet';buildEquipPanel()">Питомец</button>
+    </div>
+    ${EQU.target === 'person' ? `
+    <h2>Слот</h2>
+    <select onchange="EQU.slot=this.value;buildEquipPanel()">${slotOpts}</select>
+    <h2>Предмет (${(d.items[EQU.slot]||[]).length} шт.)</h2>
+    <div class="gridmeta">${EQU.slot==='weapon' ? 'two handed YES: мечи, палочки, автоматы, луки (двуручные, первичная рука)' : (EQU.slot==='weapon2' ? 'two handed NO + щиты; «(secondary)» = позиция во вторичной руке (weapons2X/Y)' : '')}</div>
+    ${searchBox('item', 'поиск по имени или кадру…')}
+    <select size="8" style="max-height:170px" onchange="EQU.personItem[EQU.slot]=this.value;buildEquipPanel()">${opts(d.items[EQU.slot], EQU.personItem[EQU.slot], EQU.search.item)}</select>
+    <div class="gridmeta">Кадр <b>${it.frame||'?'}</b> = индекс <b>${(EQU_SLOT_ARR[EQU.slot]||[])[0]||''}[${(it.frame||1)-1}]</b>. Тяни мышью: туловище, каждый рукав и каждая штанина двигаются ОТДЕЛЬНО (левые/правые — независимые массивы). Стрелки — 1 px (Shift — 5).</div>` : `
+    <h2>Тип питомца (${Object.keys(d.pets).length})</h2>
+    <select onchange="EQU.petType=this.value;buildEquipPanel()">${petOpts}</select>
+    <h2>Пет-шлем (${(d.items.petHelmet||[]).length})</h2>
+    ${searchBox('helmet', 'поиск по имени или кадру…')}
+    <select size="6" style="max-height:120px" onchange="EQU.petHelmet=this.value;buildEquipPanel()">${opts(d.items.petHelmet, EQU.petHelmet, EQU.search.helmet)}</select>
+    <h2>Обувь (${(d.items.petShoe||[]).length})</h2>
+    ${searchBox('shoe', 'поиск по имени или кадру…')}
+    <select size="6" style="max-height:120px" onchange="EQU.petShoe=this.value;buildEquipPanel()">${opts(d.items.petShoe, EQU.petShoe, EQU.search.shoe)}</select>
+    <label>helmetScale: <b id="equScaleVal">${(d.pets[EQU.petType]||{}).helmetScale||1}</b></label>
+    <input type="range" min="20" max="200" value="${Math.round(((d.pets[EQU.petType]||{}).helmetScale||1)*100)}"
+      oninput="EQU.data.pets[EQU.petType].helmetScale=this.value/100;document.getElementById('equScaleVal').textContent=this.value/100;EQU.dirty.pets=true">
+    <div class="gridmeta">Тяни шлем/обувь мышью; стрелки — 1 px (Shift — 5). Правки — в живую XML, пересборка клиента не нужна.</div>`}
+    <h2>Части (клик = выбрать для движения)</h2>
+    ${EQU.target === 'person' ? `
+    <div class="btnrow"><button class="${EQU.sel.person==='helmet'?'on':''}" onclick="equPick('helmet')">Шлем</button>
+      <button class="${EQU.sel.person==='accessory'?'on':''}" onclick="equPick('accessory')">Аксессуар</button></div>
+    <div class="btnrow"><button class="${EQU.sel.person==='armL'?'on':''}" onclick="equPick('armL')">Левая рука</button>
+      <button class="${EQU.sel.person==='shirt'?'on':''}" onclick="equPick('shirt')">Туловище</button>
+      <button class="${EQU.sel.person==='armR'?'on':''}" onclick="equPick('armR')">Правая рука</button></div>
+    <div class="btnrow"><button class="${EQU.sel.person==='pantsL'?'on':''}" onclick="equPick('pantsL')">Левая штанина</button>
+      <button class="${EQU.sel.person==='pantsR'?'on':''}" onclick="equPick('pantsR')">Правая штанина</button></div>
+    <div class="btnrow"><button class="${EQU.sel.person==='shoe'?'on':''}" onclick="equPick('shoe')">Обувь</button>
+      <button class="${EQU.sel.person==='weapon'?'on':''}" onclick="equPick('weapon')">Оружие 1</button>
+      <button class="${EQU.sel.person==='weapon2'?'on':''}" onclick="equPick('weapon2')">Оружие 2</button></div>` : `
+    <div class="btnrow"><button class="${EQU.sel.pet==='petHelmet'?'on':''}" onclick="equPick('petHelmet')">Шлем</button>
+      <button class="${EQU.sel.pet==='petShoe'?'on':''}" onclick="equPick('petShoe')">Обувь</button></div>`}
+    <div class="gridmeta">Выбрано: <b>${EQU.sel[EQU.target] ? (EQU_TITLES[EQU.sel[EQU.target]] || EQU.sel[EQU.target]) : 'ничего'}</b> — тащите мышью на канвасе или стрелками.</div>
+    <label>Зум: <b>${EQU.zoom}x</b></label>
+    <input type="range" min="1" max="6" value="${EQU.zoom}" style="width:100%" oninput="EQU.zoom=+this.value">
+    <h2>Сохранение</h2>
+    <div class="btnrow">
+      <button onclick="equSave(false)">💾 Сохранить</button>
+      ${EQU.target === 'person' ? '<button onclick="equSave(true)">💾🔧 Сохранить + пересобрать SWF</button>' : ''}
+    </div>
+    <span class="tag" id="equSwfStatus">SWF: …</span>
+    <div class="gridmeta">${EQU.target === 'person'
+      ? 'Персонаж: правки пишутся в BodyAnimator.as (ffdec-client + build/src). Без пересборки SWF в игре не видны.'
+      : 'Питомец: правки пишутся в gamefs/dynamic_content/misc/pet_body_locations.xml — видны после перезапуска клиента.'}</div>
+    <div class="gridmeta">После пересборки: перезапустите клиента (deploy\\stop.cmd → start.cmd); при застарелом кэше — <b>start.ps1 -ClearCache</b>.</div>
+    <span class="tag" id="equStatus">${EQU.status}</span>`;
+  const inp = EQU.focusSearch && document.getElementById('equSearch_' + EQU.focusSearch);
+  if(inp){ inp.focus(); try { inp.setSelectionRange(inp.value.length, inp.value.length); } catch {} }
+  EQU.focusSearch = null;
+  equPollStatus();
+}
+
+// лёгкий статус: время сборки SWF + хвост лога пересборки (опрос раз в 5 с)
+function equPollStatus(){
+  fetch('/editor/api/equip-status').then(r=>r.json()).then(j=>{
+    EQU.swfMtime = j.swfMtime;
+    const el = document.getElementById('equSwfStatus');
+    if(!el) return;
+    const t = j.swfMtime ? new Date(j.swfMtime).toLocaleTimeString() : 'нет';
+    el.textContent = 'SWF собран: ' + t + (j.logTail && /ошиб|error|throw|Exception/i.test(j.logTail) ? ' — в логе пересборки есть ошибки!' : '');
+    el.title = j.logTail ? ('лог tools/rebuild-client.log (хвост):\n' + j.logTail) : 'лог пересборки ещё не создавался';
+  }).catch(()=>{});
+  setTimeout(()=>{ if(currentTab === 'equip') equPollStatus(); }, 5000);
+}
+
+// выбор части кнопкой: слот -> родительский предмет для дропдауна + перерисовка обводки
+function equPick(slot){
+  EQU.sel[EQU.target] = slot;
+  if(EQU.target === 'person'){
+    const fs = EQU_SLOT_FRAME[slot] || slot;
+    if(EQU_SLOT_LIST.some(l => l[0] === fs)) EQU.slot = fs;
+  }
+  buildEquipPanel();
+}
+
+function buildEquipStage(){
+  const stage = document.getElementById('stage');
+  stage.innerHTML = '<canvas id="equCanvas" width="900" height="620" class="nogrid" style="width:100%;height:100%"></canvas>';
+  EQU.canvas = document.getElementById('equCanvas');
+  EQU.ctx = EQU.canvas.getContext('2d');
+  const coords = (e)=>{
+    const r = EQU.canvas.getBoundingClientRect();
+    const z = EQU.zoom * (EQU.canvas.width / r.width);
+    const cx = EQU.canvas.width/2, cy = EQU.canvas.height*0.62;
+    return { wx: ((e.clientX - r.left) * (EQU.canvas.width / r.width) - cx) / z,
+             wy: ((e.clientY - r.top) * (EQU.canvas.height / r.height) - cy) / z };
+  };
+  EQU.canvas.onmousedown = (e)=>{
+    const { wx, wy } = coords(e);
+    let best = null;
+    for(const h of EQU.hits)
+      if(wx >= h.x && wx <= h.x + h.w && wy >= h.y && wy <= h.y + h.h) best = h;
+    if(best){
+      EQU.drag = { slot: best.slot, lastX: wx, lastY: wy };
+      EQU.sel[EQU.target] = best.slot;                 // клик = выбрать часть (обводка)
+      if(EQU.target === 'person'){
+        // дропдаун предмета показывает родительский слот (штанина -> штаны, рукав -> броня)
+        const fs = EQU_SLOT_FRAME[best.slot] || best.slot;
+        if(EQU.slot !== fs && EQU_SLOT_LIST.some(l => l[0] === fs)){ EQU.slot = fs; buildEquipPanel(); }
+      }
+    }
+  };
+  EQU.canvas.onmousemove = (e)=>{
+    if(!EQU.drag) return;
+    const { wx, wy } = coords(e);
+    const dx = wx - EQU.drag.lastX, dy = wy - EQU.drag.lastY;
+    EQU.drag.lastX = wx; EQU.drag.lastY = wy;
+    equNudge(EQU.drag.slot, dx, dy);
+  };
+  window.addEventListener('mouseup', ()=>{ EQU.drag = null; });
+}
+
+// сдвиг предмета слота: питомец — скаляры XML; персонаж — ячейки массивов по кадру предмета
+function equNudge(slot, dx, dy){
+  const rdx = Math.round(dx), rdy = Math.round(dy);
+  if(!rdx && !rdy) return;
+  if(EQU.target === 'pet'){
+    const P = EQU.data.pets[EQU.petType]; if(!P) return;
+    if(slot === 'petHelmet'){ if(/none/.test(EQU.petHelmet)) return; P.helmetOffsetX = (P.helmetOffsetX|0) + rdx; P.helmetOffsetY = (P.helmetOffsetY|0) + rdy; EQU.dirty.pets = true; }
+    else if(slot === 'petShoe'){ if(/none/.test(EQU.petShoe)) return; P.shoePlaceX = (P.shoePlaceX|0) + rdx; P.shoePlaceY = (P.shoePlaceY|0) + rdy; EQU.dirty.pets = true; }
+  } else {
+    const arr = EQU_SLOT_ARR[slot]; if(!arr) return;
+    const frameSlot = EQU_SLOT_FRAME[slot] || slot;   // рукава/штанины наследуют кадр брони/штанов
+    // «пустые» предметы не двигаем (none/nothing, оружие-кадр 4); blue jeans с f=1 — валидна:
+    // индекс 0 массива это настоящая позиция
+    const nm = EQU.personItem[frameSlot];
+    if(!nm || nm === 'none' || nm === 'nothing') return;
+    const frame = equSlotFrame(frameSlot);
+    const O = EQU.data.person.offsets;
+    if(O[arr[0]][frame-1] == null) return;
+    // каждая часть двигается независимо: туловище (shirtX/Y), рукав L/R (armX/Y vs armRX/RY),
+    // штанина L/R (legX/Y vs legRX/RY) — правая сторона живёт в отдельных массивах (правки 41/42)
+    O[arr[0]][frame-1] += rdx; O[arr[1]][frame-1] += rdy;
+    EQU.dirty.person = true;
+  }
+  equDrawFrame();
+}
+
+// стрелки: двигают ВЫБРАННУЮ часть (клик по ней на канвасе)
+window.addEventListener('keydown', (e)=>{
+  if(currentTab !== 'equip' || !EQU.canvas) return;
+  if(e.target && /input|select|textarea/i.test(e.target.tagName)) return;
+  const step = e.shiftKey ? 5 : 1;
+  const slot = EQU.sel[EQU.target];
+  const map = { ArrowLeft: [-step, 0], ArrowRight: [step, 0], ArrowUp: [0, -step], ArrowDown: [0, step] };
+  if(map[e.key] && slot){ e.preventDefault(); equNudge(slot, map[e.key][0], map[e.key][1]); }
+});
+
+function equSave(rebuild){
+  const body = {};
+  if(EQU.target === 'person') body.person = EQU.data.person.offsets;
+  else body.pets = { [EQU.petType]: {
+    helmetOffsetX: EQU.data.pets[EQU.petType].helmetOffsetX|0, helmetOffsetY: EQU.data.pets[EQU.petType].helmetOffsetY|0,
+    helmetScale: EQU.data.pets[EQU.petType].helmetScale, shoePlaceX: EQU.data.pets[EQU.petType].shoePlaceX|0,
+    shoePlaceY: EQU.data.pets[EQU.petType].shoePlaceY|0 } };
+  body.rebuild = !!rebuild;
+  EQU.status = 'сохранение...'; buildEquipPanel();
+  fetch('/editor/api/equip', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
+    .then(r => r.json()).then(j => {
+      EQU.status = j.ok ? (j.rebuilding ? 'сохранено; клиент пересобирается — дождитесь конца сборки и перезапустите клиента' : 'сохранено') : 'ошибка';
+      if(j.ok){ EQU.dirty.person = false; EQU.dirty.pets = false; }
+      buildEquipPanel();
+    }).catch(e => { EQU.status = 'ошибка: ' + e.message; buildEquipPanel(); });
+}
+</script>
+</body>
+</html>
+
+
