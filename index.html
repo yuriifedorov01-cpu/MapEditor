@@ -600,17 +600,12 @@ function renderObjectsTab(){
   stage.innerHTML = `<div class="tabpanel">
     <h2>Настройка: торговцы (НПС)</h2>
     <div id="shopList"></div>
-    <button class="primary" onclick="addShop()">+ продавец</button>
-    <button onclick="addShopNamed('Ticket Vendor')">+ Ticket Vendor (300 000 за тикет)</button>
     <div class="gridmeta">Ставится инструментом «🧑 НПС-торговец» на вкладке «Карта». Цена 0 = цена предмета из игры; питомцы берутся из игры целиком. Объекты грузятся вместе с картой (не при подходе игрока).</div>
     <h2>Настройка: телепорты (порталы)</h2>
     <div id="portalList"></div>
-    <button class="primary" onclick="addPortal()">+ портал</button>
     <div class="gridmeta">x, y, №, <b>арена</b> (map_2 — переход на другую карту; пусто — этот же map), <b>№ портала цели</b> (0 — по умолчанию). Ставится инструментом «🌀 Портал».</div>
     <h2>Настройка: спавнеры (спавны врагов)</h2>
     <div id="spawnList"></div>
-    <button onclick="addSpawnRow()">+ спавн врага</button>
-    <div class="gridmeta">🚩 Спавн игрока — инструментом «Спавн игрока» на вкладке «Карта», один на карту.</div>
   </div>`;
   renderPortalList(); renderSpawnList();
   ensureNpcCatalog().then(() => renderShopList());
