@@ -8,6 +8,7 @@ import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
 import { spawn, spawnSync } from 'node:child_process';
+import zlib from 'node:zlib';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
@@ -37,11 +38,42 @@ http.createServer(async (req, res) => {
   const TOOLS = path.join(ROOT, '..', 'tools');
   if (url === '/editor/api/equip-status') {
     try {
-      let swfMtime = null;
-      try { swfMtime = fs.statSync(path.join(ROOT, '..', 'gamefs', 'MyGame.swf')).mtime.toISOString(); } catch {}
+      const swfPath = path.join(ROOT, '..', 'gamefs', 'MyGame.swf');
+      let swfMtime = null, swfSize = 0, swfOk = false, swfCheck = 'файла нет';
+      try {
+        const st = fs.statSync(swfPath);
+        swfMtime = st.mtime.toISOString();
+        swfSize = st.size;
+        const b = fs.readFileSync(swfPath);
+        const sig = b.toString('latin1', 0, 3);
+        let body = null;
+        if (sig === 'FWS' || sig === 'CWS') body = sig === 'CWS' ? zlib.inflateSync(b.slice(8)) : b.slice(8);
+        const s = body ? body.toString('latin1') : '';
+        const hasLocal = s.includes('127.0.0.1:8080');
+        const hasPub = s.includes('github.io');
+        const hasPet = s.includes('pet_body_locations');
+        swfOk = !!body && hasLocal && !hasPub && hasPet;
+        swfCheck = sig + ' · ' + (b.length / 1048576).toFixed(1) + ' МБ · ассеты → ' +
+          (hasLocal ? '127.0.0.1:8080' : (hasPub ? 'github.io (публичная сборка!)' : 'НЕ найдены')) +
+          (hasPet ? '' : ' · НЕТ pet_body_locations');
+      } catch (e) { swfCheck = 'ошибка чтения: ' + e.message; }
       let logTail = '';
       try { logTail = fs.readFileSync(path.join(TOOLS, 'rebuild-client.log'), 'utf8').slice(-3000); } catch {}
-      return send(res, 200, JSON.stringify({ swfMtime, logTail }), MIME['.json']);
+      let prog = null;
+      try { prog = JSON.parse(fs.readFileSync(path.join(TOOLS, 'rebuild-progress.json'), 'utf8').replace(/^\uFEFF/, '')); } catch {}
+      const stale = !!(prog && prog.running && prog.at && (Date.now() - prog.at) > 120000);
+      const rebuilding = !!(prog && prog.running) && !stale;
+      // «сборка только что завершилась» — подсказку про перезапуск клиента показываем 2 минуты
+      const done = !!(prog && prog.ok === true) && !!(prog.at && (Date.now() - prog.at) < 120000);
+      const error = prog && prog.ok === false ? (prog.error || 'сборка упала') : null;
+      // прогресс: во время сборки — реальный, после ошибки — застывший, в покое — 100% если SWF валиден
+      const percent = rebuilding ? (prog.percent | 0) : (error ? (prog.percent | 0) : (swfOk ? 100 : 0));
+      return send(res, 200, JSON.stringify({
+        swfMtime, swfSize, swfOk, swfCheck,
+        rebuilding, stale,
+        step: prog ? prog.step : null, totalSteps: prog ? prog.total : null,
+        stepName: prog ? prog.name : null, percent, done, error, logTail,
+      }), MIME['.json']);
     } catch (e) { return send(res, 500, 'equip-status error: ' + e.message); }
   }
   if (url === '/editor/api/equip') {
@@ -76,7 +108,9 @@ http.createServer(async (req, res) => {
               'System32', 'WindowsPowerShell', 'v1.0', 'powershell.exe');
             const args = ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-Command',
               `& '${path.join(TOOLS, 'rebuild-client-swf.ps1')}' -Force *> '${path.join(TOOLS, 'rebuild-client.log')}'`];
-            spawn(psExe, args, { cwd: TOOLS, detached: true, stdio: 'ignore', windowsHide: true }).unref();
+            // ВАЖНО: detached:true на Windows заставляет powershell.exe молча ничего не делать
+            // (проверено: ни лог, ни прогресс не появляются) — пересборка «не срабатывала».
+            spawn(psExe, args, { cwd: TOOLS, stdio: 'ignore', windowsHide: true }).unref();
             rebuilding = true;
           }
           return send(res, 200, JSON.stringify({ ok: true, saved, rebuilding }), MIME['.json']);
