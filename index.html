@@ -529,6 +529,12 @@ function pickZone(key){
 }
 function pickSet(setName){
   const s = TILE_INDEX.find(x => x.set === setName); if(!s) return;
+  // наборы «Trees»/«Fish» — объекты игры (свой атлас), а НЕ тайлы карты: тему карты не трогаем
+  if(s.kind === 'tree' || s.kind === 'fish'){
+    setStatus('набор «' + setName + '» (' + (s.kind === 'tree' ? 'деревья' : 'рыбы') + ') — пока только просмотр: ' +
+      'размещение появится вместе с правками игры. Тайлы и тема карты НЕ меняются.');
+    return;
+  }
   if(s.kind === 'fg'){ SEL_FG = setName; localStorage.setItem('hh_set_fg', SEL_FG); palSet = 'fg'; layer = 'fg'; }
   else { SEL_MAIN = setName; localStorage.setItem('hh_set_main', SEL_MAIN); palSet = 'main'; if(layer === 'fg') layer = 'main'; }
   renderMap();
