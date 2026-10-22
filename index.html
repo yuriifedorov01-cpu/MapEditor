@@ -2353,7 +2353,9 @@ const EQU = {
   swfMtime: null, statusTimer: 0,               // время сборки gamefs/MyGame.swf
   swf: null,                                    // последний ответ /editor/api/equip-status
   rebuilding: false,                            // идёт ли пересборка SWF прямо сейчас
-  publish: (function(){ try { return localStorage.getItem('equPublish') !== '0'; } catch(e){ return true; } })(), // публиковать в hht-client
+  // Публикация в hht-client по умолчанию ВЫКЛЮЧЕНА: каждый push = сборка GitHub Pages (~1 мин),
+  // и при частых сохранениях сборки копятся/отменяют друг друга. Включается галочкой (localStorage).
+  publish: (function(){ try { return localStorage.getItem('equPublish') === '1'; } catch(e){ return false; } })(),
 };
 const EQU_SLOT_LIST = [
   ['helmet', 'Шлем'], ['shirt', 'Нагрудник (броня)'], ['pants', 'Штаны'], ['shoe', 'Обувь'],
@@ -2669,7 +2671,7 @@ function buildEquipPanel(){
     <label style="display:flex;gap:6px;align-items:center;font-size:12px;margin-top:6px">
       <input type="checkbox" ${EQU.publish ? 'checked' : ''}
         onchange="EQU.publish=this.checked;try{localStorage.setItem('equPublish',this.checked?'1':'0')}catch(e){}">
-      публиковать в hht-client после сохранения
+      публиковать в hht-client после сохранения <span class="gridmeta" style="display:inline">(каждый push = сборка GitHub Pages ~1 мин)</span>
     </label>
     <div class="swfbar" id="equSwfBar">
       <div class="swfbar-top"><span id="equSwfStatus">SWF: …</span><b id="equSwfPct"></b></div>
@@ -2844,7 +2846,9 @@ function equSave(rebuild, publish){
     .then(r => r.json()).then(j => {
       if(j.ok){
         EQU.dirty.person = false; EQU.dirty.pets = false;
-        EQU.status = (j.rebuilding || j.publishing)
+        EQU.rebuilding = !!(j.busy || j.rebuilding || j.publishing);
+        if(j.busy) EQU.status = 'сохранено, но сборка/публикация уже идёт — дождитесь её конца и нажмите «Сохранить» ещё раз';
+        else EQU.status = (j.rebuilding || j.publishing)
           ? 'сохранено; идёт ' + (j.publishing ? (j.rebuilding ? 'пересборка + публикация в hht-client' : 'публикация в hht-client') : 'пересборка SWF') + ' — смотрите полосу прогресса ниже'
           : 'сохранено в gamefs/pet_body_locations.xml — перезапустите клиент, чтобы увидеть';
       } else { EQU.rebuilding = false; EQU.status = 'ошибка'; }

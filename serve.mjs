@@ -105,8 +105,15 @@ http.createServer(async (req, res) => {
           if (body.petHelmetOffsets) { mod.writePetHelmetOffsets(body.petHelmetOffsets.x, body.petHelmetOffsets.y); saved.petHelmetOffsets = true; }
           // Пересборка и/или публикация в hht-client. Публикация должна идти ПОСЛЕ пересборки,
           // поэтому при обоих флагах запускаем один процесс: rebuild-client-swf.ps1 -Publish.
+          // Защита от перекрытия: если сборка/публикация уже идёт, вторую НЕ запускаем — иначе
+          // пуши идут подряд, GitHub Pages отменяет деплои («бесконечный deploy»).
+          let busy = false;
+          try {
+            const p = JSON.parse(fs.readFileSync(path.join(TOOLS, 'rebuild-progress.json'), 'utf8').replace(/^\uFEFF/, ''));
+            busy = !!p.running && !(p.at && Date.now() - p.at > 120000);
+          } catch {}
           let rebuilding = false, publishing = false;
-          if ((body.rebuild || body.publish) && process.platform === 'win32') {
+          if ((body.rebuild || body.publish) && process.platform === 'win32' && !busy) {
             const psExe = path.join(process.env.SystemRoot || 'C:\\Windows',
               'System32', 'WindowsPowerShell', 'v1.0', 'powershell.exe');
             const log = path.join(TOOLS, 'rebuild-client.log');
@@ -120,7 +127,7 @@ http.createServer(async (req, res) => {
             rebuilding = !!body.rebuild;
             publishing = true;
           }
-          return send(res, 200, JSON.stringify({ ok: true, saved, rebuilding, publishing }), MIME['.json']);
+          return send(res, 200, JSON.stringify({ ok: true, saved, rebuilding, publishing, busy }), MIME['.json']);
         } catch (e) { return send(res, 500, 'equip error: ' + e.message); }
       });
       return;
