@@ -341,5 +341,12 @@
   "cols": 4,
   "rows": 4,
   "count": 15
+ },
+ {
+  "set": "Trees",
+  "kind": "tree",
+  "cols": 7,
+  "rows": 2,
+  "count": 14
  }
 ]

@@ -1,0 +1,135 @@
+{
+ "cell": 165,
+ "cols": 7,
+ "rows": 2,
+ "sprite": "Trees.png",
+ "tiles": [
+  {
+   "id": 0,
+   "file": "tile_0.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 236,
+   "h": 320,
+   "name": "pine tree"
+  },
+  {
+   "id": 1,
+   "file": "tile_1.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 264,
+   "h": 258,
+   "name": "maple tree"
+  },
+  {
+   "id": 2,
+   "file": "tile_2.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 235,
+   "h": 308,
+   "name": "chestnut tree"
+  },
+  {
+   "id": 3,
+   "file": "tile_3.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 208,
+   "h": 221,
+   "name": "palm tree"
+  },
+  {
+   "id": 4,
+   "file": "tile_4.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 221,
+   "h": 278,
+   "name": "tropical tree"
+  },
+  {
+   "id": 5,
+   "file": "tile_5.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 333,
+   "h": 352,
+   "name": "jungle tree"
+  },
+  {
+   "id": 6,
+   "file": "tile_6.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 276,
+   "h": 299,
+   "name": "cloud tree"
+  },
+  {
+   "id": 7,
+   "file": "tile_7.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 235,
+   "h": 320,
+   "name": "snowy tree"
+  },
+  {
+   "id": 8,
+   "file": "tile_8.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 222,
+   "h": 310,
+   "name": "dead tree"
+  },
+  {
+   "id": 9,
+   "file": "tile_9.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 214,
+   "h": 257,
+   "name": "thorn tree"
+  },
+  {
+   "id": 10,
+   "file": "tile_10.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 173,
+   "h": 252,
+   "name": "purple tree"
+  },
+  {
+   "id": 11,
+   "file": "tile_11.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 117,
+   "h": 199,
+   "name": "weeping willow"
+  },
+  {
+   "id": 12,
+   "file": "tile_12.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 100,
+   "h": 279,
+   "name": "goof tree"
+  },
+  {
+   "id": 13,
+   "file": "tile_13.png",
+   "ox": 0,
+   "oy": 0,
+   "w": 241,
+   "h": 268,
+   "name": "robot tree"
+  }
+ ],
+ "count": 14
+}

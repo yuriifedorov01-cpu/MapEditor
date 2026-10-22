@@ -335,6 +335,7 @@ let palShown = [], palCols = 1, palDrag = null, palSelRect = null;
 // «🧩 Набор» / «🎲 Рандом»: набор тайлов (до 10) — ставится одним разом (полосой) или в случайном порядке
 const TILE_SET_MAX = 10;
 let tileSet = [];
+let tileSetMode = 'row';      // 'row' — полосой вправо, 'square' — квадратом
 function palIndexFromEvent(e){
   const g = document.getElementById('palgrid'); if(!g) return -1;
   const r = g.getBoundingClientRect(), cw = PAL_ITEM + PAL_GAP;
@@ -422,22 +423,49 @@ function clearTileSet(){
 }
 function updateTileSetInfo(){
   const el = document.getElementById('palSetInfo'); if(!el) return;
+  const modeChip = '<span class="chip" style="cursor:pointer" onclick="toggleTileSetMode()" title="как ставить набор: полосой или квадратом">' +
+    (tileSetMode === 'square' ? '▦ квадрат' : '▬ полоса') + '</span>';
   if(!tileSet.length){
-    el.innerHTML = 'Набор тайлов: пусто. Выбери «🧩 Набор» или «🎲 Рандом» и кликай тайлы в палитре (до ' + TILE_SET_MAX + ').';
+    el.innerHTML = 'Набор тайлов: пусто. Выбери «🧩 Набор» или «🎲 Рандом» и кликай тайлы в палитре (до ' + TILE_SET_MAX + '). ' + modeChip;
     return;
   }
-  el.innerHTML = 'Набор (' + tileSet.length + '/' + TILE_SET_MAX + '): <b>' + tileSet.join(', ') + '</b> ' +
-    '<span class="chip" style="cursor:pointer" onclick="clearTileSet()">✕ очистить</span>';
+  const set = curSet();
+  const m = MANIFESTS[set];
+  const fileOf = (id) => { const t = m && m.tiles ? m.tiles.find(x => x.id === id) : null; return t ? t.file : null; };
+  const imgs = tileSet.map(id => {
+    const f = fileOf(id);
+    return f
+      ? '<img src="/models/tiles/' + set + '/' + f + '" style="max-width:34px;max-height:34px;image-rendering:pixelated" title="тайл ' + id + '">'
+      : '<b style="font-size:11px">' + id + '</b>';
+  }).join('');
+  el.innerHTML = 'Набор (' + tileSet.length + '/' + TILE_SET_MAX + '): ' + modeChip +
+    '<div style="display:flex;gap:5px;flex-wrap:wrap;align-items:center;margin-top:5px">' + imgs +
+    '<span class="chip" style="cursor:pointer" onclick="clearTileSet()">✕ очистить</span></div>';
 }
-// 🧩 «одним разом»: весь набор кладётся полосой вправо от клетки клика
-function stampTileSetRow(L, x, y){
+// 🧩 «одним разом»: весь набор кладётся от клетки клика — полосой вправо или квадратом
+function stampTileSet(L, x, y){
   if(!tileSet.length){ setStatus('набор тайлов пуст — выбери «🧩 Набор» и кликай тайлы в палитре'); return; }
-  let n = 0;
-  for(let i=0; i<tileSet.length; i++){
-    const px = x + i; if(px >= W) break;
-    setTile(L, px, y, false, tileSet[i]); n++;
+  const n = tileSet.length;
+  let placed = 0;
+  if(tileSetMode === 'square'){
+    const c = Math.max(1, Math.ceil(Math.sqrt(n)));       // ближайший квадрат (3x3 для 9 и т.п.)
+    for(let i = 0; i < n; i++){
+      const px = x + (i % c), py = y + ((i / c) | 0);
+      if(px >= W || py >= H) continue;
+      setTile(L, px, py, false, tileSet[i]); placed++;
+    }
+  } else {
+    for(let i = 0; i < n; i++){
+      const px = x + i; if(px >= W) break;
+      setTile(L, px, y, false, tileSet[i]); placed++;
+    }
   }
-  setStatus('набор поставлен: ' + n + ' тайл(ов) полосой от ' + x + ',' + y);
+  setStatus('набор поставлен: ' + placed + ' тайл(ов) ' + (tileSetMode === 'square' ? 'квадратом' : 'полосой') + ' от ' + x + ',' + y);
+}
+function toggleTileSetMode(){
+  tileSetMode = (tileSetMode === 'row') ? 'square' : 'row';
+  updateTileSetInfo();
+  setStatus('набор ставится ' + (tileSetMode === 'row' ? 'полосой (вправо)' : 'квадратом'));
 }
 // ---- 2-й этап: ЗОНА -> НАБОР ТАЙЛОВ (выводим зону из имени набора, данные не меняем) ----
 const ZONE_ALIAS = { RedMush: 'RedMushroom', Robo: 'Robot' };
@@ -1082,7 +1110,7 @@ function apply(x,y,rightClick){
   const L = targetLayer();
   if(rightClick || tool==='erase'){ setTile(L, x, y, true); draw(); return; }
   if(tool==='paint'){ if(brushTiles) stampBrush(x, y); else setTile(L, x, y, false); draw(); }
-  else if(tool==='combine'){ stampTileSetRow(L, x, y); draw(); }
+  else if(tool==='combine'){ stampTileSet(L, x, y); draw(); }
   else if(tool==='random'){ if(tileSet.length) setTile(L, x, y, false, tileSet[(Math.random()*tileSet.length)|0]); draw(); }
   else if(tool==='portal'){ area.portals.push([x,y, area.portals.length?Math.max(...area.portals.map(p=>p[2]))+1:1, '', 0]); renderPortalList(); draw(); }
   else if(tool==='spawn'){ area.spawns.push([x,y,Math.max(0,x-3),Math.min(W-1,x+3),'']); renderSpawnList(); draw(); }
