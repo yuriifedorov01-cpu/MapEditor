@@ -1,0 +1,345 @@
+[
+ {
+  "set": "AcidAreaTiles",
+  "kind": "main",
+  "cols": 11,
+  "rows": 9,
+  "count": 65
+ },
+ {
+  "set": "AcidForegroundTiles",
+  "kind": "fg",
+  "cols": 4,
+  "rows": 5,
+  "count": 17
+ },
+ {
+  "set": "AcidHouseTiles",
+  "kind": "main",
+  "cols": 12,
+  "rows": 6,
+  "count": 31
+ },
+ {
+  "set": "AquaForegroundTiles",
+  "kind": "fg",
+  "cols": 5,
+  "rows": 3,
+  "count": 15
+ },
+ {
+  "set": "AquaHouseTiles",
+  "kind": "main",
+  "cols": 12,
+  "rows": 7,
+  "count": 35
+ },
+ {
+  "set": "BarnTiles",
+  "kind": "main",
+  "cols": 12,
+  "rows": 7,
+  "count": 36
+ },
+ {
+  "set": "BeachAreaTiles",
+  "kind": "main",
+  "cols": 10,
+  "rows": 8,
+  "count": 65
+ },
+ {
+  "set": "BeachForegroundTiles",
+  "kind": "fg",
+  "cols": 5,
+  "rows": 4,
+  "count": 13
+ },
+ {
+  "set": "BeholderAreaTiles",
+  "kind": "main",
+  "cols": 12,
+  "rows": 11,
+  "count": 110
+ },
+ {
+  "set": "BeholderForegroundTiles",
+  "kind": "fg",
+  "cols": 4,
+  "rows": 5,
+  "count": 19
+ },
+ {
+  "set": "BeholderHouseTiles",
+  "kind": "main",
+  "cols": 12,
+  "rows": 6,
+  "count": 30
+ },
+ {
+  "set": "BlueMushroomAreaTiles",
+  "kind": "main",
+  "cols": 12,
+  "rows": 12,
+  "count": 130
+ },
+ {
+  "set": "BlueMushroomForegroundTiles",
+  "kind": "fg",
+  "cols": 4,
+  "rows": 3,
+  "count": 12
+ },
+ {
+  "set": "CloudAreaTiles",
+  "kind": "main",
+  "cols": 8,
+  "rows": 9,
+  "count": 36
+ },
+ {
+  "set": "CloudForegroundTiles",
+  "kind": "fg",
+  "cols": 5,
+  "rows": 4,
+  "count": 19
+ },
+ {
+  "set": "CloudHouseTiles",
+  "kind": "main",
+  "cols": 12,
+  "rows": 7,
+  "count": 35
+ },
+ {
+  "set": "DungeonAreaTiles",
+  "kind": "main",
+  "cols": 12,
+  "rows": 9,
+  "count": 49
+ },
+ {
+  "set": "FairyAreaTiles",
+  "kind": "main",
+  "cols": 11,
+  "rows": 11,
+  "count": 101
+ },
+ {
+  "set": "FairyForegroundTiles",
+  "kind": "fg",
+  "cols": 5,
+  "rows": 6,
+  "count": 28
+ },
+ {
+  "set": "FairyHouseTiles",
+  "kind": "main",
+  "cols": 12,
+  "rows": 6,
+  "count": 34
+ },
+ {
+  "set": "ForestAreaTiles",
+  "kind": "main",
+  "cols": 12,
+  "rows": 9,
+  "count": 84
+ },
+ {
+  "set": "ForestForegroundTiles",
+  "kind": "fg",
+  "cols": 4,
+  "rows": 3,
+  "count": 12
+ },
+ {
+  "set": "GreenAreaForegroundTiles",
+  "kind": "fg",
+  "cols": 5,
+  "rows": 8,
+  "count": 36
+ },
+ {
+  "set": "GreenAreaTiles",
+  "kind": "main",
+  "cols": 12,
+  "rows": 11,
+  "count": 118
+ },
+ {
+  "set": "HauntedForegroundTiles",
+  "kind": "fg",
+  "cols": 4,
+  "rows": 3,
+  "count": 11
+ },
+ {
+  "set": "HauntedTiles",
+  "kind": "main",
+  "cols": 11,
+  "rows": 9,
+  "count": 82
+ },
+ {
+  "set": "HouseTiles",
+  "kind": "main",
+  "cols": 12,
+  "rows": 7,
+  "count": 44
+ },
+ {
+  "set": "JungleForegroundTiles",
+  "kind": "fg",
+  "cols": 5,
+  "rows": 4,
+  "count": 20
+ },
+ {
+  "set": "JungleTiles",
+  "kind": "main",
+  "cols": 11,
+  "rows": 9,
+  "count": 86
+ },
+ {
+  "set": "LavaForegroundTiles",
+  "kind": "fg",
+  "cols": 5,
+  "rows": 3,
+  "count": 13
+ },
+ {
+  "set": "LavaTiles",
+  "kind": "main",
+  "cols": 8,
+  "rows": 9,
+  "count": 47
+ },
+ {
+  "set": "MushroomHouseTiles",
+  "kind": "main",
+  "cols": 12,
+  "rows": 8,
+  "count": 54
+ },
+ {
+  "set": "OceanAreaTiles",
+  "kind": "main",
+  "cols": 11,
+  "rows": 10,
+  "count": 96
+ },
+ {
+  "set": "PetAreaTiles",
+  "kind": "main",
+  "cols": 12,
+  "rows": 10,
+  "count": 109
+ },
+ {
+  "set": "PetForegroundTiles",
+  "kind": "fg",
+  "cols": 5,
+  "rows": 4,
+  "count": 16
+ },
+ {
+  "set": "PVPForegroundTiles",
+  "kind": "fg",
+  "cols": 2,
+  "rows": 2,
+  "count": 2
+ },
+ {
+  "set": "PVPTiles",
+  "kind": "main",
+  "cols": 11,
+  "rows": 10,
+  "count": 65
+ },
+ {
+  "set": "RedMushForegroundTiles",
+  "kind": "fg",
+  "cols": 4,
+  "rows": 3,
+  "count": 12
+ },
+ {
+  "set": "RedMushroomTiles",
+  "kind": "main",
+  "cols": 12,
+  "rows": 10,
+  "count": 101
+ },
+ {
+  "set": "RepguanaAreaTiles",
+  "kind": "main",
+  "cols": 11,
+  "rows": 10,
+  "count": 79
+ },
+ {
+  "set": "RepguanaForegroundTiles",
+  "kind": "fg",
+  "cols": 4,
+  "rows": 4,
+  "count": 14
+ },
+ {
+  "set": "RoboForegroundTiles",
+  "kind": "fg",
+  "cols": 4,
+  "rows": 6,
+  "count": 24
+ },
+ {
+  "set": "RobotAreaTiles",
+  "kind": "main",
+  "cols": 12,
+  "rows": 12,
+  "count": 118
+ },
+ {
+  "set": "RobotHouseTiles",
+  "kind": "main",
+  "cols": 12,
+  "rows": 7,
+  "count": 45
+ },
+ {
+  "set": "SnowAreaTiles",
+  "kind": "main",
+  "cols": 12,
+  "rows": 11,
+  "count": 107
+ },
+ {
+  "set": "SnowForegroundTiles",
+  "kind": "fg",
+  "cols": 5,
+  "rows": 4,
+  "count": 18
+ },
+ {
+  "set": "TowerAreaTiles",
+  "kind": "main",
+  "cols": 7,
+  "rows": 5,
+  "count": 21
+ },
+ {
+  "set": "WindmillAreaTiles",
+  "kind": "main",
+  "cols": 10,
+  "rows": 9,
+  "count": 69
+ },
+ {
+  "set": "WindmillForegroundTiles",
+  "kind": "fg",
+  "cols": 4,
+  "rows": 4,
+  "count": 15
+ }
+]
