@@ -1,0 +1,5911 @@
+{
+ "generatedBy": "tools/gen-npcs.mjs",
+ "npcs": [
+  {
+   "name": "Ronald",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 1,
+    "x": 351,
+    "y": 747,
+    "trigger": 1,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     7,
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "archer hat",
+    "shirt": "archer shirt",
+    "legs": "archer pants",
+    "weapon1": "medium bow",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 3,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "William",
+   "kind": "silent",
+   "shop": null,
+   "origin": {
+    "area": 1,
+    "x": 506,
+    "y": 749,
+    "trigger": -1,
+    "buy": false,
+    "sell": false,
+    "nextIds": []
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "blue beanie",
+    "shirt": "red shirt",
+    "legs": "blue jeans",
+    "weapon1": "machete",
+    "weapon2": "none",
+    "skin": 1,
+    "scaleX": 1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Ralph",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 1,
+    "x": 5106,
+    "y": 910,
+    "trigger": 3,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     8
+    ]
+   },
+   "appearance": {
+    "hair": "thin black",
+    "helmet": "none",
+    "shirt": "green shirt",
+    "legs": "green pants",
+    "weapon1": "none",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Alfred",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 4,
+    "x": 620,
+    "y": 1406,
+    "trigger": 4,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "thin black",
+    "helmet": "none",
+    "shirt": "blue shirt",
+    "legs": "red pants",
+    "weapon1": "none",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": -1,
+    "eyeFrame": 2,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Jim Sanders",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 4,
+    "x": 1824,
+    "y": 913,
+    "trigger": 22,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     16,
+     0,
+     17
+    ]
+   },
+   "appearance": {
+    "hair": "red curly",
+    "helmet": "none",
+    "shirt": "red shirt",
+    "legs": "green shorts",
+    "weapon1": "big stick",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": -1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Chad",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 6,
+    "x": 3602,
+    "y": 1236,
+    "trigger": 47,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "blue beanie",
+    "shirt": "red shirt",
+    "legs": "blue jeans",
+    "weapon1": "none",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 4,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Joshua",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 6,
+    "x": 2927,
+    "y": 587,
+    "trigger": 48,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     28,
+     0,
+     29
+    ]
+   },
+   "appearance": {
+    "hair": "brown",
+    "helmet": "none",
+    "shirt": "red shirt",
+    "legs": "chainmail legs",
+    "weapon1": "none",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 4,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Sales Man",
+   "kind": "shop",
+   "shop": {
+    "type": "items",
+    "items": [
+     {
+      "item": "blue beanie",
+      "price": 0
+     },
+     {
+      "item": "red beanie",
+      "price": 0
+     },
+     {
+      "item": "red shirt",
+      "price": 0
+     },
+     {
+      "item": "brown shoe",
+      "price": 0
+     },
+     {
+      "item": "blue jeans",
+      "price": 0
+     },
+     {
+      "item": "green pants",
+      "price": 0
+     },
+     {
+      "item": "yellow pants",
+      "price": 0
+     },
+     {
+      "item": "paper bag",
+      "price": 0
+     },
+     {
+      "item": "clover hat",
+      "price": 0
+     },
+     {
+      "item": "half coconut",
+      "price": 0
+     },
+     {
+      "item": "half ski mask",
+      "price": 0
+     },
+     {
+      "item": "full ski mask",
+      "price": 0
+     },
+     {
+      "item": "archer hat",
+      "price": 0
+     },
+     {
+      "item": "red plastic sword",
+      "price": 0
+     },
+     {
+      "item": "blue plastic sword",
+      "price": 0
+     },
+     {
+      "item": "plastic saber",
+      "price": 0
+     },
+     {
+      "item": "hammer",
+      "price": 0
+     },
+     {
+      "item": "sickle",
+      "price": 0
+     },
+     {
+      "item": "apple",
+      "price": 0
+     },
+     {
+      "item": "small bow",
+      "price": 0
+     },
+     {
+      "item": "bronze dagger",
+      "price": 0
+     },
+     {
+      "item": "banana",
+      "price": 0
+     },
+     {
+      "item": "airsoft gun",
+      "price": 0
+     },
+     {
+      "item": "paintball gun",
+      "price": 0
+     },
+     {
+      "item": "paper hat",
+      "price": 0
+     },
+     {
+      "item": "koon hat",
+      "price": 0
+     },
+     {
+      "item": "detective hat",
+      "price": 0
+     },
+     {
+      "item": "cowboy hat",
+      "price": 0
+     },
+     {
+      "item": "cowboy shirt",
+      "price": 0
+     },
+     {
+      "item": "cowboy pants",
+      "price": 0
+     }
+    ]
+   },
+   "origin": {
+    "area": 7,
+    "x": 2470,
+    "y": 1572,
+    "trigger": 2,
+    "buy": true,
+    "sell": true,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "brown",
+    "helmet": "none",
+    "shirt": "red shirt",
+    "legs": "blue jeans",
+    "weapon1": "none",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 4,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Heath",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 7,
+    "x": 2668,
+    "y": 1570,
+    "trigger": 8,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     9
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "clover hat",
+    "shirt": "blue shirt",
+    "legs": "blue jeans",
+    "weapon1": "none",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": -1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Mizon",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 7,
+    "x": 1474,
+    "y": 1076,
+    "trigger": 14,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     0,
+     10,
+     11
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "full ski mask",
+    "shirt": "suit",
+    "legs": "suit pants",
+    "weapon1": "fireman hatchet",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Anoop",
+   "kind": "shop",
+   "shop": {
+    "type": "items",
+    "items": [
+     {
+      "item": "crumby wizard hat",
+      "price": 0
+     },
+     {
+      "item": "brown wizard robe",
+      "price": 0
+     },
+     {
+      "item": "brown wizard pants",
+      "price": 0
+     },
+     {
+      "item": "red wizard robe",
+      "price": 0
+     },
+     {
+      "item": "red wizard pants",
+      "price": 0
+     },
+     {
+      "item": "red wizard hat",
+      "price": 0
+     },
+     {
+      "item": "blue wizard hat",
+      "price": 0
+     },
+     {
+      "item": "blue wizard belt hat",
+      "price": 0
+     },
+     {
+      "item": "basic wand",
+      "price": 0
+     },
+     {
+      "item": "star wand",
+      "price": 0
+     },
+     {
+      "item": "basic magic staff",
+      "price": 0
+     },
+     {
+      "item": "leaf bow",
+      "price": 0
+     },
+     {
+      "item": "triple leaf bow",
+      "price": 0
+     },
+     {
+      "item": "medium bow",
+      "price": 0
+     },
+     {
+      "item": "leaf pad bow",
+      "price": 0
+     },
+     {
+      "item": "thorn bow",
+      "price": 0
+     },
+     {
+      "item": "elf shoe",
+      "price": 0
+     },
+     {
+      "item": "elf bell shoe",
+      "price": 0
+     },
+     {
+      "item": "sai",
+      "price": 0
+     },
+     {
+      "item": "fireman hatchet",
+      "price": 0
+     },
+     {
+      "item": "shaman wand",
+      "price": 0
+     },
+     {
+      "item": "shaman staff",
+      "price": 0
+     },
+     {
+      "item": "archaic helmet",
+      "price": 0
+     },
+     {
+      "item": "archaic armor",
+      "price": 0
+     },
+     {
+      "item": "archaic legs",
+      "price": 0
+     },
+     {
+      "item": "archaic bow",
+      "price": 0
+     },
+     {
+      "item": "bb gun",
+      "price": 0
+     },
+     {
+      "item": "pirate vest",
+      "price": 0
+     },
+     {
+      "item": "pirate pants",
+      "price": 0
+     },
+     {
+      "item": "pirate hat",
+      "price": 0
+     }
+    ]
+   },
+   "origin": {
+    "area": 7,
+    "x": 3816,
+    "y": 420,
+    "trigger": 23,
+    "buy": true,
+    "sell": true,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "crumby wizard hat",
+    "shirt": "green shirt",
+    "legs": "brown wizard pants",
+    "weapon1": "basic wand",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": -1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Rita",
+   "kind": "shop",
+   "shop": {
+    "type": "items",
+    "items": [
+     {
+      "item": "hair flower",
+      "price": 0
+     },
+     {
+      "item": "charm hat",
+      "price": 0
+     },
+     {
+      "item": "cat hat",
+      "price": 0
+     },
+     {
+      "item": "ballerina outfit",
+      "price": 0
+     },
+     {
+      "item": "metal ballerina outfit",
+      "price": 0
+     },
+     {
+      "item": "ballerina stockings",
+      "price": 0
+     },
+     {
+      "item": "metal ballerina legs",
+      "price": 0
+     },
+     {
+      "item": "metal cat helmet",
+      "price": 0
+     },
+     {
+      "item": "pink crystal helmet",
+      "price": 0
+     },
+     {
+      "item": "pink crystal armor",
+      "price": 0
+     },
+     {
+      "item": "pink crystal legs",
+      "price": 0
+     },
+     {
+      "item": "crystal heart shield",
+      "price": 0
+     },
+     {
+      "item": "umbrella",
+      "price": 0
+     }
+    ]
+   },
+   "origin": {
+    "area": 20,
+    "x": 2482,
+    "y": 1240,
+    "trigger": 60,
+    "buy": true,
+    "sell": true,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "brown sag",
+    "helmet": "none",
+    "shirt": "leather armor",
+    "legs": "blue jeans",
+    "weapon1": "none",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 2,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Ben",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 44,
+    "x": 1280,
+    "y": 254,
+    "trigger": 7,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "slick black",
+    "helmet": "none",
+    "shirt": "red shirt",
+    "legs": "yellow pants",
+    "weapon1": "none",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Thomas",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 45,
+    "x": 2576,
+    "y": 746,
+    "trigger": 6,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "red beanie",
+    "shirt": "red shirt",
+    "legs": "green pants",
+    "weapon1": "none",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 4,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Sam Shoe",
+   "kind": "shop",
+   "shop": {
+    "type": "items",
+    "items": [
+     {
+      "item": "blue magic shoe",
+      "price": 0
+     },
+     {
+      "item": "cursed shoe",
+      "price": 0
+     },
+     {
+      "item": "cowboy boot",
+      "price": 0
+     },
+     {
+      "item": "double bell shoe",
+      "price": 0
+     },
+     {
+      "item": "pirate boot",
+      "price": 0
+     },
+     {
+      "item": "steel boot",
+      "price": 0
+     },
+     {
+      "item": "magnesium boot",
+      "price": 0
+     },
+     {
+      "item": "zinc boot",
+      "price": 0
+     },
+     {
+      "item": "future boot",
+      "price": 0
+     },
+     {
+      "item": "spiked dino boot",
+      "price": 0
+     },
+     {
+      "item": "blue crystal boot",
+      "price": 0
+     },
+     {
+      "item": "pink crystal boot",
+      "price": 0
+     },
+     {
+      "item": "chemical boot",
+      "price": 0
+     },
+     {
+      "item": "assault boot",
+      "price": 0
+     },
+     {
+      "item": "imperial boot",
+      "price": 0
+     },
+     {
+      "item": "achilles boot",
+      "price": 0
+     },
+     {
+      "item": "relic boot",
+      "price": 0
+     },
+     {
+      "item": "beholder boot",
+      "price": 0
+     },
+     {
+      "item": "element boot",
+      "price": 0
+     },
+     {
+      "item": "archaic boot",
+      "price": 0
+     },
+     {
+      "item": "skull crusher boot",
+      "price": 0
+     },
+     {
+      "item": "earth boot",
+      "price": 0
+     },
+     {
+      "item": "valor boot",
+      "price": 0
+     },
+     {
+      "item": "serpent boot",
+      "price": 0
+     },
+     {
+      "item": "acid boot",
+      "price": 0
+     },
+     {
+      "item": "bladed boot",
+      "price": 0
+     },
+     {
+      "item": "mystical tribal boot",
+      "price": 0
+     }
+    ]
+   },
+   "origin": {
+    "area": 58,
+    "x": 3240,
+    "y": 413,
+    "trigger": 55,
+    "buy": true,
+    "sell": true,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "spiked blond",
+    "helmet": "none",
+    "shirt": "suit",
+    "legs": "blue jeans",
+    "weapon1": "none",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": -1,
+    "eyeFrame": 5,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Vlad Shoe",
+   "kind": "shop",
+   "shop": {
+    "type": "items",
+    "items": [
+     {
+      "item": "hydro tech boot",
+      "price": 0
+     },
+     {
+      "item": "atomic boot",
+      "price": 0
+     },
+     {
+      "item": "cyro boot",
+      "price": 0
+     },
+     {
+      "item": "magma boot",
+      "price": 0
+     },
+     {
+      "item": "millennium boot",
+      "price": 0
+     },
+     {
+      "item": "empowered boot",
+      "price": 0
+     },
+     {
+      "item": "corruption boot",
+      "price": 0
+     }
+    ]
+   },
+   "origin": {
+    "area": 58,
+    "x": 3387,
+    "y": 413,
+    "trigger": 110,
+    "buy": true,
+    "sell": true,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "spiked blond",
+    "helmet": "none",
+    "shirt": "suit",
+    "legs": "blue jeans",
+    "weapon1": "none",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": -1,
+    "eyeFrame": 5,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Arny",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 58,
+    "x": 4966,
+    "y": 411,
+    "trigger": 9,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     18,
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "archer hat",
+    "shirt": "white shirt",
+    "legs": "blue jeans",
+    "weapon1": "stick",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": -1,
+    "eyeFrame": 6,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Clark",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 60,
+    "x": 1900,
+    "y": 416,
+    "trigger": 50,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     32,
+     33,
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "coconut helmet",
+    "shirt": "coconut armor",
+    "legs": "coconut knee pads",
+    "weapon1": "none",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Gordon",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 18,
+    "x": 1988,
+    "y": 578,
+    "trigger": 40,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     23,
+     0,
+     24
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "oriental hat",
+    "shirt": "leather armor",
+    "legs": "blue jeans",
+    "weapon1": "pickaxe",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": -1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Michael",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 19,
+    "x": 3726,
+    "y": 422,
+    "trigger": 5,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "blue beanie",
+    "shirt": "red shirt",
+    "legs": "blue jeans",
+    "weapon1": "stick",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Andrew",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 55,
+    "x": 648,
+    "y": 1242,
+    "trigger": 11,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "half coconut",
+    "shirt": "blue shirt",
+    "legs": "red pants",
+    "weapon1": "sickle",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": -1,
+    "eyeFrame": 4,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Drew",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 55,
+    "x": 2434,
+    "y": 916,
+    "trigger": 15,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "spiked blond",
+    "helmet": "none",
+    "shirt": "suit",
+    "legs": "blue jeans",
+    "weapon1": "none",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 2,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Hambone",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 55,
+    "x": 3588,
+    "y": 1244,
+    "trigger": 19,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     12,
+     0,
+     13
+    ]
+   },
+   "appearance": {
+    "hair": "slick black",
+    "helmet": "none",
+    "shirt": "white shirt",
+    "legs": "green shorts",
+    "weapon1": "none",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": -1,
+    "eyeFrame": 2,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Cleveland",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 55,
+    "x": 4048,
+    "y": 1244,
+    "trigger": 10,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     0,
+     19
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "clover hat",
+    "shirt": "green shirt",
+    "legs": "green shorts",
+    "weapon1": "hammer",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 2,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Brody",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 55,
+    "x": 3248,
+    "y": 84,
+    "trigger": 21,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     14,
+     0,
+     15
+    ]
+   },
+   "appearance": {
+    "hair": "spiked blond",
+    "helmet": "none",
+    "shirt": "white shirt",
+    "legs": "yellow pants",
+    "weapon1": "short sword",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": -1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Gellius",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 119,
+    "x": 956,
+    "y": 1572,
+    "trigger": 45,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     27
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "none",
+    "shirt": "blue shirt",
+    "legs": "suit pants",
+    "weapon1": "teardrop blade",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 4,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Gary",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 120,
+    "x": 771,
+    "y": 1573,
+    "trigger": 13,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "half coconut",
+    "shirt": "green shirt",
+    "legs": "green pants",
+    "weapon1": "fireman hatchet",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 3,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Carter",
+   "kind": "shop",
+   "shop": {
+    "type": "items",
+    "items": [
+     {
+      "item": "watermelon",
+      "price": 0
+     },
+     {
+      "item": "half coconut",
+      "price": 0
+     },
+     {
+      "item": "coconut helmet",
+      "price": 0
+     },
+     {
+      "item": "suit",
+      "price": 0
+     },
+     {
+      "item": "suit pants",
+      "price": 0
+     },
+     {
+      "item": "green shoe",
+      "price": 0
+     },
+     {
+      "item": "wooden bat",
+      "price": 0
+     },
+     {
+      "item": "machete",
+      "price": 0
+     },
+     {
+      "item": "rusty scimitar",
+      "price": 0
+     },
+     {
+      "item": "coconut armor",
+      "price": 0
+     },
+     {
+      "item": "coconut knee pads",
+      "price": 0
+     },
+     {
+      "item": "coconut leaves helmet",
+      "price": 0
+     },
+     {
+      "item": "wood scrap shield",
+      "price": 0
+     },
+     {
+      "item": "short sword",
+      "price": 0
+     },
+     {
+      "item": "sledgehammer",
+      "price": 0
+     },
+     {
+      "item": "log splitting axe",
+      "price": 0
+     },
+     {
+      "item": "pickaxe",
+      "price": 0
+     },
+     {
+      "item": "leaf bow",
+      "price": 0
+     },
+     {
+      "item": "triple leaf bow",
+      "price": 0
+     },
+     {
+      "item": "archer shirt",
+      "price": 0
+     },
+     {
+      "item": "archer pants",
+      "price": 0
+     },
+     {
+      "item": "banana",
+      "price": 0
+     },
+     {
+      "item": "element helmet",
+      "price": 0
+     },
+     {
+      "item": "element armor",
+      "price": 0
+     },
+     {
+      "item": "element legs",
+      "price": 0
+     },
+     {
+      "item": "element wand",
+      "price": 0
+     },
+     {
+      "item": "element staff",
+      "price": 0
+     },
+     {
+      "item": "potato gun",
+      "price": 0
+     },
+     {
+      "item": "handgun",
+      "price": 0
+     },
+     {
+      "item": "cowboy belt hat",
+      "price": 0
+     }
+    ]
+   },
+   "origin": {
+    "area": 120,
+    "x": 1538,
+    "y": 1573,
+    "trigger": 12,
+    "buy": true,
+    "sell": true,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "coconut helmet",
+    "shirt": "green shirt",
+    "legs": "coconut knee pads",
+    "weapon1": "big stick",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": -1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Shane Shield",
+   "kind": "shop",
+   "shop": {
+    "type": "items",
+    "items": [
+     {
+      "item": "wood scrap shield",
+      "price": 0
+     },
+     {
+      "item": "garbage can lid",
+      "price": 0
+     },
+     {
+      "item": "stop sign",
+      "price": 0
+     },
+     {
+      "item": "smiley tin shield",
+      "price": 0
+     },
+     {
+      "item": "wood metal shield",
+      "price": 0
+     },
+     {
+      "item": "bronze shield",
+      "price": 0
+     },
+     {
+      "item": "protector shield",
+      "price": 0
+     },
+     {
+      "item": "stone shield",
+      "price": 0
+     },
+     {
+      "item": "crystal heart shield",
+      "price": 0
+     },
+     {
+      "item": "ancient shield",
+      "price": 0
+     },
+     {
+      "item": "future shield",
+      "price": 0
+     },
+     {
+      "item": "dino shield",
+      "price": 0
+     },
+     {
+      "item": "robot shield",
+      "price": 0
+     },
+     {
+      "item": "beholder shield",
+      "price": 0
+     },
+     {
+      "item": "skull crusher shield",
+      "price": 0
+     },
+     {
+      "item": "acid shield",
+      "price": 0
+     },
+     {
+      "item": "kreeton shield",
+      "price": 0
+     },
+     {
+      "item": "bladed shield",
+      "price": 0
+     },
+     {
+      "item": "cyro shield",
+      "price": 0
+     },
+     {
+      "item": "ultra shield",
+      "price": 0
+     },
+     {
+      "item": "magma shield",
+      "price": 0
+     },
+     {
+      "item": "god shield",
+      "price": 0
+     }
+    ]
+   },
+   "origin": {
+    "area": 121,
+    "x": 974,
+    "y": 1568,
+    "trigger": 20,
+    "buy": true,
+    "sell": true,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "thin black",
+    "helmet": "none",
+    "shirt": "suit",
+    "legs": "yellow pants",
+    "weapon1": "bronze shield",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 2,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Charles",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 122,
+    "x": 782,
+    "y": 1570,
+    "trigger": 16,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     9
+    ]
+   },
+   "appearance": {
+    "hair": "fro",
+    "helmet": "none",
+    "shirt": "suit",
+    "legs": "suit pants",
+    "weapon1": "none",
+    "weapon2": "none",
+    "skin": 4,
+    "scaleX": 1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Chris",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 122,
+    "x": 1313,
+    "y": 1574,
+    "trigger": 17,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "red curly",
+    "helmet": "none",
+    "shirt": "blue shirt",
+    "legs": "red pants",
+    "weapon1": "none",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 2,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Ted",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 122,
+    "x": 1461,
+    "y": 1575,
+    "trigger": 18,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "mohawk",
+    "helmet": "none",
+    "shirt": "red shirt",
+    "legs": "blue jeans",
+    "weapon1": "none",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": -1,
+    "eyeFrame": 6,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Lewis",
+   "kind": "shop",
+   "shop": {
+    "type": "items",
+    "items": [
+     {
+      "item": "book of power",
+      "price": 0
+     },
+     {
+      "item": "book of magic",
+      "price": 0
+     },
+     {
+      "item": "book of range",
+      "price": 0
+     },
+     {
+      "item": "book of artillery",
+      "price": 0
+     },
+     {
+      "item": "book of dexterity",
+      "price": 0
+     },
+     {
+      "item": "book of health",
+      "price": 0
+     },
+     {
+      "item": "book of MP",
+      "price": 0
+     },
+     {
+      "item": "book of defense",
+      "price": 0
+     },
+     {
+      "item": "book of skill",
+      "price": 0
+     }
+    ]
+   },
+   "origin": {
+    "area": 123,
+    "x": 1058,
+    "y": 1566,
+    "trigger": 44,
+    "buy": true,
+    "sell": true,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "none",
+    "shirt": "suit",
+    "legs": "suit pants",
+    "weapon1": "none",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 5,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Alpipa",
+   "kind": "shop",
+   "shop": {
+    "type": "items",
+    "items": [
+     {
+      "item": "leather helmet",
+      "price": 0
+     },
+     {
+      "item": "racing helmet",
+      "price": 0
+     },
+     {
+      "item": "army helmet",
+      "price": 0
+     },
+     {
+      "item": "roman helmet",
+      "price": 0
+     },
+     {
+      "item": "blue face helmet",
+      "price": 0
+     },
+     {
+      "item": "sugarloaf helmet",
+      "price": 0
+     },
+     {
+      "item": "single sphere wand",
+      "price": 0
+     },
+     {
+      "item": "blue sphere staff",
+      "price": 0
+     },
+     {
+      "item": "sythe",
+      "price": 0
+     },
+     {
+      "item": "single battle axe",
+      "price": 0
+     },
+     {
+      "item": "teardrop blade",
+      "price": 0
+     },
+     {
+      "item": "halberd",
+      "price": 0
+     },
+     {
+      "item": "death bringer",
+      "price": 0
+     },
+     {
+      "item": "guardians warhammer",
+      "price": 0
+     },
+     {
+      "item": "roman robe",
+      "price": 0
+     },
+     {
+      "item": "roman leggings",
+      "price": 0
+     },
+     {
+      "item": "leather archer armor",
+      "price": 0
+     },
+     {
+      "item": "archer leather legs",
+      "price": 0
+     },
+     {
+      "item": "leather armor",
+      "price": 0
+     },
+     {
+      "item": "leather legs",
+      "price": 0
+     },
+     {
+      "item": "chainmail",
+      "price": 0
+     },
+     {
+      "item": "chainmail legs",
+      "price": 0
+     }
+    ]
+   },
+   "origin": {
+    "area": 65,
+    "x": 4882,
+    "y": 582,
+    "trigger": 24,
+    "buy": true,
+    "sell": true,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "red wizard hat",
+    "shirt": "red shirt",
+    "legs": "red pants",
+    "weapon1": "rusty scimitar",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": -1,
+    "eyeFrame": 3,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Keith",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 66,
+    "x": 4112,
+    "y": 1246,
+    "trigger": 37,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "full ski mask",
+    "shirt": "suit",
+    "legs": "suit pants",
+    "weapon1": "log splitting axe",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": -1,
+    "eyeFrame": 3,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Fredward",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 66,
+    "x": 3746,
+    "y": 254,
+    "trigger": 35,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     20,
+     21,
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "full ski mask",
+    "shirt": "suit",
+    "legs": "suit pants",
+    "weapon1": "rusty scimitar",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 3,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Mystic",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 66,
+    "x": 4702,
+    "y": 256,
+    "trigger": 38,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     22
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "full ski mask",
+    "shirt": "suit",
+    "legs": "suit pants",
+    "weapon1": "wooden spear",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 3,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Chucky",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 66,
+    "x": 2986,
+    "y": 1242,
+    "trigger": 36,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "full ski mask",
+    "shirt": "suit",
+    "legs": "suit pants",
+    "weapon1": "bronze dagger",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": -1,
+    "eyeFrame": 3,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Scarlet",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 12,
+    "x": 1450,
+    "y": 1574,
+    "trigger": 49,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     30,
+     0,
+     31
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "witch hat",
+    "shirt": "red shirt",
+    "legs": "suit pants",
+    "weapon1": "none",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": -1,
+    "eyeFrame": 7,
+    "gender": "female"
+   }
+  },
+  {
+   "name": "Ron Anderson",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 15,
+    "x": 751,
+    "y": 1567,
+    "trigger": 25,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "crumby wizard hat",
+    "shirt": "red shirt",
+    "legs": "brown wizard pants",
+    "weapon1": "bronze dagger",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Kyle Anderson",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 15,
+    "x": 951,
+    "y": 1566,
+    "trigger": 26,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "red curly",
+    "helmet": "none",
+    "shirt": "green shirt",
+    "legs": "chainmail legs",
+    "weapon1": "short sword",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Brad Anderson",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 15,
+    "x": 1520,
+    "y": 1570,
+    "trigger": 27,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "blue face helmet",
+    "shirt": "blue shirt",
+    "legs": "red wizard pants",
+    "weapon1": "bronze dagger",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": -1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Snoop",
+   "kind": "shop",
+   "shop": {
+    "type": "items",
+    "items": [
+     {
+      "item": "meat cleaver",
+      "price": 0
+     },
+     {
+      "item": "archer patches hat",
+      "price": 0
+     },
+     {
+      "item": "spartan helmet",
+      "price": 0
+     },
+     {
+      "item": "knight helmet",
+      "price": 0
+     },
+     {
+      "item": "magician armor",
+      "price": 0
+     },
+     {
+      "item": "magician armor legs",
+      "price": 0
+     },
+     {
+      "item": "bronze plate armor",
+      "price": 0
+     },
+     {
+      "item": "bronze plate legs",
+      "price": 0
+     },
+     {
+      "item": "knight armor",
+      "price": 0
+     },
+     {
+      "item": "knight armor legs",
+      "price": 0
+     },
+     {
+      "item": "natures staff",
+      "price": 0
+     },
+     {
+      "item": "nightingale wand",
+      "price": 0
+     },
+     {
+      "item": "nightingale staff",
+      "price": 0
+     },
+     {
+      "item": "chunk mace",
+      "price": 0
+     },
+     {
+      "item": "two handed mace",
+      "price": 0
+     },
+     {
+      "item": "mega sword",
+      "price": 0
+     },
+     {
+      "item": "rich mans bow",
+      "price": 0
+     },
+     {
+      "item": "angels wings bow",
+      "price": 0
+     },
+     {
+      "item": "mechanic wing bow",
+      "price": 0
+     },
+     {
+      "item": "strong basket helmet",
+      "price": 0
+     },
+     {
+      "item": "revolver",
+      "price": 0
+     },
+     {
+      "item": "mac10",
+      "price": 0
+     },
+     {
+      "item": "mp5",
+      "price": 0
+     },
+     {
+      "item": "mexican shirt",
+      "price": 0
+     },
+     {
+      "item": "mexican pants",
+      "price": 0
+     },
+     {
+      "item": "sombrero",
+      "price": 0
+     },
+     {
+      "item": "koon outfit",
+      "price": 0
+     },
+     {
+      "item": "koon pants",
+      "price": 0
+     },
+     {
+      "item": "koon hat",
+      "price": 0
+     },
+     {
+      "item": "masked cowboy hat",
+      "price": 0
+     }
+    ]
+   },
+   "origin": {
+    "area": 16,
+    "x": 1286,
+    "y": 1568,
+    "trigger": 29,
+    "buy": true,
+    "sell": true,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "half coconut",
+    "shirt": "coconut armor",
+    "legs": "blue jeans",
+    "weapon1": "teardrop blade",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 4,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Susan",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 16,
+    "x": 1579,
+    "y": 1569,
+    "trigger": 33,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     9
+    ]
+   },
+   "appearance": {
+    "hair": "blonde tails",
+    "helmet": "none",
+    "shirt": "red shirt",
+    "legs": "red pants",
+    "weapon1": "none",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": -1,
+    "eyeFrame": 7,
+    "gender": "female"
+   }
+  },
+  {
+   "name": "Wayne",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 17,
+    "x": 1437,
+    "y": 1574,
+    "trigger": 28,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "oriental hat",
+    "shirt": "white shirt",
+    "legs": "brown wizard pants",
+    "weapon1": "star wand",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": -1,
+    "eyeFrame": 2,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Barbara",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 111,
+    "x": 1158,
+    "y": 1734,
+    "trigger": 32,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     9
+    ]
+   },
+   "appearance": {
+    "hair": "blonde tails",
+    "helmet": "none",
+    "shirt": "red shirt",
+    "legs": "red pants",
+    "weapon1": "none",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Tiberius",
+   "kind": "shop",
+   "shop": {
+    "type": "items",
+    "items": [
+     {
+      "item": "wooden spear",
+      "price": 0
+     },
+     {
+      "item": "skull spear",
+      "price": 0
+     },
+     {
+      "item": "eagle staff",
+      "price": 0
+     },
+     {
+      "item": "apollos helmet",
+      "price": 0
+     },
+     {
+      "item": "apollos armor",
+      "price": 0
+     },
+     {
+      "item": "apollos armor legs",
+      "price": 0
+     },
+     {
+      "item": "stone helmet",
+      "price": 0
+     },
+     {
+      "item": "stone armor",
+      "price": 0
+     },
+     {
+      "item": "stone armor legs",
+      "price": 0
+     },
+     {
+      "item": "gold helmet",
+      "price": 0
+     },
+     {
+      "item": "gold plate armor",
+      "price": 0
+     },
+     {
+      "item": "gold plate legs",
+      "price": 0
+     },
+     {
+      "item": "witch hat",
+      "price": 0
+     },
+     {
+      "item": "blue wizard robe",
+      "price": 0
+     },
+     {
+      "item": "blue wizard pants",
+      "price": 0
+     },
+     {
+      "item": "fish scale armor",
+      "price": 0
+     },
+     {
+      "item": "fish scale legs",
+      "price": 0
+     },
+     {
+      "item": "super hero shirt",
+      "price": 0
+     },
+     {
+      "item": "shades",
+      "price": 0
+     },
+     {
+      "item": "reptile wand",
+      "price": 0
+     },
+     {
+      "item": "single godly blade",
+      "price": 0
+     },
+     {
+      "item": "banana",
+      "price": 0
+     },
+     {
+      "item": "apple",
+      "price": 0
+     },
+     {
+      "item": "watermelon",
+      "price": 0
+     },
+     {
+      "item": "alloy wolf helmet",
+      "price": 0
+     },
+     {
+      "item": "shotgun",
+      "price": 0
+     },
+     {
+      "item": "tommy gun",
+      "price": 0
+     },
+     {
+      "item": "es c90",
+      "price": 0
+     },
+     {
+      "item": "ak47",
+      "price": 0
+     },
+     {
+      "item": "chemical mask",
+      "price": 0
+     }
+    ]
+   },
+   "origin": {
+    "area": 111,
+    "x": 616,
+    "y": 1731,
+    "trigger": 34,
+    "buy": true,
+    "sell": true,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "roman helmet",
+    "shirt": "coconut armor",
+    "legs": "chainmail legs",
+    "weapon1": "none",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 4,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Chipper",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 111,
+    "x": 752,
+    "y": 912,
+    "trigger": 30,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "fro",
+    "helmet": "none",
+    "shirt": "suit",
+    "legs": "blue jeans",
+    "weapon1": "rusty scimitar",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Daniel",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 111,
+    "x": 2424,
+    "y": 916,
+    "trigger": 31,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "leather helmet",
+    "shirt": "coconut armor",
+    "legs": "chainmail legs",
+    "weapon1": "medium bow",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": -1,
+    "eyeFrame": 6,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Howard",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 111,
+    "x": 3738,
+    "y": 1074,
+    "trigger": 56,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "mohawk",
+    "helmet": "none",
+    "shirt": "magnesium armor",
+    "legs": "magnesium legs",
+    "weapon1": "short sword",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": -1,
+    "eyeFrame": 6,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Woodman Tim",
+   "kind": "shop",
+   "shop": {
+    "type": "craft",
+    "items": [
+     {
+      "item": "palm tree wood",
+      "price": 0
+     },
+     {
+      "item": "blue mushroom cube",
+      "price": 0
+     },
+     {
+      "item": "red mushroom cube",
+      "price": 0
+     },
+     {
+      "item": "purple sheet wood",
+      "price": 0
+     },
+     {
+      "item": "willow wood",
+      "price": 0
+     },
+     {
+      "item": "junk wood",
+      "price": 0
+     },
+     {
+      "item": "colored wood",
+      "price": 0
+     },
+     {
+      "item": "chestnut wood",
+      "price": 0
+     },
+     {
+      "item": "pine block",
+      "price": 0
+     }
+    ]
+   },
+   "origin": {
+    "area": 76,
+    "x": 1448,
+    "y": 1075,
+    "trigger": 93,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     54
+    ]
+   },
+   "appearance": {
+    "hair": "brown",
+    "helmet": "none",
+    "shirt": "cowboy shirt",
+    "legs": "cowboy pants",
+    "weapon1": "fireman hatchet",
+    "weapon2": "fireman hatchet",
+    "skin": 2,
+    "scaleX": -1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Woodman Steve",
+   "kind": "shop",
+   "shop": {
+    "type": "craft",
+    "items": [
+     {
+      "item": "robot bar",
+      "price": 0
+     },
+     {
+      "item": "jungle wood",
+      "price": 0
+     },
+     {
+      "item": "stacked wood",
+      "price": 0
+     },
+     {
+      "item": "thorn wood",
+      "price": 0
+     },
+     {
+      "item": "snow covered wood",
+      "price": 0
+     },
+     {
+      "item": "maple wood",
+      "price": 0
+     },
+     {
+      "item": "cloud tree wood",
+      "price": 0
+     },
+     {
+      "item": "enforcer gun",
+      "price": 0
+     }
+    ]
+   },
+   "origin": {
+    "area": 77,
+    "x": 4576,
+    "y": 1076,
+    "trigger": 94,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     55
+    ]
+   },
+   "appearance": {
+    "hair": "drooping blonde",
+    "helmet": "none",
+    "shirt": "cowboy shirt",
+    "legs": "cowboy pants",
+    "weapon1": "log splitting axe",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Tanya",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 79,
+    "x": 1623,
+    "y": 1568,
+    "trigger": 41,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     9
+    ]
+   },
+   "appearance": {
+    "hair": "blonde tails",
+    "helmet": "none",
+    "shirt": "red shirt",
+    "legs": "red pants",
+    "weapon1": "stick",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": -1,
+    "eyeFrame": 7,
+    "gender": "female"
+   }
+  },
+  {
+   "name": "Wallace",
+   "kind": "shop",
+   "shop": {
+    "type": "items",
+    "items": [
+     {
+      "item": "demons fury",
+      "price": 0
+     },
+     {
+      "item": "ice hammer",
+      "price": 0
+     },
+     {
+      "item": "ancient battle axe",
+      "price": 0
+     },
+     {
+      "item": "captains rapier",
+      "price": 0
+     },
+     {
+      "item": "electric infuriator",
+      "price": 0
+     },
+     {
+      "item": "axe of minions",
+      "price": 0
+     },
+     {
+      "item": "electric katana",
+      "price": 0
+     },
+     {
+      "item": "ice blade of gods",
+      "price": 0
+     },
+     {
+      "item": "barbarian axe of fire",
+      "price": 0
+     },
+     {
+      "item": "reapers scythe",
+      "price": 0
+     },
+     {
+      "item": "crypt bow of fire",
+      "price": 0
+     },
+     {
+      "item": "snout zinc helmet",
+      "price": 0
+     },
+     {
+      "item": "zinc armor",
+      "price": 0
+     },
+     {
+      "item": "zinc legs",
+      "price": 0
+     },
+     {
+      "item": "adamantium helmet",
+      "price": 0
+     },
+     {
+      "item": "magnesium helmet",
+      "price": 0
+     },
+     {
+      "item": "adamantium armor",
+      "price": 0
+     },
+     {
+      "item": "adamantium legs",
+      "price": 0
+     },
+     {
+      "item": "magnesium armor",
+      "price": 0
+     },
+     {
+      "item": "magnesium legs",
+      "price": 0
+     },
+     {
+      "item": "beholder wand",
+      "price": 0
+     },
+     {
+      "item": "beholder staff",
+      "price": 0
+     },
+     {
+      "item": "beholder bow",
+      "price": 0
+     },
+     {
+      "item": "beholder sword",
+      "price": 0
+     },
+     {
+      "item": "beholder axe",
+      "price": 0
+     },
+     {
+      "item": "small skull crusher",
+      "price": 0
+     },
+     {
+      "item": "skull crusher",
+      "price": 0
+     },
+     {
+      "item": "M16",
+      "price": 0
+     },
+     {
+      "item": "sniper rifle",
+      "price": 0
+     }
+    ]
+   },
+   "origin": {
+    "area": 79,
+    "x": 936,
+    "y": 1568,
+    "trigger": 42,
+    "buy": true,
+    "sell": true,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "blue face helmet",
+    "shirt": "chainmail",
+    "legs": "blue jeans",
+    "weapon1": "machete",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 5,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Chance",
+   "kind": "shop",
+   "shop": {
+    "type": "items",
+    "items": [
+     {
+      "item": "strong full helmet",
+      "price": 0
+     },
+     {
+      "item": "wizard hat mask",
+      "price": 0
+     },
+     {
+      "item": "enchanted helmet",
+      "price": 0
+     },
+     {
+      "item": "crusader helmet",
+      "price": 0
+     },
+     {
+      "item": "ancient helmet",
+      "price": 0
+     },
+     {
+      "item": "ancient armor",
+      "price": 0
+     },
+     {
+      "item": "ancient legs",
+      "price": 0
+     },
+     {
+      "item": "strong armor",
+      "price": 0
+     },
+     {
+      "item": "strong legs",
+      "price": 0
+     },
+     {
+      "item": "winged diamond wand",
+      "price": 0
+     },
+     {
+      "item": "enchanted armor",
+      "price": 0
+     },
+     {
+      "item": "enchanted legs",
+      "price": 0
+     },
+     {
+      "item": "natures bow",
+      "price": 0
+     },
+     {
+      "item": "heartstriker bow",
+      "price": 0
+     },
+     {
+      "item": "night glow bow",
+      "price": 0
+     },
+     {
+      "item": "mushroom helmet",
+      "price": 0
+     },
+     {
+      "item": "bat wing staff",
+      "price": 0
+     },
+     {
+      "item": "chain helmet",
+      "price": 0
+     },
+     {
+      "item": "chain armor",
+      "price": 0
+     },
+     {
+      "item": "chain legs",
+      "price": 0
+     },
+     {
+      "item": "hybrid helmet",
+      "price": 0
+     },
+     {
+      "item": "skull crusher helmet",
+      "price": 0
+     },
+     {
+      "item": "skull crusher armor",
+      "price": 0
+     },
+     {
+      "item": "skull crusher legs",
+      "price": 0
+     },
+     {
+      "item": "pointed pirate hat",
+      "price": 0
+     },
+     {
+      "item": "steel masked helmet",
+      "price": 0
+     },
+     {
+      "item": "cowboy knight helmet",
+      "price": 0
+     }
+    ]
+   },
+   "origin": {
+    "area": 79,
+    "x": 795,
+    "y": 1567,
+    "trigger": 46,
+    "buy": true,
+    "sell": true,
+    "nextIds": [
+     46
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "apollos helmet",
+    "shirt": "red shirt",
+    "legs": "apollos armor legs",
+    "weapon1": "thorn bow",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 4,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Pablo",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 79,
+    "x": 1087,
+    "y": 1568,
+    "trigger": 43,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     25,
+     0,
+     26
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "none",
+    "shirt": "chainmail",
+    "legs": "blue jeans",
+    "weapon1": "sledgehammer",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 2,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Jimmy",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 81,
+    "x": 2882,
+    "y": 922,
+    "trigger": 57,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     34,
+     35,
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "blue beanie",
+    "shirt": "blue shirt",
+    "legs": "blue jeans",
+    "weapon1": "chunk mace",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": -1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Lottery Man",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 83,
+    "x": 2949,
+    "y": 1409,
+    "trigger": 83,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     50
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "detective hat",
+    "shirt": "cowboy shirt",
+    "legs": "red pants",
+    "weapon1": "none",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Travis",
+   "kind": "shop",
+   "shop": {
+    "type": "items",
+    "items": [
+     {
+      "item": "reinforced bush armor",
+      "price": 0
+     },
+     {
+      "item": "reinforced bush legs",
+      "price": 0
+     },
+     {
+      "item": "flak jacket",
+      "price": 0
+     },
+     {
+      "item": "sorcerer robe",
+      "price": 0
+     },
+     {
+      "item": "jester shirt",
+      "price": 0
+     },
+     {
+      "item": "sorcerer pants",
+      "price": 0
+     },
+     {
+      "item": "jester pants",
+      "price": 0
+     },
+     {
+      "item": "sorcerer hat and glasses",
+      "price": 0
+     },
+     {
+      "item": "sorcerer copter hat",
+      "price": 0
+     },
+     {
+      "item": "jester hat",
+      "price": 0
+     },
+     {
+      "item": "ocean staff",
+      "price": 0
+     },
+     {
+      "item": "night glow wand",
+      "price": 0
+     },
+     {
+      "item": "tropical staff",
+      "price": 0
+     },
+     {
+      "item": "horned helmet",
+      "price": 0
+     },
+     {
+      "item": "green face helmet",
+      "price": 0
+     },
+     {
+      "item": "steel helmet hat",
+      "price": 0
+     },
+     {
+      "item": "cone helmet",
+      "price": 0
+     },
+     {
+      "item": "ghost mask",
+      "price": 0
+     },
+     {
+      "item": "cursed robe",
+      "price": 0
+     },
+     {
+      "item": "cursed pants",
+      "price": 0
+     },
+     {
+      "item": "diamond studded bow",
+      "price": 0
+     },
+     {
+      "item": "spiked shell helmet",
+      "price": 0
+     },
+     {
+      "item": "banana",
+      "price": 0
+     },
+     {
+      "item": "apple",
+      "price": 0
+     },
+     {
+      "item": "achilles armor",
+      "price": 0
+     },
+     {
+      "item": "achilles legs",
+      "price": 0
+     },
+     {
+      "item": "achilles helmet",
+      "price": 0
+     },
+     {
+      "item": "relic armor",
+      "price": 0
+     },
+     {
+      "item": "relic legs",
+      "price": 0
+     },
+     {
+      "item": "relic helmet",
+      "price": 0
+     }
+    ]
+   },
+   "origin": {
+    "area": 83,
+    "x": 3414,
+    "y": 1408,
+    "trigger": 52,
+    "buy": true,
+    "sell": true,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "sugarloaf helmet",
+    "shirt": "red shirt",
+    "legs": "blue jeans",
+    "weapon1": "none",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Margret",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 83,
+    "x": 3894,
+    "y": 1404,
+    "trigger": 54,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     9
+    ]
+   },
+   "appearance": {
+    "hair": "granny hair",
+    "helmet": "none",
+    "shirt": "red shirt",
+    "legs": "red pants",
+    "weapon1": "none",
+    "weapon2": "none",
+    "skin": 4,
+    "scaleX": 1,
+    "eyeFrame": 7,
+    "gender": "female"
+   }
+  },
+  {
+   "name": "Sneed",
+   "kind": "shop",
+   "shop": {
+    "type": "items",
+    "items": [
+     {
+      "item": "royal helmet",
+      "price": 0
+     },
+     {
+      "item": "protector helmet",
+      "price": 0
+     },
+     {
+      "item": "dino scale helmet",
+      "price": 0
+     },
+     {
+      "item": "samurai helmet",
+      "price": 0
+     },
+     {
+      "item": "helmet of hatred",
+      "price": 0
+     },
+     {
+      "item": "imperial helmet",
+      "price": 0
+     },
+     {
+      "item": "dino scale armor",
+      "price": 0
+     },
+     {
+      "item": "royal armor",
+      "price": 0
+     },
+     {
+      "item": "protector suit",
+      "price": 0
+     },
+     {
+      "item": "samurai armor",
+      "price": 0
+     },
+     {
+      "item": "armor of hatred",
+      "price": 0
+     },
+     {
+      "item": "imperial armor",
+      "price": 0
+     },
+     {
+      "item": "royal legs",
+      "price": 0
+     },
+     {
+      "item": "protector legs",
+      "price": 0
+     },
+     {
+      "item": "dino scale legs",
+      "price": 0
+     },
+     {
+      "item": "samurai legs",
+      "price": 0
+     },
+     {
+      "item": "legs of hatred",
+      "price": 0
+     },
+     {
+      "item": "imperial legs",
+      "price": 0
+     },
+     {
+      "item": "spherical staff",
+      "price": 0
+     },
+     {
+      "item": "frosters bow",
+      "price": 0
+     },
+     {
+      "item": "light sword",
+      "price": 0
+     },
+     {
+      "item": "single hatred blade",
+      "price": 0
+     },
+     {
+      "item": "blade of hatred",
+      "price": 0
+     },
+     {
+      "item": "heated staff",
+      "price": 0
+     },
+     {
+      "item": "dino blade",
+      "price": 0
+     },
+     {
+      "item": "wand of blessings",
+      "price": 0
+     },
+     {
+      "item": "fallen queens spectre",
+      "price": 0
+     },
+     {
+      "item": "cyborg bow",
+      "price": 0
+     },
+     {
+      "item": "frosting trident",
+      "price": 0
+     },
+     {
+      "item": "mummified axe",
+      "price": 0
+     }
+    ]
+   },
+   "origin": {
+    "area": 26,
+    "x": 5486,
+    "y": 1239,
+    "trigger": 58,
+    "buy": true,
+    "sell": true,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "sugarloaf helmet",
+    "shirt": "coconut armor",
+    "legs": "chainmail legs",
+    "weapon1": "none",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": -1,
+    "eyeFrame": 3,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Albert",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 23,
+    "x": 1115,
+    "y": 2402,
+    "trigger": 59,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     36,
+     0,
+     37
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "racing helmet",
+    "shirt": "chainmail",
+    "legs": "blue jeans",
+    "weapon1": "pickaxe",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": -1,
+    "eyeFrame": 6,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Maxwell",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 30,
+    "x": 4584,
+    "y": 1239,
+    "trigger": 63,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "half coconut",
+    "shirt": "coconut armor",
+    "legs": "blue jeans",
+    "weapon1": "teardrop blade",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 4,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Viper",
+   "kind": "shop",
+   "shop": {
+    "type": "items",
+    "items": [
+     {
+      "item": "blue crystal helmet",
+      "price": 0
+     },
+     {
+      "item": "future helmet",
+      "price": 0
+     },
+     {
+      "item": "lazer shades",
+      "price": 0
+     },
+     {
+      "item": "assault helmet",
+      "price": 0
+     },
+     {
+      "item": "robot helmet",
+      "price": 0
+     },
+     {
+      "item": "cyborg helmet",
+      "price": 0
+     },
+     {
+      "item": "neon magic helmet",
+      "price": 0
+     },
+     {
+      "item": "astro helmet",
+      "price": 0
+     },
+     {
+      "item": "industrial helmet",
+      "price": 0
+     },
+     {
+      "item": "mocap suit",
+      "price": 0
+     },
+     {
+      "item": "blue crystal armor",
+      "price": 0
+     },
+     {
+      "item": "future armor",
+      "price": 0
+     },
+     {
+      "item": "assault armor",
+      "price": 0
+     },
+     {
+      "item": "robot armor",
+      "price": 0
+     },
+     {
+      "item": "neon magic suit",
+      "price": 0
+     },
+     {
+      "item": "cyborg armor",
+      "price": 0
+     },
+     {
+      "item": "astro suit",
+      "price": 0
+     },
+     {
+      "item": "industrial armor",
+      "price": 0
+     },
+     {
+      "item": "future legs",
+      "price": 0
+     },
+     {
+      "item": "blue crystal legs",
+      "price": 0
+     },
+     {
+      "item": "mocap pants",
+      "price": 0
+     },
+     {
+      "item": "assault legs",
+      "price": 0
+     },
+     {
+      "item": "robot legs",
+      "price": 0
+     },
+     {
+      "item": "cyborg legs",
+      "price": 0
+     },
+     {
+      "item": "neon magic legs",
+      "price": 0
+     },
+     {
+      "item": "astro legs",
+      "price": 0
+     },
+     {
+      "item": "industrial legs",
+      "price": 0
+     },
+     {
+      "item": "eagle slingshot",
+      "price": 0
+     },
+     {
+      "item": "flaming needle bow",
+      "price": 0
+     },
+     {
+      "item": "indian wand",
+      "price": 0
+     }
+    ]
+   },
+   "origin": {
+    "area": 117,
+    "x": 1677,
+    "y": 1568,
+    "trigger": 62,
+    "buy": true,
+    "sell": true,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "slick black",
+    "helmet": "none",
+    "shirt": "future armor",
+    "legs": "future legs",
+    "weapon1": "guardians warhammer",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": -1,
+    "eyeFrame": 2,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Rebecca",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 117,
+    "x": 1415,
+    "y": 1571,
+    "trigger": 61,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     9
+    ]
+   },
+   "appearance": {
+    "hair": "long black",
+    "helmet": "none",
+    "shirt": "ballerina outfit",
+    "legs": "ballerina stockings",
+    "weapon1": "none",
+    "weapon2": "stick",
+    "skin": 2,
+    "scaleX": -1,
+    "eyeFrame": 4,
+    "gender": "female"
+   }
+  },
+  {
+   "name": "Larry",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 124,
+    "x": 1470,
+    "y": 1571,
+    "trigger": 65,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "none",
+    "shirt": "white shirt",
+    "legs": "blue jeans",
+    "weapon1": "none",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": -1,
+    "eyeFrame": 2,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Cassie",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 118,
+    "x": 1234,
+    "y": 1568,
+    "trigger": 64,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     38,
+     0,
+     39
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "cat hat",
+    "shirt": "red shirt",
+    "legs": "ballerina stockings",
+    "weapon1": "none",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": -1,
+    "eyeFrame": 7,
+    "gender": "female"
+   }
+  },
+  {
+   "name": "Blaire",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 33,
+    "x": 3722,
+    "y": 744,
+    "trigger": 67,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "chain helmet",
+    "shirt": "blue crystal armor",
+    "legs": "robot legs",
+    "weapon1": "ancient battle axe",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Geraldo",
+   "kind": "shop",
+   "shop": {
+    "type": "items",
+    "items": [
+     {
+      "item": "apple",
+      "price": 0
+     },
+     {
+      "item": "banana",
+      "price": 0
+     },
+     {
+      "item": "watermelon",
+      "price": 0
+     },
+     {
+      "item": "turkey",
+      "price": 0
+     },
+     {
+      "item": "chemical armor",
+      "price": 0
+     },
+     {
+      "item": "chemical legs",
+      "price": 0
+     },
+     {
+      "item": "valor helmet",
+      "price": 0
+     },
+     {
+      "item": "valor armor",
+      "price": 0
+     },
+     {
+      "item": "valor legs",
+      "price": 0
+     },
+     {
+      "item": "pirate helmet",
+      "price": 0
+     },
+     {
+      "item": "pirate armor",
+      "price": 0
+     },
+     {
+      "item": "pirate armor legs",
+      "price": 0
+     },
+     {
+      "item": "eye patch",
+      "price": 0
+     },
+     {
+      "item": "cowboy knight armor",
+      "price": 0
+     },
+     {
+      "item": "cowboy knight legs",
+      "price": 0
+     }
+    ]
+   },
+   "origin": {
+    "area": 74,
+    "x": 1089,
+    "y": 1410,
+    "trigger": 66,
+    "buy": true,
+    "sell": true,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "oriental hat",
+    "shirt": "white shirt",
+    "legs": "roman leggings",
+    "weapon1": "machete",
+    "weapon2": "none",
+    "skin": 4,
+    "scaleX": -1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Billbert",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 74,
+    "x": 1623,
+    "y": 1406,
+    "trigger": 68,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     40,
+     0,
+     41
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "racing helmet",
+    "shirt": "chainmail",
+    "legs": "blue jeans",
+    "weapon1": "pickaxe",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": -1,
+    "eyeFrame": 6,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Patrick",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 97,
+    "x": 3431,
+    "y": 1238,
+    "trigger": 77,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     48,
+     0,
+     49
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "jester hat",
+    "shirt": "fish scale armor",
+    "legs": "red pants",
+    "weapon1": "indian wand",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": -1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Walter",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 97,
+    "x": 5068,
+    "y": 1075,
+    "trigger": 79,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "magnesium helmet",
+    "shirt": "magnesium armor",
+    "legs": "magnesium legs",
+    "weapon1": "none",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": -1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Vince",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 97,
+    "x": 5535,
+    "y": 1078,
+    "trigger": 82,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "roman helmet",
+    "shirt": "blue shirt",
+    "legs": "blue jeans",
+    "weapon1": "none",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Samuel",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 97,
+    "x": 4004,
+    "y": 750,
+    "trigger": 80,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "spiked blond",
+    "helmet": "none",
+    "shirt": "red shirt",
+    "legs": "blue jeans",
+    "weapon1": "none",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Tristin",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 97,
+    "x": 1212,
+    "y": 1246,
+    "trigger": 81,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "green face helmet",
+    "shirt": "leather armor",
+    "legs": "blue jeans",
+    "weapon1": "bat wing staff",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Wilson",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 99,
+    "x": 4898,
+    "y": 916,
+    "trigger": 76,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     46,
+     0,
+     47
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "crumby wizard hat",
+    "shirt": "assault armor",
+    "legs": "brown wizard pants",
+    "weapon1": "fireman hatchet",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Ricardo",
+   "kind": "shop",
+   "shop": {
+    "type": "items",
+    "items": [
+     {
+      "item": "harpoon bow",
+      "price": 0
+     },
+     {
+      "item": "analytic wand",
+      "price": 0
+     },
+     {
+      "item": "analytic staff",
+      "price": 0
+     },
+     {
+      "item": "serpent wand",
+      "price": 0
+     },
+     {
+      "item": "serpent staff",
+      "price": 0
+     },
+     {
+      "item": "acidic sword",
+      "price": 0
+     },
+     {
+      "item": "two hand acid blade",
+      "price": 0
+     },
+     {
+      "item": "acid shield",
+      "price": 0
+     },
+     {
+      "item": "thors hammer",
+      "price": 0
+     },
+     {
+      "item": "deep sea helmet",
+      "price": 0
+     },
+     {
+      "item": "earth helmet",
+      "price": 0
+     },
+     {
+      "item": "analytic helmet",
+      "price": 0
+     },
+     {
+      "item": "serpent helmet",
+      "price": 0
+     },
+     {
+      "item": "titanium helmet",
+      "price": 0
+     },
+     {
+      "item": "titanium armor",
+      "price": 0
+     },
+     {
+      "item": "titanium legs",
+      "price": 0
+     },
+     {
+      "item": "earth armor",
+      "price": 0
+     },
+     {
+      "item": "earth legs",
+      "price": 0
+     },
+     {
+      "item": "analytic armor",
+      "price": 0
+     },
+     {
+      "item": "analytic legs",
+      "price": 0
+     },
+     {
+      "item": "serpent armor",
+      "price": 0
+     },
+     {
+      "item": "serpent legs",
+      "price": 0
+     },
+     {
+      "item": "acidic helmet",
+      "price": 0
+     },
+     {
+      "item": "acidic armor",
+      "price": 0
+     },
+     {
+      "item": "acidic legs",
+      "price": 0
+     },
+     {
+      "item": "xm8 rifle",
+      "price": 0
+     },
+     {
+      "item": "machine gun",
+      "price": 0
+     },
+     {
+      "item": "chaingun",
+      "price": 0
+     },
+     {
+      "item": "bazooka",
+      "price": 0
+     },
+     {
+      "item": "rayon gun",
+      "price": 0
+     }
+    ]
+   },
+   "origin": {
+    "area": 133,
+    "x": 1358,
+    "y": 1570,
+    "trigger": 78,
+    "buy": true,
+    "sell": true,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "knight helmet",
+    "shirt": "green shirt",
+    "legs": "zinc legs",
+    "weapon1": "death bringer",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Val",
+   "kind": "shop",
+   "shop": {
+    "type": "items",
+    "items": [
+     {
+      "item": "pet striped beanie",
+      "price": 0
+     },
+     {
+      "item": "pet bowtie",
+      "price": 0
+     },
+     {
+      "item": "pet melon helmet",
+      "price": 0
+     },
+     {
+      "item": "pet oriental hat",
+      "price": 0
+     },
+     {
+      "item": "pet archer hat",
+      "price": 0
+     },
+     {
+      "item": "pet crumby hat",
+      "price": 0
+     },
+     {
+      "item": "pet cowboy hat",
+      "price": 0
+     },
+     {
+      "item": "pet army helmet",
+      "price": 0
+     },
+     {
+      "item": "pet wizard hat",
+      "price": 0
+     },
+     {
+      "item": "pet witch hat",
+      "price": 0
+     },
+     {
+      "item": "pet pirate hat",
+      "price": 0
+     },
+     {
+      "item": "pet spartan helmet",
+      "price": 0
+     },
+     {
+      "item": "pet stone helmet",
+      "price": 0
+     },
+     {
+      "item": "pet apollo helmet",
+      "price": 0
+     },
+     {
+      "item": "pet strong helmet",
+      "price": 0
+     },
+     {
+      "item": "pet protector helmet",
+      "price": 0
+     },
+     {
+      "item": "pet samurai helmet",
+      "price": 0
+     },
+     {
+      "item": "pet jester hat",
+      "price": 0
+     },
+     {
+      "item": "pet horned helmet",
+      "price": 0
+     },
+     {
+      "item": "pet cone helmet",
+      "price": 0
+     },
+     {
+      "item": "pet adamantium helmet",
+      "price": 0
+     },
+     {
+      "item": "pet dino scale helmet",
+      "price": 0
+     },
+     {
+      "item": "pet cyborg helmet",
+      "price": 0
+     },
+     {
+      "item": "pet valor helmet",
+      "price": 0
+     },
+     {
+      "item": "pet element helmet",
+      "price": 0
+     },
+     {
+      "item": "pet beholder helmet",
+      "price": 0
+     },
+     {
+      "item": "pet earth helmet",
+      "price": 0
+     },
+     {
+      "item": "pet serpent helmet",
+      "price": 0
+     },
+     {
+      "item": "pet acid helmet",
+      "price": 0
+     },
+     {
+      "item": "pet pirate helmet",
+      "price": 0
+     }
+    ]
+   },
+   "origin": {
+    "area": 128,
+    "x": 1456,
+    "y": 1567,
+    "trigger": 75,
+    "buy": true,
+    "sell": true,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "strong basket helmet",
+    "shirt": "white shirt",
+    "legs": "blue jeans",
+    "weapon1": "none",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Leonard",
+   "kind": "shop",
+   "shop": {
+    "type": "items",
+    "items": [
+     {
+      "item": "pet mystical tribal helmet",
+      "price": 0
+     },
+     {
+      "item": "pet hydro tech helmet",
+      "price": 0
+     },
+     {
+      "item": "pet atomic helmet",
+      "price": 0
+     },
+     {
+      "item": "pet cyro helmet",
+      "price": 0
+     }
+    ]
+   },
+   "origin": {
+    "area": 129,
+    "x": 904,
+    "y": 1575,
+    "trigger": 101,
+    "buy": true,
+    "sell": true,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "red beanie",
+    "shirt": "koon outfit",
+    "legs": "fish scale legs",
+    "weapon1": "none",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Martin",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 128,
+    "x": 1368,
+    "y": 1570,
+    "trigger": 69,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "mohawk",
+    "helmet": "none",
+    "shirt": "suit",
+    "legs": "suit pants",
+    "weapon1": "element wand",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Bartholomew",
+   "kind": "shop",
+   "shop": {
+    "type": "items",
+    "items": [
+     {
+      "item": "beholder boot",
+      "price": 0
+     },
+     {
+      "item": "beholder sword",
+      "price": 0
+     },
+     {
+      "item": "beholder axe",
+      "price": 0
+     },
+     {
+      "item": "kreeton helmet",
+      "price": 0
+     },
+     {
+      "item": "kreeton armor",
+      "price": 0
+     },
+     {
+      "item": "kreeton legs",
+      "price": 0
+     },
+     {
+      "item": "kreeton cutter",
+      "price": 0
+     },
+     {
+      "item": "eye of kreeton",
+      "price": 0
+     },
+     {
+      "item": "darkane hood helmet",
+      "price": 0
+     },
+     {
+      "item": "darkane armor",
+      "price": 0
+     },
+     {
+      "item": "darkane legs",
+      "price": 0
+     },
+     {
+      "item": "darkane wand",
+      "price": 0
+     },
+     {
+      "item": "darkane staff",
+      "price": 0
+     },
+     {
+      "item": "repguana helmet",
+      "price": 0
+     },
+     {
+      "item": "repguana armor",
+      "price": 0
+     },
+     {
+      "item": "repguana legs",
+      "price": 0
+     },
+     {
+      "item": "repguana bow",
+      "price": 0
+     },
+     {
+      "item": "bladed helmet",
+      "price": 0
+     },
+     {
+      "item": "bladed armor",
+      "price": 0
+     },
+     {
+      "item": "bladed legs",
+      "price": 0
+     },
+     {
+      "item": "brooding fire axe",
+      "price": 0
+     },
+     {
+      "item": "electric barracuda",
+      "price": 0
+     },
+     {
+      "item": "skullcrusher gun",
+      "price": 0
+     },
+     {
+      "item": "beholder gun",
+      "price": 0
+     },
+     {
+      "item": "kreeton gun",
+      "price": 0
+     }
+    ]
+   },
+   "origin": {
+    "area": 39,
+    "x": 1318,
+    "y": 1574,
+    "trigger": 70,
+    "buy": true,
+    "sell": true,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "beholder helmet",
+    "shirt": "jester shirt",
+    "legs": "beholder legs",
+    "weapon1": "beholder bow",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": -1,
+    "eyeFrame": 2,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Bobby",
+   "kind": "shop",
+   "shop": {
+    "type": "craft",
+    "items": [
+     {
+      "item": "beholder helmet",
+      "price": 0
+     },
+     {
+      "item": "beholder armor",
+      "price": 0
+     },
+     {
+      "item": "beholder legs",
+      "price": 0
+     },
+     {
+      "item": "ultima",
+      "price": 0
+     },
+     {
+      "item": "spellbound wand",
+      "price": 0
+     },
+     {
+      "item": "spellbound staff",
+      "price": 0
+     }
+    ]
+   },
+   "origin": {
+    "area": 39,
+    "x": 1506,
+    "y": 1571,
+    "trigger": 96,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     57
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "kreeton helmet",
+    "shirt": "beholder armor",
+    "legs": "yellow pants",
+    "weapon1": "skull crusher",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": -1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Tanner",
+   "kind": "shop",
+   "shop": {
+    "type": "pets",
+    "items": [
+     {
+      "item": "Tebra",
+      "price": 0
+     },
+     {
+      "item": "Marshy",
+      "price": 0
+     },
+     {
+      "item": "Baby Bounce",
+      "price": 0
+     },
+     {
+      "item": "Petri",
+      "price": 0
+     },
+     {
+      "item": "Gibler",
+      "price": 0
+     },
+     {
+      "item": "Fisky",
+      "price": 0
+     }
+    ]
+   },
+   "origin": {
+    "area": 130,
+    "x": 1513,
+    "y": 1737,
+    "trigger": 71,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     42
+    ]
+   },
+   "appearance": {
+    "hair": "mohawk",
+    "helmet": "none",
+    "shirt": "suit",
+    "legs": "suit pants",
+    "weapon1": "none",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 2,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Nicolas",
+   "kind": "shop",
+   "shop": {
+    "type": "pets",
+    "items": [
+     {
+      "item": "Roblost",
+      "price": 0
+     },
+     {
+      "item": "Pumpman",
+      "price": 0
+     },
+     {
+      "item": "Chippy",
+      "price": 0
+     },
+     {
+      "item": "Thumper",
+      "price": 0
+     },
+     {
+      "item": "Nooter",
+      "price": 0
+     },
+     {
+      "item": "Gobloid",
+      "price": 0
+     }
+    ]
+   },
+   "origin": {
+    "area": 131,
+    "x": 1374,
+    "y": 1734,
+    "trigger": 72,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     43
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "none",
+    "shirt": "suit",
+    "legs": "suit pants",
+    "weapon1": "none",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Markus",
+   "kind": "shop",
+   "shop": {
+    "type": "pets",
+    "items": [
+     {
+      "item": "Ritardo",
+      "price": 0
+     },
+     {
+      "item": "Ozich",
+      "price": 0
+     },
+     {
+      "item": "Topper",
+      "price": 0
+     },
+     {
+      "item": "Bunyan",
+      "price": 0
+     },
+     {
+      "item": "Quackster",
+      "price": 0
+     }
+    ]
+   },
+   "origin": {
+    "area": 131,
+    "x": 1871,
+    "y": 1740,
+    "trigger": 73,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     44
+    ]
+   },
+   "appearance": {
+    "hair": "thin black",
+    "helmet": "none",
+    "shirt": "suit",
+    "legs": "suit pants",
+    "weapon1": "none",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Ted",
+   "kind": "shop",
+   "shop": {
+    "type": "pets",
+    "items": [
+     {
+      "item": "Dwimplepike",
+      "price": 0
+     },
+     {
+      "item": "Squatch",
+      "price": 0
+     },
+     {
+      "item": "Stalkling",
+      "price": 0
+     }
+    ]
+   },
+   "origin": {
+    "area": 132,
+    "x": 1870,
+    "y": 1736,
+    "trigger": 74,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     45
+    ]
+   },
+   "appearance": {
+    "hair": "blond bowl",
+    "helmet": "none",
+    "shirt": "suit",
+    "legs": "suit pants",
+    "weapon1": "none",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Train Shack Man",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 126,
+    "x": 4004,
+    "y": 1404,
+    "trigger": 103,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "army helmet",
+    "shirt": "green shirt",
+    "legs": "red pants",
+    "weapon1": "none",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Donald",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 88,
+    "x": 878,
+    "y": 1396,
+    "trigger": 85,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "blue beanie",
+    "shirt": "blue shirt",
+    "legs": "blue jeans",
+    "weapon1": "blue plastic sword",
+    "weapon2": "blue plastic sword",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Train Shack Man",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 88,
+    "x": 2294,
+    "y": 578,
+    "trigger": 84,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "army helmet",
+    "shirt": "green shirt",
+    "legs": "red pants",
+    "weapon1": "none",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Lamar",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 88,
+    "x": 2704,
+    "y": 578,
+    "trigger": 86,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     51,
+     0,
+     52
+    ]
+   },
+   "appearance": {
+    "hair": "fro",
+    "helmet": "none",
+    "shirt": "flak jacket",
+    "legs": "zinc legs",
+    "weapon1": "teardrop blade",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": -1,
+    "eyeFrame": 4,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Betty",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 92,
+    "x": 1622,
+    "y": 1566,
+    "trigger": 88,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     9
+    ]
+   },
+   "appearance": {
+    "hair": "ratty blonde",
+    "helmet": "none",
+    "shirt": "pink crystal armor",
+    "legs": "metal ballerina legs",
+    "weapon1": "none",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": -1,
+    "eyeFrame": 12,
+    "gender": "female"
+   }
+  },
+  {
+   "name": "Milton",
+   "kind": "shop",
+   "shop": {
+    "type": "items",
+    "items": [
+     {
+      "item": "fishing pole",
+      "price": 0
+     }
+    ]
+   },
+   "origin": {
+    "area": 92,
+    "x": 1066,
+    "y": 1562,
+    "trigger": 87,
+    "buy": true,
+    "sell": true,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "none",
+    "shirt": "fish scale armor",
+    "legs": "fish scale legs",
+    "weapon1": "fishing pole",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Ned",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 78,
+    "x": 3818,
+    "y": 584,
+    "trigger": 90,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "protector helmet",
+    "shirt": "samurai armor",
+    "legs": "blue crystal legs",
+    "weapon1": "fishing pole",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": -1,
+    "eyeFrame": 2,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Craft-Man",
+   "kind": "shop",
+   "shop": {
+    "type": "craft",
+    "items": [
+     {
+      "item": "mithril helmet",
+      "price": 0
+     },
+     {
+      "item": "mithril armor",
+      "price": 0
+     },
+     {
+      "item": "mithril legs",
+      "price": 0
+     },
+     {
+      "item": "phantom hood",
+      "price": 0
+     },
+     {
+      "item": "phantom robe",
+      "price": 0
+     },
+     {
+      "item": "phantom pants",
+      "price": 0
+     },
+     {
+      "item": "divine helmet",
+      "price": 0
+     },
+     {
+      "item": "divine armor",
+      "price": 0
+     },
+     {
+      "item": "divine legs",
+      "price": 0
+     }
+    ]
+   },
+   "origin": {
+    "area": 78,
+    "x": 5242,
+    "y": 1074,
+    "trigger": 92,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     53
+    ]
+   },
+   "appearance": {
+    "hair": "mohawk",
+    "helmet": "eye patch",
+    "shirt": "stone armor",
+    "legs": "stone armor legs",
+    "weapon1": "captains rapier",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": -1,
+    "eyeFrame": 4,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Scott",
+   "kind": "shop",
+   "shop": {
+    "type": "craft",
+    "items": [
+     {
+      "item": "enforcer helmet",
+      "price": 0
+     },
+     {
+      "item": "enforcer armor",
+      "price": 0
+     },
+     {
+      "item": "enforcer legs",
+      "price": 0
+     },
+     {
+      "item": "frozen mithril axe",
+      "price": 0
+     },
+     {
+      "item": "god dagger",
+      "price": 0
+     },
+     {
+      "item": "phantom wand",
+      "price": 0
+     },
+     {
+      "item": "phantom staff",
+      "price": 0
+     },
+     {
+      "item": "divine bow",
+      "price": 0
+     },
+     {
+      "item": "mithril shield",
+      "price": 0
+     }
+    ]
+   },
+   "origin": {
+    "area": 78,
+    "x": 5554,
+    "y": 1074,
+    "trigger": 95,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     56
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "cone helmet",
+    "shirt": "robot armor",
+    "legs": "mocap pants",
+    "weapon1": "fishing pole",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": -1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Bert",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 78,
+    "x": 4031,
+    "y": 1407,
+    "trigger": 91,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "comb over",
+    "helmet": "none",
+    "shirt": "white shirt",
+    "legs": "green shorts",
+    "weapon1": "none",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": -1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Christy",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 98,
+    "x": 3970,
+    "y": 1738,
+    "trigger": 97,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "brown ponytails",
+    "helmet": "none",
+    "shirt": "pink crystal armor",
+    "legs": "pink crystal legs",
+    "weapon1": "sai",
+    "weapon2": "sai",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Philbert",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 104,
+    "x": 2158,
+    "y": 746,
+    "trigger": 98,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     58,
+     0,
+     59
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "skull crusher helmet",
+    "shirt": "relic armor",
+    "legs": "titanium legs",
+    "weapon1": "bazooka",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": -1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Dan",
+   "kind": "shop",
+   "shop": {
+    "type": "craft",
+    "items": [
+     {
+      "item": "mystical tribal legs",
+      "price": 0
+     },
+     {
+      "item": "hydro tech legs",
+      "price": 0
+     },
+     {
+      "item": "atomic legs",
+      "price": 0
+     },
+     {
+      "item": "mystic tribal bow",
+      "price": 0
+     },
+     {
+      "item": "skull bone gun",
+      "price": 0
+     },
+     {
+      "item": "hydro tech wand",
+      "price": 0
+     },
+     {
+      "item": "hydro tech staff",
+      "price": 0
+     },
+     {
+      "item": "cyro thorn blade",
+      "price": 0
+     },
+     {
+      "item": "cyro x force",
+      "price": 0
+     }
+    ]
+   },
+   "origin": {
+    "area": 105,
+    "x": 4062,
+    "y": 414,
+    "trigger": 100,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     61
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "assault helmet",
+    "shirt": "analytic armor",
+    "legs": "jester pants",
+    "weapon1": "rayon gun",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Hubert",
+   "kind": "shop",
+   "shop": {
+    "type": "craft",
+    "items": [
+     {
+      "item": "cyro helmet",
+      "price": 0
+     },
+     {
+      "item": "mystical tribal mask",
+      "price": 0
+     },
+     {
+      "item": "hydro tech helmet",
+      "price": 0
+     },
+     {
+      "item": "atomic helmet",
+      "price": 0
+     },
+     {
+      "item": "cyro armor",
+      "price": 0
+     },
+     {
+      "item": "mystical tribal armor",
+      "price": 0
+     },
+     {
+      "item": "hydro tech suit",
+      "price": 0
+     },
+     {
+      "item": "atomic suit",
+      "price": 0
+     },
+     {
+      "item": "cyro legs",
+      "price": 0
+     }
+    ]
+   },
+   "origin": {
+    "area": 105,
+    "x": 3752,
+    "y": 412,
+    "trigger": 99,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     60
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "ancient helmet",
+    "shirt": "relic armor",
+    "legs": "zinc legs",
+    "weapon1": "skull crusher",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": -1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Jenkins",
+   "kind": "shop",
+   "shop": {
+    "type": "craft",
+    "items": [
+     {
+      "item": "prey helmet",
+      "price": 0
+     },
+     {
+      "item": "prey armor",
+      "price": 0
+     },
+     {
+      "item": "prey legs",
+      "price": 0
+     },
+     {
+      "item": "wrangler helmet",
+      "price": 0
+     },
+     {
+      "item": "wrangler armor",
+      "price": 0
+     },
+     {
+      "item": "wrangler legs",
+      "price": 0
+     },
+     {
+      "item": "radiator gun",
+      "price": 0
+     },
+     {
+      "item": "spellbound helmet",
+      "price": 0
+     },
+     {
+      "item": "spellbound armor",
+      "price": 0
+     }
+    ]
+   },
+   "origin": {
+    "area": 105,
+    "x": 392,
+    "y": 90,
+    "trigger": 102,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     62
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "helmet of hatred",
+    "shirt": "samurai armor",
+    "legs": "samurai legs",
+    "weapon1": "harpoon bow",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Derek",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 53,
+    "x": 2842,
+    "y": 84,
+    "trigger": 104,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     63,
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "spiked blond",
+    "helmet": "none",
+    "shirt": "chainmail",
+    "legs": "red pants",
+    "weapon1": "none",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Hamlet",
+   "kind": "shop",
+   "shop": {
+    "type": "craft",
+    "items": [
+     {
+      "item": "spellbound legs",
+      "price": 0
+     },
+     {
+      "item": "ghillie helmet",
+      "price": 0
+     },
+     {
+      "item": "ghillie armor",
+      "price": 0
+     },
+     {
+      "item": "ghillie legs",
+      "price": 0
+     },
+     {
+      "item": "ghillie bow",
+      "price": 0
+     },
+     {
+      "item": "ultra helmet",
+      "price": 0
+     },
+     {
+      "item": "ultra armor",
+      "price": 0
+     },
+     {
+      "item": "ultra legs",
+      "price": 0
+     },
+     {
+      "item": "ultra scimitar",
+      "price": 0
+     }
+    ]
+   },
+   "origin": {
+    "area": 136,
+    "x": 3724,
+    "y": 750,
+    "trigger": 105,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     64
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "acidic helmet",
+    "shirt": "acidic armor",
+    "legs": "acidic legs",
+    "weapon1": "ak47",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Zander",
+   "kind": "shop",
+   "shop": {
+    "type": "craft",
+    "items": [
+     {
+      "item": "corruptor",
+      "price": 0
+     }
+    ]
+   },
+   "origin": {
+    "area": 139,
+    "x": 1358,
+    "y": 1570,
+    "trigger": 108,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     67
+    ]
+   },
+   "appearance": {
+    "hair": "fro",
+    "helmet": "none",
+    "shirt": "green shirt",
+    "legs": "green pants",
+    "weapon1": "machete",
+    "weapon2": "machete",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Tanya",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 140,
+    "x": 1623,
+    "y": 1568,
+    "trigger": 109,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     9
+    ]
+   },
+   "appearance": {
+    "hair": "blonde tails",
+    "helmet": "none",
+    "shirt": "jester shirt",
+    "legs": "leather legs",
+    "weapon1": "es c90",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": -1,
+    "eyeFrame": 7,
+    "gender": "female"
+   }
+  },
+  {
+   "name": "Isaac Sr",
+   "kind": "shop",
+   "shop": {
+    "type": "craft",
+    "items": [
+     {
+      "item": "magma helmet",
+      "price": 0
+     },
+     {
+      "item": "magma armor",
+      "price": 0
+     },
+     {
+      "item": "magma legs",
+      "price": 0
+     },
+     {
+      "item": "millennium helmet",
+      "price": 0
+     },
+     {
+      "item": "millennium armor",
+      "price": 0
+     },
+     {
+      "item": "millennium legs",
+      "price": 0
+     },
+     {
+      "item": "winged skull helmet",
+      "price": 0
+     },
+     {
+      "item": "corruption helmet",
+      "price": 0
+     },
+     {
+      "item": "empowered staff",
+      "price": 0
+     }
+    ]
+   },
+   "origin": {
+    "area": 141,
+    "x": 1358,
+    "y": 1570,
+    "trigger": 106,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     65
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "ancient helmet",
+    "shirt": "samurai armor",
+    "legs": "imperial legs",
+    "weapon1": "heated staff",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Isaac Jr",
+   "kind": "shop",
+   "shop": {
+    "type": "craft",
+    "items": [
+     {
+      "item": "corruption armor",
+      "price": 0
+     },
+     {
+      "item": "corruption legs",
+      "price": 0
+     },
+     {
+      "item": "empowered armor",
+      "price": 0
+     },
+     {
+      "item": "empowered legs",
+      "price": 0
+     },
+     {
+      "item": "inferno",
+      "price": 0
+     },
+     {
+      "item": "coal blazer",
+      "price": 0
+     },
+     {
+      "item": "millennium bow",
+      "price": 0
+     },
+     {
+      "item": "corruptor",
+      "price": 0
+     },
+     {
+      "item": "empowered wand",
+      "price": 0
+     }
+    ]
+   },
+   "origin": {
+    "area": 141,
+    "x": 841,
+    "y": 1570,
+    "trigger": 107,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     66
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "strong full helmet",
+    "shirt": "apollos armor",
+    "legs": "fish scale legs",
+    "weapon1": "acid shield",
+    "weapon2": "acidic sword",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Kris",
+   "kind": "dialog",
+   "shop": null,
+   "origin": {
+    "area": 144,
+    "x": 2376,
+    "y": 1568,
+    "trigger": 113,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     0
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "analytic helmet",
+    "shirt": "serpent armor",
+    "legs": "kreeton legs",
+    "weapon1": "xm8 rifle",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Ethan",
+   "kind": "shop",
+   "shop": {
+    "type": "craft",
+    "items": [
+     {
+      "item": "god helmet",
+      "price": 0
+     },
+     {
+      "item": "god armor",
+      "price": 0
+     },
+     {
+      "item": "god legs",
+      "price": 0
+     },
+     {
+      "item": "angelic helmet",
+      "price": 0
+     },
+     {
+      "item": "angelic armor",
+      "price": 0
+     },
+     {
+      "item": "angelic legs",
+      "price": 0
+     },
+     {
+      "item": "gemstone helmet",
+      "price": 0
+     },
+     {
+      "item": "gemstone armor",
+      "price": 0
+     },
+     {
+      "item": "gemstone legs",
+      "price": 0
+     }
+    ]
+   },
+   "origin": {
+    "area": 145,
+    "x": 2202,
+    "y": 1567,
+    "trigger": 111,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     68
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "cowboy knight helmet",
+    "shirt": "adamantium armor",
+    "legs": "protector legs",
+    "weapon1": "enforcer gun",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Toddwell",
+   "kind": "shop",
+   "shop": {
+    "type": "craft",
+    "items": [
+     {
+      "item": "god blade",
+      "price": 0
+     },
+     {
+      "item": "god scimitar",
+      "price": 0
+     },
+     {
+      "item": "angelic bow",
+      "price": 0
+     },
+     {
+      "item": "gemstone wand",
+      "price": 0
+     },
+     {
+      "item": "gemstone staff",
+      "price": 0
+     },
+     {
+      "item": "neoplasti blaster",
+      "price": 0
+     },
+     {
+      "item": "neoplasti helmet",
+      "price": 0
+     },
+     {
+      "item": "neoplasti armor",
+      "price": 0
+     },
+     {
+      "item": "neoplasti legs",
+      "price": 0
+     }
+    ]
+   },
+   "origin": {
+    "area": 145,
+    "x": 1301,
+    "y": 1569,
+    "trigger": 112,
+    "buy": false,
+    "sell": false,
+    "nextIds": [
+     69
+    ]
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "bladed helmet",
+    "shirt": "blue crystal armor",
+    "legs": "assault legs",
+    "weapon1": "beholder bow",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Ticket Vendor",
+   "kind": "shop",
+   "shop": {
+    "type": "items",
+    "items": [
+     {
+      "item": "ticket",
+      "price": 300000
+     }
+    ],
+    "stock": 10000,
+    "infinite": true
+   },
+   "origin": {
+    "area": 0,
+    "x": 0,
+    "y": 0,
+    "trigger": -1,
+    "virtual": true
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "none",
+    "shirt": "suit",
+    "legs": "suit pants",
+    "weapon1": "none",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Item Vendor",
+   "kind": "shop",
+   "shop": {
+    "type": "items",
+    "items": []
+   },
+   "origin": {
+    "area": 0,
+    "x": 0,
+    "y": 0,
+    "trigger": -1,
+    "virtual": true
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "none",
+    "shirt": "green shirt",
+    "legs": "blue jeans",
+    "weapon1": "none",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  },
+  {
+   "name": "Pet Vendor",
+   "kind": "shop",
+   "shop": {
+    "type": "pets",
+    "items": []
+   },
+   "origin": {
+    "area": 0,
+    "x": 0,
+    "y": 0,
+    "trigger": -1,
+    "virtual": true
+   },
+   "appearance": {
+    "hair": "bald",
+    "helmet": "none",
+    "shirt": "red shirt",
+    "legs": "blue jeans",
+    "weapon1": "none",
+    "weapon2": "none",
+    "skin": 2,
+    "scaleX": 1,
+    "eyeFrame": 1,
+    "gender": "male"
+   }
+  }
+ ]
+}

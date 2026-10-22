@@ -1,0 +1,86 @@
+[
+  {
+    "key": "green spawn ball",
+    "c": 100
+  },
+  {
+    "key": "blue spawn ball",
+    "c": 100
+  },
+  {
+    "key": "yellow spawn ball",
+    "c": 100
+  },
+  {
+    "key": "orange spawn ball",
+    "c": 100
+  },
+  {
+    "key": "bullhorn",
+    "c": 100
+  },
+  {
+    "key": "item vendor",
+    "c": 100
+  },
+  {
+    "key": "pet vendor",
+    "c": 100
+  },
+  {
+    "key": "evolution crystal",
+    "c": 100
+  },
+  {
+    "key": "apple",
+    "c": 50
+  },
+  {
+    "key": "banana",
+    "c": 35
+  },
+  {
+    "key": "watermelon",
+    "c": 120
+  },
+  {
+    "key": "turkey",
+    "c": 300
+  },
+  {
+    "key": "book of power",
+    "c": 55000
+  },
+  {
+    "key": "book of magic",
+    "c": 55000
+  },
+  {
+    "key": "book of range",
+    "c": 55000
+  },
+  {
+    "key": "book of artillery",
+    "c": 55000
+  },
+  {
+    "key": "book of dexterity",
+    "c": 55000
+  },
+  {
+    "key": "book of health",
+    "c": 55000
+  },
+  {
+    "key": "book of MP",
+    "c": 55000
+  },
+  {
+    "key": "book of defense",
+    "c": 55000
+  },
+  {
+    "key": "book of skill",
+    "c": 210000
+  }
+]

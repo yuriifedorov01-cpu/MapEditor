@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="load screen.png">
+	<!-- Created with Adobe Animate version 16.0.0.112 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="ad" x="0" y="0" width="364" height="241" pivotX="180.85" pivotY="121.05" />
+	<SubTexture name="earn" x="0" y="241" width="129" height="55" pivotX="47.55" pivotY="22.75" />
+	<SubTexture name="load screen" x="0" y="292" width="950" height="700" />
+</TextureAtlas>

@@ -1,0 +1,8 @@
+[
+ { "key": "hhoshop1", "player": "Pet Shop", "x": 908,  "y": 3320, "pet": "Teeny",  "coins": 500,  "tickets": 0, "rot": 0 },
+ { "key": "hhoshop2", "player": "Pet Shop", "x": 1073, "y": 3320, "pet": "Bouncy", "coins": 800,  "tickets": 0, "rot": 0 },
+ { "key": "hhoshop3", "player": "Pet Shop", "x": 1238, "y": 3320, "pet": "Quacky", "coins": 1200, "tickets": 0, "rot": 0 },
+ { "key": "hhoshop4", "player": "Pet Shop", "x": 1403, "y": 3320, "pet": "Spooky", "coins": 2000, "tickets": 0, "rot": 0 },
+ { "key": "hhoshop5", "player": "Pet Shop", "x": 1568, "y": 3320, "pet": "Rocky",  "coins": 3500, "tickets": 0, "rot": 0 },
+ { "key": "hhoshop6", "player": "Pet Shop", "x": 1733, "y": 3320, "pet": "Zappy",  "coins": 6000, "tickets": 0, "rot": 0 }
+]

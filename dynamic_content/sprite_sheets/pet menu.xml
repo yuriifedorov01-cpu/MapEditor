@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="pet menu.png">
+	<!-- Created with Adobe Flash Professional version 15.0.1.179 -->
+	<!-- http://www.adobe.com/products/flash.html -->
+	<SubTexture name="active icon" x="907" y="0" width="104" height="133" pivotX="51.95" pivotY="70.85"/>
+	<SubTexture name="auto activate_00" x="995" y="133" width="26" height="26" pivotX="12.45" pivotY="14.35" frameX="0" frameY="-2" frameWidth="31" frameHeight="28"/>
+	<SubTexture name="auto activate_01" x="867" y="139" width="31" height="28"/>
+	<SubTexture name="companion icon" x="779" y="0" width="128" height="139" pivotX="64.65" pivotY="76.25"/>
+	<SubTexture name="big panel" x="0" y="0" width="779" height="458" />
+	<SubTexture name="small panel" x="0" y="458" width="778" height="351" />
+	<SubTexture name="panel_00" x="907" y="133" width="88" height="96" pivotX="43.85" pivotY="43.85"/>
+	<SubTexture name="panel_01" x="779" y="139" width="88" height="96"/>
+	<SubTexture name="activate_00" x="779" y="235" width="165" height="40" pivotX="73.15" pivotY="15.25"/>
+	<SubTexture name="companion" x="856" y="472" width="94" height="21" pivotX="42.65" pivotY="9.9"/>
+	<SubTexture name="equip_00" x="779" y="434" width="90" height="38" pivotX="32.9" pivotY="15.25"/>
+	<SubTexture name="equip_01" x="869" y="434" width="90" height="38"/>
+	<SubTexture name="mode_00" x="779" y="395" width="115" height="39" pivotX="49.4" pivotY="15.25"/>
+	<SubTexture name="info" x="778" y="514" width="85" height="21" pivotX="21.4" pivotY="9.9"/>
+	<SubTexture name="release" x="944" y="275" width="78" height="28" pivotX="32.1" pivotY="9.9"/>
+	<SubTexture name="vend_00" x="925" y="315" width="88" height="40" pivotX="35.65" pivotY="15.6"/>
+	<SubTexture name="withdraw_00" x="779" y="315" width="146" height="40" pivotX="37.9" pivotY="15.25"/>
+	<SubTexture name="x_btn_00" x="944" y="229" width="48" height="46" pivotX="30.2" pivotY="18.6"/>
+	<SubTexture name="x_btn_01" x="959" y="434" width="48" height="46"/>
+	<SubTexture name="pet shop panel" x="0" y="809" width="796" height="283" />
+	<SubTexture name="small health bar" x="785" y="544" width="35" height="3" />
+	<SubTexture name="small health BG" x="785" y="551" width="37" height="5" />
+	
+	<SubTexture name="red pixel" x="967" y="459" width="1" height="1" />
+	<SubTexture name="pink pixel" x="969" y="451" width="1" height="1" />
+	<SubTexture name="yellow pixel" x="864" y="409" width="1" height="1" />
+	<SubTexture name="dark pixel" x="636" y="457" width="1" height="1" />
+</TextureAtlas>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="friends menu.png">
+	<!-- Created with Adobe Flash Professional version 15.0.1.179 -->
+	<!-- http://www.adobe.com/products/flash.html -->
+	<SubTexture name="add friend panel" x="222" y="591" width="200" height="46" pivotX="99.5" pivotY="22.7"/>
+	<SubTexture name="addFriendMenu_btn_00" x="310" y="715" width="82" height="40" pivotX="32.9" pivotY="15.25"/>
+	<SubTexture name="chat_btn" x="422" y="591" width="84" height="40" pivotX="32.9" pivotY="15.25"/>
+	<SubTexture name="enemiesTab_btn" x="144" y="637" width="128" height="41" pivotX="50.5" pivotY="18.05"/>
+	<SubTexture name="facebookInvite_btn" x="0" y="615" width="144" height="44" pivotX="71.5" pivotY="21.75"/>
+	<SubTexture name="friend slot_01" x="222" y="515" width="270" height="38" pivotX="134.2" pivotY="18.85"/>
+	<SubTexture name="friend slot_00" x="222" y="553" width="270" height="38" pivotX="134.2" pivotY="18.85"/>
+	<SubTexture name="friendsTab_btn" x="0" y="659" width="126" height="41" pivotX="50.5" pivotY="18.05"/>
+	<SubTexture name="guildChatPanel" x="0" y="515" width="222" height="100" pivotX="165.55" pivotY="49.15"/>
+	<SubTexture name="guildChat_btn" x="0" y="700" width="155" height="28" pivotX="68.95" pivotY="11.45"/>
+	<SubTexture name="guildTab_btn" x="396" y="637" width="112" height="41" pivotX="50.5" pivotY="18.05"/>
+	<SubTexture name="offline clip" x="96" y="728" width="49" height="26" pivotX="27.25" pivotY="12.35"/>
+	<SubTexture name="online clip" x="155" y="678" width="49" height="26"/>
+	<SubTexture name="panel" x="0" y="0" width="512" height="515" pivotX="308" pivotY="237.95"/>
+	<SubTexture name="scroll_btn" x="480" y="678" width="29" height="39" pivotX="14.5" pivotY="19"/>
+	<SubTexture name="unFriend_btn_00" x="272" y="637" width="124" height="39" pivotX="51.15" pivotY="15.25"/>
+	<SubTexture name="x_btn_00" x="0" y="728" width="48" height="45" pivotX="30.2" pivotY="18.6"/>
+</TextureAtlas>

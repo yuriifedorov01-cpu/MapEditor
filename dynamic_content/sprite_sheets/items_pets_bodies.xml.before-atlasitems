@@ -1,0 +1,1299 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="items_pets_bodies.png">
+	<!-- Created with Adobe Flash Professional version 15.0.1.179 -->
+	<!-- http://www.adobe.com/products/flash.html -->
+	<SubTexture name="ak47" x="141" y="842" width="86" height="25" pivotX="42.15" pivotY="12.6"/>
+	<SubTexture name="es c90" x="575" y="1174" width="56" height="23" pivotX="27.65" pivotY="11.6"/>
+	<SubTexture name="M16" x="220" y="723" width="89" height="27" pivotX="43.65" pivotY="13.05"/>
+	<SubTexture name="abomino body" x="804" y="1163" width="35" height="37" pivotX="16.7" pivotY="18.45"/>
+	<SubTexture name="abomino head" x="0" y="487" width="58" height="49" pivotX="28.25" pivotY="24.55"/>
+	<SubTexture name="abomino leg" x="139" y="900" width="12" height="12" pivotX="6.2" pivotY="2.8"/>
+	<SubTexture name="achilles armor arm" x="283" y="1052" width="21" height="33" pivotX="8.95" pivotY="16.45"/>
+	<SubTexture name="achilles armor" x="627" y="437" width="23" height="29" pivotX="10.9" pivotY="14.55"/>
+	<SubTexture name="achilles boot" x="283" y="1393" width="14" height="11" pivotX="6.15" pivotY="5.05"/>
+	<SubTexture name="achilles helmet" x="352" y="506" width="53" height="53" pivotX="-7.25" pivotY="10.7"/>
+	<SubTexture name="achilles legs" x="488" y="1375" width="19" height="21" pivotX="9.15" pivotY="9.35"/>
+	<SubTexture name="acid boot" x="702" y="1064" width="14" height="12" pivotX="6.45" pivotY="5.3"/>
+	<SubTexture name="acid shield" x="37" y="913" width="39" height="51" pivotX="19.2" pivotY="25.75"/>
+	<SubTexture name="acidic armor arm" x="135" y="1314" width="25" height="27" pivotX="13.25" pivotY="13"/>
+	<SubTexture name="acidic armor" x="720" y="1295" width="29" height="25" pivotX="14" pivotY="12.75"/>
+	<SubTexture name="acidic helmet" x="898" y="214" width="55" height="69" pivotX="25.05" pivotY="34.25"/>
+	<SubTexture name="acidic legs" x="228" y="396" width="17" height="21" pivotX="9.1" pivotY="10.75"/>
+	<SubTexture name="acidic sword" x="77" y="702" width="29" height="83" pivotX="12.15" pivotY="53.7"/>
+	<SubTexture name="adamantium armor arm" x="974" y="764" width="19" height="30" pivotX="7.95" pivotY="15.65"/>
+	<SubTexture name="adamantium armor" x="706" y="1258" width="29" height="32" pivotX="12.35" pivotY="11.1"/>
+	<SubTexture name="adamantium legs" x="888" y="1391" width="13" height="20" pivotX="6.5" pivotY="9.95"/>
+	<SubTexture name="adamantium helmet" x="436" y="1045" width="39" height="42" pivotX="18.8" pivotY="22.35"/>
+	<SubTexture name="airsoft gun" x="29" y="1267" width="32" height="26" pivotX="15.8" pivotY="12.3"/>
+	<SubTexture name="analytic armor arm" x="770" y="910" width="19" height="30" pivotX="7.95" pivotY="15.7"/>
+	<SubTexture name="analytic armor" x="670" y="1255" width="36" height="26" pivotX="17.4" pivotY="11.95"/>
+	<SubTexture name="analytic helmet" x="809" y="600" width="51" height="51" pivotX="27" pivotY="30.95"/>
+	<SubTexture name="analytic legs" x="483" y="1147" width="17" height="23" pivotX="8.35" pivotY="11.2"/>
+	<SubTexture name="analytic staff" x="835" y="454" width="32" height="92" pivotX="15.45" pivotY="68.5"/>
+	<SubTexture name="analytic wand" x="470" y="842" width="31" height="69" pivotX="17.35" pivotY="50.05"/>
+	<SubTexture name="ancient armor arm" x="903" y="559" width="18" height="30" pivotX="9.05" pivotY="14.6"/>
+	<SubTexture name="ancient armor" x="875" y="1290" width="26" height="29" pivotX="12.4" pivotY="14.75"/>
+	<SubTexture name="ancient battle axe" x="0" y="637" width="33" height="77" pivotX="16.1" pivotY="38.65"/>
+	<SubTexture name="ancient helmet" x="341" y="818" width="42" height="52" pivotX="20.5" pivotY="25.95"/>
+	<SubTexture name="ancient legs" x="830" y="734" width="14" height="22" pivotX="6.45" pivotY="10.2"/>
+	<SubTexture name="ancient shield" x="106" y="702" width="38" height="63" pivotX="20" pivotY="27.6"/>
+	<SubTexture name="angels wings bow" x="34" y="413" width="42" height="74" pivotX="21.05" pivotY="36.85"/>
+	<SubTexture name="aparashee head" x="575" y="0" width="69" height="93" pivotX="34.15" pivotY="46.05"/>
+	<SubTexture name="apollos armor arm" x="375" y="1045" width="22" height="32" pivotX="13.75" pivotY="16.55"/>
+	<SubTexture name="apollos armor" x="0" y="1006" width="39" height="45" pivotX="18.3" pivotY="23.2"/>
+	<SubTexture name="apollos armor legs" x="360" y="931" width="13" height="21" pivotX="6.35" pivotY="10.5"/>
+	<SubTexture name="apollos helmet" x="809" y="844" width="35" height="61" pivotX="24.75" pivotY="38.8"/>
+	<SubTexture name="apple" x="885" y="1364" width="18" height="27" pivotX="8.7" pivotY="12.75"/>
+	<SubTexture name="archaic armor arm" x="209" y="1345" width="18" height="30" pivotX="8.35" pivotY="11.1"/>
+	<SubTexture name="archaic armor" x="351" y="1256" width="31" height="30" pivotX="14.8" pivotY="14.6"/>
+	<SubTexture name="archaic boot" x="453" y="1393" width="14" height="11" pivotX="6.4" pivotY="5.15"/>
+	<SubTexture name="archaic bow" x="343" y="281" width="37" height="98" pivotX="18.1" pivotY="48.8"/>
+	<SubTexture name="archaic helmet" x="675" y="869" width="49" height="43" pivotX="24.15" pivotY="21.5"/>
+	<SubTexture name="archaic legs" x="18" y="1377" width="18" height="22" pivotX="8.6" pivotY="10.4"/>
+	<SubTexture name="green face helmet" x="409" y="461" width="61" height="48" pivotX="23.1" pivotY="11.55"/>
+	<SubTexture name="archer hat" x="305" y="1112" width="48" height="31" pivotX="23.55" pivotY="12.9"/>
+	<SubTexture name="leather archer armor arm" x="845" y="1258" width="16" height="29" pivotX="7.85" pivotY="15.15"/>
+	<SubTexture name="leather archer armor" x="0" y="1289" width="27" height="29" pivotX="13.1" pivotY="13.85"/>
+	<SubTexture name="archer leather legs" x="228" y="630" width="11" height="22" pivotX="5.45" pivotY="10.7"/>
+	<SubTexture name="archer pants" x="481" y="714" width="11" height="21" pivotX="2.6" pivotY="12.8"/>
+	<SubTexture name="archer shirt arm" x="430" y="1323" width="14" height="18" pivotX="6.5" pivotY="15.75"/>
+	<SubTexture name="archer shirt" x="612" y="1339" width="22" height="27" pivotX="10.85" pivotY="12.95"/>
+	<SubTexture name="army helmet" x="979" y="1125" width="42" height="34" pivotX="18.8" pivotY="16.05"/>
+	<SubTexture name="small bow proj" x="331" y="1364" width="38" height="13" />
+	<SubTexture name="leaf bow proj" x="783" y="171" width="42" height="20" />
+	<SubTexture name="triple leaf bow proj" x="72" y="1229" width="41" height="25" />
+	<SubTexture name="basic wand proj" x="360" y="952" width="13" height="14" />
+	<SubTexture name="star wand proj" x="811" y="1387" width="18" height="18" />
+	<SubTexture name="slingshot proj" x="1015" y="257" width="9" height="11" />
+	<SubTexture name="medium bow proj" x="762" y="1357" width="41" height="13" />
+	<SubTexture name="leaf pad bow proj" x="921" y="1357" width="41" height="13" />
+	<SubTexture name="thorn bow proj" x="272" y="1358" width="41" height="13" />xm
+	<SubTexture name="thorn bow proj" x="272" y="1358" width="41" height="13" />
+	<SubTexture name="basic magic staff proj" x="346" y="1332" width="12" height="14" />
+	<SubTexture name="blue sphere staff proj" x="830" y="266" width="11" height="11" />
+	<SubTexture name="single sphere wand proj" x="830" y="266" width="11" height="11" />
+	<SubTexture name="natures staff proj" x="376" y="1392" width="12" height="12" />
+	<SubTexture name="nightingale staff proj" x="352" y="493" width="11" height="11" />
+	<SubTexture name="nightingale wand proj" x="352" y="493" width="11" height="11" />
+	<SubTexture name="rich mans bow proj" x="385" y="1323" width="45" height="14" />
+	<SubTexture name="angels wings bow proj" x="154" y="1204" width="49" height="23" />
+	<SubTexture name="mechanic wing bow proj" x="227" y="1244" width="52" height="19" />
+	<SubTexture name="crypt bow of fire proj" x="41" y="1180" width="53" height="24" />
+	<SubTexture name="eagle staff proj" x="597" y="715" width="16" height="12" />
+	<SubTexture name="reptile wand proj" x="675" y="1305" width="17" height="12" />
+	<SubTexture name="natures bow proj" x="612" y="1324" width="42" height="12" />
+	<SubTexture name="ocean staff proj" x="174" y="1247" width="14" height="12" />
+	<SubTexture name="night glow wand proj" x="606" y="565" width="19" height="13" />
+	<SubTexture name="tropical staff proj" x="134" y="1216" width="16" height="11" />
+	<SubTexture name="diamond studded bow proj" x="168" y="1365" width="40" height="12" />
+	<SubTexture name="winged diamond wand proj" x="327" y="370" width="16" height="9" />
+	<SubTexture name="bat wing staff proj" x="332" y="1231" width="13" height="11" />
+	<SubTexture name="heartstriker bow proj" x="182" y="1331" width="45" height="14" />
+	<SubTexture name="night glow bow proj" x="310" y="1304" width="47" height="12" />
+	<SubTexture name="frosters bow proj" x="654" y="1358" width="40" height="13" />
+	<SubTexture name="spherical staff proj" x="679" y="1100" width="16" height="17" />
+	<SubTexture name="indian wand proj" x="903" y="589" width="18" height="11" />
+	<SubTexture name="flaming needle bow proj" x="521" y="1269" width="50" height="17" />
+	<SubTexture name="heated staff proj" x="804" y="440" width="24" height="12" />
+	<SubTexture name="eagle slingshot proj" x="437" y="615" width="19" height="16" />
+	<SubTexture name="fallen queens spectre proj" x="700" y="1334" width="14" height="14" />
+	<SubTexture name="wand of blessings proj" x="784" y="1240" width="14" height="16" />
+	<SubTexture name="cyborg bow proj" x="299" y="1244" width="52" height="19" />
+	<SubTexture name="shaman wand proj" x="113" y="1229" width="19" height="18" />
+	<SubTexture name="shaman staff proj" x="428" y="1369" width="20" height="22" />
+	<SubTexture name="beholder bow proj" x="0" y="1096" width="36" height="18" />
+	<SubTexture name="beholder staff proj" x="279" y="1245" width="19" height="18" />
+	<SubTexture name="beholder wand proj" x="320" y="1096" width="13" height="13" />
+	<SubTexture name="element staff proj" x="557" y="1287" width="29" height="27" />
+	<SubTexture name="element wand proj" x="856" y="1375" width="19" height="21" />
+	<SubTexture name="archaic bow proj" x="437" y="1244" width="52" height="19" />
+	<SubTexture name="harpoon bow proj" x="310" y="1319" width="51" height="13" />
+	<SubTexture name="analytic staff proj" x="521" y="1252" width="12" height="16" />
+	<SubTexture name="analytic wand proj" x="239" y="1038" width="16" height="14" />
+	<SubTexture name="serpent wand proj" x="100" y="1361" width="28" height="18" />
+	<SubTexture name="serpent staff proj" x="891" y="1346" width="30" height="18" />
+	<SubTexture name="repguana bow proj" x="880" y="1187" width="66" height="18" />
+	<SubTexture name="darkane staff proj" x="993" y="1336" width="26" height="23" />
+	<SubTexture name="darkane wand proj" x="227" y="1359" width="22" height="23" />
+	<SubTexture name="M16 proj" x="333" y="1036" width="16" height="8" />
+	<SubTexture name="handgun proj" x="333" y="1036" width="16" height="8" />
+	<SubTexture name="revolver proj" x="333" y="1036" width="16" height="8" />
+	<SubTexture name="mac10 proj" x="333" y="1036" width="16" height="8" />
+	<SubTexture name="mp5 proj" x="333" y="1036" width="16" height="8" />
+	<SubTexture name="shotgun proj" x="333" y="1036" width="16" height="8" />
+	<SubTexture name="tommy gun proj" x="333" y="1036" width="16" height="8" />
+	<SubTexture name="es c90 proj" x="333" y="1036" width="16" height="8" />
+	<SubTexture name="ak47 proj" x="333" y="1036" width="16" height="8" />
+	<SubTexture name="chaingun proj" x="333" y="1036" width="16" height="8" />
+	<SubTexture name="xm8 rifle proj" x="333" y="1036" width="16" height="8" />
+	<SubTexture name="machine gun proj" x="333" y="1036" width="16" height="8" />
+	<SubTexture name="sniper rifle proj" x="725" y="760" width="21" height="8" />
+	<SubTexture name="airsoft gun proj" x="841" y="75" width="8" height="7" />
+	<SubTexture name="bb gun proj" x="841" y="75" width="8" height="7" />
+	<SubTexture name="paintball gun proj" x="253" y="543" width="10" height="10" />
+	<SubTexture name="potato gun proj" x="558" y="1186" width="17" height="11" />
+	<SubTexture name="bazooka proj" x="751" y="584" width="28" height="16" />
+	<SubTexture name="rayon gun proj" x="556" y="324" width="25" height="10" />
+	<SubTexture name="beholder gun proj" x="263" y="483" width="25" height="10" />
+	<SubTexture name="kreeton gun proj" x="267" y="1391" width="16" height="20" />
+	<SubTexture name="skullcrusher gun proj" x="330" y="607" width="27" height="9" />
+	<SubTexture name="enforcer gun proj" x="33" y="637" width="20" height="12" />
+	<SubTexture name="divine bow proj" x="631" y="1212" width="48" height="23" />
+	<SubTexture name="phantom staff proj" x="27" y="1293" width="27" height="27" />
+	<SubTexture name="phantom wand proj" x="583" y="1245" width="19" height="19" />
+	<SubTexture name="radiator gun proj" x="583" y="1245" width="19" height="19" />
+	<SubTexture name="mystic tribal bow proj" x="790" y="1290" width="51" height="12" />
+	<SubTexture name="hydro tech wand proj" x="524" y="1377" width="19" height="19" />
+	<SubTexture name="hydro tech staff proj" x="739" y="1342" width="23" height="24" />
+	<SubTexture name="skull bone gun proj" x="43" y="336" width="48" height="12" />
+	<SubTexture name="assault boot" x="668" y="752" width="18" height="8" pivotX="8.35" pivotY="3.75"/>
+	<SubTexture name="astro suit arm" x="0" y="1345" width="18" height="30" pivotX="7.7" pivotY="15.65"/>
+	<SubTexture name="astro helmet" x="550" y="1017" width="40" height="43" pivotX="19.55" pivotY="22.35"/>
+	<SubTexture name="astro legs" x="875" y="1391" width="13" height="21" pivotX="7.05" pivotY="9.9"/>
+	<SubTexture name="astro suit" x="223" y="1304" width="26" height="27" pivotX="12.85" pivotY="12.95"/>
+	<SubTexture name="atomic suit arm" x="574" y="866" width="20" height="29" pivotX="9.85" pivotY="14.75"/>
+	<SubTexture name="atomic helmet" x="425" y="869" width="42" height="50" pivotX="20.9" pivotY="24.55"/>
+	<SubTexture name="atomic legs" x="346" y="1377" width="12" height="25" pivotX="7.95" pivotY="15.2"/>
+	<SubTexture name="atomic suit" x="735" y="1264" width="28" height="31" pivotX="13.95" pivotY="15.15"/>
+	<SubTexture name="atomic boot" x="300" y="773" width="11" height="8" pivotX="8" pivotY="4" />
+	<SubTexture name="racing helmet" x="591" y="907" width="45" height="45" pivotX="22.25" pivotY="22.15"/>
+	<SubTexture name="axe of minions" x="91" y="257" width="40" height="92" pivotX="19.55" pivotY="45.85"/>
+	<SubTexture name="baby bounce leg" x="88" y="651" width="10" height="7" pivotX="5.15" pivotY="2.85"/>
+	<SubTexture name="baby bounce head" x="592" y="531" width="35" height="34" pivotX="16.9" pivotY="17.4"/>
+	<SubTexture name="ballerina outfit arm" x="820" y="1361" width="19" height="26" pivotX="9.9" pivotY="13.05"/>
+	<SubTexture name="ballerina outfit" x="33" y="1204" width="39" height="29" pivotX="18.75" pivotY="14.5"/>
+	<SubTexture name="ballerina stockings" x="953" y="276" width="13" height="12" pivotX="6.45" pivotY="4.6"/>
+	<SubTexture name="balloon pack" x="644" y="0" width="63" height="100" pivotX="29" pivotY="42.15"/>
+	<SubTexture name="banana" x="724" y="847" width="30" height="30" pivotX="16.5" pivotY="19.3"/>
+	<SubTexture name="basic magic staff" x="1015" y="114" width="9" height="75" pivotX="3.9" pivotY="37.25"/>
+	<SubTexture name="wooden spear" x="353" y="1112" width="17" height="86" pivotX="7.85" pivotY="36.55"/>
+	<SubTexture name="basic wand" x="1015" y="189" width="7" height="46" pivotX="2.55" pivotY="23.35"/>
+	<SubTexture name="bat wing staff" x="103" y="108" width="48" height="100" pivotX="23.2" pivotY="50.05"/>
+	<SubTexture name="bazooka" x="501" y="843" width="93" height="23" pivotX="46.15" pivotY="11.45"/>
+	<SubTexture name="bb gun" x="860" y="1092" width="78" height="20" pivotX="38.3" pivotY="9.3"/>
+	<SubTexture name="beat cargo pants" x="456" y="538" width="14" height="26" pivotX="6.55" pivotY="12.45"/>
+	<SubTexture name="beat trench coat arm" x="968" y="1356" width="17" height="30" pivotX="7.45" pivotY="15.9"/>
+	<SubTexture name="beat trench coat" x="299" y="1332" width="24" height="26" pivotX="11.5" pivotY="13.25"/>
+	<SubTexture name="beholder armor arm" x="0" y="1257" width="29" height="32" pivotX="15.05" pivotY="14.15"/>
+	<SubTexture name="beholder armor" x="445" y="1290" width="28" height="27" pivotX="13.65" pivotY="13.55"/>
+	<SubTexture name="beholder sword" x="405" y="615" width="32" height="80" pivotX="16.15" pivotY="46.5"/>
+	<SubTexture name="beholder boot" x="654" y="944" width="17" height="8" pivotX="8.35" pivotY="3.75"/>
+	<SubTexture name="beholder bow" x="0" y="293" width="43" height="83" pivotX="20.6" pivotY="41.25"/>
+	<SubTexture name="beholder helmet" x="442" y="140" width="75" height="60" pivotX="45.45" pivotY="33.95"/>
+	<SubTexture name="beholder legs" x="913" y="1112" width="22" height="22" pivotX="10.25" pivotY="10.75"/>
+	<SubTexture name="beholder gun" x="95" y="867" width="64" height="33" pivotX="31.65" pivotY="16.05"/>
+	<SubTexture name="beholder shield" x="868" y="840" width="42" height="51" pivotX="20.45" pivotY="25.35"/>
+	<SubTexture name="beholder staff" x="975" y="0" width="49" height="114" pivotX="25.9" pivotY="104.55"/>
+	<SubTexture name="beholder wand" x="966" y="209" width="49" height="79" pivotX="24.3" pivotY="56.65"/>
+	<SubTexture name="beholder axe" x="0" y="108" width="53" height="93" pivotX="26.35" pivotY="46.5"/>
+	<SubTexture name="big stick" x="279" y="1186" width="20" height="59" pivotX="9.6" pivotY="29.8"/>
+	<SubTexture name="suit arm" x="86" y="1367" width="14" height="28" pivotX="6.5" pivotY="15.85"/>
+	<SubTexture name="half ski mask" x="346" y="1346" width="30" height="18" pivotX="14.55" pivotY="8.45"/>
+	<SubTexture name="full ski mask" x="679" y="1220" width="31" height="35" pivotX="15.05" pivotY="17"/>
+	<SubTexture name="suit" x="78" y="1340" width="22" height="27" pivotX="10.85" pivotY="12.95"/>
+	<SubTexture name="blade of hatred" x="144" y="652" width="25" height="99" pivotX="11.6" pivotY="48.85"/>
+	<SubTexture name="bladed armor arm" x="982" y="1216" width="33" height="33" pivotX="17.15" pivotY="16.4"/>
+	<SubTexture name="bladed armor" x="267" y="1263" width="35" height="26" pivotX="16.65" pivotY="13.75"/>
+	<SubTexture name="bladed boot" x="901" y="1392" width="12" height="12" pivotX="7.45" pivotY="5.3"/>
+	<SubTexture name="bladed helmet" x="867" y="507" width="54" height="52" pivotX="26.25" pivotY="25.95"/>
+	<SubTexture name="bladed legs" x="605" y="252" width="20" height="23" pivotX="9.7" pivotY="10.75"/>
+	<SubTexture name="repguana bow" x="0" y="201" width="44" height="92" pivotX="21.45" pivotY="45.7"/>
+	<SubTexture name="bladed shield" x="551" y="393" width="44" height="72" pivotX="21.7" pivotY="36.45"/>
+	<SubTexture name="blue shirt arm" x="830" y="706" width="14" height="28" pivotX="6.5" pivotY="15.85"/>
+	<SubTexture name="blue beanie" x="890" y="1263" width="33" height="27" pivotX="15.85" pivotY="13.05"/>
+	<SubTexture name="blue crystal boot" x="36" y="1393" width="14" height="11" pivotX="6.15" pivotY="5.05"/>
+	<SubTexture name="blue face helmet" x="720" y="1149" width="35" height="39" pivotX="17" pivotY="18.95"/>
+	<SubTexture name="blue jeans" x="388" y="791" width="11" height="21" pivotX="2.5" pivotY="12.7"/>
+	<SubTexture name="blue magic shoe" x="568" y="1007" width="17" height="9" pivotX="8.35" pivotY="3.75"/>
+	<SubTexture name="red mushroom cube" x="869" y="405" width="70" height="45" pivotX="32.75" pivotY="20.05"/>
+	<SubTexture name="blue mushroom cube" x="837" y="559" width="66" height="41" pivotX="32.75" pivotY="20.05"/>
+	<SubTexture name="blue plastic sword" x="135" y="1153" width="19" height="63" pivotX="9.1" pivotY="31.55"/>
+	<SubTexture name="blue shirt" x="227" y="1331" width="22" height="28" pivotX="10.9" pivotY="13.6"/>
+	<SubTexture name="blue sphere staff" x="654" y="678" width="33" height="74" pivotX="28.1" pivotY="43"/>
+	<SubTexture name="blue wizard belt hat" x="553" y="565" width="53" height="51" pivotX="24.6" pivotY="16.85"/>
+	<SubTexture name="blue wizard hat" x="783" y="549" width="54" height="51" pivotX="23.2" pivotY="22.75"/>
+	<SubTexture name="blue wizard pants" x="979" y="1097" width="11" height="21" pivotX="2.5" pivotY="12.75"/>
+	<SubTexture name="blue wizard robe arm" x="639" y="1368" width="12" height="28" pivotX="6.5" pivotY="15.9"/>
+	<SubTexture name="blue wizard robe" x="710" y="1220" width="28" height="38" pivotX="13.75" pivotY="18.85"/>
+	<SubTexture name="bone" x="999" y="1249" width="14" height="62" pivotX="6.7" pivotY="37.4"/>
+	<SubTexture name="book of artillery" x="889" y="1020" width="39" height="44" pivotX="17" pivotY="19.05"/>
+	<SubTexture name="book of skill" x="811" y="1017" width="39" height="44" pivotX="17" pivotY="19.05"/>
+	<SubTexture name="book of defense" x="502" y="1043" width="39" height="43" pivotX="17" pivotY="19.05"/>
+	<SubTexture name="book of MP" x="928" y="1028" width="39" height="44" pivotX="17" pivotY="19.05"/>
+	<SubTexture name="book of health" x="397" y="1041" width="39" height="43" pivotX="17" pivotY="19.05"/>
+	<SubTexture name="book of dexterity" x="590" y="1017" width="40" height="43" pivotX="17" pivotY="19.05"/>
+	<SubTexture name="book of range" x="200" y="1038" width="39" height="43" pivotX="17" pivotY="19.05"/>
+	<SubTexture name="book of magic" x="500" y="1130" width="35" height="40" pivotX="17" pivotY="19.05"/>
+	<SubTexture name="book of power" x="850" y="1020" width="39" height="44" pivotX="17" pivotY="19.05"/>m
+	<SubTexture name="boopis head" x="0" y="799" width="41" height="54" pivotX="20.1" pivotY="27.05"/>
+	<SubTexture name="boopis leg" x="713" y="808" width="12" height="8" pivotX="5.45" pivotY="3.25"/>
+	<SubTexture name="boopular leg" x="879" y="1064" width="14" height="8" pivotX="6.5" pivotY="3.85"/>
+	<SubTexture name="boopular head" x="228" y="417" width="48" height="63" pivotX="23.95" pivotY="31.45"/>
+	<SubTexture name="yellow spawn ball" x="127" y="0" width="126" height="108" pivotX="61" pivotY="50"/>
+	<SubTexture name="blue spawn ball" x="0" y="0" width="127" height="108" pivotX="61" pivotY="50"/>
+	<SubTexture name="green spawn ball" x="253" y="0" width="122" height="104" pivotX="61" pivotY="50"/>
+	<SubTexture name="orange spawn ball" x="1278" y="0" width="122" height="107" pivotX = "61" pivotY="50" />
+	<SubTexture name="bronze plate armor arm" x="458" y="564" width="12" height="22" pivotX="6.85" pivotY="9.45"/>
+	<SubTexture name="bronze dagger" x="58" y="487" width="16" height="40" pivotX="7.4" pivotY="20"/>
+	<SubTexture name="bronze plate legs" x="297" y="750" width="12" height="20" pivotX="6.15" pivotY="9.5"/>
+	<SubTexture name="bronze plate armor" x="500" y="496" width="24" height="45" pivotX="11.25" pivotY="15.9"/>
+	<SubTexture name="bronze shield" x="0" y="1116" width="39" height="38" pivotX="19.2" pivotY="19.2"/>
+	<SubTexture name="brown shoe" x="907" y="1064" width="14" height="8" pivotX="6.65" pivotY="3.85"/>
+	<SubTexture name="brown wizard pants" x="393" y="656" width="12" height="21" pivotX="2.55" pivotY="12.75"/>
+	<SubTexture name="brown wizard robe arm" x="76" y="913" width="12" height="29" pivotX="6.5" pivotY="15.9"/>
+	<SubTexture name="brown wizard robe" x="409" y="1218" width="28" height="38" pivotX="13.1" pivotY="18.85"/>
+	<SubTexture name="bucket helmet" x="431" y="758" width="42" height="55" pivotX="20.45" pivotY="36"/>
+	<SubTexture name="bullhorn" x="330" y="656" width="63" height="40" pivotX="31.25" pivotY="19.2"/>
+	<SubTexture name="bunyan body" x="1011" y="659" width="13" height="28" pivotX="6.05" pivotY="13.7"/>
+	<SubTexture name="bunyan head" x="925" y="1251" width="32" height="30" pivotX="16.1" pivotY="15.35"/>
+	<SubTexture name="bunyan leg" x="1015" y="278" width="9" height="9" pivotX="3.25" pivotY="1"/>
+	<SubTexture name="captains rapier" x="131" y="208" width="19" height="94" pivotX="11.8" pivotY="47.4"/>
+	<SubTexture name="cat hat" x="281" y="664" width="42" height="59" pivotX="20.7" pivotY="3.05"/>
+	<SubTexture name="chain armor arm" x="313" y="1359" width="18" height="28" pivotX="9.25" pivotY="14.2"/>
+	<SubTexture name="chain armor" x="586" y="1287" width="27" height="29" pivotX="12.55" pivotY="14.6"/>
+	<SubTexture name="chain helmet" x="704" y="652" width="43" height="58" pivotX="26.95" pivotY="23.8"/>
+	<SubTexture name="chain legs" x="668" y="277" width="16" height="22" pivotX="5.95" pivotY="10.6"/>
+	<SubTexture name="chaingun" x="309" y="744" width="91" height="26" pivotX="45.2" pivotY="12.9"/>
+	<SubTexture name="chainmail arm" x="654" y="1371" width="12" height="27" pivotX="5.4" pivotY="13.5"/>
+	<SubTexture name="chainmail" x="54" y="1312" width="24" height="29" pivotX="11.6" pivotY="14.2"/>
+	<SubTexture name="chainmail legs" x="388" y="812" width="11" height="21" pivotX="5.7" pivotY="10.55"/>
+	<SubTexture name="chainsaw" x="597" y="633" width="31" height="82" pivotX="15.45" pivotY="40"/>
+	<SubTexture name="charm hat" x="191" y="1162" width="48" height="27" pivotX="22.1" pivotY="9.15"/>
+	<SubTexture name="charnatto body" x="371" y="1198" width="38" height="30" pivotX="18.2" pivotY="14.9"/>
+	<SubTexture name="charnatto head" x="605" y="277" width="63" height="58" pivotX="31.25" pivotY="28.55"/>
+	<SubTexture name="charnatto leg" x="357" y="1304" width="12" height="12" pivotX="6.45" pivotY="3.2"/>
+	<SubTexture name="charpo body" x="621" y="1269" width="38" height="22" pivotX="18.8" pivotY="11.3"/>
+	<SubTexture name="charpo leg" x="735" y="752" width="12" height="8" pivotX="5.55" pivotY="3.25"/>
+	<SubTexture name="charpo head" x="0" y="588" width="54" height="49" pivotX="26.65" pivotY="24.85"/>
+	<SubTexture name="chemical armor arm" x="781" y="1210" width="17" height="30" pivotX="4.2" pivotY="23.25"/>
+	<SubTexture name="chemical armor" x="994" y="1311" width="28" height="25" pivotX="13.15" pivotY="12.95"/>
+	<SubTexture name="chemical boot" x="921" y="450" width="18" height="9" pivotX="8.35" pivotY="3.8"/>
+	<SubTexture name="chemical legs" x="211" y="1264" width="16" height="22" pivotX="7.3" pivotY="10.8"/>
+	<SubTexture name="chemical mask" x="232" y="276" width="58" height="63" pivotX="28.55" pivotY="30.5"/>
+	<SubTexture name="chestnut wood" x="526" y="811" width="69" height="32" pivotX="34.75" pivotY="15.25"/>
+	<SubTexture name="chesterz body" x="227" y="1263" width="40" height="23" pivotX="19.6" pivotY="11.6"/>
+	<SubTexture name="chesterz leg" x="458" y="586" width="12" height="8" pivotX="5.7" pivotY="3.5"/>
+	<SubTexture name="chesterz head" x="33" y="651" width="55" height="46" pivotX="27.3" pivotY="23.25"/>
+	<SubTexture name="chestnut tree log" x="855" y="974" width="40" height="46" pivotX="20.35" pivotY="22.25"/>
+	<SubTexture name="chicken hat" x="36" y="1077" width="41" height="39" pivotX="18.85" pivotY="19.1"/>
+	<SubTexture name="chicken pants" x="719" y="1377" width="12" height="23" pivotX="6.95" pivotY="10.7"/>
+	<SubTexture name="chicken outfit arm" x="128" y="1369" width="16" height="28" pivotX="6.15" pivotY="12.05"/>
+	<SubTexture name="chicken outfit" x="249" y="1343" width="23" height="24" pivotX="11.3" pivotY="11.45"/>
+	<SubTexture name="chippy body" x="352" y="466" width="12" height="27" pivotX="5.75" pivotY="13.65"/>
+	<SubTexture name="chippy head" x="194" y="1081" width="42" height="38" pivotX="20.75" pivotY="18.55"/>
+	<SubTexture name="chippy leg" x="253" y="533" width="10" height="10" pivotX="3.2" pivotY="0.5"/>
+	<SubTexture name="fisky leg" x="253" y="533" width="10" height="10" pivotX="3.2" pivotY="0.5"/>
+	<SubTexture name="claw" x="413" y="1168" width="25" height="50" pivotX="11.75" pivotY="24.9"/>
+	<SubTexture name="coconut armor arm" x="420" y="383" width="14" height="26" pivotX="6.85" pivotY="12.4"/>
+	<SubTexture name="coconut armor" x="613" y="1291" width="25" height="30" pivotX="12" pivotY="14.5"/>
+	<SubTexture name="half coconut" x="784" y="1257" width="32" height="29" pivotX="15.7" pivotY="13.85"/>
+	<SubTexture name="coconut helmet" x="271" y="1148" width="34" height="38" pivotX="17" pivotY="18.35"/>
+	<SubTexture name="coconut leaves helmet" x="44" y="208" width="82" height="49" pivotX="40.35" pivotY="23.95"/>
+	<SubTexture name="coconut knee pads" x="121" y="943" width="16" height="17" pivotX="5.85" pivotY="9.85"/>
+	<SubTexture name="coin" x="669" y="1371" width="20" height="20" pivotX="9.45" pivotY="9.65"/>
+	<SubTexture name="colored wood" x="542" y="1229" width="64" height="16" pivotX="32.35" pivotY="7.25"/>
+	<SubTexture name="cone helmet" x="260" y="750" width="37" height="63" pivotX="18.1" pivotY="32.2"/>
+	<SubTexture name="turkey" x="860" y="1112" width="53" height="28" pivotX="26.25" pivotY="13.8"/>
+	<SubTexture name="cowboy shirt arm" x="839" y="1366" width="17" height="27" pivotX="7.65" pivotY="15.05"/>
+	<SubTexture name="cowboy belt hat" x="491" y="940" width="49" height="40" pivotX="23.3" pivotY="18.4"/>
+	<SubTexture name="cowboy boot" x="76" y="413" width="18" height="8" pivotX="8.35" pivotY="3.8"/>
+	<SubTexture name="cowboy hat" x="349" y="1009" width="48" height="36" pivotX="23.15" pivotY="17.25"/>
+	<SubTexture name="cowboy knight armor arm" x="520" y="1332" width="20" height="30" pivotX="12.5" pivotY="11.65"/>
+	<SubTexture name="cowboy knight armor" x="256" y="1289" width="29" height="27" pivotX="13.95" pivotY="14.25"/>
+	<SubTexture name="cowboy knight legs" x="689" y="1377" width="12" height="24" pivotX="6.55" pivotY="12.1"/>
+	<SubTexture name="cowboy pants" x="999" y="1387" width="14" height="23" pivotX="6.45" pivotY="11.15"/>
+	<SubTexture name="cowboy shirt" x="968" y="1332" width="25" height="24" pivotX="11.55" pivotY="12.2"/>
+	<SubTexture name="sorcerer hat and glasses" x="239" y="607" width="46" height="56" pivotX="22.45" pivotY="27.2"/>
+	<SubTexture name="crumby wizard hat" x="910" y="851" width="45" height="47" pivotX="16.45" pivotY="21.05"/>
+	<SubTexture name="crusader helmet" x="203" y="899" width="43" height="48" pivotX="21.5" pivotY="22.65"/>
+	<SubTexture name="cyro x force" x="828" y="82" width="51" height="111" pivotX="20.95" pivotY="96.9"/>
+	<SubTexture name="blue crystal armor arm" x="866" y="1347" width="19" height="28" pivotX="8.55" pivotY="14.15"/>
+	<SubTexture name="blue crystal armor" x="471" y="1341" width="23" height="25" pivotX="12.6" pivotY="13.35"/>
+	<SubTexture name="crystal heart shield" x="812" y="974" width="43" height="43" pivotX="21.35" pivotY="21.15"/>
+	<SubTexture name="blue crystal helmet" x="118" y="1045" width="38" height="44" pivotX="18.3" pivotY="21.45"/>
+	<SubTexture name="blue crystal legs" x="543" y="1390" width="16" height="20" pivotX="3.55" pivotY="10.65"/>
+	<SubTexture name="cursed pants" x="115" y="1379" width="13" height="21" pivotX="6" pivotY="10.7"/>
+	<SubTexture name="cursed robe arm" x="154" y="751" width="12" height="30" pivotX="7.3" pivotY="14.55"/>
+	<SubTexture name="cursed robe" x="479" y="1203" width="30" height="38" pivotX="14.65" pivotY="19.15"/>
+	<SubTexture name="cursed shoe" x="679" y="1211" width="18" height="9" pivotX="8.35" pivotY="3.75"/>
+	<SubTexture name="cyborg armor arm" x="718" y="1348" width="18" height="29" pivotX="9.05" pivotY="14.6"/>
+	<SubTexture name="cyborg armor" x="891" y="1321" width="25" height="25" pivotX="12.75" pivotY="12.65"/>
+	<SubTexture name="cyborg bow" x="203" y="108" width="49" height="97" pivotX="40.3" pivotY="52.9"/>
+	<SubTexture name="cyborg helmet" x="427" y="714" width="54" height="44" pivotX="27.7" pivotY="21.45"/>
+	<SubTexture name="cyborg legs" x="796" y="1387" width="12" height="22" pivotX="6.25" pivotY="10.55"/>
+	<SubTexture name="lazer shades" x="0" y="473" width="33" height="12" pivotX="16.4" pivotY="5.85"/>
+	<SubTexture name="cyro armor arm" x="299" y="1210" width="33" height="34" pivotX="22.6" pivotY="12.85"/>
+	<SubTexture name="cyro armor" x="817" y="1305" width="26" height="27" pivotX="12.65" pivotY="13.75"/>
+	<SubTexture name="cyro helmet" x="930" y="288" width="62" height="58" pivotX="30.75" pivotY="28.3"/>
+	<SubTexture name="cyro legs" x="777" y="1370" width="19" height="23" pivotX="10.1" pivotY="10.3"/>
+	<SubTexture name="cyro shield" x="131" y="302" width="54" height="66" pivotX="26.3" pivotY="25.35"/>
+	<SubTexture name="cyro boot" x="298" y="781" width="17" height="8" pivotX="6" pivotY="5" />
+	<SubTexture name="cyro thorn blade" x="318" y="466" width="34" height="86" pivotX="10.75" pivotY="45.25"/>
+	<SubTexture name="darkane armor arm" x="947" y="1301" width="24" height="30" pivotX="11.15" pivotY="15.9"/>
+	<SubTexture name="darkane armor" x="606" y="1235" width="35" height="29" pivotX="16.9" pivotY="14.2"/>
+	<SubTexture name="darkane hood helmet" x="253" y="553" width="51" height="54" pivotX="25.15" pivotY="26.8"/>
+	<SubTexture name="darkane legs" x="448" y="1370" width="19" height="23" pivotX="9.05" pivotY="11.65"/>
+	<SubTexture name="darkane staff" x="804" y="454" width="31" height="95" pivotX="14.75" pivotY="46.3"/>
+	<SubTexture name="darkane wand" x="961" y="847" width="36" height="59" pivotX="19.5" pivotY="28.4"/>
+	<SubTexture name="dead tree log" x="220" y="710" width="58" height="13" pivotX="29.65" pivotY="5.9"/>
+	<SubTexture name="deep sea helmet" x="224" y="951" width="47" height="41" pivotX="24.75" pivotY="22.15"/>
+	<SubTexture name="death bringer" x="526" y="693" width="25" height="97" pivotX="11.9" pivotY="48.5"/>
+	
+	<SubTexture name="demons fury_00" x="0" y="1769" width="52" height="88" pivotX="36.1" pivotY="42.75" frameX="-3" frameY="0" frameWidth="55" frameHeight="88"/>
+	<SubTexture name="demons fury_01" x="0" y="1769" width="52" height="88" frameX="-3" frameY="0" frameWidth="55" frameHeight="88"/>
+	<SubTexture name="demons fury_02" x="0" y="1681" width="55" height="88"/>
+	<SubTexture name="demons fury_03" x="0" y="1681" width="55" height="88"/>
+	<SubTexture name="demons fury_04" x="52" y="1769" width="53" height="86" frameX="-2" frameY="-2" frameWidth="55" frameHeight="88"/>
+	<SubTexture name="demons fury_05" x="52" y="1769" width="53" height="86" frameX="-2" frameY="-2" frameWidth="55" frameHeight="88"/>
+	
+	<SubTexture name="electric katana_00" x="0" y="1852" width="62" height="134" pivotX="42.3" pivotY="67.55"/>
+	<SubTexture name="electric katana_01" x="0" y="1852" width="62" height="134"/>
+	<SubTexture name="electric katana_02" x="62" y="1852" width="62" height="134"/>
+	<SubTexture name="electric katana_03" x="62" y="1852" width="62" height="134"/>
+	<SubTexture name="electric katana_04" x="124" y="1852" width="62" height="134"/>
+	<SubTexture name="electric katana_05" x="124" y="1852" width="62" height="134"/>
+	
+	<SubTexture name="crypt bow of fire_00" x="207" y="1653" width="44" height="103" pivotX="30.95" pivotY="60.85" frameX="-8" frameY="-7" frameWidth="58" frameHeight="112"/>
+	<SubTexture name="crypt bow of fire_01" x="207" y="1653" width="44" height="103" frameX="-8" frameY="-7" frameWidth="58" frameHeight="112"/>
+	<SubTexture name="crypt bow of fire_02" x="153" y="1653" width="54" height="107" frameX="-4" frameY="-5" frameWidth="58" frameHeight="112"/>
+	<SubTexture name="crypt bow of fire_03" x="153" y="1653" width="54" height="107" frameX="-4" frameY="-5" frameWidth="58" frameHeight="112"/>
+	<SubTexture name="crypt bow of fire_04" x="153" y="1542" width="56" height="111" frameX="0" frameY="0" frameWidth="58" frameHeight="112"/>
+	<SubTexture name="crypt bow of fire_05" x="153" y="1542" width="56" height="111" frameX="0" frameY="0" frameWidth="58" frameHeight="112"/>
+	
+	<SubTexture name="barbarian axe of fire_00" x="400" y="1625" width="50" height="96" pivotX="22.6" pivotY="50.85" frameX="0" frameY="0" frameWidth="51" frameHeight="96"/>
+	<SubTexture name="barbarian axe of fire_01" x="400" y="1625" width="50" height="96" frameX="0" frameY="0" frameWidth="51" frameHeight="96"/>
+	<SubTexture name="barbarian axe of fire_02" x="450" y="1625" width="50" height="95" frameX="0" frameY="-1" frameWidth="51" frameHeight="96"/>
+	<SubTexture name="barbarian axe of fire_03" x="450" y="1625" width="50" height="95" frameX="0" frameY="-1" frameWidth="51" frameHeight="96"/>
+	<SubTexture name="barbarian axe of fire_04" x="400" y="1529" width="51" height="96"/>
+	<SubTexture name="barbarian axe of fire_05" x="400" y="1529" width="51" height="96"/>
+	
+	<SubTexture name="electric infuriator_00" x="321" y="1532" width="33" height="88" pivotX="16.85" pivotY="46.8" />
+	<SubTexture name="electric infuriator_01" x="321" y="1532" width="33" height="88" />
+	<SubTexture name="electric infuriator_02" x="367" y="1532" width="33" height="88" />
+	<SubTexture name="electric infuriator_03" x="367" y="1532" width="33" height="88" />
+	<SubTexture name="electric infuriator_04" x="321" y="1627" width="33" height="88" />
+	<SubTexture name="electric infuriator_05" x="321" y="1627" width="33" height="88" />
+	
+	<SubTexture name="flaming needle bow_00" x="265" y="1646" width="58" height="97" pivotX="22.5" pivotY="62.15" frameX="0" frameY="-11" frameWidth="58" frameHeight="108"/>
+	<SubTexture name="flaming needle bow_01" x="265" y="1646" width="58" height="97" frameX="0" frameY="-11" frameWidth="58" frameHeight="108"/>
+	<SubTexture name="flaming needle bow_02" x="265" y="1543" width="57" height="103" frameX="0" frameY="-5" frameWidth="58" frameHeight="108"/>
+	<SubTexture name="flaming needle bow_03" x="265" y="1543" width="57" height="103" frameX="0" frameY="-5" frameWidth="58" frameHeight="108"/>
+	<SubTexture name="flaming needle bow_04" x="208" y="1543" width="57" height="108" frameX="-1" frameY="0" frameWidth="58" frameHeight="108"/>
+	<SubTexture name="flaming needle bow_05" x="208" y="1543" width="57" height="108" frameX="-1" frameY="0" frameWidth="58" frameHeight="108"/>
+	
+	<SubTexture name="thors hammer_00" x="146" y="1761" width="42" height="89" pivotX="22.45" pivotY="49" frameX="-2" frameY="0" frameWidth="44" frameHeight="89"/>
+	<SubTexture name="thors hammer_01" x="146" y="1761" width="42" height="89" frameX="-2" frameY="0" frameWidth="44" frameHeight="89"/>
+	<SubTexture name="thors hammer_02" x="102" y="1761" width="44" height="87" frameX="0" frameY="-2" frameWidth="44" frameHeight="89"/>
+	<SubTexture name="thors hammer_03" x="102" y="1761" width="44" height="87" frameX="0" frameY="-2" frameWidth="44" frameHeight="89"/>
+	<SubTexture name="thors hammer_04" x="188" y="1761" width="42" height="89" frameX="-2" frameY="0" frameWidth="44" frameHeight="89"/>
+	<SubTexture name="thors hammer_05" x="188" y="1761" width="42" height="89" frameX="-2" frameY="0" frameWidth="44" frameHeight="89"/>
+	
+	<SubTexture name="brooding fire axe_00" x="753" y="1491" width="37" height="78" pivotX="21.65" pivotY="39.45" frameX="-2" frameY="0" frameWidth="39" frameHeight="78"/>
+	<SubTexture name="brooding fire axe_01" x="753" y="1491" width="37" height="78" frameX="-2" frameY="0" frameWidth="39" frameHeight="78"/>
+	<SubTexture name="brooding fire axe_02" x="790" y="1491" width="37" height="78" frameX="-2" frameY="0" frameWidth="39" frameHeight="78"/>
+	<SubTexture name="brooding fire axe_03" x="790" y="1491" width="37" height="78" frameX="-2" frameY="0" frameWidth="39" frameHeight="78"/>
+	<SubTexture name="brooding fire axe_04" x="714" y="1491" width="39" height="78"/>
+	<SubTexture name="brooding fire axe_05" x="714" y="1491" width="39" height="78"/>
+	
+	<SubTexture name="electric barracuda_00" x="933" y="1451" width="32" height="102" pivotX="15.95" pivotY="50.7" frameX="0" frameY="0" frameWidth="34" frameHeight="102"/>
+	<SubTexture name="electric barracuda_01" x="933" y="1451" width="32" height="102" frameX="0" frameY="0" frameWidth="34" frameHeight="102"/>
+	<SubTexture name="electric barracuda_02" x="965" y="1451" width="32" height="102" frameX="0" frameY="0" frameWidth="34" frameHeight="102"/>
+	<SubTexture name="electric barracuda_03" x="965" y="1451" width="32" height="102" frameX="0" frameY="0" frameWidth="34" frameHeight="102"/>
+	<SubTexture name="electric barracuda_04" x="899" y="1451" width="34" height="102"/>
+	<SubTexture name="electric barracuda_05" x="899" y="1451" width="34" height="102"/>
+	
+	<SubTexture name="wings_00" x="501" y="1592" width="88" height="54" pivotX="49.9" pivotY="30.8"/>
+	<SubTexture name="wings_01" x="501" y="1646" width="71" height="54" frameX="-10" frameY="0" frameWidth="88" frameHeight="54"/>
+	<SubTexture name="wings_02" x="572" y="1646" width="54" height="54" frameX="-20" frameY="0" frameWidth="88" frameHeight="54"/>
+	<SubTexture name="wings_03" x="589" y="1592" width="38" height="54" frameX="-30" frameY="0" frameWidth="88" frameHeight="54"/>
+	
+	<SubTexture name="jet pack_00" x="564" y="621" width="34" height="31" pivotX="22.2" pivotY="14.8" frameX="-5" frameY="0" frameWidth="46" frameHeight="53"/>
+	<SubTexture name="jet pack_01" x="553" y="664" width="46" height="53"/>
+	<SubTexture name="jet pack_02" x="553" y="664" width="46" height="53"/>
+	<SubTexture name="jet pack_03" x="553" y="664" width="46" height="53"/>
+	
+	<SubTexture name="evil wings_00" x="233" y="1744" width="72" height="81" pivotX="44.65" pivotY="38.4"/>
+	<SubTexture name="evil wings_01" x="293" y="1825" width="47" height="81" frameX="-15" frameY="0" frameWidth="72" frameHeight="81"/>
+	<SubTexture name="evil wings_02" x="305" y="1744" width="33" height="81" frameX="-23" frameY="0" frameWidth="72" frameHeight="81"/>
+	
+	<SubTexture name="butterfly wings_00" x="627" y="1591" width="84" height="55" pivotX="53.15" pivotY="33.45"/>
+	<SubTexture name="butterfly wings_01" x="627" y="1646" width="64" height="55" frameX="-13" frameY="0" frameWidth="84" frameHeight="55"/>
+	<SubTexture name="butterfly wings_02" x="691" y="1646" width="44" height="55" frameX="-25" frameY="0" frameWidth="84" frameHeight="55"/>
+	<SubTexture name="butterfly wings_03" x="711" y="1591" width="24" height="55" frameX="-38" frameY="0" frameWidth="84" frameHeight="55"/>
+	
+	<SubTexture name="detective hat" x="720" y="1117" width="46" height="32" pivotX="20.85" pivotY="14.25"/>
+	<SubTexture name="diamond studded bow" x="563" y="465" width="29" height="100" pivotX="14.45" pivotY="50.4"/>
+	<SubTexture name="dino blade" x="191" y="205" width="41" height="98" pivotX="24.4" pivotY="51.35"/>
+	<SubTexture name="dino scale armor arm" x="868" y="1319" width="23" height="28" pivotX="13.45" pivotY="15.15"/>
+	<SubTexture name="dino scale armor" x="845" y="1289" width="30" height="26" pivotX="17.65" pivotY="10.75"/>
+	<SubTexture name="dino scale helmet" x="559" y="187" width="66" height="65" pivotX="40.2" pivotY="46.45"/>
+	<SubTexture name="dino scale legs" x="288" y="1371" width="19" height="22" pivotX="10.4" pivotY="10.85"/>
+	<SubTexture name="dino shield" x="957" y="548" width="51" height="54" pivotX="25.05" pivotY="26.55"/>
+	<SubTexture name="dino tail" x="236" y="1216" width="39" height="28" pivotX="35.1" pivotY="6.75"/>
+	<SubTexture name="divine armor arm" x="200" y="994" width="24" height="37" pivotX="6.25" pivotY="12.55"/>
+	<SubTexture name="divine armor" x="675" y="1334" width="25" height="24" pivotX="11.95" pivotY="12.3"/>
+	<SubTexture name="divine bow" x="349" y="109" width="47" height="101" pivotX="22.8" pivotY="50.05"/>
+	<SubTexture name="divine helmet" x="180" y="585" width="59" height="45" pivotX="7.55" pivotY="10.9"/>
+	<SubTexture name="divine legs" x="982" y="1190" width="18" height="26" pivotX="11.35" pivotY="11.7"/>
+	<SubTexture name="double bell shoe" x="581" y="324" width="19" height="11" pivotX="12.1" pivotY="6.55"/>
+	<SubTexture name="dwimplepike body" x="529" y="1314" width="38" height="18" pivotX="18.15" pivotY="8.2"/>
+	<SubTexture name="dwimplepike head" x="702" y="1076" width="39" height="41" pivotX="19.25" pivotY="20.45"/>
+	<SubTexture name="dwimplepike leg" x="470" y="461" width="10" height="11" pivotX="3.25" pivotY="1.2"/>
+	<SubTexture name="eagle slingshot" x="0" y="536" width="53" height="52" pivotX="38.8" pivotY="26.35"/>
+	<SubTexture name="eagle staff" x="595" y="437" width="32" height="94" pivotX="-22.65" pivotY="19.15"/>
+	<SubTexture name="earth armor arm" x="861" y="1227" width="35" height="30" pivotX="17.3" pivotY="17.95"/>
+	<SubTexture name="earth armor" x="94" y="1180" width="41" height="31" pivotX="21.35" pivotY="12.9"/>
+	<SubTexture name="earth boot" x="489" y="1241" width="18" height="9" pivotX="10.6" pivotY="4.85"/>
+	<SubTexture name="earth helmet" x="292" y="214" width="51" height="75" pivotX="29.25" pivotY="55.1"/>
+	<SubTexture name="earth legs" x="958" y="1134" width="21" height="23" pivotX="11.7" pivotY="10.9"/>
+	<SubTexture name="element armor arm" x="160" y="1317" width="22" height="30" pivotX="8.7" pivotY="14.35"/>
+	<SubTexture name="element armor" x="302" y="1263" width="29" height="31" pivotX="13.8" pivotY="14.7"/>
+	<SubTexture name="element boot" x="351" y="1242" width="18" height="12" pivotX="10.6" pivotY="6.55"/>
+	<SubTexture name="element helmet" x="285" y="607" width="45" height="57" pivotX="25.85" pivotY="33.3"/>
+	<SubTexture name="element legs" x="249" y="1367" width="18" height="25" pivotX="6.05" pivotY="12.2"/>
+	<SubTexture name="element staff" x="0" y="376" width="34" height="97" pivotX="16.65" pivotY="47.5"/>
+	<SubTexture name="element wand" x="835" y="776" width="33" height="68" pivotX="5.65" pivotY="31.45"/>
+	<SubTexture name="elf bell shoe" x="461" y="994" width="18" height="12" pivotX="10.6" pivotY="6.55"/>
+	<SubTexture name="elf shoe" x="550" y="1007" width="18" height="10" pivotX="10.6" pivotY="4.85"/>
+	<SubTexture name="enchanted armor arm" x="985" y="1359" width="18" height="28" pivotX="8.3" pivotY="12.9"/>
+	<SubTexture name="enchanted helmet" x="624" y="1137" width="37" height="37" pivotX="22.2" pivotY="20.4"/>
+	<SubTexture name="enchanted legs" x="309" y="723" width="14" height="21" pivotX="7.2" pivotY="10.15"/>
+	<SubTexture name="enchanted armor" x="380" y="281" width="25" height="35" pivotX="10.95" pivotY="18.25"/>
+	<SubTexture name="enforcer armor arm" x="560" y="1348" width="18" height="29" pivotX="6.45" pivotY="9.1"/>
+	<SubTexture name="enforcer armor" x="104" y="1336" width="24" height="25" pivotX="14.45" pivotY="11.85"/>
+	<SubTexture name="enforcer gun" x="330" y="621" width="73" height="35" pivotX="36.05" pivotY="16.95"/>
+	<SubTexture name="enforcer helmet" x="296" y="822" width="43" height="50" pivotX="20.75" pivotY="24.25"/>
+	<SubTexture name="enforcer legs" x="163" y="1377" width="17" height="23" pivotX="8.2" pivotY="11.35"/>
+	<SubTexture name="letter to Cleveland" x="841" y="193" width="37" height="20" pivotX="17.95" pivotY="9.55"/>
+	<SubTexture name="evolution crystal" x="811" y="800" width="24" height="41" pivotX="11.75" pivotY="20.25"/>
+	<SubTexture name="eye of kreeton" x="992" y="288" width="31" height="110" pivotX="19.05" pivotY="78.4"/>
+	<SubTexture name="eye patch" x="267" y="1371" width="21" height="20" pivotX="12.1" pivotY="7.65"/>
+	<SubTexture name="fallen queens spectre" x="518" y="134" width="41" height="111" pivotX="22.45" pivotY="77.15"/>
+	<SubTexture name="fireman hatchet" x="279" y="1089" width="26" height="59" pivotX="12.2" pivotY="29.3"/>
+	<SubTexture name="fish scale armor arm" x="506" y="632" width="21" height="34" pivotX="2.9" pivotY="13.35"/>
+	<SubTexture name="fish scale armor" x="843" y="1315" width="25" height="27" pivotX="11.35" pivotY="15.15"/>
+	<SubTexture name="fish scale legs" x="749" y="1295" width="13" height="20" pivotX="6.35" pivotY="10.1"/>
+	<SubTexture name="fishing pole" x="327" y="289" width="14" height="81" pivotX="6.35" pivotY="39.6"/>
+	<SubTexture name="fisky body" x="331" y="1286" width="44" height="18" pivotX="22.8" pivotY="11.65"/>
+	<SubTexture name="fisky head" x="239" y="1052" width="44" height="37" pivotX="21.9" pivotY="18.6"/>
+	<SubTexture name="flak jacket arm" x="607" y="1366" width="16" height="29" pivotX="6.35" pivotY="14.3"/>
+	<SubTexture name="flak jacket" x="159" y="368" width="26" height="28" pivotX="12.6" pivotY="14.35"/>
+	<SubTexture name="hair flower" x="799" y="1332" width="24" height="25" pivotX="11.5" pivotY="11.9"/>
+	<SubTexture name="frankenstein mask" x="756" y="1036" width="42" height="40" pivotX="20.5" pivotY="15.75"/>
+	<SubTexture name="frawn body" x="661" y="1153" width="49" height="27" pivotX="24.1" pivotY="13"/>
+	<SubTexture name="frawn head" x="751" y="600" width="58" height="45" pivotX="28.8" pivotY="22"/>
+	<SubTexture name="frawn leg" x="735" y="752" width="12" height="8" pivotX="5.55" pivotY="3.25"/>
+	<SubTexture name="frinshaw body" x="957" y="1280" width="39" height="21" pivotX="19.2" pivotY="10.45"/>
+	<SubTexture name="frinshaw head" x="961" y="661" width="50" height="50" pivotX="25.05" pivotY="25.15"/>
+	<SubTexture name="frinshaw leg" x="189" y="1288" width="12" height="12" pivotX="6.45" pivotY="3.05"/>
+	<SubTexture name="fritterz body" x="373" y="930" width="52" height="38" pivotX="25.55" pivotY="18.55"/>
+	<SubTexture name="fritterz head" x="232" y="210" width="60" height="66" pivotX="30.3" pivotY="33.05"/>
+	<SubTexture name="fritterz leg" x="370" y="1112" width="12" height="12" pivotX="6.35" pivotY="3.3"/>
+	<SubTexture name="frosters bow" x="525" y="465" width="38" height="77" pivotX="18.3" pivotY="39.25"/>
+	<SubTexture name="frosting trident" x="685" y="100" width="50" height="112" pivotX="24.35" pivotY="56.15"/>
+	<SubTexture name="frozen mithril axe" x="575" y="93" width="60" height="94" pivotX="29.55" pivotY="61.2"/>
+	<SubTexture name="future armor arm" x="1003" y="1359" width="18" height="28" pivotX="8.05" pivotY="13.85"/>
+	<SubTexture name="future armor" x="110" y="1308" width="25" height="28" pivotX="12.15" pivotY="14.15"/>
+	<SubTexture name="future legs" x="985" y="1387" width="14" height="23" pivotX="8.1" pivotY="11.15"/>
+	<SubTexture name="future boot" x="391" y="1393" width="14" height="11" pivotX="6.15" pivotY="5.05"/>
+	<SubTexture name="future helmet" x="228" y="663" width="53" height="47" pivotX="22.35" pivotY="25.25"/>
+	<SubTexture name="future shield" x="39" y="1032" width="38" height="45" pivotX="18.2" pivotY="23.35"/>
+	<SubTexture name="garbage can lid" x="263" y="1011" width="42" height="41" pivotX="20.45" pivotY="20.45"/>
+	<SubTexture name="ghost mask" x="772" y="990" width="39" height="46" pivotX="18.8" pivotY="22.55"/>
+	<SubTexture name="gibler body" x="96" y="349" width="33" height="17" pivotX="16.1" pivotY="7.75"/>
+	<SubTexture name="gibler head" x="116" y="1116" width="40" height="37" pivotX="19.85" pivotY="17.7"/>
+	<SubTexture name="gibler leg" x="1015" y="235" width="9" height="11" pivotX="3.25" pivotY="1.1"/>
+	<SubTexture name="gobakahn body" x="594" y="1197" width="37" height="31" pivotX="18.35" pivotY="15.35"/>
+	<SubTexture name="gobakahn head" x="939" y="405" width="58" height="54" pivotX="28.9" pivotY="27.3"/>
+	<SubTexture name="gobakahn leg" x="305" y="1096" width="12" height="16" pivotX="6.65" pivotY="2.95"/>
+	<SubTexture name="gobloid head" x="848" y="1140" width="35" height="39" pivotX="16.8" pivotY="19"/>
+	<SubTexture name="god dagger" x="639" y="883" width="34" height="61" pivotX="10.75" pivotY="49.2"/>
+	<SubTexture name="gold plate armor arm" x="901" y="1290" width="22" height="31" pivotX="19.25" pivotY="13.9"/>
+	<SubTexture name="gold plate armor" x="631" y="1180" width="39" height="32" pivotX="18.2" pivotY="18.35"/>
+	<SubTexture name="gold plate legs" x="239" y="585" width="14" height="22" pivotX="7.8" pivotY="11.8"/>
+	<SubTexture name="gold helmet" x="640" y="821" width="35" height="62" pivotX="19.5" pivotY="67.1"/>
+	<SubTexture name="goncho body" x="174" y="1264" width="37" height="24" pivotX="17.95" pivotY="12.25"/>
+	<SubTexture name="goncho leg" x="341" y="552" width="11" height="7" pivotX="5.2" pivotY="3.05"/>
+	<SubTexture name="goncho head" x="373" y="884" width="45" height="46" pivotX="22.35" pivotY="22.45"/>
+	<SubTexture name="goof tree log" x="134" y="1227" width="54" height="20" pivotX="27.25" pivotY="9.75"/>
+	<SubTexture name="green shirt arm" x="546" y="1362" width="14" height="28" pivotX="6.5" pivotY="15.9"/>
+	<SubTexture name="green beanie" x="445" y="1263" width="33" height="27" pivotX="15.9" pivotY="13.1"/>
+	<SubTexture name="clover hat" x="0" y="1157" width="41" height="32" pivotX="20.05" pivotY="15.55"/>
+	<SubTexture name="green pants" x="409" y="440" width="11" height="21" pivotX="2.85" pivotY="12.8"/>
+	<SubTexture name="green shirt" x="716" y="1320" width="23" height="28" pivotX="10.9" pivotY="13.6"/>
+	<SubTexture name="green shoe" x="542" y="1219" width="14" height="9" pivotX="6.65" pivotY="3.85"/>
+	<SubTexture name="green shorts" x="393" y="677" width="12" height="12" pivotX="5.45" pivotY="6.55"/>
+	<SubTexture name="grenade" x="361" y="1377" width="12" height="25" pivotX="7.9" pivotY="12.3"/>
+	<SubTexture name="halberd" x="997" y="398" width="27" height="114" pivotX="13" pivotY="56.8"/>
+	<SubTexture name="assault armor arm" x="654" y="1324" width="21" height="29" pivotX="9.75" pivotY="13.95"/>
+	<SubTexture name="assault armor" x="361" y="1319" width="24" height="27" pivotX="12.85" pivotY="13.25"/>
+	<SubTexture name="assault helmet" x="673" y="912" width="49" height="41" pivotX="24.35" pivotY="26.75"/>
+	<SubTexture name="assault legs" x="942" y="1165" width="16" height="22" pivotX="7.55" pivotY="12.3"/>
+	<SubTexture name="hammer" x="838" y="1210" width="23" height="48" pivotX="10.85" pivotY="23.8"/>
+	<SubTexture name="handgun" x="41" y="1157" width="31" height="23" pivotX="15.25" pivotY="11.25"/>
+	<SubTexture name="harpoon bow" x="150" y="562" width="30" height="90" pivotX="14.6" pivotY="44.8"/>
+	<SubTexture name="armor of hatred arm" x="0" y="1318" width="24" height="27" pivotX="11.45" pivotY="13.2"/>
+	<SubTexture name="armor of hatred" x="32" y="1233" width="30" height="34" pivotX="14.4" pivotY="19.65"/>
+	<SubTexture name="legs of hatred" x="764" y="1264" width="19" height="22" pivotX="9.3" pivotY="10.15"/>
+	<SubTexture name="head wrap" x="185" y="303" width="46" height="36" pivotX="22.55" pivotY="17.5"/>
+	<SubTexture name="heartstriker bow" x="628" y="633" width="26" height="97" pivotX="12.3" pivotY="47.45"/>
+	<SubTexture name="heated staff" x="151" y="200" width="40" height="102" pivotX="21.85" pivotY="59.7"/>
+	<SubTexture name="helmet of hatred" x="500" y="542" width="53" height="52" pivotX="26" pivotY="27.55"/>
+	<SubTexture name="hockey mask" x="896" y="1227" width="29" height="36" pivotX="7.85" pivotY="13.05"/>
+	<SubTexture name="horned helmet" x="782" y="706" width="48" height="50" pivotX="23.15" pivotY="24.85"/>
+	<SubTexture name="hybrid helmet" x="405" y="509" width="51" height="55" pivotX="24.95" pivotY="27.3"/>
+	<SubTexture name="pet hydro tech helmet" x="39" y="873" width="52" height="40" pivotX="32.35" pivotY="24.25"/>
+	<SubTexture name="hydro tech staff" x="616" y="335" width="34" height="102" pivotX="19.4" pivotY="74.75"/>
+	<SubTexture name="hydro tech wand" x="747" y="699" width="35" height="69" pivotX="18.4" pivotY="48.2"/>
+	<SubTexture name="hydro tech suit arm" x="588" y="1344" width="19" height="29" pivotX="9.3" pivotY="13.95"/>
+	<SubTexture name="hydro tech helmet" x="156" y="442" width="53" height="56" pivotX="31.15" pivotY="32"/>
+	<SubTexture name="hydro tech legs" x="100" y="1379" width="12" height="23" pivotX="7.25" pivotY="10.9"/>
+	<SubTexture name="hydro tech suit" x="812" y="944" width="28" height="30" pivotX="13.45" pivotY="14.85"/>
+	<SubTexture name="hydro tech boot" x="315" y="779" width="12" height="10" pivotX="5" pivotY="4" />
+	<SubTexture name="ice blade of gods" x="922" y="0" width="53" height="109" pivotX="23.35" pivotY="52.15"/>
+	<SubTexture name="ice hammer" x="493" y="669" width="33" height="72" pivotX="26.4" pivotY="49.7"/>
+	<SubTexture name="imperial armor arm" x="933" y="951" width="20" height="33" pivotX="11.35" pivotY="15.95"/>
+	<SubTexture name="imperial armor" x="399" y="1291" width="25" height="30" pivotX="12.25" pivotY="14.95"/>
+	<SubTexture name="imperial boot" x="439" y="1393" width="14" height="11" pivotX="6.45" pivotY="5.3"/>
+	<SubTexture name="imperial helmet" x="349" y="212" width="56" height="69" pivotX="27.1" pivotY="33.8"/>
+	<SubTexture name="imperial legs" x="208" y="1375" width="19" height="21" pivotX="9.45" pivotY="10.35"/>
+	<SubTexture name="indian wand" x="735" y="100" width="33" height="70" pivotX="15.4" pivotY="47.7"/>
+	<SubTexture name="industrial armor arm" x="175" y="1089" width="19" height="30" pivotX="10.95" pivotY="14.4"/>
+	<SubTexture name="industrial armor" x="693" y="1290" width="27" height="28" pivotX="13.1" pivotY="13.85"/>
+	<SubTexture name="industrial helmet" x="285" y="913" width="44" height="45" pivotX="21" pivotY="22" />
+	<SubTexture name="industrial legs" x="461" y="1087" width="14" height="22" pivotX="6.55" pivotY="10.25"/>
+	<SubTexture name="jackopump body" x="413" y="1263" width="32" height="28" pivotX="15.2" pivotY="13.95"/>
+	<SubTexture name="jackopump head" x="0" y="752" width="50" height="47" pivotX="24.4" pivotY="23.55"/>
+	<SubTexture name="jackopump leg" x="613" y="715" width="12" height="12" pivotX="6.4" pivotY="3.05"/>
+	<SubTexture name="jester shirt arm" x="754" y="954" width="16" height="30" pivotX="5.6" pivotY="16.05"/>
+	<SubTexture name="jester hat" x="159" y="396" width="69" height="46" pivotX="32.9" pivotY="21.4"/>
+	<SubTexture name="jester pants" x="734" y="1387" width="12" height="22" pivotX="6.9" pivotY="9.9"/>
+	<SubTexture name="jester shirt" x="944" y="1331" width="24" height="26" pivotX="11.45" pivotY="12.95"/>
+	<SubTexture name="jungle tree log" x="867" y="898" width="47" height="44" pivotX="23.05" pivotY="21.5"/>
+	<SubTexture name="jungle wood" x="458" y="594" width="69" height="38" pivotX="34.2" pivotY="18.1"/>
+	<SubTexture name="junk wood" x="657" y="1064" width="45" height="36" pivotX="22.4" pivotY="18.2"/>
+	<SubTexture name="knight armor arm" x="687" y="678" width="17" height="31" pivotX="7.6" pivotY="15.75"/>
+	<SubTexture name="knight armor" x="996" y="512" width="28" height="32" pivotX="14.15" pivotY="16.2"/>
+	<SubTexture name="knight armor legs" x="332" y="1210" width="13" height="21" pivotX="6.95" pivotY="10.6"/>
+	<SubTexture name="cowboy knight helmet" x="594" y="860" width="45" height="47" pivotX="25.3" pivotY="28.35"/>
+	<SubTexture name="knight helmet" x="914" y="898" width="39" height="53" pivotX="19.25" pivotY="42.85"/>
+	<SubTexture name="koon outfit arm" x="1008" y="544" width="12" height="33" pivotX="6.35" pivotY="8.4"/>
+	<SubTexture name="koon hat" x="84" y="986" width="37" height="48" pivotX="17.8" pivotY="22.9"/>
+	<SubTexture name="koon pants" x="331" y="1377" width="12" height="25" pivotX="7.2" pivotY="12.3"/>
+	<SubTexture name="koon outfit" x="483" y="1170" width="39" height="33" pivotX="19.85" pivotY="15.25"/>
+	<SubTexture name="kreeton armor arm" x="763" y="1286" width="27" height="29" pivotX="14.9" pivotY="15.85"/>
+	<SubTexture name="kreeton armor" x="274" y="1323" width="25" height="25" pivotX="16.55" pivotY="12.55"/>
+	<SubTexture name="kreeton cutter" x="400" y="758" width="31" height="75" pivotX="33.6" pivotY="44.8"/>
+	<SubTexture name="kreeton gun" x="551" y="755" width="87" height="27" pivotX="42.65" pivotY="12.95"/>
+	<SubTexture name="kreeton helmet" x="655" y="626" width="49" height="52" pivotX="27.75" pivotY="27.45"/>
+	<SubTexture name="kreeton legs" x="227" y="842" width="24" height="20" pivotX="13.2" pivotY="9"/>
+	<SubTexture name="kreeton shield" x="798" y="651" width="46" height="55" pivotX="24.6" pivotY="24"/>
+	<SubTexture name="leaf bow" x="798" y="1200" width="20" height="57" pivotX="9.2" pivotY="32.65"/>
+	<SubTexture name="leaf pad bow" x="818" y="1200" width="20" height="56" pivotX="9.35" pivotY="27.95"/>
+	<SubTexture name="leather armor arm" x="623" y="1368" width="16" height="28" pivotX="7.05" pivotY="13.95"/>
+	<SubTexture name="leather helmet" x="156" y="1151" width="35" height="38" pivotX="23.3" pivotY="30.9"/>
+	<SubTexture name="leather legs" x="798" y="1036" width="13" height="21" pivotX="6.15" pivotY="10.55"/>
+	<SubTexture name="leather armor" x="473" y="1312" width="24" height="29" pivotX="11.15" pivotY="14.1"/>
+	<SubTexture name="light sword" x="635" y="100" width="50" height="112" pivotX="22.05" pivotY="88.1"/>
+	<SubTexture name="log splitting axe" x="997" y="924" width="26" height="69" pivotX="12.25" pivotY="32.25"/>
+	<SubTexture name="mac10" x="958" y="1159" width="42" height="31" pivotX="19.15" pivotY="11.75"/>
+	<SubTexture name="machete" x="96" y="1254" width="14" height="60" pivotX="6.4" pivotY="30.2"/>
+	<SubTexture name="machine gun" x="491" y="985" width="84" height="22" pivotX="41.75" pivotY="10.55"/>
+	<SubTexture name="magician armor arm" x="18" y="1348" width="18" height="29" pivotX="10.75" pivotY="16.75"/>
+	<SubTexture name="magician armor" x="166" y="994" width="34" height="52" pivotX="16.7" pivotY="20.25"/>
+	<SubTexture name="magician armor legs" x="388" y="770" width="12" height="21" pivotX="2.85" pivotY="12.8"/>
+	<SubTexture name="magnesium armor arm" x="451" y="1342" width="20" height="28" pivotX="9.95" pivotY="13.55"/>
+	<SubTexture name="magnesium armor" x="135" y="1284" width="27" height="30" pivotX="13.6" pivotY="14"/>
+	<SubTexture name="magnesium boot" x="509" y="1203" width="13" height="11" pivotX="6.15" pivotY="5.05"/>
+	<SubTexture name="magnesium helmet" x="627" y="520" width="48" height="58" pivotX="23.45" pivotY="33.95"/>
+	<SubTexture name="magnesium legs" x="1011" y="687" width="13" height="22" pivotX="6.95" pivotY="10.05"/>
+	<SubTexture name="maple tree log" x="437" y="632" width="69" height="37" pivotX="34.55" pivotY="17.7"/>
+	<SubTexture name="maple wood" x="227" y="863" width="59" height="36" pivotX="29.55" pivotY="17.7"/>
+	<SubTexture name="marshraptor body" x="709" y="1188" width="37" height="32" pivotX="18.15" pivotY="15.95"/>
+	<SubTexture name="marshraptor head" x="650" y="363" width="65" height="52" pivotX="32.05" pivotY="25.9"/>
+	<SubTexture name="marshraptor leg" x="933" y="984" width="12" height="12" pivotX="7.25" pivotY="2.35"/>
+	<SubTexture name="marshruto body" x="438" y="1186" width="41" height="29" pivotX="20" pivotY="14.3"/>
+	<SubTexture name="marshruto leg" x="506" y="239" width="11" height="6" pivotX="4.95" pivotY="2.9"/>
+	<SubTexture name="marshruto head" x="41" y="833" width="54" height="40" pivotX="26.65" pivotY="20.3"/>
+	<SubTexture name="marshy body" x="837" y="546" width="30" height="13" pivotX="14.6" pivotY="8.4"/>
+	<SubTexture name="marshy leg" x="470" y="472" width="10" height="11" pivotX="3.4" pivotY="2"/>
+	<SubTexture name="marshy head" x="522" y="1186" width="36" height="33" pivotX="17.35" pivotY="16.5"/>
+	<SubTexture name="masked cowboy hat" x="50" y="785" width="47" height="47" pivotX="22.9" pivotY="38.3"/>
+	<SubTexture name="meat cleaver" x="655" y="578" width="19" height="46" pivotX="9" pivotY="22.9"/>
+	<SubTexture name="mechanic wing bow" x="844" y="844" width="23" height="91" pivotX="10.25" pivotY="45.55"/>
+	<SubTexture name="medium bow" x="731" y="510" width="20" height="56" pivotX="9.35" pivotY="27.95"/>
+	<SubTexture name="chunk mace" x="662" y="953" width="32" height="60" pivotX="15.75" pivotY="25.75"/>
+	<SubTexture name="metal ballerina outfit arm" x="789" y="878" width="19" height="27" pivotX="10" pivotY="13.65"/>
+	<SubTexture name="metal ballerina legs" x="669" y="1391" width="13" height="21" pivotX="6.25" pivotY="10.1"/>
+	<SubTexture name="metal cat helmet" x="770" y="944" width="42" height="46" pivotX="21" pivotY="22.75"/>
+	<SubTexture name="alloy wolf helmet" x="106" y="765" width="48" height="48" pivotX="23.65" pivotY="45.2"/>
+	<SubTexture name="metal ballerina outfit" x="438" y="1215" width="38" height="29" pivotX="18.8" pivotY="12.4"/>
+	<SubTexture name="mexican shirt arm" x="903" y="1364" width="17" height="28" pivotX="4.3" pivotY="12.4"/>
+	<SubTexture name="mexican pants" x="968" y="1222" width="14" height="25" pivotX="6.1" pivotY="12.45"/>
+	<SubTexture name="mexican shirt" x="249" y="1316" width="25" height="27" pivotX="11.2" pivotY="14.05"/>
+	<SubTexture name="mithril armor arm" x="61" y="1282" width="27" height="30" pivotX="12.45" pivotY="15.45"/>
+	<SubTexture name="mithril armor" x="790" y="1305" width="27" height="26" pivotX="12.7" pivotY="12.95"/>
+	<SubTexture name="mithril helmet" x="650" y="415" width="59" height="52" pivotX="28.95" pivotY="25.3"/>
+	<SubTexture name="mithril legs" x="758" y="1370" width="19" height="23" pivotX="8.9" pivotY="11.4"/>
+	<SubTexture name="mithril shield" x="553" y="252" width="52" height="72" pivotX="25.2" pivotY="35.95"/>
+	<SubTexture name="mocap suit arm" x="634" y="1339" width="20" height="29" pivotX="9.55" pivotY="14.45"/>
+	<SubTexture name="mocap pants" x="957" y="1386" width="14" height="24" pivotX="7.3" pivotY="13.05"/>
+	<SubTexture name="mocap suit" x="529" y="1286" width="28" height="28" pivotX="11.5" pivotY="11.8"/>
+	<SubTexture name="monkey tail" x="513" y="1362" width="33" height="12" pivotX="30.55" pivotY="3.15"/>
+	<SubTexture name="monster skull" x="879" y="163" width="87" height="51" pivotX="42.8" pivotY="19.1"/>
+	<SubTexture name="moronicus body" x="641" y="1235" width="29" height="34" pivotX="14.3" pivotY="16.3"/>
+	<SubTexture name="moronicus head" x="263" y="495" width="49" height="58" pivotX="23.95" pivotY="29.2"/>
+	<SubTexture name="moronicus leg" x="774" y="1315" width="12" height="12" pivotX="6.45" pivotY="3.8"/>
+	<SubTexture name="mp5" x="879" y="82" width="41" height="26" pivotX="20.3" pivotY="12.4"/>
+	<SubTexture name="mummified axe" x="506" y="245" width="47" height="80" pivotX="22.85" pivotY="40"/>
+	<SubTexture name="mushroom helmet" x="154" y="785" width="45" height="50" pivotX="22" pivotY="24.65"/>
+	<SubTexture name="red mushroom log" x="406" y="1006" width="50" height="35" pivotX="26.55" pivotY="19.2"/>
+	<SubTexture name="blue mushroom log" x="156" y="1119" width="46" height="32" pivotX="26.55" pivotY="19.2"/>
+	<SubTexture name="mystical tribal armor arm" x="971" y="1301" width="23" height="31" pivotX="15.95" pivotY="12.4"/>
+	<SubTexture name="mystic tribal bow" x="735" y="171" width="48" height="90" pivotX="23.3" pivotY="45.1"/>
+	<SubTexture name="mystical tribal legs" x="36" y="1368" width="18" height="25" pivotX="8.7" pivotY="12.15"/>
+	<SubTexture name="mystical tribal mask" x="209" y="480" width="54" height="53" pivotX="25.8" pivotY="27"/>
+	<SubTexture name="mystical tribal armor" x="968" y="1249" width="31" height="31" pivotX="18.45" pivotY="16.45"/>
+	<SubTexture name="mystical tribal boot" x="312" y="771" width="17" height="8" pivotX="6" pivotY="5" />
+	<SubTexture name="narito body" x="933" y="999" width="61" height="29" pivotX="30.45" pivotY="13.9"/>
+	<SubTexture name="narito leg" x="199" y="785" width="14" height="12" pivotX="6.7" pivotY="3.8"/>
+	<SubTexture name="narito head" x="556" y="335" width="60" height="58" pivotX="29.95" pivotY="29.25"/>
+	<SubTexture name="natures bow" x="798" y="266" width="32" height="114" pivotX="16.4" pivotY="56.8"/>
+	<SubTexture name="natures staff" x="993" y="711" width="27" height="88" pivotX="12.85" pivotY="43.9"/>
+	<SubTexture name="neon magic suit arm" x="393" y="1364" width="17" height="29" pivotX="7.85" pivotY="15.2"/>
+	<SubTexture name="neon magic suit" x="843" y="1342" width="23" height="24" pivotX="11" pivotY="12.5"/>
+	<SubTexture name="neon magic helmet" x="97" y="813" width="44" height="50" pivotX="21.55" pivotY="24.05"/>
+	<SubTexture name="neon magic legs" x="961" y="806" width="13" height="22" pivotX="5.85" pivotY="10.3"/>
+	<SubTexture name="net" x="830" y="369" width="39" height="85" pivotX="31.35" pivotY="53.35"/>
+	<SubTexture name="night glow bow" x="976" y="906" width="21" height="93" pivotX="10.1" pivotY="45.95"/>
+	<SubTexture name="night terror body" x="74" y="1153" width="49" height="27" pivotX="24.15" pivotY="13.3"/>
+	<SubTexture name="night terror leg" x="902" y="942" width="12" height="8" pivotX="5.55" pivotY="3.35"/>
+	<SubTexture name="night terror head" x="374" y="696" width="53" height="46" pivotX="26.55" pivotY="22.75"/>
+	<SubTexture name="nightingale staff" x="751" y="496" width="32" height="88" pivotX="-0.65" pivotY="48.9"/>
+	<SubTexture name="night glow wand" x="339" y="870" width="34" height="61" pivotX="11.25" pivotY="37"/>
+	<SubTexture name="nooter body" x="675" y="1318" width="41" height="16" pivotX="20.1" pivotY="7.65"/>
+	<SubTexture name="nooter leg" x="169" y="673" width="11" height="7" pivotX="4.95" pivotY="3.05"/>
+	<SubTexture name="nooter head" x="808" y="1128" width="40" height="35" pivotX="20.35" pivotY="17.2"/>
+	<SubTexture name="ocean staff" x="720" y="566" width="31" height="86" pivotX="14.9" pivotY="43.1"/>
+	<SubTexture name="odiot body" x="424" y="1291" width="21" height="32" pivotX="10.2" pivotY="16.2"/>
+	<SubTexture name="odiot head" x="121" y="960" width="45" height="42" pivotX="22.35" pivotY="20.8"/>
+	<SubTexture name="odiot leg" x="1015" y="246" width="9" height="11" pivotX="2.9" pivotY="1.4"/>
+	<SubTexture name="single battle axe" x="630" y="977" width="29" height="60" pivotX="13.6" pivotY="29.55"/>
+	<SubTexture name="oriental hat" x="694" y="954" width="60" height="32" pivotX="28.05" pivotY="14.3"/>
+	<SubTexture name="ozacode head" x="871" y="346" width="62" height="56" pivotX="31.35" pivotY="27.5"/>
+	<SubTexture name="ozacode leg" x="239" y="1186" width="40" height="30" pivotX="32.35" pivotY="12"/>
+	<SubTexture name="ozark head" x="420" y="409" width="60" height="52" pivotX="30.1" pivotY="25.8"/>
+	<SubTexture name="ozark leg" x="45" y="964" width="31" height="22" pivotX="24.4" pivotY="8.15"/>
+	<SubTexture name="ozich head" x="121" y="1002" width="41" height="43" pivotX="20.35" pivotY="20.75"/>
+	<SubTexture name="ozich leg" x="45" y="964" width="31" height="22" pivotX="24.4" pivotY="8.15"/>
+	<SubTexture name="pablet body" x="880" y="1205" width="51" height="22" pivotX="24.85" pivotY="11.2"/>
+	<SubTexture name="pablet leg" x="948" y="702" width="13" height="8" pivotX="5.95" pivotY="3.55"/>
+	<SubTexture name="pablet head" x="200" y="533" width="53" height="52" pivotX="25.75" pivotY="25.2"/>
+	<SubTexture name="paintball gun" x="900" y="661" width="61" height="41" pivotX="29.85" pivotY="20.4"/>
+	<SubTexture name="pallock body" x="189" y="1304" width="34" height="21" pivotX="16.6" pivotY="10.2"/>
+	<SubTexture name="pallock leg" x="780" y="1076" width="12" height="8" pivotX="5.55" pivotY="3.2"/>
+	<SubTexture name="pallock head" x="540" y="942" width="45" height="43" pivotX="21.75" pivotY="21.1"/>
+	<SubTexture name="palm tree log" x="117" y="1089" width="58" height="27" pivotX="29.6" pivotY="12.6"/>
+	<SubTexture name="palm tree wood" x="728" y="266" width="70" height="53" pivotX="34.75" pivotY="25.8"/>
+	<SubTexture name="paper bag" x="0" y="714" width="33" height="38" pivotX="16.2" pivotY="12.25"/>
+	<SubTexture name="paper hat" x="638" y="1100" width="41" height="37" pivotX="23.05" pivotY="16.95"/>
+	<SubTexture name="archer patches hat" x="406" y="972" width="55" height="34" pivotX="30.25" pivotY="17.6"/>
+	<SubTexture name="pengman leg" x="861" y="1210" width="12" height="17" pivotX="6.5" pivotY="4.25"/>
+	<SubTexture name="pengman head" x="442" y="200" width="64" height="66" pivotX="31.75" pivotY="32.5"/>
+	<SubTexture name="pet acid helmet" x="286" y="872" width="51" height="41" pivotX="25.45" pivotY="19.8"/>
+	<SubTexture name="pet adamantium helmet" x="766" y="1120" width="42" height="35" pivotX="23.8" pivotY="20.8"/>
+	<SubTexture name="pet apollo helmet" x="461" y="1109" width="39" height="38" pivotX="14.55" pivotY="18.05"/>
+	<SubTexture name="pet archer hat" x="789" y="905" width="52" height="39" pivotX="27" pivotY="15.95"/>
+	<SubTexture name="pet army helmet" x="931" y="1222" width="37" height="29" pivotX="18.4" pivotY="13.95"/>
+	<SubTexture name="pet atomic helmet" x="670" y="1180" width="39" height="31" pivotX="22" pivotY="12"/>
+	<SubTexture name="pet striped beanie" x="755" y="1155" width="49" height="27" pivotX="27.8" pivotY="12.35"/>
+	<SubTexture name="pet beholder helmet" x="169" y="683" width="51" height="48" pivotX="25.7" pivotY="23.7"/>
+	<SubTexture name="pet bowtie" x="883" y="1140" width="29" height="25" pivotX="14.35" pivotY="12.05"/>
+	<SubTexture name="pet cone helmet" x="39" y="1116" width="35" height="41" pivotX="21.2" pivotY="31.2"/>
+	<SubTexture name="pet cowboy hat" x="502" y="1007" width="48" height="36" pivotX="21.5" pivotY="15.75"/>
+	<SubTexture name="pet crumby hat" x="383" y="833" width="42" height="51" pivotX="17.5" pivotY="16.65"/>
+	<SubTexture name="pet cyborg helmet" x="585" y="1060" width="45" height="36" pivotX="22.3" pivotY="16.05"/>
+	<SubTexture name="pet cyro helmet" x="754" y="800" width="57" height="39" pivotX="28.25" pivotY="19"/>
+	<SubTexture name="pet dino scale helmet" x="304" y="559" width="57" height="48" pivotX="39.15" pivotY="31.8"/>
+	<SubTexture name="pet earth helmet" x="782" y="756" width="53" height="44" pivotX="25.85" pivotY="21"/>
+	<SubTexture name="pet element helmet" x="0" y="964" width="45" height="42" pivotX="23" pivotY="24.95"/>
+	<SubTexture name="pet horned helmet" x="724" y="910" width="46" height="44" pivotX="27.85" pivotY="26.25"/>
+	<SubTexture name="pet jester hat" x="487" y="377" width="64" height="52" pivotX="32.05" pivotY="16.5"/>
+	<SubTexture name="pet mystical tribal helmet" x="456" y="1007" width="46" height="38" pivotX="28.4" pivotY="21.9"/>
+	<SubTexture name="pet oriental hat" x="913" y="1134" width="45" height="31" pivotX="21.15" pivotY="13.15"/>
+	<SubTexture name="pet pirate hat" x="76" y="943" width="45" height="43" pivotX="22.6" pivotY="20.85"/>
+	<SubTexture name="pet pirate helmet" x="780" y="1084" width="44" height="36" pivotX="21.95" pivotY="17.75"/>
+	<SubTexture name="pet protector helmet" x="583" y="1135" width="41" height="34" pivotX="21.25" pivotY="16.05"/>
+	<SubTexture name="pet samurai helmet" x="77" y="1034" width="41" height="41" pivotX="19" pivotY="19"/>
+	<SubTexture name="pet serpent helmet" x="715" y="386" width="60" height="53" pivotX="21.65" pivotY="37.5"/>
+	<SubTexture name="pet spartan helmet" x="541" y="1060" width="44" height="37" pivotX="21.95" pivotY="17.65"/>
+	<SubTexture name="pet stone helmet" x="535" y="1153" width="40" height="33" pivotX="21.8" pivotY="17.5"/>
+	<SubTexture name="pet strong helmet" x="597" y="1098" width="41" height="37" pivotX="23.2" pivotY="22.6"/>
+	<SubTexture name="pet valor helmet" x="501" y="895" width="46" height="45" pivotX="27.3" pivotY="20.95"/>
+	<SubTexture name="pet vendor" x="488" y="325" width="68" height="52" pivotX="34.05" pivotY="25.85"/>
+	<SubTexture name="pet melon helmet" x="188" y="1238" width="39" height="26" pivotX="15.45" pivotY="17.7"/>
+	<SubTexture name="pet witch hat" x="183" y="947" width="41" height="47" pivotX="20.75" pivotY="22.9"/>
+	<SubTexture name="pet wizard hat" x="45" y="986" width="39" height="46" pivotX="17.55" pivotY="28.8"/>
+	<SubTexture name="petri head" x="156" y="1046" width="38" height="43" pivotX="18.65" pivotY="20.65"/>
+	<SubTexture name="petri leg" x="553" y="542" width="10" height="10" pivotX="2.95" pivotY="1.2"/>
+	<SubTexture name="petruski head" x="98" y="647" width="46" height="55" pivotX="22.15" pivotY="26.8"/>
+	<SubTexture name="petruski leg" x="782" y="699" width="12" height="7" pivotX="5.3" pivotY="3.1"/>
+	<SubTexture name="phantom robe arm" x="525" y="429" width="24" height="35" pivotX="17.4" pivotY="19.2"/>
+	<SubTexture name="phantom hood" x="869" y="450" width="52" height="57" pivotX="22.3" pivotY="39.4" />
+	<SubTexture name="phantom pants" x="376" y="1363" width="17" height="29" pivotX="14" pivotY="16.45" /> <!--pivotX="4.8" pivotY="16.45" />-->
+	<SubTexture name="phantom robe" x="203" y="867" width="23" height="32" pivotX="10.7" pivotY="15.7"/>
+	<SubTexture name="phantom staff" x="470" y="496" width="30" height="94" pivotX="12.8" pivotY="40.55"/>
+	<SubTexture name="phantom wand" x="329" y="931" width="31" height="63" pivotX="14.65" pivotY="35.45"/>
+	<SubTexture name="pickaxe" x="724" y="319" width="53" height="67" pivotX="25.7" pivotY="33.55"/>
+	<SubTexture name="pine block" x="585" y="977" width="45" height="40" pivotX="22.65" pivotY="19.4"/>
+	<SubTexture name="pine tree log" x="841" y="942" width="61" height="32" pivotX="30.4" pivotY="15.5"/>
+	<SubTexture name="pink balloon" x="963" y="459" width="33" height="89" pivotX="11.55" pivotY="75.35"/>
+	<SubTexture name="pink crystal armor arm" x="823" y="1332" width="20" height="29" pivotX="9.65" pivotY="15.5"/>
+	<SubTexture name="pink crystal armor" x="162" y="1288" width="27" height="29" pivotX="12.8" pivotY="14.4"/>
+	<SubTexture name="pink crystal boot" x="188" y="1227" width="14" height="11" pivotX="6.75" pivotY="5.05"/>
+	<SubTexture name="pink crystal helmet" x="323" y="696" width="51" height="48" pivotX="28.9" pivotY="25.5"/>
+	<SubTexture name="pink crystal legs" x="144" y="1375" width="19" height="21" pivotX="9.15" pivotY="10.15"/>
+	<SubTexture name="pirate armor arm" x="923" y="1315" width="21" height="32" pivotX="10.45" pivotY="16.85"/>
+	<SubTexture name="pirate armor" x="445" y="1317" width="26" height="25" pivotX="12.15" pivotY="13.15"/>
+	<SubTexture name="pirate armor legs" x="920" y="1370" width="17" height="25" pivotX="7.85" pivotY="12.4"/>
+	<SubTexture name="pirate boot" x="636" y="944" width="18" height="8" pivotX="8.35" pivotY="3.8"/>
+	<SubTexture name="pirate hat" x="91" y="900" width="48" height="43" pivotX="22.45" pivotY="21"/>
+	<SubTexture name="pirate helmet" x="76" y="478" width="52" height="55" pivotX="28.25" pivotY="32.1"/>
+	<SubTexture name="pirate vest arm" x="69" y="1367" width="17" height="27" pivotX="6.7" pivotY="13.9"/>
+	<SubTexture name="pirate vest" x="489" y="1252" width="32" height="30" pivotX="15.2" pivotY="15.15"/>
+	<SubTexture name="pirate pants" x="560" y="1377" width="12" height="24" pivotX="7" pivotY="11.65"/>
+	<SubTexture name="pointed pirate hat" x="437" y="669" width="55" height="45" pivotX="26.3" pivotY="21.95"/>
+	<SubTexture name="potato gun" x="659" y="1013" width="82" height="21" pivotX="40.65" pivotY="10.3"/>
+	<SubTexture name="protector suit arm" x="24" y="1320" width="23" height="28" pivotX="11.75" pivotY="13.55"/>
+	<SubTexture name="protector legs" x="0" y="1375" width="18" height="22" pivotX="12.7" pivotY="9.55"/>
+	<SubTexture name="protector suit" x="78" y="1314" width="26" height="26" pivotX="12.55" pivotY="13.4"/>
+	<SubTexture name="protector helmet" x="675" y="821" width="45" height="48" pivotX="21.85" pivotY="26.5"/>
+	<SubTexture name="protector shield" x="675" y="566" width="45" height="60" pivotX="22" pivotY="30"/>
+	<SubTexture name="pumperoni head" x="213" y="750" width="47" height="50" pivotX="22.75" pivotY="25.15"/>
+	<SubTexture name="pumperoni leg" x="860" y="1084" width="12" height="8" pivotX="5.45" pivotY="3.25"/>
+	<SubTexture name="pumpkin helmet" x="224" y="992" width="39" height="46" pivotX="19.15" pivotY="22.1"/>
+	<SubTexture name="pumpman leg" x="416" y="742" width="11" height="7" pivotX="4.95" pivotY="3"/>
+	<SubTexture name="pumpman head" x="741" y="1076" width="39" height="41" pivotX="18.9" pivotY="19.9"/>
+	<SubTexture name="purple sheet wood" x="154" y="1189" width="78" height="12" pivotX="38.75" pivotY="7.25"/>
+	<SubTexture name="purple tree log" x="659" y="1034" width="57" height="30" pivotX="28.55" pivotY="14.3"/>
+	<SubTexture name="quackman body" x="659" y="1281" width="34" height="24" pivotX="16.65" pivotY="11.7"/>
+	<SubTexture name="quackman leg" x="828" y="75" width="13" height="7" pivotX="5.9" pivotY="3.35"/>
+	<SubTexture name="quackman head" x="844" y="653" width="56" height="45" pivotX="27.5" pivotY="21.65"/>
+	<SubTexture name="quackster body" x="741" y="1013" width="28" height="20" pivotX="13.25" pivotY="9.55"/>
+	<SubTexture name="quackster leg" x="228" y="652" width="11" height="7" pivotX="4.85" pivotY="3.05"/>
+	<SubTexture name="quackster head" x="839" y="1179" width="41" height="31" pivotX="19.4" pivotY="14.95"/>
+	<SubTexture name="quarbler body" x="371" y="1228" width="37" height="28" pivotX="18.3" pivotY="13.55"/>
+	<SubTexture name="quarbler head" x="76" y="421" width="53" height="57" pivotX="26.2" pivotY="27.9"/>
+	<SubTexture name="quarbler leg" x="931" y="1205" width="12" height="17" pivotX="7.1" pivotY="4.6"/>
+	<SubTexture name="rabeeto body" x="755" y="1182" width="43" height="28" pivotX="20.85" pivotY="13.15"/>
+	<SubTexture name="rabeeto head" x="98" y="596" width="51" height="51" pivotX="25.2" pivotY="25.25"/>
+	<SubTexture name="rabeeto leg" x="937" y="1391" width="12" height="12" pivotX="6.3" pivotY="3.4"/>
+	<SubTexture name="robotix leg" x="937" y="1391" width="12" height="12" pivotX="6.3" pivotY="3.4"/>
+	<SubTexture name="rayon gun" x="798" y="1064" width="81" height="20" pivotX="40.1" pivotY="9.6"/>
+	<SubTexture name="reapers scythe" x="768" y="75" width="60" height="96" pivotX="13.35" pivotY="46.95"/>
+	<SubTexture name="red shirt arm" x="456" y="509" width="14" height="29" pivotX="6.5" pivotY="15.85"/>
+	<SubTexture name="red beanie" x="509" y="1219" width="33" height="33" pivotX="15.85" pivotY="26.85"/>
+	<SubTexture name="red cape" x="427" y="1087" width="34" height="46" pivotX="16.55" pivotY="12.65"/>
+	<SubTexture name="red pants" x="169" y="652" width="11" height="21" pivotX="2.7" pivotY="12.8"/>
+	<SubTexture name="red plastic sword" x="783" y="496" width="19" height="52" pivotX="9.1" pivotY="26.15"/>
+	<SubTexture name="red shirt" x="408" y="1337" width="22" height="27" pivotX="10.9" pivotY="13.1"/>
+	<SubTexture name="red wizard hat" x="627" y="467" width="54" height="53" pivotX="25.4" pivotY="22.25"/>
+	<SubTexture name="red wizard pants" x="735" y="731" width="12" height="21" pivotX="2.6" pivotY="12.75"/>
+	<SubTexture name="red wizard robe arm" x="54" y="1368" width="12" height="28" pivotX="6.5" pivotY="15.9"/>
+	<SubTexture name="red wizard robe" x="681" y="467" width="28" height="39" pivotX="13.75" pivotY="18.85"/>
+	<SubTexture name="reinforced bush armor arm" x="494" y="1347" width="19" height="28" pivotX="11" pivotY="13.8"/>
+	<SubTexture name="reinforced bush armor" x="946" y="1190" width="36" height="32" pivotX="17.4" pivotY="16.1"/>
+	<SubTexture name="reinforced bush legs" x="736" y="1366" width="22" height="21" pivotX="10.15" pivotY="10.3"/>
+	<SubTexture name="relic armor arm" x="567" y="1316" width="21" height="32" pivotX="9.85" pivotY="14.75"/>
+	<SubTexture name="relic armor" x="478" y="1282" width="27" height="30" pivotX="12.9" pivotY="12"/>
+	<SubTexture name="relic boot" x="310" y="1294" width="17" height="9" pivotX="8.35" pivotY="3.75"/>
+	<SubTexture name="relic helmet" x="606" y="578" width="49" height="55" pivotX="27.8" pivotY="26.45"/>
+	<SubTexture name="relic legs" x="578" y="1373" width="19" height="21" pivotX="8.8" pivotY="11.05"/>
+	<SubTexture name="repguana armor arm" x="919" y="735" width="29" height="29" pivotX="13.25" pivotY="14.95"/>
+	<SubTexture name="repguana armor" x="558" y="1197" width="36" height="32" pivotX="17.7" pivotY="19.8"/>
+	<SubTexture name="repguana helmet" x="948" y="711" width="45" height="53" pivotX="22.1" pivotY="25.85"/>
+	<SubTexture name="repguana legs" x="431" y="1343" width="20" height="26" pivotX="10.7" pivotY="13.5"/>
+	<SubTexture name="reptile wand" x="991" y="1059" width="24" height="66" pivotX="11.35" pivotY="33"/>
+	<SubTexture name="revolver" x="583" y="1264" width="38" height="23" pivotX="18.6" pivotY="10.75"/>
+	<SubTexture name="rexosaur body" x="536" y="1122" width="47" height="31" pivotX="22.85" pivotY="15.2"/>
+	<SubTexture name="rexosaur leg" x="479" y="994" width="12" height="8" pivotX="5.55" pivotY="3.4"/>
+	<SubTexture name="rexosaur head" x="751" y="440" width="53" height="56" pivotX="26.35" pivotY="27.4"/>
+	<SubTexture name="rich mans bow" x="630" y="1037" width="25" height="61" pivotX="13.75" pivotY="31.05"/>
+	<SubTexture name="ritardo body" x="442" y="109" width="14" height="30" pivotX="6.45" pivotY="14.55"/>
+	<SubTexture name="ritardo head" x="203" y="1204" width="33" height="34" pivotX="16.15" pivotY="16.45"/>
+	<SubTexture name="ritardo leg" x="1015" y="268" width="9" height="10" pivotX="3" pivotY="1.25"/>
+	<SubTexture name="roblost body" x="937" y="1370" width="20" height="21" pivotX="9.5" pivotY="10"/>
+	<SubTexture name="roblost head" x="0" y="1189" width="33" height="35" pivotX="15.7" pivotY="17.4"/>
+	<SubTexture name="robot armor arm" x="149" y="1347" width="19" height="28" pivotX="9.55" pivotY="13.25"/>
+	<SubTexture name="robot armor" x="588" y="1316" width="24" height="28" pivotX="11" pivotY="14.25"/>
+	<SubTexture name="robot legs" x="507" y="1377" width="17" height="22" pivotX="8.7" pivotY="9.65"/>
+	<SubTexture name="robot bar" x="738" y="1242" width="46" height="22" pivotX="22.85" pivotY="10.6"/>
+	<SubTexture name="robot helmet" x="43" y="349" width="53" height="64" pivotX="27.75" pivotY="39.45"/>
+	<SubTexture name="robot shield" x="370" y="1127" width="38" height="37" pivotX="18.6" pivotY="18.75"/>
+	<SubTexture name="robot tree log" x="501" y="866" width="73" height="29" pivotX="36.2" pivotY="14"/>
+	<SubTexture name="robotix body" x="305" y="1143" width="39" height="35" pivotX="19" pivotY="16.95"/>
+	<SubTexture name="robotix head" x="909" y="606" width="48" height="54" pivotX="24.15" pivotY="26.5"/>
+	<SubTexture name="roman robe arm" x="803" y="1357" width="17" height="30" pivotX="7.6" pivotY="14.7"/>
+	<SubTexture name="roman helmet" x="380" y="317" width="54" height="66" pivotX="26.65" pivotY="36.1"/>
+	<SubTexture name="roman leggings" x="141" y="813" width="13" height="22" pivotX="6.3" pivotY="10.25"/>
+	<SubTexture name="roman robe" x="923" y="1281" width="24" height="34" pivotX="11.5" pivotY="16.5"/>
+	<SubTexture name="royal armor arm" x="650" y="335" width="18" height="28" pivotX="9.7" pivotY="13.7"/>
+	<SubTexture name="royal armor" x="861" y="1257" width="29" height="32" pivotX="14.6" pivotY="11.9"/>
+	<SubTexture name="royal helmet" x="0" y="853" width="39" height="54" pivotX="19.35" pivotY="37.25"/>
+	<SubTexture name="royal legs" x="227" y="1382" width="16" height="21" pivotX="7.15" pivotY="9.65"/>
+	<SubTexture name="rusty scimitar" x="475" y="1045" width="25" height="64" pivotX="12.15" pivotY="32.2"/>
+	<SubTexture name="sai" x="777" y="319" width="21" height="59" pivotX="10.05" pivotY="29.1"/>
+	<SubTexture name="samurai armor arm" x="540" y="1332" width="20" height="30" pivotX="9.9" pivotY="15.15"/>
+	<SubTexture name="samurai armor" x="110" y="1275" width="25" height="33" pivotX="9.6" pivotY="15.45"/>
+	<SubTexture name="samurai legs" x="704" y="1377" width="12" height="23" pivotX="7.4" pivotY="10.25"/>
+	<SubTexture name="samurai helmet" x="58" y="533" width="48" height="58" pivotX="29.95" pivotY="49.75"/>
+	<SubTexture name="santa claus hat" x="919" y="764" width="55" height="42" pivotX="31.95" pivotY="24.85"/>
+	<SubTexture name="serpent armor arm" x="749" y="1315" width="25" height="27" pivotX="13.85" pivotY="14.05"/>
+	<SubTexture name="serpent armor" x="774" y="1331" width="25" height="25" pivotX="12" pivotY="12.45"/>
+	<SubTexture name="serpent boot" x="239" y="1172" width="18" height="12" pivotX="10.6" pivotY="7.2"/>
+	<SubTexture name="serpent helmet" x="768" y="0" width="81" height="75" pivotX="34.05" pivotY="52.75"/>
+	<SubTexture name="serpent legs" x="331" y="1263" width="20" height="22" pivotX="9.1" pivotY="9.95"/>
+	<SubTexture name="serpent staff" x="327" y="379" width="37" height="87" pivotX="17.85" pivotY="42.95"/>
+	<SubTexture name="serpent wand" x="709" y="439" width="42" height="71" pivotX="20.65" pivotY="35.1"/>
+	<SubTexture name="shades" x="312" y="552" width="29" height="7" pivotX="7.7" pivotY="7"/>
+	<SubTexture name="shaman staff" x="303" y="104" width="46" height="110" pivotX="26.15" pivotY="80"/>
+	<SubTexture name="shaman wand" x="997" y="847" width="27" height="77" pivotX="13.65" pivotY="37.9"/>
+	<SubTexture name="short sword" x="488" y="266" width="12" height="54" pivotX="6.75" pivotY="26.9"/>
+	<SubTexture name="shotgun" x="879" y="1072" width="81" height="20" pivotX="32.8" pivotY="3.8"/>
+	<SubTexture name="sickle" x="345" y="1198" width="26" height="44" pivotX="13.2" pivotY="21.6"/>
+	<SubTexture name="single hatred blade" x="844" y="698" width="30" height="78" pivotX="20.8" pivotY="39.05"/>
+	<SubTexture name="single godly blade" x="725" y="768" width="29" height="79" pivotX="13.85" pivotY="39.35"/>
+	<SubTexture name="single sphere wand" x="994" y="999" width="29" height="60" pivotX="14.9" pivotY="45.4"/>
+	<SubTexture name="skull bone gun" x="638" y="760" width="87" height="27" pivotX="43" pivotY="12.7"/>
+	<SubTexture name="skull crusher armor arm" x="0" y="1224" width="32" height="33" pivotX="19.9" pivotY="15.45"/>
+	<SubTexture name="skull crusher armor" x="62" y="1254" width="34" height="28" pivotX="16.65" pivotY="13.35"/>
+	<SubTexture name="skull crusher boot" x="583" y="1122" width="14" height="11" pivotX="6.45" pivotY="5.3"/>
+	<SubTexture name="skullcrusher gun" x="551" y="730" width="96" height="25" pivotX="47.55" pivotY="12.15"/>
+	<SubTexture name="skull crusher helmet" x="921" y="459" width="42" height="70" pivotX="23.5" pivotY="21.1"/>
+	<SubTexture name="skull crusher" x="129" y="421" width="27" height="110" pivotX="13.5" pivotY="54.7"/>
+	<SubTexture name="skull crusher legs" x="526" y="790" width="24" height="21" pivotX="12.75" pivotY="8.85"/>
+	<SubTexture name="skull crusher shield" x="431" y="813" width="39" height="56" pivotX="19.4" pivotY="27.4"/>
+	<SubTexture name="skull spear" x="527" y="594" width="26" height="99" pivotX="17.75" pivotY="49.35"/>
+	<SubTexture name="sledgehammer" x="967" y="1028" width="24" height="69" pivotX="11.45" pivotY="32.1"/>
+	<SubTexture name="slingshot" x="307" y="958" width="22" height="34" pivotX="10.75" pivotY="16.95"/>
+	<SubTexture name="small bow" x="595" y="393" width="19" height="44" pivotX="8.9" pivotY="22.1"/>
+	<SubTexture name="nightingale wand" x="305" y="1036" width="27" height="60" pivotX="23.8" pivotY="42.6"/>
+	<SubTexture name="small skull crusher" x="953" y="906" width="23" height="87" pivotX="0.1" pivotY="44.2"/>
+	<SubTexture name="stick" x="506" y="200" width="12" height="39" pivotX="5.8" pivotY="19.55"/>
+	<SubTexture name="smiley tin shield" x="77" y="1075" width="40" height="40" pivotX="19.8" pivotY="19.8"/>
+	<SubTexture name="sniper rifle" x="551" y="787" width="95" height="24" pivotX="46.65" pivotY="12.85"/>
+	<SubTexture name="snout zinc helmet" x="751" y="645" width="47" height="54" pivotX="22.3" pivotY="25.5"/>
+	<SubTexture name="snow covered wood" x="72" y="1211" width="62" height="18" pivotX="30.9" pivotY="8.75"/>
+	<SubTexture name="snowy tree log" x="724" y="878" width="65" height="32" pivotX="32.25" pivotY="15.5"/>
+	<SubTexture name="sombrero" x="199" y="800" width="53" height="42" pivotX="25.75" pivotY="19.7"/>
+	<SubTexture name="sorcerer robe arm" x="410" y="1364" width="18" height="27" pivotX="6.3" pivotY="15.5"/>
+	<SubTexture name="sorcerer copter hat" x="0" y="1051" width="36" height="45" pivotX="22.55" pivotY="21.95"/>
+	<SubTexture name="sorcerer pants" x="410" y="1391" width="12" height="21" pivotX="6.75" pivotY="10.9"/>
+	<SubTexture name="sorcerer robe" x="241" y="1125" width="30" height="47" pivotX="15.9" pivotY="18.05"/>
+	<SubTexture name="spartan helmet" x="271" y="958" width="36" height="53" pivotX="21.8" pivotY="29.45"/>
+	<SubTexture name="spherical staff" x="290" y="289" width="37" height="97" pivotX="18.2" pivotY="55.1"/>
+	<SubTexture name="spiked dino boot" x="257" y="1172" width="14" height="14" pivotX="6.75" pivotY="2.9"/>
+	<SubTexture name="spiked shell helmet" x="933" y="346" width="58" height="59" pivotX="20.7" pivotY="30.65"/>
+	<SubTexture name="spooker head" x="783" y="193" width="58" height="73" pivotX="28.55" pivotY="35.6"/>
+	<SubTexture name="squatch body" x="128" y="1341" width="21" height="28" pivotX="9.6" pivotY="13.75"/>
+	<SubTexture name="squatch head" x="408" y="1133" width="40" height="35" pivotX="19.95" pivotY="17.35"/>
+	<SubTexture name="squatch leg" x="625" y="187" width="10" height="12" pivotX="3.35" pivotY="2"/>
+	<SubTexture name="stalker jr body" x="716" y="1034" width="40" height="42" pivotX="19.95" pivotY="20.6"/>
+	<SubTexture name="stalker jr head" x="777" y="380" width="53" height="60" pivotX="26.15" pivotY="29.55"/>
+	<SubTexture name="stalker jr leg" x="638" y="1291" width="12" height="14" pivotX="5.75" pivotY="2.5"/>
+	<SubTexture name="stalkling body" x="211" y="1286" width="45" height="18" pivotX="22.45" pivotY="8.65"/>
+	<SubTexture name="stalkling head" x="448" y="1147" width="35" height="39" pivotX="17.5" pivotY="20.7"/>
+	<SubTexture name="stalkling leg" x="625" y="199" width="10" height="12" pivotX="3.55" pivotY="1.4"/>
+	<SubTexture name="star wand" x="559" y="134" width="16" height="51" pivotX="7.45" pivotY="25.1"/>
+	<SubTexture name="steel boot" x="448" y="1133" width="13" height="11" pivotX="6.15" pivotY="5.05"/>
+	<SubTexture name="steel helmet hat" x="860" y="600" width="49" height="53" pivotX="23.6" pivotY="26.15"/>
+	<SubTexture name="steel masked helmet" x="687" y="710" width="48" height="50" pivotX="23.25" pivotY="29.9"/>
+	<SubTexture name="stone armor arm" x="183" y="915" width="20" height="32" pivotX="11.65" pivotY="16.45"/>
+	<SubTexture name="stone armor" x="50" y="752" width="27" height="33" pivotX="12.45" pivotY="22.8"/>
+	<SubTexture name="stone armor legs" x="971" y="1386" width="14" height="23" pivotX="6.95" pivotY="11.25"/>
+	<SubTexture name="stone helmet" x="390" y="1084" width="37" height="43" pivotX="19.55" pivotY="23.8"/>
+	<SubTexture name="stone shield" x="0" y="907" width="37" height="54" pivotX="18.95" pivotY="22.65"/>
+	<SubTexture name="stop sign" x="307" y="994" width="42" height="42" pivotX="20.7" pivotY="20.6"/>
+	<SubTexture name="strong armor arm" x="704" y="626" width="16" height="26" pivotX="6.45" pivotY="13.1"/>
+	<SubTexture name="strong armor" x="754" y="768" width="28" height="31" pivotX="13.6" pivotY="15.35"/>
+	<SubTexture name="strong basket helmet" x="434" y="344" width="53" height="65" pivotX="26.35" pivotY="27.9"/>
+	<SubTexture name="strong full helmet" x="871" y="283" width="59" height="61" pivotX="29.65" pivotY="53.25"/>
+	<SubTexture name="strong legs" x="307" y="1387" width="12" height="22" pivotX="7.35" pivotY="10.05"/>
+	<SubTexture name="sugarloaf helmet" x="425" y="919" width="37" height="53" pivotX="17.25" pivotY="24.8"/>
+	<SubTexture name="suit pants" x="735" y="710" width="12" height="21" pivotX="2.85" pivotY="12.8"/>
+	<SubTexture name="super hero shirt arm" x="168" y="1347" width="13" height="18" pivotX="6.5" pivotY="15.75"/>
+	<SubTexture name="super hero shirt" x="385" y="1337" width="23" height="26" pivotX="6.1" pivotY="18.4"/>
+	<SubTexture name="mega sword" x="289" y="386" width="29" height="109" pivotX="14.15" pivotY="54.7"/>
+	<SubTexture name="sythe" x="44" y="257" width="47" height="79" pivotX="27.85" pivotY="36.3"/>
+	<SubTexture name="tarma body" x="305" y="1178" width="40" height="32" pivotX="19.75" pivotY="15.6"/>
+	<SubTexture name="tarma head" x="364" y="383" width="56" height="57" pivotX="27.7" pivotY="27.95"/>
+	<SubTexture name="tarma leg" x="400" y="742" width="16" height="16" pivotX="6.1" pivotY="2.2"/>
+	<SubTexture name="teardrop blade" x="467" y="911" width="24" height="83" pivotX="11.6" pivotY="41.65"/>
+	<SubTexture name="tebra head" x="938" y="1097" width="41" height="37" pivotX="20.55" pivotY="17.95"/>
+	<SubTexture name="tebra leg" x="553" y="552" width="10" height="9" pivotX="3.4" pivotY="0"/>
+	<SubTexture name="tebroni body" x="360" y="968" width="46" height="41" pivotX="22.75" pivotY="20"/>
+	<SubTexture name="tebroni leg" x="141" y="835" width="12" height="7" pivotX="5.3" pivotY="3.15"/>
+	<SubTexture name="tebroni head" x="912" y="806" width="49" height="45" pivotX="24.5" pivotY="22"/>
+	<SubTexture name="tebrumpt body" x="536" y="1097" width="61" height="25" pivotX="30.45" pivotY="12.4"/>
+	<SubTexture name="tebrumpt head" x="96" y="368" width="63" height="53" pivotX="31.3" pivotY="26"/>
+	<SubTexture name="tebrumpt leg" x="661" y="1137" width="12" height="16" pivotX="6.3" pivotY="2.65"/>
+	<SubTexture name="technotron head" x="974" y="799" width="46" height="48" pivotX="23.4" pivotY="23.55"/>
+	<SubTexture name="technotron leg" x="458" y="586" width="12" height="8" pivotX="5.7" pivotY="3.5"/>
+	<SubTexture name="technotron body" x="479" y="429" width="30" height="23" pivotX="12" pivotY="11" />
+	<SubTexture name="teemore body" x="370" y="1168" width="43" height="30" pivotX="21" pivotY="14.3"/>
+	<SubTexture name="teemore leg" x="153" y="835" width="12" height="7" pivotX="5.25" pivotY="3.15"/>
+	<SubTexture name="teemore head" x="405" y="564" width="53" height="51" pivotX="25.9" pivotY="24.6"/>
+	<SubTexture name="tebra body" x="542" y="1245" width="41" height="24" pivotX="22.05" pivotY="17.75"/>
+	<SubTexture name="thorn bow" x="1000" y="1159" width="22" height="57" pivotX="11.15" pivotY="28.25"/>
+	<SubTexture name="thorn tree log" x="875" y="702" width="73" height="33" pivotX="36.6" pivotY="15.65"/>
+	<SubTexture name="thorn wood" x="646" y="787" width="67" height="34" pivotX="33.45" pivotY="16.45"/>
+	<SubTexture name="thornotaur body" x="679" y="1117" width="41" height="36" pivotX="19.75" pivotY="17.5"/>
+	<SubTexture name="thornotaur head" x="185" y="339" width="61" height="57" pivotX="29.95" pivotY="27.6"/>
+	<SubTexture name="thornotaur leg" x="243" y="1392" width="12" height="12" pivotX="5.75" pivotY="4"/>
+	<SubTexture name="thumper body" x="182" y="1345" width="27" height="20" pivotX="12.95" pivotY="9.3"/>
+	<SubTexture name="thumper leg" x="416" y="749" width="11" height="7" pivotX="4.95" pivotY="2.95"/>
+	<SubTexture name="spooker leg" x="416" y="749" width="11" height="7" pivotX="4.95" pivotY="2.95"/>
+	<SubTexture name="aparashee leg" x="416" y="749" width="11" height="7" pivotX="4.95" pivotY="2.95"/>
+	<SubTexture name="gobloid leg" x="416" y="749" width="11" height="7" pivotX="4.95" pivotY="2.95"/>
+	<SubTexture name="roblost leg" x="416" y="749" width="11" height="7" pivotX="4.95" pivotY="2.95"/>
+	<SubTexture name="thumper head" x="333" y="1045" width="42" height="39" pivotX="21.15" pivotY="18.3"/>
+	<SubTexture name="titanium armor arm" x="285" y="1294" width="25" height="28" pivotX="14.95" pivotY="14.7"/>
+	<SubTexture name="titanium armor" x="113" y="1247" width="35" height="28" pivotX="16.9" pivotY="14"/>
+	<SubTexture name="titanium helmet" x="246" y="899" width="39" height="52" pivotX="23.95" pivotY="31.1"/>
+	<SubTexture name="titanium legs" x="180" y="562" width="20" height="22" pivotX="10.45" pivotY="10.5"/>
+	<SubTexture name="tommy gun" x="694" y="990" width="78" height="23" pivotX="38.55" pivotY="11"/>
+	<SubTexture name="topper body" x="638" y="1305" width="37" height="19" pivotX="18.4" pivotY="9"/>
+	<SubTexture name="topper head" x="236" y="1089" width="43" height="36" pivotX="21.1" pivotY="17.15"/>
+	<SubTexture name="topper leg" x="470" y="483" width="10" height="11" pivotX="3.4" pivotY="0.85"/>
+	<SubTexture name="plastic saber" x="276" y="417" width="10" height="66" pivotX="5" pivotY="45.55"/>
+	<SubTexture name="triple leaf bow" x="1001" y="602" width="23" height="57" pivotX="9.2" pivotY="32.65"/>
+	<SubTexture name="stacked wood" x="333" y="1084" width="57" height="28" pivotX="28.5" pivotY="13.4"/>
+	<SubTexture name="tropical staff" x="966" y="114" width="49" height="95" pivotX="23.7" pivotY="48.45"/>
+	<SubTexture name="tropical tree log" x="473" y="800" width="53" height="42" pivotX="26.2" pivotY="20.25"/>
+	<SubTexture name="two hand acid blade" x="405" y="212" width="36" height="105" pivotX="15.55" pivotY="74.35"/>
+	<SubTexture name="two handed mace" x="830" y="281" width="41" height="88" pivotX="20.15" pivotY="44.9"/>
+	<SubTexture name="umbrella" x="921" y="529" width="36" height="77" pivotX="17.25" pivotY="38.1"/>
+	<SubTexture name="valor armor arm" x="166" y="960" width="17" height="31" pivotX="7.25" pivotY="19.3"/>
+	<SubTexture name="valor armor" x="382" y="1256" width="31" height="30" pivotX="14.95" pivotY="15.5"/>
+	<SubTexture name="valor boot" x="647" y="752" width="21" height="8" pivotX="8.35" pivotY="3.8"/>
+	<SubTexture name="valor helmet" x="180" y="630" width="48" height="53" pivotX="23" pivotY="15.15"/>
+	<SubTexture name="valor legs" x="1008" y="577" width="16" height="24" pivotX="7.2" pivotY="11.15"/>
+	<SubTexture name="item vendor" x="595" y="811" width="45" height="49" pivotX="22" pivotY="23.65"/>
+	<SubTexture name="wand of blessings" x="441" y="266" width="47" height="78" pivotX="27" pivotY="49.25"/>
+	<SubTexture name="guardians warhammer" x="684" y="212" width="44" height="87" pivotX="21.15" pivotY="43.35"/>
+	<SubTexture name="watermelon" x="754" y="839" width="55" height="39" pivotX="27" pivotY="19"/>
+	<SubTexture name="weeping willow log" x="883" y="1165" width="59" height="22" pivotX="29.6" pivotY="10.45"/>
+	<SubTexture name="white shirt" x="47" y="1341" width="22" height="27" pivotX="11.05" pivotY="12.95"/>
+	<SubTexture name="white shoe" x="893" y="1064" width="14" height="8" pivotX="6.65" pivotY="3.85"/>
+	<SubTexture name="white shirt arm" x="961" y="828" width="13" height="19" pivotX="6.5" pivotY="15.75"/>
+	<SubTexture name="willow wood" x="875" y="735" width="44" height="54" pivotX="22.15" pivotY="26.65"/>
+	<SubTexture name="winged diamond wand" x="902" y="951" width="31" height="62" pivotX="14.65" pivotY="30.95"/>
+	<SubTexture name="witch hat" x="681" y="510" width="50" height="56" pivotX="19.65" pivotY="24.75"/>
+	<SubTexture name="wizard hat mask" x="481" y="741" width="40" height="59" pivotX="19.75" pivotY="28.95"/>
+	<SubTexture name="wood scrap shield" x="202" y="1125" width="39" height="37" pivotX="18.95" pivotY="18.4"/>
+	<SubTexture name="wood metal shield" x="77" y="1115" width="39" height="38" pivotX="19" pivotY="19"/>
+	<SubTexture name="wooden bat" x="953" y="214" width="12" height="62" pivotX="5.95" pivotY="30.8"/>
+	<SubTexture name="body wrap arm" x="209" y="442" width="18" height="32" pivotX="7.35" pivotY="15.75"/>
+	<SubTexture name="wrapped legs" x="425" y="1391" width="14" height="22" pivotX="6.05" pivotY="10.25"/>
+	<SubTexture name="body wrap" x="323" y="1332" width="23" height="27" pivotX="11" pivotY="12.65"/>
+	<SubTexture name="xm8 rifle" x="585" y="953" width="77" height="23" pivotX="37.9" pivotY="12.35"/>
+	<SubTexture name="yellow pants" x="713" y="787" width="11" height="21" pivotX="2.7" pivotY="12.75"/>
+	<SubTexture name="yeterz body" x="148" y="1247" width="26" height="37" pivotX="12.85" pivotY="17.95"/>
+	<SubTexture name="yeterz leg" x="808" y="1120" width="12" height="8" pivotX="5.15" pivotY="3.3"/>
+	<SubTexture name="yeterz head" x="341" y="770" width="47" height="48" pivotX="23" pivotY="23.5"/>
+	<SubTexture name="zinc armor arm" x="497" y="1319" width="23" height="28" pivotX="11.8" pivotY="15.1"/>
+	<SubTexture name="zinc armor" x="816" y="1258" width="29" height="32" pivotX="13.8" pivotY="16.2"/>
+	<SubTexture name="zinc boot" x="522" y="1170" width="13" height="11" pivotX="5.95" pivotY="5.05"/>
+	<SubTexture name="zinc legs" x="180" y="1377" width="19" height="20" pivotX="9.75" pivotY="10.2"/>
+	<SubTexture name="clown mask" x="626" y="211" width="53" height="54" pivotX="26.55" pivotY="27.25" />
+	<SubTexture name="prey helmet" x="0" y="1404" width="72" height="59" pivotX="36" pivotY="30" />
+	<SubTexture name="prey armor" x="72" y="1396" width="27" height="30" pivotX="13.95" pivotY="13.85" />
+	<SubTexture name="prey armor arm" x="99" y="1401" width="22" height="34" pivotX="10.35" pivotY="20.55" />
+	<SubTexture name="prey legs" x="121" y="1400" width="17" height="27" pivotX="7.8" pivotY="11.8" />
+	<SubTexture name="pet bubble" x="221" y="1411" width="100" height="100" />
+	<SubTexture name="pet wolf teeth" x="321" y="1408" width="54" height="54" />
+	<SubTexture name="pet none helmet" x="0" y="30" width="2" height="2" />
+	<SubTexture name="none shoe" x="0" y="30" width="2" height="2" />
+	<SubTexture name="male head 1" x="667" y="299" width="29" height="26" />
+	<SubTexture name="male head 2" x="483" y="455" width="29" height="26" />
+	<SubTexture name="male head 3" x="368" y="441" width="29" height="26" />
+	<SubTexture name="male head 4" x="366" y="468" width="29" height="26" />
+	<SubTexture name="female head 1" x="158" y="499" width="28" height="26" />
+	<SubTexture name="female head 2" x="156" y="526" width="28" height="26" />
+	<SubTexture name="female head 3" x="56" y="591" width="28" height="26" />
+	<SubTexture name="female head 4" x="55" y="619" width="28" height="26" />
+	<SubTexture name="zombie head" x="39" y="721" width="30" height="26" />
+	<SubTexture name="bare hand 1" x="668" y="325" width="6" height="9" />
+	<SubTexture name="bare hand 2" x="674" y="325" width="6" height="9" />
+	<SubTexture name="bare hand 3" x="680" y="325" width="6" height="9" />
+	<SubTexture name="bare hand 4" x="686" y="325" width="6" height="9" />
+	<SubTexture name="bare hand 5" x="692" y="325" width="6" height="9" />
+	<SubTexture name="bare leg 1" x="247" y="340" width="10" height="20" pivotX="2.5" pivotY="12.5"/>
+	<SubTexture name="bare leg 2" x="247" y="360" width="10" height="20"/>
+	<SubTexture name="bare leg 3" x="247" y="380" width="10" height="20"/>
+	<SubTexture name="bare leg 4" x="257" y="340" width="10" height="20"/>
+	<SubTexture name="bare leg 5" x="257" y="360" width="10" height="20"/>
+	<SubTexture name="bare arm 1" x="928" y="110" width="12" height="32" pivotX="6.35" pivotY="15.9" frameX="0" frameY="-1" frameWidth="12" frameHeight="32"/>
+	<SubTexture name="bare arm 2" x="880" y="110" width="12" height="32"/>
+	<SubTexture name="bare arm 3" x="892" y="110" width="12" height="32"/>
+	<SubTexture name="bare arm 4" x="904" y="110" width="12" height="32"/>
+	<SubTexture name="bare arm 5" x="916" y="110" width="12" height="32"/>
+	<SubTexture name="eyes 7" x="843" y="214" width="14" height="7" />
+	<SubTexture name="eyes 9" x="859" y="214" width="14" height="8" />
+	<SubTexture name="eyes 10" x="843" y="222" width="14" height="9" />
+	<SubTexture name="eyes 11" x="858" y="222" width="14" height="8" />
+	<SubTexture name="eyes 12" x="842" y="231" width="14" height="9" />
+	<SubTexture name="eyes 8" x="858" y="231" width="12" height="7" />
+	<SubTexture name="eyes 3" x="841" y="240" width="12" height="7" />
+	<SubTexture name="eyes 1" x="857" y="238" width="12" height="7" />
+	<SubTexture name="eyes 5" x="841" y="246" width="11" height="6" />
+	<SubTexture name="eyes 6" x="853" y="245" width="11" height="7" />
+	<SubTexture name="eyes 2" x="841" y="258" width="14" height="4" />
+	<SubTexture name="eyes 4" x="853" y="252" width="10" height="6" />
+	<SubTexture name="beard 8" x="107" y="533" width="32" height="21" pivotX="21" pivotY="14" />
+	<SubTexture name="beard 3" x="107" y="554" width="12" height="21" pivotX="8" pivotY="10" />
+	<SubTexture name="beard 5" x="122" y="554" width="17" height="10" pivotX="10" pivotY="7" />
+	<SubTexture name="beard 7" x="122" y="564" width="17" height="7" pivotX="10" pivotY="6" />
+	<SubTexture name="beard 4" x="123" y="571" width="11" height="10" pivotX="5" pivotY="1" />
+	<SubTexture name="beard 2" x="107" y="557" width="16" height="16" pivotX="8" pivotY="8" />
+	<SubTexture name="beard 6" x="123" y="581" width="14" height="5" pivotX="8" pivotY="6" />
+	<SubTexture name="hair 1" x="459" y="1410" width="62" height="47" pivotX="35.4" pivotY="30.15" frameX="-5" frameY="-7" frameWidth="67" frameHeight="69"/>
+	<SubTexture name="hair 2" x="649" y="1491" width="53" height="35" frameX="-3" frameY="-15" frameWidth="67" frameHeight="69"/>
+	<SubTexture name="hair 3" x="459" y="1410" width="0" height="0" frameX="232" frameY="170" frameWidth="67" frameHeight="69"/>
+	<SubTexture name="hair 4" x="544" y="1569" width="43" height="18" frameX="-10" frameY="-25" frameWidth="67" frameHeight="69"/>
+	<SubTexture name="hair 5" x="890" y="1552" width="17" height="39" frameX="-27" frameY="1" frameWidth="67" frameHeight="69"/>
+	<SubTexture name="hair 6" x="459" y="1576" width="25" height="19" frameX="-18" frameY="-18" frameWidth="67" frameHeight="69"/>
+	<SubTexture name="hair 7" x="495" y="1568" width="49" height="22" frameX="-12" frameY="-23" frameWidth="67" frameHeight="69"/>
+	<SubTexture name="hair 8" x="623" y="1452" width="58" height="39" frameX="-3" frameY="-13" frameWidth="67" frameHeight="69"/>
+	<SubTexture name="hair 9" x="677" y="1410" width="38" height="34" frameX="-15" frameY="-20" frameWidth="67" frameHeight="69"/>
+	<SubTexture name="hair 10" x="459" y="1500" width="47" height="41" frameX="-7" frameY="-15" frameWidth="67" frameHeight="69"/>
+	<SubTexture name="hair 11" x="649" y="1526" width="63" height="29" frameX="-1" frameY="-26" frameWidth="67" frameHeight="69"/>
+	<SubTexture name="hair 12" x="849" y="1540" width="38" height="53" frameX="-16" frameY="-19" frameWidth="67" frameHeight="69"/>
+	<SubTexture name="hair 13" x="506" y="1505" width="43" height="34" frameX="-7" frameY="-17" frameWidth="67" frameHeight="69"/>
+	<SubTexture name="hair 14" x="521" y="1455" width="42" height="50" frameX="-11" frameY="-18" frameWidth="67" frameHeight="69"/>
+	<SubTexture name="hair 15" x="623" y="1410" width="54" height="42" frameX="0" frameY="-18" frameWidth="67" frameHeight="69"/>
+	<SubTexture name="hair 16" x="574" y="1410" width="49" height="48" frameX="-4" frameY="0" frameWidth="67" frameHeight="69"/>
+	<SubTexture name="hair 17" x="459" y="1541" width="36" height="35" frameX="-15" frameY="-22" frameWidth="67" frameHeight="69"/>
+	<SubTexture name="hair 18" x="554" y="1541" width="41" height="27" frameX="-13" frameY="-27" frameWidth="67" frameHeight="69"/>
+	<SubTexture name="hair 19" x="681" y="1444" width="33" height="31" frameX="-17" frameY="-24" frameWidth="67" frameHeight="69"/>
+	<SubTexture name="hair 20" x="563" y="1458" width="48" height="43" frameX="-8" frameY="-10" frameWidth="67" frameHeight="69"/>
+	<SubTexture name="hair 21" x="521" y="1410" width="53" height="45" frameX="-6" frameY="-16" frameWidth="67" frameHeight="69"/>
+	<SubTexture name="hair 22" x="563" y="1501" width="42" height="40" frameX="-13" frameY="-19" frameWidth="67" frameHeight="69"/>
+	<SubTexture name="hair 23" x="459" y="1457" width="45" height="43" frameX="-6" frameY="-10" frameWidth="67" frameHeight="69"/>
+	<SubTexture name="hair 24" x="611" y="1491" width="38" height="49" frameX="-15" frameY="-20" frameWidth="67" frameHeight="69"/>
+	<SubTexture name="hair 25" x="506" y="1539" width="47" height="29" frameX="-13" frameY="-17" frameWidth="67" frameHeight="69"/>
+	<SubTexture name="hair 26" x="605" y="1540" width="42" height="40" frameX="-12" frameY="-23" frameWidth="67" frameHeight="69"/>
+	<SubTexture name="hair 27" x="982" y="1698" width="42" height="77" frameX="-15" frameY="22" frameWidth="68" frameHeight="92" />
+	<SubTexture name="hair 28" x="930" y="1726" width="46" height="44" frameX="-7" frameY="-10" frameWidth="68" frameHeight="92" />
+	<SubTexture name="slash 1" x="716" y="1409" width="114" height="81" />
+	<SubTexture name="slash 2" x="830" y="1412" width="148" height="11" />
+	<SubTexture name="yellow slash 1" x="831" y="1424" width="67" height="114" />
+	<SubTexture name="muzzle flash" x="670" y="336" width="47" height="24" />
+	<SubTexture name="halo" x="33" y="698" width="40" height="19" />
+	<SubTexture name="firefly" x="817" y="419" width="3" height="3" />
+	<SubTexture name="firefly lightup" x="656" y="911" width="3" height="3" />
+	<SubTexture name="person shadow" x="899" y="1427" width="65" height="23" />
+	<SubTexture name="shine" x="305" y="794" width="22" height="23" />
+	<SubTexture name="bow charge glow" x="0" y="1645" width="34" height="34" />
+	<SubTexture name="guard symbol" x="323" y="1465" width="39" height="65" pivotX="19" pivotY="31" />
+	<SubTexture name="fart puff" x="255" y="817" width="40" height="29" pivotX="36.15" pivotY="9.25"/>
+	<SubTexture name="gamemaster icon" x="939" y="1553" width="85" height="18" />
+	<SubTexture name="community assistant icon" x="632" y="1825" width="134" height="17" />
+	<SubTexture name="moderator icon" x="632" y="1845" width="73" height="17" />
+	<SubTexture name="alarm" x="0" y="0" width="3" height="3" />
+	<SubTexture name="blue water bubble" x="163" y="869" width="34" height="34" />
+	<SubTexture name="purple water bubble" x="144" y="920" width="34" height="34" />
+	<SubTexture name="red water bubble" x="173" y="749" width="34" height="34" />
+	<SubTexture name="brown water bubble" x="961" y="622" width="34" height="34" />
+	<SubTexture name="green water bubble" x="253" y="171" width="34" height="34" />
+	<SubTexture name="talk bubble" x="851" y="1594" width="119" height="96" pivotX="18" pivotY="96" />
+	<SubTexture name="pet cage tall" x="341" y="1721" width="94" height="119" />
+	<SubTexture name="pet cage wide" x="436" y="1721" width="114" height="86" />
+	<SubTexture name="click to interact" x="341" y="1841" width="91" height="21" pivotX="46" pivotY="11" />
+	<SubTexture name="vending machine" x="743" y="1570" width="103" height="118" />
+	<SubTexture name="vending machine tickets" x="970" y="1571" width="40" height="72" />
+	<SubTexture name="vending machine window panel" x="804" y="1670" width="1" height="1" />
+	<SubTexture name="cloud tree wood" x="193" y="1853" width="47" height="37" pivotX="18" pivotY="16"/>
+	<SubTexture name="cloud tree log" x="193" y="1892" width="54" height="18" pivotX="27.7" pivotY="6.65"/>
+	
+	<SubTexture name="angelic armor arm" x="1186" y="668" width="55" height="62" pivotX="22.1" pivotY="17.25"/>
+	<SubTexture name="angelic armor" x="1199" y="603" width="69" height="63" pivotX="31.25" pivotY="25.8"/>
+	<SubTexture name="angelic bow" x="1024" y="433" width="68" height="125" pivotX="31.9" pivotY="60.75"/>
+	<SubTexture name="angelic helmet" x="1196" y="433" width="82" height="87" pivotX="42.5" pivotY="50.9"/>
+	<SubTexture name="angelic legs" x="1124" y="709" width="56" height="57" pivotX="28.1" pivotY="13.45"/>
+	<SubTexture name="gemstone armor arm" x="1243" y="668" width="29" height="38" pivotX="20.3" pivotY="8.6"/>
+	<SubTexture name="gemstone armor" x="1024" y="693" width="29" height="33" pivotX="16.35" pivotY="17.15"/>
+	<SubTexture name="gemstone helmet" x="1094" y="433" width="100" height="81" pivotX="50.35" pivotY="53.65"/>
+	<SubTexture name="gemstone legs" x="1114" y="768" width="28" height="30" pivotX="20.55" pivotY="4.05"/>
+	<SubTexture name="gemstone staff" x="1094" y="516" width="52" height="123" pivotX="24.35" pivotY="91.95"/>
+	<SubTexture name="gemstone wand" x="1080" y="641" width="42" height="100" pivotX="20.6" pivotY="66.85"/>
+	<SubTexture name="god armor arm" x="1239" y="744" width="24" height="37" pivotX="16.95" pivotY="5"/>
+	<SubTexture name="god armor" x="1024" y="659" width="39" height="32" pivotX="21.55" pivotY="16.5"/>
+	<SubTexture name="god blade" x="1148" y="522" width="49" height="126" pivotX="24.95" pivotY="107.75"/>
+	<SubTexture name="god helmet" x="1199" y="522" width="67" height="79" pivotX="40.65" pivotY="48.6"/>
+	<SubTexture name="god scimitar" x="1024" y="560" width="54" height="97" pivotX="9" pivotY="7.95"/>
+	<SubTexture name="god shield" x="1182" y="732" width="55" height="58" pivotX="27.6" pivotY="28"/>
+	<SubTexture name="god legs" x="1144" y="768" width="22" height="30" pivotX="12.6" pivotY="6.05"/>
+	<SubTexture name="neoplasti armor arm" x="1055" y="693" width="18" height="38" pivotX="8.85" pivotY="12.05"/>
+	<SubTexture name="neoplasti armor" x="1243" y="708" width="28" height="34" pivotX="12.6" pivotY="16.35"/>
+	<SubTexture name="neoplasti blaster" x="1024" y="743" width="88" height="29" pivotX="22.3" pivotY="17.7"/>
+	<SubTexture name="neoplasti helmet" x="1124" y="650" width="60" height="57" pivotX="33.4" pivotY="31.8"/>
+	<SubTexture name="neoplasti legs" x="1024" y="774" width="17" height="30" pivotX="11.3" pivotY="3.75"/>
+	<SubTexture name="wolf mask" x="0" y="1987" width="54" height="62" pivotX="33.4" pivotY="40.05"/>
+
+	<SubTexture name="angelic bow proj" x="1024" y="852" width="50" height="15" pivotX="12.75" pivotY="7.25"/>
+	<SubTexture name="gemstone staff proj" x="1024" y="815" width="38" height="35" pivotX="18.35" pivotY="17.35"/>
+	<SubTexture name="gemstone wand proj" x="1024" y="869" width="28" height="24" pivotX="13.1" pivotY="12.6"/>
+	<SubTexture name="neoplasti blaster proj" x="1064" y="815" width="20" height="11" pivotX="6.1" pivotY="5.45"/>
+	
+	
+	
+	<SubTexture name="heli pack_00" x="436" y="1812" width="101" height="88" pivotX="50.05" pivotY="55.95"/>
+	<SubTexture name="heli pack_01" x="436" y="1900" width="62" height="88" frameX="-19" frameY="0" frameWidth="101" frameHeight="88"/>
+	<SubTexture name="heli pack_02" x="498" y="1900" width="27" height="88" frameX="-36" frameY="0" frameWidth="101" frameHeight="88"/>
+	<SubTexture name="heli pack_03" x="436" y="1900" width="62" height="88" frameX="-19" frameY="0" frameWidth="101" frameHeight="88"/>
+	
+	<SubTexture name="ghillie helmet" x="945" y="1802" width="50" height="65" pivotX="24.95" pivotY="37.2"/>
+	<SubTexture name="ghillie armor arm" x="817" y="1890" width="26" height="34" pivotX="17.1" pivotY="5.55"/>
+	<SubTexture name="ghillie armor" x="873" y="2010" width="36" height="34" pivotX="16.15" pivotY="14.45"/>
+	<SubTexture name="ghillie legs" x="994" y="1925" width="26" height="25" pivotX="15.9" pivotY="5.75"/>
+	<SubTexture name="ghillie bow" x="817" y="1932" width="56" height="90" pivotX="27.9" pivotY="44.6"/>
+	<SubTexture name="radiator gun" x="769" y="2022" width="91" height="22" pivotX="45.15" pivotY="11.65"/>
+	<SubTexture name="spellbound armor arm" x="909" y="2010" width="17" height="32" pivotX="7.6" pivotY="7.85"/>
+	<SubTexture name="spellbound armor" x="994" y="1897" width="28" height="28" pivotX="13.65" pivotY="14.2"/>
+	<SubTexture name="spellbound helmet" x="965" y="1952" width="45" height="63" pivotX="22.45" pivotY="31.2"/>
+	<SubTexture name="spellbound legs" x="1010" y="1950" width="14" height="26" pivotX="7.5" pivotY="5.75"/>
+	<SubTexture name="spellbound staff" x="769" y="1890" width="48" height="111" pivotX="25.4" pivotY="65.45"/>
+	<SubTexture name="spellbound wand" x="893" y="1802" width="53" height="83" pivotX="22.95" pivotY="56.35"/>
+	<SubTexture name="ultima" x="844" y="1802" width="47" height="117" pivotX="35.2" pivotY="66.9"/>
+	<SubTexture name="ultra armor" x="994" y="1867" width="28" height="30" pivotX="14.6" pivotY="14.35"/>
+	<SubTexture name="ultra armor arm" x="893" y="1885" width="32" height="40" pivotX="24.75" pivotY="13.75"/>
+	<SubTexture name="ultra helmet" x="769" y="1802" width="75" height="88" pivotX="44" pivotY="59.3"/>
+	<SubTexture name="ultra legs" x="996" y="1827" width="18" height="24" pivotX="11.1" pivotY="4.6"/>
+	<SubTexture name="ultra scimitar" x="930" y="1952" width="33" height="88" pivotX="18.4" pivotY="48.25"/>
+	<SubTexture name="ultra shield" x="873" y="1932" width="56" height="75" pivotX="27.7" pivotY="37.95"/>
+	<SubTexture name="wrangler armor arm" x="1005" y="2015" width="19" height="34" pivotX="8.2" pivotY="4"/>
+	<SubTexture name="wrangler armor" x="965" y="2015" width="40" height="29" pivotX="20.2" pivotY="16.95"/>
+	<SubTexture name="wrangler helmet" x="930" y="1884" width="64" height="67" pivotX="32.1" pivotY="47.75"/>
+	<SubTexture name="wrangler legs" x="996" y="1802" width="19" height="25" pivotX="12.3" pivotY="1.5"/>
+	<SubTexture name="ghillie bow proj" x="972" y="1677" width="47" height="21" pivotX="23.45" pivotY="10"/>
+	<SubTexture name="spellbound wand proj" x="956" y="1698" width="22" height="22" pivotX="10.3" pivotY="8.9"/>
+	<SubTexture name="spellbound staff proj" x="932" y="1698" width="24" height="26" pivotX="12.1" pivotY="10.45"/>
+	
+	<SubTexture name="small health bar BG" x="375" y="1413" width="35" height="6" pivotX="0" pivotY="0"/>
+	<SubTexture name="small health bar" x="375" y="1419" width="33" height="4" pivotX="0" pivotY="0"/>
+	<SubTexture name="fire_00" x="412" y="1493" width="38" height="35" pivotX="27.15" pivotY="23.2" frameX="-6" frameY="-3" frameWidth="48" frameHeight="38"/>
+	<SubTexture name="fire_01" x="412" y="1493" width="38" height="35" frameX="-6" frameY="-3" frameWidth="48" frameHeight="38"/>
+	<SubTexture name="fire_02" x="375" y="1423" width="47" height="35" frameX="-1" frameY="-3" frameWidth="48" frameHeight="38"/>
+	<SubTexture name="fire_03" x="375" y="1423" width="47" height="35" frameX="-1" frameY="-3" frameWidth="48" frameHeight="38"/>
+	<SubTexture name="fire_04" x="422" y="1458" width="37" height="35" frameX="-5" frameY="-1" frameWidth="48" frameHeight="38"/>
+	<SubTexture name="fire_05" x="422" y="1458" width="37" height="35" frameX="-5" frameY="-1" frameWidth="48" frameHeight="38"/>
+	<SubTexture name="fire_06" x="422" y="1423" width="38" height="35" frameX="-4" frameY="-3" frameWidth="48" frameHeight="38"/>
+	<SubTexture name="fire_07" x="422" y="1423" width="38" height="35" frameX="-4" frameY="-3" frameWidth="48" frameHeight="38"/>
+	<SubTexture name="fire_08" x="375" y="1458" width="47" height="35" frameX="0" frameY="-3" frameWidth="48" frameHeight="38"/>
+	<SubTexture name="fire_09" x="375" y="1458" width="47" height="35" frameX="0" frameY="-3" frameWidth="48" frameHeight="38"/>
+	<SubTexture name="fire_10" x="375" y="1493" width="37" height="36" frameX="-5" frameY="0" frameWidth="48" frameHeight="38"/>
+	<SubTexture name="fire_11" x="375" y="1493" width="37" height="36" frameX="-5" frameY="0" frameWidth="48" frameHeight="38"/>
+	
+	<SubTexture name="tan orb" x="75" y="1436" width="30" height="30" />
+	<SubTexture name="gray orb" x="105" y="1436" width="30" height="30" />
+	<SubTexture name="orange orb" x="0" y="1466" width="30" height="30" />
+	<SubTexture name="blue orb" x="30" y="1466" width="30" height="30" />
+	<SubTexture name="green orb" x="60" y="1466" width="30" height="30" />
+	<SubTexture name="black orb" x="90" y="1466" width="30" height="30" />
+	<SubTexture name="lime orb" x="120" y="1466" width="30" height="30" />
+	<SubTexture name="dark green orb" x="150" y="1466" width="30" height="30" />
+	<SubTexture name="purple orb" x="0" y="1496" width="30" height="30" />
+	<SubTexture name="white orb" x="30" y="1496" width="30" height="30" />
+	<SubTexture name="dark red orb" x="60" y="1496" width="30" height="30" />
+	<SubTexture name="yellow orb" x="90" y="1496" width="30" height="30" />
+	<SubTexture name="red orb" x="120" y="1496" width="30" height="30" />
+	
+	<SubTexture name="lime orb stroke" x="150" y="1496" width="38" height="38" />
+	<SubTexture name="tan orb stroke" x="0" y="1526" width="38" height="38" />
+	<SubTexture name="gray orb stroke" x="38" y="1526" width="38" height="38" />
+	<SubTexture name="dark green orb stroke" x="76" y="1526" width="38" height="38" />
+	<SubTexture name="red orb stroke" x="114" y="1526" width="38" height="38" />
+	<SubTexture name="orange orb stroke" x="0" y="1564" width="38" height="38" />
+	<SubTexture name="blue orb stroke" x="38" y="1564" width="38" height="38" />
+	<SubTexture name="green orb stroke" x="76" y="1564" width="38" height="38" />
+	<SubTexture name="black orb stroke" x="114" y="1564" width="38" height="38" />
+	<SubTexture name="purple orb stroke" x="0" y="1602" width="38" height="38" />
+	<SubTexture name="white orb stroke" x="38" y="1602" width="38" height="38" />
+	<SubTexture name="dark red orb stroke" x="76" y="1602" width="38" height="38" />
+	<SubTexture name="yellow orb stroke" x="114" y="1602" width="38" height="38" />
+	
+	<SubTexture name="tan particle" x="190" y="1504" width="12" height="12" />
+	<SubTexture name="silver particle" x="203" y="1504" width="12" height="12" />
+	<SubTexture name="orange particle" x="190" y="1517" width="12" height="12" />
+	<SubTexture name="blue particle" x="202" y="1517" width="12" height="12" />
+	<SubTexture name="green particle" x="215" y="1517" width="12" height="12" />
+	<SubTexture name="black particle" x="228" y="1517" width="12" height="12" />
+	<SubTexture name="lime particle" x="241" y="1517" width="12" height="12" />
+	<SubTexture name="dark green particle" x="254" y="1517" width="12" height="12" />
+	<SubTexture name="purple particle" x="190" y="1529" width="12" height="12" />
+	<SubTexture name="white particle" x="203" y="1529" width="12" height="12" />
+	<SubTexture name="dark red particle" x="216" y="1529" width="12" height="12" />
+	<SubTexture name="yellow particle" x="229" y="1529" width="12" height="12" />
+	<SubTexture name="red particle" x="242" y="1529" width="12" height="12" />
+	
+	<SubTexture name="dash cloud 1" x="551" y="1793" width="45" height="22" />
+	<SubTexture name="dash cloud 2" x="689" y="1779" width="77" height="47" />
+	<SubTexture name="dash cloud 3" x="709" y="1702" width="90" height="77" />
+	<SubTexture name="dash cloud 4" x="551" y="1702" width="158" height="91"/>
+	
+	<SubTexture name="hit animation 1" x="805" y="1690" width="57" height="66" pivotX="37" pivotY="20" />
+	<SubTexture name="hit animation 2" x="864" y="1690" width="65" height="50" pivotX="32" pivotY="25" />
+	<SubTexture name="hit animation 3" x="863" y="1741" width="61" height="33" pivotX="28" pivotY="33" />
+	<SubTexture name="smoke" x="52" y="1643" width="60" height="52" />
+	<SubTexture name="magic oval" x="50" y="1698" width="24" height="11" />
+	<SubTexture name="white pixel" x="825" y="1034" width="1" height="1" />
+	<SubTexture name="dark gray pixel" x="502" y="1304" width="1" height="1" />
+	<SubTexture name="star explosion star" x="463" y="85" width="49" height="46" />
+	<SubTexture name="fish bobber" x="506" y="1282" width="9" height="11" />
+	<SubTexture name="bullet shell" x="269" y="341" width="11" height="5" />
+	
+	<SubTexture name="coal blazer_00" x="1234" y="2" width="43" height="86" pivotX="32.85" pivotY="66.1" frameX="-3" frameY="0" frameWidth="48" frameHeight="86"/>
+	<SubTexture name="coal blazer_01" x="1234" y="2" width="43" height="86" frameX="-3" frameY="0" frameWidth="48" frameHeight="86"/>
+	<SubTexture name="coal blazer_02" x="1076" y="293" width="46" height="86" frameX="0" frameY="0" frameWidth="48" frameHeight="86"/>
+	<SubTexture name="coal blazer_03" x="1076" y="293" width="46" height="86" frameX="0" frameY="0" frameWidth="48" frameHeight="86"/>
+	<SubTexture name="coal blazer_04" x="1027" y="293" width="47" height="86" frameX="-1" frameY="0" frameWidth="48" frameHeight="86"/>
+	<SubTexture name="coal blazer_05" x="1027" y="293" width="47" height="86" frameX="-1" frameY="0" frameWidth="48" frameHeight="86"/>
+	<SubTexture name="corruption armor arm" x="1202" y="365" width="28" height="36" pivotX="15.9" pivotY="4"/>
+	<SubTexture name="corruption armor" x="1025" y="197" width="30" height="32" pivotX="15.85" pivotY="12"/>
+	<SubTexture name="corruption boot" x="1096" y="183" width="15" height="12" pivotX="14.15" pivotY="0"/>
+	<SubTexture name="corruption helmet" x="1190" y="305" width="61" height="58" pivotX="32.5" pivotY="30"/>
+	<SubTexture name="corruption legs" x="1096" y="122" width="20" height="28" pivotX="9.05" pivotY="5"/>
+	<SubTexture name="corruptor" x="1124" y="365" width="76" height="33" pivotX="28.85" pivotY="8"/>
+	<SubTexture name="empowered armor arm" x="1252" y="201" width="27" height="37" pivotX="14" pivotY="8"/>
+	<SubTexture name="empowered armor" x="1154" y="309" width="30" height="34" pivotX="13" pivotY="12"/>
+	<SubTexture name="empowered boot" x="1251" y="90" width="20" height="10" pivotX="19" pivotY="0"/>
+	<SubTexture name="empowered legs" x="1096" y="152" width="19" height="29" pivotX="11" pivotY="9"/>
+	<SubTexture name="empowered staff" x="1175" y="2" width="57" height="110" pivotX="24" pivotY="73"/>
+	<SubTexture name="empowered wand" x="1228" y="114" width="49" height="85" pivotX="24" pivotY="58"/>
+	<SubTexture name="inferno_00" x="1175" y="114" width="51" height="116" pivotX="37" pivotY="93.2" frameX="-4" frameY="0" frameWidth="55" frameHeight="116"/>
+	<SubTexture name="inferno_01" x="1175" y="114" width="51" height="116" frameX="-4" frameY="0" frameWidth="55" frameHeight="116"/>
+	<SubTexture name="inferno_02" x="1118" y="2" width="55" height="115" frameX="0" frameY="-1" frameWidth="55" frameHeight="116"/>
+	<SubTexture name="inferno_03" x="1118" y="2" width="55" height="115" frameX="0" frameY="-1" frameWidth="55" frameHeight="116"/>
+	<SubTexture name="inferno_04" x="1118" y="119" width="53" height="110" frameX="-2" frameY="-6" frameWidth="55" frameHeight="116"/>
+	<SubTexture name="inferno_05" x="1118" y="119" width="53" height="110" frameX="-2" frameY="-6" frameWidth="55" frameHeight="116"/>
+	<SubTexture name="magma armor arm" x="1252" y="240" width="23" height="40" pivotX="14" pivotY="9"/>
+	<SubTexture name="magma armor" x="1232" y="365" width="29" height="31" pivotX="15" pivotY="13"/>
+	<SubTexture name="magma boot" x="1234" y="90" width="15" height="14" pivotX="13" pivotY="0"/>
+	<SubTexture name="magma helmet" x="1027" y="122" width="67" height="73" pivotX="38" pivotY="39"/>
+	<SubTexture name="magma legs" x="1090" y="197" width="22" height="29" pivotX="13" pivotY="6"/>
+	<SubTexture name="magma shield" x="1126" y="232" width="62" height="75" pivotX="31" pivotY="45"/>
+	<SubTexture name="millennium boot" x="1251" y="102" width="20" height="9" pivotX="9" pivotY="4"/>
+	<SubTexture name="millennium armor arm" x="1124" y="309" width="28" height="39" pivotX="18.85" pivotY="8"/>
+	<SubTexture name="millennium armor" x="1059" y="197" width="29" height="32" pivotX="14.1" pivotY="15"/>
+	<SubTexture name="millennium bow" x="1027" y="2" width="89" height="118" pivotX="27" pivotY="56"/>
+	<SubTexture name="millennium helmet" x="1190" y="232" width="60" height="71" pivotX="28" pivotY="41"/>
+	<SubTexture name="millennium legs" x="1253" y="282" width="23" height="27" pivotX="16" pivotY="5"/>
+	<SubTexture name="winged skull helmet" x="1027" y="231" width="97" height="60" pivotX="60" pivotY="43"/>
+	<SubTexture name="empowered wand proj" x="524" y="1377" width="19" height="19" />
+	<SubTexture name="empowered staff proj" x="739" y="1342" width="23" height="24" />
+	<SubTexture name="corruptor proj" x="333" y="1036" width="16" height="8" />
+	<SubTexture name="millennium bow proj" x="437" y="1244" width="52" height="19" />
+	
+	<SubTexture name="bouncer hat" x="1031" y="384" width="48" height="48" pivotX="29" pivotY="22"/>
+</TextureAtlas>

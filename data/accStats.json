@@ -1,0 +1,134 @@
+[
+  {
+    "key": "nothing",
+    "def": 0,
+    "lvl": 1,
+    "c": 0,
+    "pow": 0,
+    "rng": 0,
+    "mgc": 0,
+    "art": 0,
+    "f": 1
+  },
+  {
+    "key": "none",
+    "def": 0,
+    "lvl": 1,
+    "c": 0,
+    "pow": 0,
+    "rng": 0,
+    "mgc": 0,
+    "art": 0,
+    "f": 1
+  },
+  {
+    "key": "red cape",
+    "def": 80,
+    "lvl": 15,
+    "c": 0,
+    "pow": 0,
+    "rng": 0,
+    "mgc": 0,
+    "art": 0,
+    "f": 2
+  },
+  {
+    "key": "jet pack",
+    "def": 75,
+    "lvl": 25,
+    "c": 0,
+    "pow": 0,
+    "rng": 0,
+    "mgc": 0,
+    "art": 0,
+    "f": 3
+  },
+  {
+    "key": "wings",
+    "def": 145,
+    "lvl": 65,
+    "c": 0,
+    "pow": 0,
+    "rng": 0,
+    "mgc": 0,
+    "art": 0,
+    "f": 4
+  },
+  {
+    "key": "evil wings",
+    "def": 170,
+    "lvl": 80,
+    "c": 0,
+    "pow": 0,
+    "rng": 0,
+    "mgc": 0,
+    "art": 0,
+    "f": 5
+  },
+  {
+    "key": "butterfly wings",
+    "def": 155,
+    "lvl": 72,
+    "c": 0,
+    "pow": 0,
+    "rng": 0,
+    "mgc": 0,
+    "art": 0,
+    "f": 6
+  },
+  {
+    "key": "heli pack",
+    "def": 155,
+    "lvl": 50,
+    "c": 0,
+    "pow": 0,
+    "rng": 0,
+    "mgc": 0,
+    "art": 0,
+    "f": 7
+  },
+  {
+    "key": "pink balloon",
+    "def": 80,
+    "lvl": 1,
+    "c": 0,
+    "pow": 0,
+    "rng": 0,
+    "mgc": 0,
+    "art": 0,
+    "f": 8
+  },
+  {
+    "key": "balloon pack",
+    "def": 90,
+    "lvl": 10,
+    "c": 0,
+    "pow": 0,
+    "rng": 0,
+    "mgc": 0,
+    "art": 0,
+    "f": 9
+  },
+  {
+    "key": "monkey tail",
+    "def": 65,
+    "lvl": 1,
+    "c": 0,
+    "pow": 0,
+    "rng": 0,
+    "mgc": 0,
+    "art": 0,
+    "f": 10
+  },
+  {
+    "key": "dino tail",
+    "def": 70,
+    "lvl": 55,
+    "c": 0,
+    "pow": 10,
+    "rng": 0,
+    "mgc": 0,
+    "art": 0,
+    "f": 11
+  }
+]

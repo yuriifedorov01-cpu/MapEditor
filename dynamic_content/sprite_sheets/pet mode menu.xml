@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="pet mode menu.png">
+	<!-- Created with Adobe Flash Professional version 15.0.1.179 -->
+	<!-- http://www.adobe.com/products/flash.html -->
+	<SubTexture name="panel" x="0" y="0" width="750" height="264" />
+	<SubTexture name="mode_00" x="0" y="264" width="354" height="28" />
+	<SubTexture name="mode_01" x="354" y="264" width="354" height="28"/>
+	<SubTexture name="mode_02" x="0" y="292" width="354" height="28"/>
+	<SubTexture name="enable_00" x="750" y="0" width="125" height="39" pivotX="25.9" pivotY="15.25"/>
+	<SubTexture name="xp_00" x="750" y="78" width="65" height="56" pivotX="44.75" pivotY="36.3" frameX="-12" frameY="-9" frameWidth="77" frameHeight="65"/>
+	<SubTexture name="xp_01" x="750" y="134" width="65" height="56" frameX="-12" frameY="-9" frameWidth="77" frameHeight="65"/>
+	<SubTexture name="xp_02" x="708" y="264" width="77" height="65"/>
+</TextureAtlas>

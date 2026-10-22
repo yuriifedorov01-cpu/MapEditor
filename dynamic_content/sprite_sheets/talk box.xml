@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="talk box.png">
+	<!-- Created with Adobe Flash Professional version 15.0.1.179 -->
+	<!-- http://www.adobe.com/products/flash.html -->
+	<SubTexture name="next_btn_00" x="0" y="242" width="131" height="44" pivotX="75.9" pivotY="21.7"/>
+	<SubTexture name="sell_btn_00" x="262" y="242" width="112" height="44" pivotX="56.1" pivotY="21.7"/>
+	<SubTexture name="shop_btn_00" x="486" y="242" width="112" height="44" pivotX="56.1" pivotY="21.7"/>
+	<SubTexture name="panel" x="0" y="0" width="828" height="242" />
+</TextureAtlas>

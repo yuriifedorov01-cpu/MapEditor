@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="energy menu.png">
+	<!-- Created with Adobe Animate version 15.1.1.13 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="aura icon" x="774" y="0" width="44" height="34" pivotX="40.95" pivotY="16.35" />
+	<SubTexture name="bar lines" x="684" y="0" width="50" height="247" pivotX="25" pivotY="247" />
+	<SubTexture name="bar top line" x="877" y="0" width="50" height="9" pivotX="25" pivotY="3.25"/>
+	<SubTexture name="battery icon" x="794" y="34" width="12" height="24" pivotX="5.8" pivotY="11.35"/>
+	<SubTexture name="hatchet icon" x="774" y="34" width="20" height="20" pivotX="10.35" pivotY="9.95"/>
+	<SubTexture name="fish icon" x="927" y="0" width="13" height="19" pivotX="6.15" pivotY="8.6"/>
+	<SubTexture name="bar gradient" x="734" y="0" width="40" height="241" />
+	<SubTexture name="bar blue gradient" x="942" y="0" width="40" height="241" />
+	<SubTexture name="enemy icon" x="774" y="54" width="16" height="17" pivotX="8.1" pivotY="8.2"/>
+	<SubTexture name="level helmet icon" x="818" y="24" width="25" height="23" pivotX="11.9" pivotY="10.9"/>
+	<SubTexture name="panel" x="0" y="0" width="684" height="351" pivotX="341.95" pivotY="174.7"/>
+	<SubTexture name="pvp sword icon" x="849" y="0" width="28" height="26" pivotX="13.05" pivotY="12.25"/>
+	<SubTexture name="small aura icon" x="818" y="0" width="31" height="24" pivotX="21.3" pivotY="9.3"/>
+	<SubTexture name="info button" x="983" y="1" width="20" height="20" />
+</TextureAtlas>

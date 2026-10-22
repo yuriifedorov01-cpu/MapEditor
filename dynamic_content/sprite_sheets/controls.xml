@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="controls.png">
+	<!-- Created with Adobe Flash Professional version 15.0.1.179 -->
+	<!-- http://www.adobe.com/products/flash.html -->
+	<SubTexture name="character" x="0" y="117" width="139" height="40" pivotX="85.4" pivotY="0.75"/>
+	<SubTexture name="chat" x="0" y="0" width="929" height="117" pivotX="464.3" pivotY="58"/>
+	<SubTexture name="social" x="437" y="117" width="107" height="40" pivotX="67.4" pivotY="0.35"/>
+	<SubTexture name="heropedia" x="139" y="117" width="162" height="29" pivotX="85.4" pivotY="-10.3"/>
+	<SubTexture name="items" x="788" y="117" width="97" height="32" pivotX="67.4" pivotY="-6.95"/>
+	<SubTexture name="map" x="929" y="31" width="75" height="30" pivotX="49.65" pivotY="-10.55"/>
+	<SubTexture name="missions" x="665" y="117" width="123" height="30" pivotX="79.9" pivotY="-10.55"/>
+	<SubTexture name="options" x="544" y="117" width="121" height="31" pivotX="79.9" pivotY="-8.05"/>
+	<SubTexture name="payvault" x="301" y="117" width="136" height="33" pivotX="102.4" pivotY="-5.55"/>
+	<SubTexture name="pets" x="929" y="0" width="87" height="31" pivotX="70.15" pivotY="-8.2"/>
+	<SubTexture name="main menu" x="887" y="125" width="127" height="29" />
+	
+	<SubTexture name="health BG" x="0" y="157" width="271" height="36" />
+	<SubTexture name="health bar" x="0" y="193" width="245" height="27" />
+	
+	<SubTexture name="MP bar" x="0" y="292" width="181" height="20" />
+	<SubTexture name="MP BG" x="0" y="246" width="202" height="26" />
+	<SubTexture name="XP bar" x="0" y="272" width="182" height="20" />
+	<SubTexture name="XP BG" x="0" y="220" width="203" height="26" />
+	
+	<SubTexture name="coin" x="930" y="61" width="19" height="21" />
+	<SubTexture name="debug" x="952" y="62" width="8" height="8" />
+	
+	<SubTexture name="pet bars BG" x="0" y="313" width="107" height="29" />
+	<SubTexture name="pet health bar" x="0" y="348" width="77" height="7" />
+	<SubTexture name="pet xp bar" x="0" y="341" width="77" height="7" />
+	
+	<SubTexture name="boss BG" x="0" y="357" width="560" height="12" />
+	<SubTexture name="boss bar" x="0" y="369" width="555" height="8" />
+	
+	<SubTexture name="analog stick base" x="0" y="377" width="212" height="212" />
+	<SubTexture name="analog stick top" x="212" y="377" width="184" height="185" />
+	<SubTexture name="attack button" x="212" y="562" width="175" height="175" />
+	<SubTexture name="block button" x="0" y="765" width="174" height="175" />
+	<SubTexture name="jump button" x="0" y="590" width="175" height="175" />
+	
+	<SubTexture name="etc button" x="930" y="82" width="81" height="41" />
+	<SubTexture name="cursor" x="304" y="284" width="28" height="43" />
+	
+	<SubTexture name="chop/fish button" x="335" y="160" width="62" height="62" />
+	<SubTexture name="guild heal button" x="335" y="222" width="62" height="62" />
+	<SubTexture name="guild rage button" x="273" y="160" width="62" height="63" />
+	<SubTexture name="heal button" x="335" y="284" width="62" height="62" />
+	<SubTexture name="unleash button" x="273" y="223" width="62" height="62" />
+	<SubTexture name="loot button" x="396" y="160" width="62" height="62" />
+</TextureAtlas>

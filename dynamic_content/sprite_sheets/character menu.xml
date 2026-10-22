@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="character menu.png">
+	<!-- Created with Adobe Animate version 15.1.1.13 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="addFriend_btn" x="960" y="60" width="62" height="29" />
+	<SubTexture name="character menu" x="0" y="0" width="606" height="353" />
+	<SubTexture name="close button_00" x="922" y="135" width="40" height="38" />
+	<SubTexture name="close button_01" x="962" y="135" width="40" height="38"/>
+	<SubTexture name="givePresent_btn" x="836" y="0" width="133" height="32" />
+	<SubTexture name="more_btn_00" x="1004" y="21" width="19" height="20" />
+	<SubTexture name="more_btn_01" x="1002" y="135" width="19" height="20"/>
+	<SubTexture name="info_btn" x="1004" y="0" width="20" height="21" />
+	<SubTexture name="pet panel" x="614" y="0" width="222" height="283" />
+	<SubTexture name="less_btn_00" x="1004" y="41" width="20" height="10" />
+	<SubTexture name="less_btn_01" x="1002" y="155" width="20" height="10"/>
+	<SubTexture name="proficient_btn" x="836" y="75" width="124" height="27" />
+	<SubTexture name="energy_btn" x="836" y="32" width="86" height="42" />
+	<SubTexture name="ranks_btn" x="836" y="102" width="106" height="27" />
+	<SubTexture name="report_btn" x="922" y="32" width="82" height="28" />
+	<SubTexture name="skills panel" x="0" y="354" width="300" height="50" />
+	<SubTexture name="skills_btn" x="942" y="102" width="78" height="33" />
+	<SubTexture name="trade_btn" x="836" y="129" width="86" height="26" />
+	<SubTexture name="dark pixel" x="509" y="352" width="1" height="1" />
+	<SubTexture name="greenish pixel" x="223" y="55" width="1" height="1" />
+</TextureAtlas>

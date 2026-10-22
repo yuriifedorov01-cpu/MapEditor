@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="char create menu.png">
+	<!-- Created with Adobe Flash Professional version 15.0.1.179 -->
+	<!-- http://www.adobe.com/products/flash.html -->
+	<SubTexture name="nonChange" x="0" y="0" width="772" height="550" pivotX="386.7" pivotY="275"/>
+	<SubTexture name="nonChange no terms" x="0" y="0" width="772" height="532" pivotX="386.7" pivotY="275"/>
+	<SubTexture name="left_00" x="322" y="595" width="22" height="40" pivotX="8.15" pivotY="14.1"/>
+	<SubTexture name="left_01" x="0" y="622" width="22" height="40"/>
+	<SubTexture name="right_00" x="22" y="622" width="22" height="40" pivotX="12.25" pivotY="14.1"/>
+	<SubTexture name="right_01" x="44" y="622" width="22" height="40"/>
+	<SubTexture name="back_00" x="465" y="550" width="109" height="38" pivotX="63.45" pivotY="18.25"/>
+	<SubTexture name="finished_00" x="0" y="550" width="155" height="49" pivotX="41" pivotY="21.5" frameX="0" frameY="0" frameWidth="155" frameHeight="50"/>
+	<SubTexture name="terms_00" x="465" y="588" width="161" height="23" pivotX="58.3" pivotY="11.05"/>
+	<SubTexture name="input box" x="0" y="662" width="255" height="40" />
+	<SubTexture name="input box small" x="0" y="703" width="129" height="40" />
+	<SubTexture name="wooden platform" x="0" y="743" width="77" height="248" />
+</TextureAtlas>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="heropedia menu.png">
+	<!-- Created with Adobe Animate version 15.2.1.95 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="sound btn" x="92" y="1530" width="28" height="26" />
+	<SubTexture name="click panel 1" x="0" y="1498" width="146" height="32" />
+	<SubTexture name="click panel 2" x="146" y="1498" width="146" height="32"/>
+	<SubTexture name="click panel 3" x="292" y="1498" width="146" height="32"/>
+	<SubTexture name="back btn" x="438" y="1498" width="102" height="43" />
+	<SubTexture name="panel 1" x="0" y="966" width="819" height="532" />
+	<SubTexture name="panel 2" x="0" y="483" width="820" height="483" />
+	<SubTexture name="panel 3" x="0" y="0" width="821" height="483" />
+	<SubTexture name="shine" x="120" y="1530" width="25" height="28" />
+	<SubTexture name="x btn" x="0" y="1530" width="46" height="46" />
+</TextureAtlas>

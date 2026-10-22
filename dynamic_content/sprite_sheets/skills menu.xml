@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="skills menu.png">
+	<!-- Created with Adobe Animate version 15.1.0.210 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="archerSkills_btn" x="735" y="0" width="109" height="32" pivotX="59.25" pivotY="15.8"/>
+	<SubTexture name="basicSkills_btn" x="735" y="32" width="91" height="32" pivotX="49.9" pivotY="15.55"/>
+	<SubTexture name="cowboySkills_btn" x="724" y="442" width="117" height="33" pivotX="49.9" pivotY="16.95"/>
+	<SubTexture name="panel" x="0" y="0" width="735" height="442" />
+	<SubTexture name="skills backdrop" x="0" y="442" width="616" height="426" />
+	<SubTexture name="warriorSkills_btn" x="616" y="481" width="119" height="33" pivotX="54.2" pivotY="17.3"/>
+	<SubTexture name="wizardSkills_btn" x="616" y="442" width="108" height="39" pivotX="51.75" pivotY="23.35"/>
+</TextureAtlas>

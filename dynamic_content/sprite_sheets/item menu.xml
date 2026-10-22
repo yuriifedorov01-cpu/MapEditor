@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="item menu.png">
+	<!-- Created with Adobe Flash Professional version 15.0.1.179 -->
+	<!-- http://www.adobe.com/products/flash.html -->
+	<SubTexture name="vendor panel" x="234" y="631" width="199" height="46" pivotX="100.45" pivotY="22.45"/>
+	<SubTexture name="buy_btn" x="430" y="735" width="82" height="39" pivotX="32.9" pivotY="15.25"/>
+	<SubTexture name="drop_btn" x="83" y="813" width="82" height="39" pivotX="32.9" pivotY="15.25"/>
+	<SubTexture name="equip_btn" x="0" y="774" width="90" height="39" pivotX="32.9" pivotY="15.25"/>
+	<SubTexture name="equip" x="482" y="487" width="26" height="27" pivotX="24" pivotY="12.6"/>
+	<SubTexture name="item panel_00" x="0" y="707" width="245" height="28" />
+	<SubTexture name="item panel_01" x="245" y="707" width="245" height="28" />
+	<SubTexture name="item panel_02" x="0" y="677" width="247" height="30"/>
+	<SubTexture name="item panel_03" x="247" y="677" width="247" height="30"/>
+	<SubTexture name="panel" x="0" y="0" width="500" height="487" pivotX="250.1" pivotY="243.55"/>
+	<SubTexture name="primary_00" x="165" y="815" width="75" height="22" pivotX="23.05" pivotY="10.65"/>
+	<SubTexture name="scroll" x="481" y="630" width="30" height="39" pivotX="14.5" pivotY="19"/>
+	<SubTexture name="secondary_00" x="263" y="814" width="110" height="22" pivotX="24.45" pivotY="10.65"/>
+	<SubTexture name="sell_btn_00" x="263" y="775" width="82" height="39" pivotX="32.9" pivotY="15.25"/>
+	<SubTexture name="small menu" x="234" y="585" width="200" height="46" pivotX="100.45" pivotY="22.45"/>
+	<SubTexture name="ticket panel" x="234" y="487" width="248" height="98" pivotX="123.7" pivotY="39.85"/>
+	<SubTexture name="unEquip_btn" x="0" y="735" width="114" height="39" pivotX="45.4" pivotY="15.25"/>
+	<SubTexture name="use_btn_00" x="180" y="775" width="83" height="34" pivotX="32.9" pivotY="15.25" />
+	<SubTexture name="use_btn_01" x="0" y="813" width="83" height="34" />
+	<SubTexture name="vend_btn_00" x="228" y="735" width="101" height="40" pivotX="7.9" pivotY="15.45"/>
+	<SubTexture name="vend_btn_01" x="329" y="735" width="101" height="40"/>
+	<SubTexture name="x_btn_00" x="433" y="631" width="48" height="45" pivotX="30.2" pivotY="18.6"/>
+	<SubTexture name="x_btn_01" x="434" y="585" width="48" height="45"/>
+	<SubTexture name="your item panel" x="0" y="487" width="234" height="189" pivotX="141.8" pivotY="100.15"/>
+	<SubTexture name="addVItem_btn_00" x="0" y="849" width="53" height="22" pivotX="23.05" pivotY="10.65"/>
+	<SubTexture name="pet item panel" x="501" y="0" width="500" height="437" />
+	<SubTexture name="trade panel" x="0" y="893" width="812" height="674" />
+	<SubTexture name="confirm" x="514" y="438" width="121" height="41" pivotX="59.15" pivotY="15.95"/>
+	<SubTexture name="offer" x="514" y="592" width="82" height="36" pivotX="29.6" pivotY="13.7"/>
+	<SubTexture name="withhold" x="514" y="520" width="118" height="36" pivotX="47.15" pivotY="14.15"/>
+	<SubTexture name="no" x="632" y="554" width="102" height="58" pivotX="47.25" pivotY="22.5"/>
+	<SubTexture name="yes" x="632" y="438" width="102" height="58" pivotX="47.25" pivotY="22.5"/>
+	<SubTexture name="pet confirm panel" x="0" y="1568" width="460" height="316" />
+	<SubTexture name="pet vend panel" x="516" y="671" width="460" height="199" />
+	<SubTexture name="alert panel" x="736" y="439" width="199" height="108" />
+	<SubTexture name="crafting panel" x="1002" y="0" width="500" height="547" />
+	<SubTexture name="craft item panel_00" x="461" y="1568" width="252" height="80" />
+	<SubTexture name="craft item panel_01" x="461" y="1649" width="252" height="80" />
+	<SubTexture name="bank panel" x="979" y="549" width="651" height="492" />
+	<SubTexture name="storage_00" x="979" y="1041" width="194" height="42" pivotX="145.95" pivotY="18.15"/>
+	
+	<SubTexture name="deposit_00" x="818" y="955" width="113" height="40" pivotX="42.9" pivotY="15.25"/>
+	<SubTexture name="withdrawl_00" x="818" y="875" width="146" height="40" pivotX="37.9" pivotY="15.25"/>
+	
+	<SubTexture name="options panel" x="1503" y="0" width="453" height="484" pivotX="226.45" pivotY="241.95"/>
+	<SubTexture name="defineButtons" x="1503" y="484" width="145" height="24" pivotX="62.15" pivotY="11.45"/>
+	
+	<SubTexture name="fish list panel" x="813" y="1079" width="690" height="386" />
+	
+	<SubTexture name="checkmark" x="1944" y="1571" width="31" height="26" pivotX="15.5" pivotY="12.6"/>
+	<SubTexture name="x mark" x="1974" y="1571" width="25" height="25" frameX="-4" frameY="-1" frameWidth="31" frameHeight="26"/>
+	<SubTexture name="new PM icon" x="484" y="515" width="26" height="24" />
+	<SubTexture name="block PM icon" x="483" y="539" width="20" height="20" />
+	
+	<SubTexture name="mission menu panel" x="1504" y="1079" width="501" height="491" pivotX="249.65" pivotY="245.5"/>
+	<SubTexture name="mission panel_00" x="1502" y="1569" width="442" height="28" pivotX="221" pivotY="14.1"/>
+	<SubTexture name="mission panel_01" x="1502" y="1597" width="442" height="28"/>
+	<SubTexture name="PM person panel_00" x="316" y="837" width="183" height="31" />
+	<SubTexture name="PM person panel_01" x="56" y="849" width="183" height="31" />
+	
+	<SubTexture name="lottery panel" x="1588" y="1626" width="459" height="295" />
+	<SubTexture name="present panel" x="461" y="1731" width="460" height="316" />
+	<SubTexture name="PM panel" x="813" y="1466" width="547" height="150" />
+	<SubTexture name="L key icon" x="91" y="773" width="15" height="15" />
+	
+	<SubTexture name="dark green pixel" x="202" y="445" width="1" height="1" />
+	<SubTexture name="confirm backdrop" x="0" y="1885" width="430" height="157" pivotX="0" pivotY="0"/>
+</TextureAtlas>

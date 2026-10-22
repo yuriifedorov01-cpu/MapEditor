@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="skill images.png">
+	<!-- Created with Adobe Animate version 15.1.0.210 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="accel-down" x="0" y="1008" width="251" height="126" />
+	<SubTexture name="archer-down" x="502" y="882" width="251" height="126" />
+	<SubTexture name="arrow-barrage" x="502" y="630" width="251" height="126" />
+	<SubTexture name="arrow-knockback" x="753" y="630" width="251" height="126" />
+	<SubTexture name="arrow-rain" x="0" y="1134" width="251" height="126" />
+	<SubTexture name="arrow-triple-shot" x="0" y="378" width="251" height="126" />
+	<SubTexture name="avoidance" x="0" y="504" width="251" height="126" />
+	<SubTexture name="block" x="0" y="756" width="251" height="126" />
+	<SubTexture name="bullet-distance" x="502" y="1008" width="251" height="126" />
+	<SubTexture name="bullet-knockback" x="502" y="756" width="251" height="126" />
+	<SubTexture name="dash" x="251" y="756" width="251" height="126" />
+	<SubTexture name="expert-archer" x="251" y="378" width="251" height="126" />
+	<SubTexture name="expert-cowboy" x="251" y="504" width="251" height="126" />
+	<SubTexture name="expert-warrior" x="753" y="756" width="251" height="126" />
+	<SubTexture name="expert-wizard" x="502" y="378" width="251" height="126" />
+	<SubTexture name="grenades" x="753" y="378" width="251" height="126" />
+	<SubTexture name="guild-rage" x="251" y="882" width="251" height="126" />
+	<SubTexture name="critical" x="0" y="882" width="251" height="126" />
+	<SubTexture name="jump-grenade" x="753" y="882" width="251" height="126" />
+	<SubTexture name="jump-height" x="251" y="1134" width="251" height="126" />
+	<SubTexture name="light-beam" x="502" y="504" width="251" height="126" />
+	<SubTexture name="loot" x="251" y="1008" width="251" height="126" />
+	<SubTexture name="magic-distance" x="753" y="1008" width="251" height="126" />
+	<SubTexture name="magic-projectiles" x="502" y="1134" width="251" height="126" />
+	<SubTexture name="melee-knockback" x="0" y="252" width="251" height="126" />
+	<SubTexture name="mp-restore" x="251" y="252" width="251" height="126" />
+	<SubTexture name="multi-attack-distance" x="502" y="252" width="251" height="126" />
+	<SubTexture name="multi-attack" x="753" y="252" width="251" height="126" />
+	<SubTexture name="pet-guild-heal" x="753" y="504" width="251" height="126" />
+	<SubTexture name="piercing-arrow" x="0" y="630" width="251" height="126" />
+	<SubTexture name="power-attack" x="753" y="126" width="251" height="126" />
+	<SubTexture name="rage" x="251" y="126" width="251" height="126" />
+	<SubTexture name="self-heal" x="753" y="0" width="251" height="126" />
+	<SubTexture name="shield-mastery" x="502" y="0" width="251" height="126" />
+	<SubTexture name="shotgun-attack" x="0" y="126" width="251" height="126" />
+	<SubTexture name="spin-attack" x="502" y="126" width="251" height="126" />
+	<SubTexture name="thunder-attack" x="251" y="0" width="251" height="126" />
+	<SubTexture name="training" x="251" y="630" width="251" height="126" />
+	<SubTexture name="upward-shoot" x="0" y="0" width="251" height="126" />
+</TextureAtlas>

@@ -1,0 +1,352 @@
+[
+  {
+    "key": "pet none helmet",
+    "def": 0,
+    "c": 0,
+    "lvl": 1,
+    "l": 0,
+    "h": 0,
+    "spe": 0,
+    "f": 2
+  },
+  {
+    "key": "pet striped beanie",
+    "def": 3,
+    "c": 200,
+    "lvl": 1,
+    "l": 0,
+    "h": 0,
+    "spe": 0,
+    "f": 3
+  },
+  {
+    "key": "pet bowtie",
+    "def": 1,
+    "c": 90,
+    "lvl": 1,
+    "l": 0,
+    "h": 0,
+    "spe": 0,
+    "f": 4
+  },
+  {
+    "key": "pet melon helmet",
+    "def": 11,
+    "c": 1150,
+    "lvl": 4,
+    "l": 0,
+    "h": 0,
+    "spe": 0,
+    "f": 5
+  },
+  {
+    "key": "pet archer hat",
+    "def": 10,
+    "c": 1900,
+    "lvl": 4,
+    "l": 2,
+    "h": 0,
+    "spe": 0,
+    "f": 6
+  },
+  {
+    "key": "pet oriental hat",
+    "def": 12,
+    "c": 1500,
+    "lvl": 5,
+    "l": 0,
+    "h": 0,
+    "spe": 0,
+    "f": 7
+  },
+  {
+    "key": "pet crumby hat",
+    "def": 8,
+    "c": 1300,
+    "lvl": 6,
+    "l": 0,
+    "h": 2,
+    "spe": 0,
+    "f": 8
+  },
+  {
+    "key": "pet army helmet",
+    "def": 30,
+    "c": 5500,
+    "lvl": 16,
+    "l": 0,
+    "h": 0,
+    "spe": 0,
+    "f": 9
+  },
+  {
+    "key": "pet cowboy hat",
+    "def": 12,
+    "c": 8000,
+    "lvl": 18,
+    "l": 0,
+    "h": 0,
+    "spe": 0,
+    "f": 10
+  },
+  {
+    "key": "pet apollo helmet",
+    "def": 35,
+    "c": 13000,
+    "lvl": 23,
+    "l": 3,
+    "h": 0,
+    "spe": 0,
+    "f": 11
+  },
+  {
+    "key": "pet wizard hat",
+    "def": 11,
+    "c": 2300,
+    "lvl": 24,
+    "l": 0,
+    "h": 6,
+    "spe": 0,
+    "f": 12
+  },
+  {
+    "key": "pet spartan helmet",
+    "def": 44,
+    "c": 12000,
+    "lvl": 27,
+    "l": 0,
+    "h": 0,
+    "spe": 0,
+    "f": 13
+  },
+  {
+    "key": "pet witch hat",
+    "def": 15,
+    "c": 12500,
+    "lvl": 33,
+    "l": 0,
+    "h": 10,
+    "spe": 0,
+    "f": 14
+  },
+  {
+    "key": "pet stone helmet",
+    "def": 48,
+    "c": 19000,
+    "lvl": 33,
+    "l": 0,
+    "h": 0,
+    "spe": 0,
+    "f": 15
+  },
+  {
+    "key": "pet strong helmet",
+    "def": 44,
+    "c": 35000,
+    "lvl": 35,
+    "l": 4,
+    "h": 0,
+    "spe": 0,
+    "f": 16
+  },
+  {
+    "key": "pet pirate hat",
+    "def": 19,
+    "c": 25000,
+    "lvl": 38,
+    "l": 0,
+    "h": 0,
+    "spe": 0,
+    "f": 17
+  },
+  {
+    "key": "pet horned helmet",
+    "def": 52,
+    "c": 30000,
+    "lvl": 40,
+    "l": 0,
+    "h": 0,
+    "spe": 0,
+    "f": 18
+  },
+  {
+    "key": "pet protector helmet",
+    "def": 49,
+    "c": 70000,
+    "lvl": 43,
+    "l": 5,
+    "h": 0,
+    "spe": 0,
+    "f": 19
+  },
+  {
+    "key": "pet adamantium helmet",
+    "def": 56,
+    "c": 38000,
+    "lvl": 45,
+    "l": 0,
+    "h": 0,
+    "spe": 0,
+    "f": 20
+  },
+  {
+    "key": "pet jester hat",
+    "def": 19,
+    "c": 33000,
+    "lvl": 48,
+    "l": 2,
+    "h": 15,
+    "spe": 0,
+    "f": 21
+  },
+  {
+    "key": "pet cone helmet",
+    "def": 62,
+    "c": 46000,
+    "lvl": 51,
+    "l": 0,
+    "h": 0,
+    "spe": 0,
+    "f": 22
+  },
+  {
+    "key": "pet samurai helmet",
+    "def": 54,
+    "c": 98000,
+    "lvl": 56,
+    "l": 5,
+    "h": 0,
+    "spe": 0,
+    "f": 23
+  },
+  {
+    "key": "pet cyborg helmet",
+    "def": 67,
+    "c": 180000,
+    "lvl": 76,
+    "l": 6,
+    "h": 0,
+    "spe": 0,
+    "f": 24
+  },
+  {
+    "key": "pet dino scale helmet",
+    "def": 95,
+    "c": 275000,
+    "lvl": 87,
+    "l": 0,
+    "h": 0,
+    "spe": 0,
+    "f": 25
+  },
+  {
+    "key": "pet element helmet",
+    "def": 64,
+    "c": 385000,
+    "lvl": 117,
+    "l": 0,
+    "h": 20,
+    "spe": 0,
+    "f": 26
+  },
+  {
+    "key": "pet beholder helmet",
+    "def": 110,
+    "c": 510000,
+    "lvl": 121,
+    "l": 0,
+    "h": 0,
+    "spe": 0,
+    "f": 27
+  },
+  {
+    "key": "pet valor helmet",
+    "def": 75,
+    "c": 500000,
+    "lvl": 125,
+    "l": 0,
+    "h": 0,
+    "spe": 0,
+    "f": 28
+  },
+  {
+    "key": "pet earth helmet",
+    "def": 87,
+    "c": 465000,
+    "lvl": 131,
+    "l": 7,
+    "h": 0,
+    "spe": 0,
+    "f": 29
+  },
+  {
+    "key": "pet serpent helmet",
+    "def": 74,
+    "c": 660000,
+    "lvl": 181,
+    "l": 0,
+    "h": 21,
+    "spe": 0,
+    "f": 30
+  },
+  {
+    "key": "pet acid helmet",
+    "def": 135,
+    "c": 950000,
+    "lvl": 182,
+    "l": 0,
+    "h": 0,
+    "spe": 0,
+    "f": 31
+  },
+  {
+    "key": "pet pirate helmet",
+    "def": 94,
+    "c": 800000,
+    "lvl": 200,
+    "l": 0,
+    "h": 0,
+    "spe": 0,
+    "f": 32
+  },
+  {
+    "key": "pet mystical tribal helmet",
+    "def": 120,
+    "c": 2500000,
+    "lvl": 203,
+    "l": 8,
+    "h": 0,
+    "spe": 0,
+    "f": 33
+  },
+  {
+    "key": "pet hydro tech helmet",
+    "def": 99,
+    "c": 2100000,
+    "lvl": 235,
+    "l": 0,
+    "h": 24,
+    "spe": 0,
+    "f": 34
+  },
+  {
+    "key": "pet atomic helmet",
+    "def": 125,
+    "c": 2500000,
+    "lvl": 250,
+    "l": 0,
+    "h": 0,
+    "spe": 0,
+    "f": 35
+  },
+  {
+    "key": "pet cyro helmet",
+    "def": 173,
+    "c": 2800000,
+    "lvl": 245,
+    "l": 0,
+    "h": 0,
+    "spe": 0,
+    "f": 36
+  }
+]

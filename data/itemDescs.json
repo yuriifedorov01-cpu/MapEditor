@@ -1,0 +1,42 @@
+[
+  {
+    "key": "green spawn ball",
+    "d": "Green spawn ball\n\nDrops a gateway on the ground that keeps spawning green bouncers, green walkers and purple goos (9 enemies per minute). It lasts about 3 hours, cannot be picked up again and stays in every matching area of all servers."
+  },
+  {
+    "key": "blue spawn ball",
+    "d": "Blue spawn ball\n\nDrops a gateway on the ground that keeps spawning mushroom balls, bouncing mushrooms and yellow puff monsters (8 enemies per minute). It lasts about 3 hours, cannot be picked up again and stays in every matching area of all servers."
+  },
+  {
+    "key": "yellow spawn ball",
+    "d": "Yellow spawn ball\n\nDrops a gateway on the ground that keeps spawning plant monsters, pumpkin creepers, penguins, great frogs and sasquatches (8 enemies per minute). It lasts about 3 hours, cannot be picked up again and stays in every matching area of all servers."
+  },
+  {
+    "key": "orange spawn ball",
+    "d": "Orange spawn ball\n\nDrops a gateway on the ground that keeps spawning brick monsters, block bots, night stalkers, bouncing mushrooms, leaflets and drill bots (8 enemies per minute). It lasts about 3 hours, cannot be picked up again and stays in every matching area of all servers."
+  },
+  {
+    "key": "bullhorn",
+    "d": "Bullhorn\n\nUse it to shout a message to every player on the server."
+  },
+  {
+    "key": "item vendor",
+    "d": "Item vendor licence\n\nLets you place an item vending machine in the world."
+  },
+  {
+    "key": "pet vendor",
+    "d": "Pet vendor licence\n\nLets you place a pet vending machine in the world."
+  },
+  {
+    "key": "net",
+    "d": "Net\n\nThrow it to catch a pet. It breaks after a few throws."
+  },
+  {
+    "key": "chainsaw",
+    "d": "Chainsaw\n\nCuts trees much faster than an axe, but it breaks."
+  },
+  {
+    "key": "evolution crystal",
+    "d": "Evolution crystal\n\nUse it on a pet to evolve it."
+  }
+]

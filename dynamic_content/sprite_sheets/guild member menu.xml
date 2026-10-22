@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="guild member menu.png">
+	<!-- Created with Adobe Flash Professional version 15.0.1.179 -->
+	<!-- http://www.adobe.com/products/flash.html -->
+	<SubTexture name="allowJoin_btn_00" x="517" y="0" width="150" height="39" pivotX="82.9" pivotY="15.25"/>
+	<SubTexture name="deny_btn_00" x="517" y="78" width="87" height="43" pivotX="32.9" pivotY="15.25"/>
+	<SubTexture name="kick_btn_00" x="517" y="164" width="82" height="40" pivotX="32.9" pivotY="15.25"/>
+	<SubTexture name="name panel_01" x="0" y="438" width="271" height="29" />
+	<SubTexture name="name panel_00" x="271" y="438" width="271" height="29" />
+	<SubTexture name="panel" x="0" y="0" width="517" height="438" />
+	<SubTexture name="scroll_btn" x="517" y="338" width="30" height="39" pivotX="14.5" pivotY="19"/>
+	<SubTexture name="x_btn_00" x="517" y="244" width="48" height="47" pivotX="30.2" pivotY="18.6"/>
+	<SubTexture name="x_btn_01" x="517" y="291" width="48" height="47"/>
+</TextureAtlas>
